@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{TITLE}} · presentación proyectable">
+<title>{{TITLE}}</title>
+<style>
+/* Fuentes alojadas en el propio fichero: nada se carga de terceros (apartado 10). */
+{{FONTS}}
+/* ===== Tokens EDUmind-Alumno ===== */
+:root{
+  --paper:#fafbfc; --paper-2:#f1f4f8; --card:#ffffff;
+  --ink:#0f172a; --ink-2:#334155; --line:#cbd5e1;
+  --m-mental:#3b82f6; --m-emocional:#f59e0b; --m-social:#ec4899; --m-fisico:#10b981; --m-interior:#8b5cf6;
+  --m-mental-d:#1d4ed8;
+  --radius:20px; --radius-sm:12px; --radius-pill:999px;
+  --shadow:0 4px 20px rgba(15,23,42,.08);
+  --f-display:'Fraunces', Georgia, serif;
+  --f-body:'Space Grotesk', system-ui, sans-serif;
+  --base:clamp(18px,1.55vw,24px);
+}
+*{box-sizing:border-box}
+html{font-size:var(--base)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);line-height:1.45;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+h2:focus,h2:focus-visible{outline:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+
+/* ===== Cabecera ===== */
+header.top{background:var(--card);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.tag{font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,3.2vw,2.6rem);margin:2px 0 0;line-height:1.1;overflow-wrap:anywhere}
+.tit{flex:1 1 320px;min-width:0}
+.a11y-btn{display:inline-flex;align-items:center;gap:10px;min-height:64px;padding:10px 22px;border-radius:var(--radius-pill);
+  border:3px solid var(--ink);background:var(--card);font-weight:700;font-size:1.05rem}
+.a11y-btn[aria-pressed="true"]{background:var(--ink);color:#fff}
+.a11y-btn svg{width:34px;height:34px}
+
+/* ===== Pasos (anticipación) ===== */
+nav.pasos{background:var(--paper-2);border-bottom:1px solid var(--line)}
+nav.pasos ol{list-style:none;margin:0;padding:12px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+nav.pasos li{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--radius-sm);background:var(--card);
+  border:2px solid var(--line);cursor:pointer;min-height:64px}
+nav.pasos .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);font-weight:700;flex:none}
+nav.pasos .lbl{font-weight:700;font-size:1rem}
+nav.pasos .now{display:none;margin-left:auto;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+nav.pasos li[aria-current="step"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav.pasos li[aria-current="step"] .n{border-color:#fff}
+nav.pasos li[aria-current="step"] .now{display:inline}
+nav.pasos li.done .n{background:var(--paper-2)}
+
+/* ===== Pantallas ===== */
+main{padding:28px 0 120px}
+section.screen{display:none}
+section.screen.on{display:block}
+h2{font-family:var(--f-display);font-weight:700;font-size:clamp(1.8rem,4.2vw,3.3rem);margin:0 0 14px;line-height:1.1}
+.lead{font-size:1.25rem;color:var(--ink-2);margin:0 0 22px;max-width:60ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 24px;margin-bottom:22px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;right:0;height:8px;background:var(--bar,var(--m-mental))}
+.card.social{--bar:var(--m-social)} .card.emo{--bar:var(--m-emocional)} .card.int{--bar:var(--m-interior)} .card.fis{--bar:var(--m-fisico)}
+.big{font-size:clamp(1.35rem,2.8vw,2.3rem);line-height:1.35;font-weight:500}
+ol.seq{margin:0;padding-left:1.6em} ol.seq li{margin:.35em 0}
+ul.fix{margin:0;padding-left:1.2em} ul.fix li{margin:.45em 0}
+.regra{font-weight:700;color:var(--ink-2);margin:0 0 12px;font-size:1.05rem}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media (max-width:900px){.cols{grid-template-columns:minmax(0,1fr)} nav.pasos .lbl{font-size:.85rem} nav.pasos li{padding:8px} nav.pasos .now{display:none!important}}
+@media (max-width:640px){nav.pasos ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px} nav.pasos .lbl{display:none} nav.pasos li{justify-content:center;padding:6px}}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:64px;min-width:64px;padding:12px 22px;border-radius:var(--radius-pill);
+  border:3px solid var(--ink);background:var(--ink);color:#fff;font-weight:700;font-size:1.05rem;transition:background-color .15s,color .15s}
+.btn.alt{background:var(--card);color:var(--ink)}
+.btn svg{width:28px;height:28px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.seg-ctl{display:flex;flex-wrap:wrap;gap:22px;margin-top:18px}
+.seg-ctl fieldset{border:2px solid var(--line);border-radius:var(--radius-sm);padding:8px 14px;margin:0}
+.seg-ctl legend{font-weight:700;font-size:.9rem;padding:0 6px}
+.seg-ctl label{display:inline-flex;align-items:center;gap:8px;margin-right:14px;min-height:44px;font-size:1rem}
+.seg-ctl input{width:24px;height:24px}
+
+/* Reproductor por trozos */
+.estado{display:flex;align-items:center;gap:18px;margin:22px 0 10px;flex-wrap:wrap}
+.estado .msg{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,3.6vw,3rem)}
+.estado .cnt{font-weight:700;font-size:1.15rem;color:var(--ink-2)}
+.estado svg{width:64px;height:64px;color:var(--m-mental)}
+.dots{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 18px}
+.dots span{width:22px;height:22px;border-radius:50%;border:3px solid var(--ink);background:var(--card)}
+.dots span.feito{background:var(--ink)}
+.dots span.agora{background:var(--m-mental);border-color:var(--m-mental-d)}
+
+/* Corrección */
+[role=tablist]{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+[role=tab]{min-height:64px;padding:10px 24px;border-radius:var(--radius-pill);border:3px solid var(--ink);background:var(--card);font-weight:700;font-size:1.05rem}
+[role=tab][aria-selected="true"]{background:var(--ink);color:#fff}
+.texto{font-size:clamp(1.35rem,2.7vw,2.25rem);line-height:1.7;font-weight:500;overflow-wrap:anywhere}
+.texto .k{font-weight:700;padding:0 2px;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px;text-decoration-color:var(--m-mental-d)}
+.texto sup.num{font-size:.5em;font-weight:700;background:var(--ink);color:#fff;border-radius:var(--radius-pill);padding:1px 7px;margin-right:2px;vertical-align:super}
+ul.claves{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:12px}
+.kw{width:100%;text-align:left;display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 16px;border-radius:var(--radius-sm);border:2px solid var(--line);background:var(--card);font-weight:700;font-size:1.1rem}
+.kw[aria-expanded="true"]{border-color:var(--ink);background:var(--paper-2)}
+.kn{display:inline-grid;place-items:center;min-width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-size:.85rem;flex:none}
+.kx{margin:8px 4px 4px;font-size:1.05rem}
+.frase{font-family:var(--f-display);font-weight:700;font-size:clamp(1.3rem,2.6vw,2rem);margin:6px 0 0}
+
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;min-height:72px;padding:12px 16px;border-radius:var(--radius-sm);border:3px solid var(--line);background:var(--card)}
+.opt .ol{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;border:3px solid var(--ink);font-weight:700;font-size:1.3rem;flex:none}
+.opt .ot{display:flex;flex-direction:column;gap:2px}.opt .ot b{font-size:1.1rem;line-height:1.25}.opt .ot span{font-size:.9rem;color:var(--ink-2)}
+.opt[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}.opt[aria-pressed="true"] .ol{border-color:#fff}.opt[aria-pressed="true"] .ot span{color:#fff}
+.card.soc2{--bar:var(--m-social)}
+body.a11y .opt{border:3px solid #000}
+/* Pie */
+footer{border-top:1px solid var(--line);padding:16px 0 110px;color:var(--ink-2);font-size:.85rem}
+.bottom{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);z-index:5}
+.bottom .wrap{display:flex;justify-content:space-between;gap:14px;padding-top:10px;padding-bottom:10px}
+
+/* ===== Modo accesibilidad (botón) ===== */
+body.a11y{--paper:#ffffff;--paper-2:#ffffff;--card:#ffffff;--ink:#000000;--ink-2:#000000;--line:#000000;--shadow:none;
+  --f-display:'Atkinson Hyperlegible', Verdana, sans-serif;--f-body:'Atkinson Hyperlegible', Verdana, sans-serif;--base:clamp(22px,2.1vw,32px)}
+body.a11y .card{border:3px solid #000}
+body.a11y .card::before{background:#000}
+body.a11y nav.pasos li{border:3px solid #000}
+body.a11y .texto{line-height:1.9;letter-spacing:.02em}
+body.a11y .texto .k{text-decoration-color:#000}
+body.a11y .dots span.agora{background:#000;border-color:#000;outline:4px solid #000;outline-offset:3px}
+body.a11y .estado svg{color:#000}
+body.a11y *{transition:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.bottom,nav.pasos,.a11y-btn,.btn,[role=tablist]{display:none!important} section.screen{display:block!important} body{background:#fff}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="tit">
+    <div class="tag">{{TIPO}} {{NUM}} · {{CURSO}}.º · {{UD}}</div>
+    <h1 id="h1t">{{TITULO}}</h1>
+  </div>
+  <!-- Botón de accesibilidad: letra más grande, alto contraste y letra Atkinson -->
+  <button class="a11y-btn" id="a11y" aria-pressed="false">
+    <svg viewBox="0 0 64 64" role="img" aria-hidden="true"><circle cx="32" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="4"/><path d="M12 24h40M32 24v16M32 40l-10 16M32 40l10 16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+    <span>{{A11Y}}</span>
+  </button>
+</div></header>
+
+<nav class="pasos" aria-label="{{NAV}}"><div class="wrap"><ol id="pasos">{{PASOS}}</ol></div></nav>
+
+<main><div class="wrap">
+
+  <!-- PASO 1 · Preparo -->
+  <section class="screen on" data-screen="0" aria-labelledby="h0">
+    {{OPSEL}}
+    <div class="cols">
+      <div class="card int">
+        <h2 id="h0">{{S1T}}</h2>
+        <p class="lead">{{S1P}}</p>
+        <ol class="seq big">{{S1L}}</ol>
+      </div>
+      <div class="card">
+        <h2>{{S2T}}</h2>
+        <p class="regra">{{REGRA}}</p>
+        <ul class="fix big">{{FIX}}</ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASO 2 · Escucho -->
+  <section class="screen" data-screen="1" aria-labelledby="h1">
+    <div class="card">
+      <h2 id="h1">{{L1}}</h2>
+      <p class="big">{{L1P}}</p>
+      <div class="row"><button class="btn" data-play="completo">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14l30 18-30 18z" fill="currentColor"/></svg>{{PLAY}}</button>
+        <button class="btn alt" data-stop>{{PAUSE}}</button></div>
+    </div>
+  </section>
+
+  <!-- PASO 3 · Escribo (trozo a trozo) y reviso -->
+  <section class="screen" data-screen="2" aria-labelledby="h2">
+    <div class="card">
+      <h2 id="h2">{{L2}}</h2>
+      <p class="big">{{L2P}}</p>
+      <div class="estado" aria-live="polite">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true"><path d="M14 50l4-14 26-26 10 10-26 26z M18 36l10 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="msg" id="msg">{{ANACO}} 1 {{DE}} {{NSEG}}</span>
+        <span class="cnt" id="cnt"></span>
+      </div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <div class="row">
+        <button class="btn" id="go">{{START}}</button>
+        <button class="btn alt" id="rep">{{REP}}</button>
+        <button class="btn alt" id="prev">{{PREV}}</button>
+        <button class="btn alt" id="next">{{NEXT}}</button>
+      </div>
+      <div class="seg-ctl">
+        <fieldset><legend>{{TEMPO}}</legend>
+          <label><input type="radio" name="tempo" value="0.75">{{TC}}</label>
+          <label><input type="radio" name="tempo" value="1" checked>{{TM}}</label>
+          <label><input type="radio" name="tempo" value="1.4">{{TL}}</label>
+        </fieldset>
+        <fieldset><legend>{{VEL}}</legend>
+          <label><input type="radio" name="vel" value="0.85">{{VLE}}</label>
+          <label><input type="radio" name="vel" value="1" checked>{{VNO}}</label>
+        </fieldset>
+      </div>
+    </div>
+    <div class="card fis">
+      <h2>{{L3}}</h2>
+      <p class="big">{{L3P}}</p>
+      <div class="row"><button class="btn" data-play="completo">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14l30 18-30 18z" fill="currentColor"/></svg>{{PLAY}}</button>
+        <button class="btn alt" data-stop>{{PAUSE}}</button></div>
+    </div>
+  </section>
+
+  <!-- PASO 4 · Corrijo -->
+  <section class="screen" data-screen="3" aria-labelledby="h3">
+    <div class="card social">
+      <h2 id="h3">{{S4T}}</h2>
+      <div role="tablist" aria-label="{{S4T}}">
+        <button role="tab" id="t1" aria-selected="true" aria-controls="p1">{{MODO1}}</button>
+        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">{{MODO2}}</button>
+      </div>
+      <div role="tabpanel" id="p1" aria-labelledby="t1"><p class="big">{{M1P}}</p></div>
+      <div role="tabpanel" id="p2" aria-labelledby="t2" hidden><p class="big">{{M2P}}</p></div>
+    </div>
+    <div class="card">
+      <button class="btn" id="ver" aria-expanded="false" aria-controls="texto">{{AMOSAR}}</button>
+      <div id="texto" hidden>{{CORR}}</div>
+    </div>
+  </section>
+
+  <!-- PASO 5 · Pienso -->
+  <section class="screen" data-screen="4" aria-labelledby="h4">
+    <div class="card emo">
+      <h2 id="h4">{{S5T}}</h2>
+      <ol class="seq big">{{S5L}}</ol>
+      <p class="frase">{{S5P}}</p>
+    </div>
+  </section>
+
+  <footer>{{VOZ}}<br>{{PE}} · {{AREA}} · {{LICENCIA}}</footer>
+</div></main>
+
+<div class="bottom"><div class="wrap">
+  <button class="btn alt" id="bprev">{{ANT}}</button>
+  <button class="btn" id="bnext">{{SEG}}</button>
+</div></div>
+
+<script>
+const D = {{DATA}};
+let op = 0;
+const O = () => D.ops[op];
+const T = D.t;
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+
+/* ---------- Preferencias del docente en el navegador (siempre con try/catch; sin ellas todo funciona igual) ---------- */
+const PREF = 'ditados.prefs';
+function leerPrefs() { try { return JSON.parse(localStorage.getItem(PREF) || '{}'); } catch (e) { return {}; } }
+function guardarPref(k, v) { try { const p = leerPrefs(); p[k] = v; localStorage.setItem(PREF, JSON.stringify(p)); } catch (e) { /* sin almacenamiento: no pasa nada */ } }
+
+/* ---------- Botón de accesibilidad ---------- */
+function setA11y(on) {
+  document.body.classList.toggle('a11y', on);
+  const b = $('#a11y'); b.setAttribute('aria-pressed', on); b.querySelector('span').textContent = on ? T.a11yOn : T.a11y;
+}
+$('#a11y').addEventListener('click', () => { const on = !document.body.classList.contains('a11y'); setA11y(on); guardarPref('a11y', on); });
+
+/* ---------- Pasos ---------- */
+let step = 0;
+function goStep(n) {
+  step = Math.max(0, Math.min(4, n));
+  stopAll();
+  $$('section.screen').forEach((s) => s.classList.toggle('on', +s.dataset.screen === step));
+  $$('#pasos li').forEach((li, i) => {
+    if (i === step) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    li.classList.toggle('done', i < step);
+  });
+  $('#bprev').disabled = step === 0;
+  $('#bnext').disabled = step === 4;
+  window.scrollTo(0, 0);
+  const h = document.querySelector('section.screen.on h2'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); }
+}
+$$('#pasos li').forEach((li, i) => { li.tabIndex = 0; li.addEventListener('click', () => goStep(i)); li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goStep(i); } }); });
+$('#bprev').addEventListener('click', () => goStep(step - 1));
+$('#bnext').addEventListener('click', () => goStep(step + 1));
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest('input,[role=tab]')) return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') goStep(step + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') goStep(step - 1);
+});
+
+/* ---------- Sonido ---------- */
+const audio = new Audio();
+let token = 0;                       // cancela cualquier reproducción en curso
+let stopper = [];
+const vel = () => +document.querySelector('input[name=vel]:checked').value;
+const tempo = () => +document.querySelector('input[name=tempo]:checked').value;
+const wait = (ms) => new Promise((res) => { const id = setTimeout(res, ms); stopper.push(() => { clearTimeout(id); res(); }); });
+
+function speak(text) {               // voz del navegador si no hay audio grabado
+  return new Promise((res) => {
+    if (!('speechSynthesis' in window)) return res();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = D.lang === 'gl' ? 'gl-ES' : 'es-ES';
+    const v = speechSynthesis.getVoices().find((x) => x.lang && x.lang.toLowerCase().startsWith(D.lang));
+    if (v) u.voice = v;
+    u.rate = vel() * 0.9;
+    u.onend = res; u.onerror = res;
+    speechSynthesis.speak(u);
+    stopper.push(() => { speechSynthesis.cancel(); res(); });
+  });
+}
+function play(which) {
+  if (!O().audio) return speak(which === 'completo' ? O().texto : O().seg[which]);
+  return new Promise((res) => {
+    audio.src = which === 'completo' ? O().audio.completo : O().audio.seg[which];
+    audio.playbackRate = vel();
+    audio.onended = res; audio.onerror = res;
+    audio.play().catch(res);
+    stopper.push(() => { audio.pause(); res(); });
+  });
+}
+let running = false;
+function stopAll() { token++; stopper.forEach((f) => f()); stopper = []; running = false; paintGo(); }
+$$('[data-play]').forEach((b) => b.addEventListener('click', () => { stopAll(); play(b.dataset.play); }));
+$$('[data-stop]').forEach((b) => b.addEventListener('click', stopAll));
+
+/* ---------- Dictado trozo a trozo ---------- */
+let N = O().seg.length;
+let i = 0;
+const dots = $('#dots');
+function mkDots() { dots.innerHTML = ''; for (let k = 0; k < N; k++) dots.append(document.createElement('span')); }
+mkDots();
+function paint(msgTxt) {
+  $('#msg').textContent = msgTxt || `${T.anaco} ${i + 1} ${T.de} ${N}`;
+  [...dots.children].forEach((d, k) => { d.className = k < i ? 'feito' : k === i ? 'agora' : ''; });
+}
+function paintGo() { const g = $('#go'); if (g) g.textContent = running ? T.pause : (i > 0 && i < N ? T.resume : T.start); }
+async function run() {
+  running = true; paintGo();
+  const tk = ++token;
+  while (i < N && tk === token) {
+    paint(); $('#cnt').textContent = '';
+    await play(i); if (tk !== token) return;
+    await wait(1100); if (tk !== token) return;
+    await play(i); if (tk !== token) return;
+    const words = O().seg[i].split(/\s+/).length;
+    $('#cnt').textContent = T.escribe;
+    await wait((2500 + words * 1100) * tempo() / vel()); if (tk !== token) return;
+    i++;
+  }
+  if (tk === token) { running = false; i = N; paint(T.fin); $('#cnt').textContent = ''; [...dots.children].forEach((d) => d.className = 'feito'); paintGo(); }
+}
+$('#go').addEventListener('click', () => { if (running) { stopAll(); paint(); } else { if (i >= N) i = 0; run(); } });
+$('#rep').addEventListener('click', async () => { stopAll(); if (i >= N) i = N - 1; paint(); ++token; await play(i); });
+$('#prev').addEventListener('click', () => { stopAll(); i = Math.max(0, Math.min(i, N) - 1); paint(); });
+$('#next').addEventListener('click', () => { stopAll(); i = Math.min(N - 1, i + 1); paint(); });
+paint();
+$$('input[name=tempo],input[name=vel]').forEach((r) => r.addEventListener('change', () => guardarPref(r.name, r.value)));
+
+/* ---------- Corrección ---------- */
+const tabs = $$('[role=tab]');
+tabs.forEach((tb, k) => {
+  tb.addEventListener('click', () => selTab(k));
+  tb.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); selTab((k + 1) % 2); tabs[(k + 1) % 2].focus(); } });
+});
+function selTab(k) { tabs.forEach((tb, j) => { tb.setAttribute('aria-selected', j === k); tb.tabIndex = j === k ? 0 : -1; $('#' + tb.getAttribute('aria-controls')).hidden = j !== k; }); }
+$('#ver').addEventListener('click', (e) => {
+  const open = $('#texto').hidden;
+  $('#texto').hidden = !open;
+  e.currentTarget.setAttribute('aria-expanded', open);
+  e.currentTarget.textContent = open ? T.ocultar : T.amosar;
+});
+$$('.kw').forEach((b) => b.addEventListener('click', () => {
+  const x = $('#' + b.getAttribute('aria-controls'));
+  x.hidden = !x.hidden; b.setAttribute('aria-expanded', !x.hidden);
+}));
+/* ---------- Elegir texto ---------- */
+const H1 = D.titulo;
+function selOp(k) {
+  stopAll(); op = k; N = O().seg.length; i = 0; mkDots(); paint();
+  $$('.opt').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.op === k));
+  $$('#texto .op').forEach((x) => x.hidden = +x.dataset.op !== k);
+  $('#h1t').textContent = D.ops.length > 1 ? H1 + ' · ' + O().titulo : H1;
+}
+$$('.opt').forEach((b) => b.addEventListener('click', () => selOp(+b.dataset.op)));
+
+/* ---------- Arranque: aplicar preferencias guardadas ---------- */
+(function () {
+  const p = leerPrefs();
+  if (p.a11y) setA11y(true);
+  ['tempo', 'vel'].forEach((k) => { if (p[k]) { const r = document.querySelector(`input[name=${k}][value="${p[k]}"]`); if (r) r.checked = true; } });
+})();
+goStep(0);
+</script>
+</body>
+</html>

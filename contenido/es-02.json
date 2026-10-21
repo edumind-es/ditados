@@ -1,0 +1,361 @@
+{
+  "lang": "es",
+  "num": 2,
+  "curso": "6",
+  "titulo": "Dictado 2 · Signos que ordenan el texto",
+  "semana": "Semana del 19 al 23 de octubre de 2026",
+  "ud": "Unidad 2 · Yo desearía",
+  "regra": "Dos puntos, punto y coma y puntos suspensivos · ¿? y ¡! · tildes",
+  "etiquetas": [
+    "dos puntos",
+    "punto y coma",
+    "puntos suspensivos",
+    "signos de interrogación",
+    "signos de exclamación",
+    "esdrújulas",
+    "texto instructivo"
+  ],
+  "fixome": [
+    "Dos puntos: antes de una enumeración (estos materiales: una botella, vinagre…) y antes de una explicación (es extraño: parece un pez).",
+    "Punto y coma: separa dos partes de una frase muy relacionadas o que ya llevan comas.",
+    "Puntos suspensivos: la lista sigue o la frase queda en suspenso. Siempre tres.",
+    "Las esdrújulas llevan tilde siempre, también los verbos con pronombres: échale, lávate."
+  ],
+  "estado": "publicado",
+  "revision": {
+    "fecha": "2026-10-19",
+    "revisor": "Luis Vilela Acuña",
+    "fuentes": [
+      "https://dle.rae.es",
+      "https://www.rae.es/dpd",
+      "Ortografía de la lengua española (RAE, 2010)"
+    ],
+    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Texto instructivo",
+      "titulo": "Un volcán en tu mesa",
+      "texto": "Para hacer un volcán en tu mesa, necesitas estos materiales: una botella pequeña, bicarbonato, vinagre, colorante rojo y un chorrito de jabón. Primero, coloca la botella sobre una bandeja; así no mancharás nada. Después, échale dos cucharadas de bicarbonato, unas gotas de colorante y el jabón. Por último, añade el vinagre poco a poco y apártate un paso… ¡La lava empezará a salir! Recuerda: pide ayuda a un adulto y lávate las manos al terminar.",
+      "segmentos": [
+        "Para hacer un volcán en tu mesa,",
+        "necesitas estos materiales:",
+        "una botella pequeña, bicarbonato, vinagre,",
+        "colorante rojo y un chorrito de jabón.",
+        "Primero, coloca la botella sobre una bandeja;",
+        "así no mancharás nada.",
+        "Después, échale dos cucharadas de bicarbonato,",
+        "unas gotas de colorante y el jabón.",
+        "Por último, añade el vinagre poco a poco",
+        "y apártate un paso…",
+        "¡La lava empezará a salir!",
+        "Recuerda: pide ayuda a un adulto",
+        "y lávate las manos al terminar."
+      ],
+      "foco": [
+        {
+          "p": "volcán",
+          "por": "Aguda terminada en -n: lleva tilde. Con v."
+        },
+        {
+          "p": "materiales:",
+          "por": "Dos puntos antes de una enumeración: anuncian la lista que viene detrás."
+        },
+        {
+          "p": "bicarbonato",
+          "por": "Dos b: bi- (que significa «dos») y car-bo-na-to (de carbono)."
+        },
+        {
+          "p": "vinagre",
+          "por": "Con v y con g."
+        },
+        {
+          "p": "jabón",
+          "por": "Con j. Aguda terminada en -n: lleva tilde."
+        },
+        {
+          "p": "bandeja; así",
+          "por": "Punto y coma: separa dos partes muy relacionadas. Así es aguda terminada en vocal: tilde.",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "mancharás",
+          "por": "Aguda terminada en -s: lleva tilde."
+        },
+        {
+          "p": "échale",
+          "por": "Del verbo echar: sin h. Es esdrújula (é-cha-le): tilde siempre."
+        },
+        {
+          "p": "añade",
+          "por": "Del verbo añadir: sin h."
+        },
+        {
+          "p": "apártate un paso…",
+          "por": "Apártate es esdrújula: tilde. Los puntos suspensivos dejan la frase en suspenso: son tres.",
+          "e": "apártate…"
+        },
+        {
+          "p": "¡La lava empezará a salir!",
+          "por": "La exclamación se abre y se cierra. Empezará es aguda terminada en vocal: tilde.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "Recuerda:",
+          "por": "Dos puntos antes de lo que hay que recordar."
+        },
+        {
+          "p": "lávate",
+          "por": "Del verbo lavar: con v. Es esdrújula (lá-va-te): tilde siempre."
+        }
+      ],
+      "datos": "Texto instructivo: repaso de la UD1 (título, materiales, pasos con marcadores de orden e imperativos). Seguridad: la reacción de bicarbonato y vinagre es inocua, pero en clase se hace con el docente, en bandeja, con poco vinagre y lavándose las manos al terminar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Curiosidad",
+      "titulo": "El ajolote, un animal con superpoderes",
+      "texto": "El ajolote es un animal muy extraño: parece un pez, pero es un anfibio. Vive en unos canales de la Ciudad de México y tiene una habilidad increíble. Si pierde una pata, le crece otra nueva; también puede regenerar la cola, partes del corazón e incluso del cerebro. Por desgracia, está en peligro de extinción. En México lo quieren tanto que aparece en un billete de cincuenta pesos… ¿Te imaginas tener ese superpoder?",
+      "segmentos": [
+        "El ajolote es un animal muy extraño:",
+        "parece un pez, pero es un anfibio.",
+        "Vive en unos canales",
+        "de la Ciudad de México",
+        "y tiene una habilidad increíble.",
+        "Si pierde una pata, le crece otra nueva;",
+        "también puede regenerar la cola,",
+        "partes del corazón e incluso del cerebro.",
+        "Por desgracia, está en peligro de extinción.",
+        "En México lo quieren tanto",
+        "que aparece en un billete de cincuenta pesos…",
+        "¿Te imaginas tener ese superpoder?"
+      ],
+      "foco": [
+        {
+          "p": "ajolote",
+          "por": "Con j."
+        },
+        {
+          "p": "extraño:",
+          "por": "Dos puntos antes de una explicación: lo que viene detrás explica por qué es extraño."
+        },
+        {
+          "p": "anfibio",
+          "por": "Con f y con b."
+        },
+        {
+          "p": "Vive",
+          "por": "Del verbo vivir: con v las dos veces."
+        },
+        {
+          "p": "México",
+          "por": "Se escribe con x aunque suena como j. Es esdrújula: tilde."
+        },
+        {
+          "p": "habilidad",
+          "por": "Con h y con b."
+        },
+        {
+          "p": "increíble",
+          "por": "La í es tónica y va separada de la e (hiato): lleva tilde."
+        },
+        {
+          "p": "nueva; también",
+          "por": "Punto y coma: separa dos partes muy relacionadas. También es aguda terminada en -n: tilde.",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "regenerar",
+          "por": "Con g, aunque delante de e suena como j (re-ge-ne-rar), igual que en generar."
+        },
+        {
+          "p": "corazón",
+          "por": "Aguda terminada en -n: lleva tilde."
+        },
+        {
+          "p": "extinción",
+          "por": "Con x y con c. Aguda terminada en -n: tilde."
+        },
+        {
+          "p": "billete",
+          "por": "Con b y con ll."
+        },
+        {
+          "p": "pesos…",
+          "por": "Puntos suspensivos: la frase queda en suspenso. Son tres y no llevan punto detrás."
+        },
+        {
+          "p": "¿Te imaginas tener ese superpoder?",
+          "por": "La pregunta se abre y se cierra.",
+          "e": "¿ … ? (pregunta)"
+        }
+      ],
+      "datos": "Ajolote: anfibio mexicano de los canales de Xochimilco (Ciudad de México); el texto no nombra Xochimilco para no dictar una palabra náhuatl. Regenera extremidades, cola y partes del corazón y del cerebro. En peligro crítico según la UICN. Aparece en el billete de 50 pesos emitido por el Banco de México en 2021."
+    },
+    {
+      "letra": "C",
+      "tipo": "Datos y noticias",
+      "titulo": "Más de siete mil lenguas",
+      "texto": "En el mundo se hablan más de siete mil lenguas. El país con más idiomas es Papúa Nueva Guinea: allí conviven más de ochocientos. La lengua con más hablantes nativos es el chino mandarín; la segunda, el español. Sin embargo, muchas lenguas pequeñas están desapareciendo… Por eso, algunos lingüistas graban a sus últimos hablantes y escriben diccionarios. ¿Cuántas lenguas conoces tú? ¡Seguro que más de una!",
+      "segmentos": [
+        "En el mundo se hablan",
+        "más de siete mil lenguas.",
+        "El país con más idiomas",
+        "es Papúa Nueva Guinea:",
+        "allí conviven más de ochocientos.",
+        "La lengua con más hablantes nativos",
+        "es el chino mandarín;",
+        "la segunda, el español.",
+        "Sin embargo, muchas lenguas pequeñas",
+        "están desapareciendo…",
+        "Por eso, algunos lingüistas graban a sus últimos hablantes",
+        "y escriben diccionarios.",
+        "¿Cuántas lenguas conoces tú?",
+        "¡Seguro que más de una!"
+      ],
+      "foco": [
+        {
+          "p": "hablan",
+          "por": "Con h, como todas las formas del verbo hablar."
+        },
+        {
+          "p": "más",
+          "por": "Más lleva tilde siempre. Solo mas, cuando significa «pero», va sin tilde."
+        },
+        {
+          "p": "Papúa Nueva Guinea:",
+          "por": "Nombre propio: mayúsculas. En Papúa, la ú tónica va separada de la a (hiato): tilde. Los dos puntos anuncian una explicación.",
+          "e": "Papúa Nueva Guinea:"
+        },
+        {
+          "p": "conviven",
+          "por": "Del verbo convivir: con v las dos veces."
+        },
+        {
+          "p": "ochocientos",
+          "por": "Con c delante de i."
+        },
+        {
+          "p": "mandarín; la segunda, el español",
+          "por": "Punto y coma entre las dos partes. La coma después de «la segunda» sustituye a «es».",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "mandarín",
+          "por": "Aguda terminada en -n: lleva tilde."
+        },
+        {
+          "p": "desapareciendo…",
+          "por": "Puntos suspensivos: la frase queda en suspenso. Son tres."
+        },
+        {
+          "p": "lingüistas",
+          "por": "Lleva diéresis: la u de güi se pronuncia."
+        },
+        {
+          "p": "graban",
+          "por": "Del verbo grabar: con b."
+        },
+        {
+          "p": "últimos",
+          "por": "Esdrújula: tilde siempre."
+        },
+        {
+          "p": "diccionarios",
+          "por": "Con cc: la primera suena k y la segunda, z."
+        },
+        {
+          "p": "¿Cuántas lenguas conoces tú?",
+          "por": "Cuántas pregunta: lleva tilde. Tú es pronombre: tilde (tu, sin tilde, es «tu casa»).",
+          "e": "¿Cuántas … tú?"
+        },
+        {
+          "p": "¡Seguro que más de una!",
+          "por": "La exclamación se abre y se cierra.",
+          "e": "¡ … ! (exclamación)"
+        }
+      ],
+      "datos": "«Más de siete mil» lenguas y «más de ochocientas» en Papúa Nueva Guinea son cifras redondas de los catálogos de lenguas (Ethnologue). El orden por hablantes nativos (mandarín primero, español segundo) es el de esos catálogos; con hablantes totales, el inglés pasa delante."
+    },
+    {
+      "letra": "D",
+      "tipo": "Ciencia",
+      "titulo": "Dormir con medio cerebro",
+      "texto": "Los delfines no pueden dormir del todo como nosotros: tienen que subir a la superficie para respirar. ¿Cómo lo consiguen? Mientras una mitad de su cerebro descansa, la otra sigue despierta; así vigilan si hay peligro. Además, muchos delfines tienen un silbido propio, que funciona como su nombre. Cuando uno se separa de su grupo, silba una y otra vez para que lo encuentren… ¡Es como llamar por teléfono!",
+      "segmentos": [
+        "Los delfines no pueden dormir del todo",
+        "como nosotros:",
+        "tienen que subir a la superficie para respirar.",
+        "¿Cómo lo consiguen?",
+        "Mientras una mitad de su cerebro descansa,",
+        "la otra sigue despierta;",
+        "así vigilan si hay peligro.",
+        "Además, muchos delfines tienen un silbido propio,",
+        "que funciona como su nombre.",
+        "Cuando uno se separa de su grupo,",
+        "silba una y otra vez",
+        "para que lo encuentren…",
+        "¡Es como llamar por teléfono!"
+      ],
+      "foco": [
+        {
+          "p": "delfines",
+          "por": "Plural de delfín (aguda en -n): añade -es. Delfines es llana terminada en -s: sin tilde."
+        },
+        {
+          "p": "nosotros:",
+          "por": "Dos puntos antes de una explicación: lo que sigue dice por qué no pueden dormir del todo."
+        },
+        {
+          "p": "superficie",
+          "por": "Con c delante de i."
+        },
+        {
+          "p": "¿Cómo lo consiguen?",
+          "por": "Cómo pregunta: lleva tilde. La pregunta se abre y se cierra. Consiguen lleva u entre la g y la e.",
+          "e": "¿Cómo … consiguen?"
+        },
+        {
+          "p": "descansa",
+          "por": "Con sc: des-can-sa."
+        },
+        {
+          "p": "despierta; así",
+          "por": "Punto y coma: separa dos partes muy relacionadas. Así es aguda terminada en vocal: tilde.",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "vigilan",
+          "por": "Con v y con g."
+        },
+        {
+          "p": "Además",
+          "por": "Aguda terminada en -s: lleva tilde."
+        },
+        {
+          "p": "silbido",
+          "por": "Con b."
+        },
+        {
+          "p": "Cuando",
+          "por": "Sin tilde: aquí no pregunta. Lleva tilde cuando pregunta o exclama, aunque no haya signos: ¿Cuándo vienes?, No sé cuándo vendrá."
+        },
+        {
+          "p": "vez",
+          "por": "Con z al final. El plural es veces."
+        },
+        {
+          "p": "encuentren…",
+          "por": "Puntos suspensivos: la frase queda en suspenso. Son tres."
+        },
+        {
+          "p": "¡Es como llamar por teléfono!",
+          "por": "La exclamación se abre y se cierra. Como compara: sin tilde. Teléfono es esdrújula: tilde.",
+          "e": "¡ … ! · teléfono"
+        }
+      ],
+      "datos": "Delfines: sueño unihemisférico (un hemisferio cerebral cada vez). El «silbido firma» está demostrado sobre todo en el delfín mular, por eso el texto dice «muchos delfines»; funciona como un nombre y sirve para mantener el contacto con el grupo."
+    }
+  ]
+}

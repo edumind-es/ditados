@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<style>
+{{FONTS}}
+/* Impresos: negro sobre blanco, filetes finos, Atkinson Hyperlegible a 14 pt como mínimo. Sin color. */
+@page { size: A4 portrait; margin: 14mm; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#000}
+body{font-family:'Atkinson Hyperlegible', Verdana, sans-serif;font-size:14pt;line-height:1.25}
+.pagina + .pagina{page-break-before:always}
+.cab{font-size:12pt;font-weight:700;margin:0 0 3mm}
+.cab span{font-weight:400}
+h1{font-size:22pt;margin:0 0 1.5mm;padding-bottom:1.5mm;border-bottom:1.2pt solid #000;line-height:1.15}
+.nome{margin:2mm 0 3mm}
+.caixa{border:1pt solid #000;padding:2mm 3mm;margin:0 0 2.5mm}
+.caixa p{margin:0 0 1mm}
+.caixa ul{margin:0;padding:0;list-style:none}
+.caixa li{margin:.6mm 0;padding-left:7mm;text-indent:-7mm}
+.casilla{display:inline-block;width:5mm;height:5mm;border:1pt solid #000;vertical-align:-1mm;margin-right:2mm}
+h2{font-size:16pt;margin:3mm 0 1mm;page-break-after:avoid}
+.renglons{width:100%;border-collapse:collapse}
+.renglons td{height:11mm;border-bottom:.8pt solid #000;padding:0}
+.letras{margin:0 0 1.5mm}
+.letras .casilla{margin-left:4mm}
+table.clasif{width:100%;border-collapse:collapse;table-layout:fixed}
+table.clasif th,table.clasif td{border:.8pt solid #000;padding:1.5mm 2mm;text-align:left;vertical-align:top;font-weight:700}
+table.clasif td{height:9mm;font-weight:400}
+.liña{display:inline-block;border-bottom:.8pt solid #000;min-width:38mm;height:1em;vertical-align:-1mm}
+.liña.curta{min-width:22mm}
+.liña.longa{min-width:62mm}
+p{margin:0 0 1mm}
+.duas{display:flex;gap:8mm}
+.duas p{flex:1}
+.pe{position:fixed;bottom:0;right:0;font-size:10pt}
+.sub{font-style:italic;margin:2mm 0 3mm}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+{{CUERPO}}
+<div class="pe">{{PE}}</div>
+</body>
+</html>

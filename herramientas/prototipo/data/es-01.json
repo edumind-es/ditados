@@ -1,0 +1,102 @@
+{
+  "lang": "es",
+  "num": 1,
+  "titulo": "Dictado 1 · Una carta a la abuela",
+  "semana": "Semana del 19 al 23 de octubre de 2026",
+  "ud": "Unidad 2 · Yo desearía",
+  "regra": "Punto y coma, dos puntos y puntos suspensivos · signos de pregunta y exclamación · repaso de tildes",
+  "fixome": [
+    "Dos puntos: después del saludo de una carta y antes de una enumeración.",
+    "Punto y coma: separa partes de una frase que ya llevan comas dentro.",
+    "Puntos suspensivos: la lista sigue. Son siempre tres y después no va punto.",
+    "En castellano las preguntas y exclamaciones se abren y se cierran: ¿…? ¡…!"
+  ],
+  "texto": "Querida abuela:\nEsta semana hemos aprendido que España es plurilingüe. Aquí se hablan varias lenguas: el castellano, el gallego, el catalán, el euskera… ¿Sabías que el español es lengua oficial en una veintena de países? Yo desearía viajar por todos ellos y conocer a más gente. En la mochila llevaría un mapa, una libreta y un lápiz; en la maleta, ropa de abrigo y un bañador. ¡Qué ganas tengo de verte y contártelo todo!\nUn abrazo muy fuerte.",
+  "segmentos": [
+    "Querida abuela:",
+    "Esta semana hemos aprendido",
+    "que España es plurilingüe.",
+    "Aquí se hablan varias lenguas:",
+    "el castellano, el gallego,",
+    "el catalán, el euskera…",
+    "¿Sabías que el español",
+    "es lengua oficial en una veintena de países?",
+    "Yo desearía viajar por todos ellos",
+    "y conocer a más gente.",
+    "En la mochila llevaría un mapa,",
+    "una libreta y un lápiz;",
+    "en la maleta, ropa de abrigo y un bañador.",
+    "¡Qué ganas tengo de verte",
+    "y contártelo todo!",
+    "Un abrazo muy fuerte."
+  ],
+  "foco": [
+    {
+      "p": "abuela:",
+      "por": "Dos puntos después del saludo de una carta."
+    },
+    {
+      "p": "plurilingüe",
+      "por": "Lleva diéresis: la u de güe se pronuncia."
+    },
+    {
+      "p": "hablan",
+      "por": "Con h, como todas las formas del verbo hablar."
+    },
+    {
+      "p": "lenguas:",
+      "por": "Dos puntos antes de una enumeración."
+    },
+    {
+      "p": "euskera…",
+      "por": "Puntos suspensivos: la lista sigue. Son tres y no llevan punto detrás."
+    },
+    {
+      "p": "¿Sabías que el español es lengua oficial en una veintena de países?",
+      "por": "La pregunta se abre y se cierra.",
+      "e": "¿ … ? (pregunta)"
+    },
+    {
+      "p": "Sabías",
+      "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+    },
+    {
+      "p": "más",
+      "por": "Más lleva tilde siempre. Solo mas, cuando significa «pero», va sin tilde."
+    },
+    {
+      "p": "países",
+      "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+    },
+    {
+      "p": "desearía",
+      "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+    },
+    {
+      "p": "viajar",
+      "por": "Con v y con j."
+    },
+    {
+      "p": "llevaría",
+      "por": "Con ll. La í lleva tilde (hiato)."
+    },
+    {
+      "p": "lápiz",
+      "por": "Llana terminada en z: lleva tilde."
+    },
+    {
+      "p": "lápiz; en la maleta",
+      "por": "Punto y coma: separa dos partes que ya llevan comas dentro. La coma de «en la maleta,» sustituye a «llevaría».",
+      "e": "; (punto y coma)"
+    },
+    {
+      "p": "¡Qué ganas tengo de verte y contártelo todo!",
+      "por": "La exclamación se abre y se cierra. Qué exclamativo lleva tilde.",
+      "e": "¡ … ! (exclamación)"
+    },
+    {
+      "p": "contártelo",
+      "por": "Se divide con-tár-te-lo. La tónica, tár, es la antepenúltima: es esdrújula y lleva tilde siempre."
+    }
+  ]
+}

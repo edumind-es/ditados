@@ -1,0 +1,22 @@
+{
+  "_comentario": "Parámetros por curso. Los rangos de palabras son una propuesta de partida sin fuente normativa; ajústalos aquí y todo el sistema los aplica. renglones = líneas de escritura en la cara A de la ficha (11 mm cada una).",
+  "cursos": {
+    "1": { "palabras": [20, 35], "renglones": 6 },
+    "2": { "palabras": [30, 45], "renglones": 7 },
+    "3": { "palabras": [40, 55], "renglones": 8 },
+    "4": { "palabras": [50, 65], "renglones": 9 },
+    "5": { "palabras": [55, 75], "renglones": 10 },
+    "6": { "palabras": [60, 90], "renglones": 10 }
+  },
+  "claves": [10, 18],
+  "segmento_palabras": [3, 8],
+  "opciones_recomendadas": 4,
+  "tipos": {
+    "gl": ["Curiosidade", "Noticia", "Ciencia", "Natureza", "Texto instrutivo", "Carta", "Narración", "Historia", "Deporte", "Arte"],
+    "es": ["Curiosidad", "Noticia", "Ciencia", "Naturaleza", "Texto instructivo", "Carta", "Narración", "Historia", "Deporte", "Arte"]
+  },
+  "voces": {
+    "gl": { "defecto": "brais", "disponibles": ["brais", "celtia", "sabela", "icia"] },
+    "es": { "defecto": "alejandro", "disponibles": ["alejandro"] }
+  }
+}

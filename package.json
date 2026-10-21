@@ -1,0 +1,14 @@
+{
+  "name": "@edumind/ditados",
+  "version": "0.1.0",
+  "description": "Ditados de Lingua Galega e Lengua Castellana para primaria: catálogo, presentación proxectable, impresos e audio",
+  "private": true,
+  "license": "(AGPL-3.0-or-later OR EUPL-1.2)",
+  "author": "Luis Vilela Acuña",
+  "scripts": {
+    "validar": "node bin/ditados.js validar",
+    "build": "node bin/ditados.js build",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=22" }
+}

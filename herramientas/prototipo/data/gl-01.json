@@ -1,0 +1,106 @@
+{
+  "lang": "gl",
+  "num": 1,
+  "titulo": "Ditado 1 · Unha tarde en Cambados",
+  "semana": "Semana do 19 ao 23 de outubro de 2026",
+  "ud": "Unidade 2 · A ponte dos suspiros",
+  "regra": "Regras xerais de acentuación (agudas, esdrúxulas e hiatos) · plural das palabras en -l · feminino das palabras en -án",
+  "fixome": [
+    "As agudas de máis dunha sílaba levan til se rematan en vogal, -n, -s ou -ns: alí, tamén, cancións.",
+    "Pero se a palabra é aguda e remata en ditongo decrecente (ai, ei, oi…), non leva til: ademais, papeis.",
+    "As esdrúxulas levan til sempre: música, árbores, mércores.",
+    "En galego abonda normalmente co signo do final: Que bonito!"
+  ],
+  "texto": "A miña curmá e a súa irmá viven en Cambados, a vila de Ramón Cabanillas. Onte paseamos pola beira do mar e lemos dous poemas. Que bonitos eran! Despois atopamos unha ponte vella, chea de musgo. Entre as pedras durmían uns animais pequenos. Ademais, alí había moitas árbores e unha música que soaba docemente desde as casas. Escribimos os versos en papeis de cores e cantamos dúas cancións. Volveremos tamén o mércores?",
+  "segmentos": [
+    "A miña curmá e a súa irmá",
+    "viven en Cambados,",
+    "a vila de Ramón Cabanillas.",
+    "Onte paseamos pola beira do mar",
+    "e lemos dous poemas.",
+    "Que bonitos eran!",
+    "Despois atopamos unha ponte vella,",
+    "chea de musgo.",
+    "Entre as pedras durmían",
+    "uns animais pequenos.",
+    "Ademais, alí había moitas árbores",
+    "e unha música que soaba docemente desde as casas.",
+    "Escribimos os versos en papeis de cores",
+    "e cantamos dúas cancións.",
+    "Volveremos tamén o mércores?"
+  ],
+  "foco": [
+    {
+      "p": "curmá",
+      "por": "Feminino de curmán: -án cambia a -á. Non se di «curmana»."
+    },
+    {
+      "p": "irmá",
+      "por": "Feminino de irmán: -án cambia a -á. «Hermana» é castelán."
+    },
+    {
+      "p": "súa",
+      "por": "A u é tónica e vai separada da a (hiato): leva til."
+    },
+    {
+      "p": "Ramón",
+      "por": "Aguda rematada en -n: leva til."
+    },
+    {
+      "p": "Que bonitos eran!",
+      "por": "Exclamativo sen til. En galego abonda normalmente co signo do final."
+    },
+    {
+      "p": "Despois",
+      "por": "Palabra galega. «Después» é castelán."
+    },
+    {
+      "p": "durmían",
+      "por": "A i é tónica e vai separada da a (hiato): leva til."
+    },
+    {
+      "p": "animais",
+      "por": "Plural de animal: aguda en -l cambia -l por -is. Remata en ditongo: sen til."
+    },
+    {
+      "p": "Ademais",
+      "por": "Aguda rematada en ditongo decrecente (ai): sen til."
+    },
+    {
+      "p": "alí",
+      "por": "Aguda de dúas sílabas rematada en vogal: leva til."
+    },
+    {
+      "p": "árbores",
+      "por": "Esdrúxula: leva til sempre."
+    },
+    {
+      "p": "música",
+      "por": "Esdrúxula: leva til sempre."
+    },
+    {
+      "p": "docemente",
+      "por": "Os adverbios en -mente non levan til."
+    },
+    {
+      "p": "papeis",
+      "por": "Plural de papel: -l cambia a -is. Remata en ditongo: sen til."
+    },
+    {
+      "p": "dúas",
+      "por": "A u é tónica e vai separada da a (hiato): leva til."
+    },
+    {
+      "p": "cancións",
+      "por": "Aguda rematada en -ns: leva til."
+    },
+    {
+      "p": "tamén",
+      "por": "Aguda rematada en -n: leva til. «También» é castelán."
+    },
+    {
+      "p": "mércores?",
+      "por": "Esdrúxula: leva til sempre. En galego abonda co signo do final; o de apertura é opcional."
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "lang": "gl",
+  "num": 2,
+  "curso": "6",
+  "titulo": "Ditado 2 · Substantivos e plurais",
+  "semana": "Semana do 19 ao 23 de outubro de 2026",
+  "ud": "Unidade 2 · A ponte dos suspiros",
+  "regra": "O substantivo e as súas clases · o número: como se forma o plural",
+  "etiquetas": [
+    "substantivo",
+    "plural",
+    "plural en -l",
+    "acentuación",
+    "hiato",
+    "til diacrítico"
+  ],
+  "fixome": [
+    "Se remata en vogal ou en -n, engade -s: mesa, mesas; corazón, corazóns.",
+    "Se remata en -r ou en -z, ou é aguda en -s, engade -es: flor, flores; país, países. A z cambia a c: luz, luces.",
+    "En -l: os monosílabos e as graves engaden -es (mil, miles; túnel, túneles). As agudas de máis dunha sílaba cambian -l por -is (animal, animais); se rematan en -il, por -ís (funil, funís).",
+    "Algúns teñen a mesma forma en singular e en plural: o lapis, os lapis."
+  ],
+  "estado": "publicado",
+  "revision": {
+    "fecha": "2026-10-19",
+    "revisor": "Luis Vilela Acuña",
+    "fuentes": [
+      "https://academia.gal/dicionario",
+      "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
+    ],
+    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "Tres corazóns e sangue azul",
+      "texto": "O polbo é un dos animais máis curiosos do mar. Ten tres corazóns e o seu sangue é azul. Nos seus oito brazos hai centos de ventosas que lle serven para tocar e tamén para saborear. Pode cambiar de cor en poucos segundos e esconderse entre as rochas e os corais. Ademais, é moi listo: nalgúns acuarios aprendeu a abrir frascos para comer os caranguexos que había dentro. Non che parece incrible?",
+      "segmentos": [
+        "O polbo é un dos animais",
+        "máis curiosos do mar.",
+        "Ten tres corazóns",
+        "e o seu sangue é azul.",
+        "Nos seus oito brazos",
+        "hai centos de ventosas",
+        "que lle serven para tocar",
+        "e tamén para saborear.",
+        "Pode cambiar de cor en poucos segundos",
+        "e esconderse entre as rochas e os corais.",
+        "Ademais, é moi listo:",
+        "nalgúns acuarios aprendeu a abrir frascos",
+        "para comer os caranguexos que había dentro.",
+        "Non che parece incrible?"
+      ],
+      "foco": [
+        {
+          "p": "polbo",
+          "por": "Substantivo común, concreto e contable. En castelán dise «pulpo»."
+        },
+        {
+          "p": "animais",
+          "por": "Plural de animal: aguda de máis dunha sílaba en -l, cambia -l por -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "máis",
+          "por": "Til diacrítico: máis indica cantidade. Mais, sen til, significa «pero»."
+        },
+        {
+          "p": "corazóns",
+          "por": "Corazón remata en -n: engade -s. É aguda rematada en -ns: leva til."
+        },
+        {
+          "p": "sangue",
+          "por": "Substantivo común e non contable. En galego é masculino: o sangue."
+        },
+        {
+          "p": "tamén",
+          "por": "Aguda rematada en -n: leva til. «También» é castelán."
+        },
+        {
+          "p": "corais",
+          "por": "Plural de coral: aguda en -l, cambia -l por -is."
+        },
+        {
+          "p": "Ademais",
+          "por": "Aguda rematada en ditongo decrecente (ai): sen til."
+        },
+        {
+          "p": "nalgúns",
+          "por": "En + algúns. Aguda rematada en -ns: leva til."
+        },
+        {
+          "p": "caranguexos",
+          "por": "Con x. En castelán dise «cangrejos»."
+        },
+        {
+          "p": "había",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "Non che parece incrible?",
+          "por": "Incrible é grave rematada en vogal: sen til. En galego abonda co signo do final; o de apertura é opcional.",
+          "e": "incrible?"
+        }
+      ],
+      "datos": "Polbo: tres corazóns, sangue azul (hemocianina), ventosas con quimiorreceptores e cambio de cor. Fonte pendente de completar polo autor."
+    },
+    {
+      "letra": "B",
+      "tipo": "Noticia",
+      "titulo": "As Illas Cíes, un tesouro no noso mar",
+      "texto": "As Illas Cíes están na entrada da ría de Vigo e forman parte dun parque nacional. En verán chegan miles de visitantes, pero non poden ir todos á vez: hai que pedir permiso antes de viaxar. Alí viven gaivotas, corvos mariños e outras moitas aves. Baixo a auga hai bosques de algas e grandes cardumes de peixes. Os areais son brancos e a auga é transparente, aínda que moi fría. Coidar este tesouro é cousa de todos.",
+      "segmentos": [
+        "As Illas Cíes están",
+        "na entrada da ría de Vigo",
+        "e forman parte dun parque nacional.",
+        "En verán chegan miles de visitantes,",
+        "pero non poden ir todos á vez:",
+        "hai que pedir permiso antes de viaxar.",
+        "Alí viven gaivotas, corvos mariños",
+        "e outras moitas aves.",
+        "Baixo a auga hai bosques de algas",
+        "e grandes cardumes de peixes.",
+        "Os areais son brancos",
+        "e a auga é transparente,",
+        "aínda que moi fría.",
+        "Coidar este tesouro é cousa de todos."
+      ],
+      "foco": [
+        {
+          "p": "Illas Cíes",
+          "por": "Nome propio: vai con maiúscula. En Cíes, a i tónica vai separada da e (hiato): leva til."
+        },
+        {
+          "p": "ría",
+          "por": "Substantivo común. A i tónica vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "verán",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "miles",
+          "por": "Plural de mil: monosílabo en -l, engade -es."
+        },
+        {
+          "p": "á vez",
+          "por": "Á é a + a: leva til. O plural de vez é veces: a z cambia a c."
+        },
+        {
+          "p": "Alí",
+          "por": "Aguda de dúas sílabas rematada en vogal: leva til."
+        },
+        {
+          "p": "corvos mariños",
+          "por": "Nome de ave de dúas palabras: as dúas van en plural. En castelán dise «cormoranes»."
+        },
+        {
+          "p": "cardumes",
+          "por": "Substantivo colectivo: en singular xa nomea moitos peixes xuntos."
+        },
+        {
+          "p": "peixes",
+          "por": "Plural de peixe: remata en vogal, engade -s. En castelán dise «peces»."
+        },
+        {
+          "p": "areais",
+          "por": "Plural de areal: aguda en -l, cambia -l por -is."
+        },
+        {
+          "p": "aínda",
+          "por": "A i tónica vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "fría",
+          "por": "A i tónica vai separada da a (hiato): leva til."
+        }
+      ],
+      "datos": "Illas Cíes: Parque Nacional Marítimo-Terrestre das Illas Atlánticas de Galicia; acceso con autorización previa en tempada alta. Fonte pendente de completar polo autor."
+    },
+    {
+      "letra": "C",
+      "tipo": "Ciencia",
+      "titulo": "Dezaseis amenceres nun só día",
+      "texto": "Os astronautas da Estación Espacial Internacional dan unha volta á Terra cada hora e media, máis ou menos. Por iso, nun só día poden ver dezaseis amenceres e dezaseis solpores. Desde as fiestras, os países parecen manchas de cores e, de noite, as cidades brillan coma luces de Nadal. Dentro da estación non hai arriba nin abaixo: os lapis, os papeis e mesmo as persoas flotan. Imaxinas durmir pegado á parede?",
+      "segmentos": [
+        "Os astronautas",
+        "da Estación Espacial Internacional",
+        "dan unha volta á Terra",
+        "cada hora e media, máis ou menos.",
+        "Por iso, nun só día poden ver",
+        "dezaseis amenceres e dezaseis solpores.",
+        "Desde as fiestras,",
+        "os países parecen manchas de cores",
+        "e, de noite, as cidades brillan",
+        "coma luces de Nadal.",
+        "Dentro da estación non hai arriba nin abaixo:",
+        "os lapis, os papeis",
+        "e mesmo as persoas flotan.",
+        "Imaxinas durmir pegado á parede?"
+      ],
+      "foco": [
+        {
+          "p": "Estación Espacial Internacional",
+          "por": "Nome propio de varias palabras: todas con maiúscula. Estación é aguda en -n: leva til."
+        },
+        {
+          "p": "Terra",
+          "por": "Como nome do planeta, é nome propio: maiúscula."
+        },
+        {
+          "p": "só",
+          "por": "Til diacrítico: só significa «soamente» ou «un único». So, sen til, significa «debaixo de»."
+        },
+        {
+          "p": "dezaseis",
+          "por": "Numeral con z e con s. En castelán dise «dieciséis»."
+        },
+        {
+          "p": "amenceres",
+          "por": "Plural de amencer: remata en -r, engade -es."
+        },
+        {
+          "p": "solpores",
+          "por": "Plural de solpor: remata en -r, engade -es."
+        },
+        {
+          "p": "países",
+          "por": "Plural de país: aguda en -s, engade -es. A i tónica vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "cores",
+          "por": "Plural de cor: remata en -r, engade -es."
+        },
+        {
+          "p": "luces",
+          "por": "Plural de luz: engade -es e a z cambia a c."
+        },
+        {
+          "p": "Nadal",
+          "por": "Nome propio dunha festa: maiúscula."
+        },
+        {
+          "p": "lapis",
+          "por": "Mesma forma en singular e en plural: o lapis, os lapis. Grave rematada en -s: sen til."
+        },
+        {
+          "p": "papeis",
+          "por": "Plural de papel: aguda en -l, cambia -l por -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "Imaxinas durmir pegado á parede?",
+          "por": "Imaxinas vai con x. Á é a + a: leva til. En galego abonda co signo do final; o de apertura é opcional.",
+          "e": "Imaxinas … parede?"
+        }
+      ],
+      "datos": "Fonte pendente de completar polo autor."
+    },
+    {
+      "letra": "D",
+      "tipo": "Natureza",
+      "titulo": "Unha cidade chea de abellas",
+      "texto": "Unha colmea é coma unha cidade. Nela viven miles de abellas: unha raíña, moitas obreiras e algúns abellóns. As obreiras visitan centos de flores cada día e levan o néctar aos panais, onde se converte en mel. Para facer un só quilo de mel cómpre o traballo de moitísimas abellas. Por iso, se ves unha abella, déixaa traballar tranquila: sen elas, moitas plantas non darían froitos.",
+      "segmentos": [
+        "Unha colmea é coma unha cidade.",
+        "Nela viven miles de abellas:",
+        "unha raíña, moitas obreiras",
+        "e algúns abellóns.",
+        "As obreiras visitan centos de flores cada día",
+        "e levan o néctar aos panais,",
+        "onde se converte en mel.",
+        "Para facer un só quilo de mel",
+        "cómpre o traballo de moitísimas abellas.",
+        "Por iso, se ves unha abella,",
+        "déixaa traballar tranquila:",
+        "sen elas, moitas plantas",
+        "non darían froitos."
+      ],
+      "foco": [
+        {
+          "p": "colmea",
+          "por": "Substantivo común. En castelán dise «colmena»."
+        },
+        {
+          "p": "miles",
+          "por": "Plural de mil: monosílabo en -l, engade -es."
+        },
+        {
+          "p": "raíña",
+          "por": "A i tónica vai separada da a (hiato): leva til. É o feminino de rei, cunha forma especial."
+        },
+        {
+          "p": "abellóns",
+          "por": "Abellón é o macho da abella. Remata en -n: engade -s. Aguda en -ns: leva til."
+        },
+        {
+          "p": "flores",
+          "por": "Plural de flor: remata en -r, engade -es."
+        },
+        {
+          "p": "néctar",
+          "por": "Grave rematada en consoante que non é -n nin -s: leva til."
+        },
+        {
+          "p": "panais",
+          "por": "Plural de panal: aguda en -l, cambia -l por -is."
+        },
+        {
+          "p": "mel",
+          "por": "Substantivo non contable: non se conta un a un. Se fai falta, o plural é meles."
+        },
+        {
+          "p": "cómpre",
+          "por": "Til diacrítico: cómpre significa «é preciso». Compre, sen til, é do verbo comprar."
+        },
+        {
+          "p": "moitísimas",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "ves",
+          "por": "Do verbo ver: sen til. Vés, con til, é do verbo vir."
+        },
+        {
+          "p": "déixaa",
+          "por": "Deixa + a. A tónica é a antepenúltima: esdrúxula, leva til."
+        },
+        {
+          "p": "darían",
+          "por": "A i tónica vai separada da a (hiato): leva til."
+        }
+      ],
+      "datos": "Colmea: raíña, obreiras e abellóns. Fonte pendente de completar polo autor."
+    }
+  ]
+}
