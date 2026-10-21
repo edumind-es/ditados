@@ -77,9 +77,11 @@ function paginaDitado(d, ficheros, voz, kit) {
     [ficheros.ficha, C.ficha], [ficheros.repetido, C.repetido],
     [fm.A3 && fm.A3.ficha, C.fichaA3], [fm.A3 && fm.A3.repetido, C.repetidoA3],
     [fm.grande && fm.grande.ficha, C.fichaGrande], [fm.grande && fm.grande.repetido, C.repetidoGrande],
+    [ficheros.odt && ficheros.odt.ficha, C.fichaOdt], [ficheros.odt && ficheros.odt.repetido, C.repetidoOdt],
     [ficheros.textos, C.textosDocente],
     ...ficheros.miclase.map((m, i) => [m, `${C.miclase} · ${d.opcions[i].letra}`]),
     [kit && '../' + kit.tarxeta, C.kitTarxeta], [kit && '../' + kit.caderno, C.kitCaderno],
+    [kit && kit.tarxetaOdt && '../' + kit.tarxetaOdt, C.kitTarxeta + ' (ODT)'], [kit && kit.cadernoOdt && '../' + kit.cadernoOdt, C.kitCaderno + ' (ODT)'],
   ].filter(([f]) => f).map(([f, l]) => `<li><a href="${esc(f)}" download>${esc(l)}</a></li>`).join('');
   const audio = ficheros.audio.length
     ? `<li>${esc(C.audio)}: ${ficheros.audio.map((a) => `<a href="${esc(a)}" download>${esc(path.basename(a, '.mp3'))}</a>`).join(' · ')}</li>` : '';
@@ -162,7 +164,7 @@ function paginaIndice(entradas, kit = {}) {
 ${items}
 </ul>
 <p id="vacio" hidden>${esc(C.sinResultados)}</p>
-${Object.keys(kit).length ? `<section><h2><span class="n">02</span>${esc(C.kit)}</h2><ul class="descargas">${['gl', 'es'].filter((l) => kit[l]).map((l) => `<li>${esc(C.langs[l])}: <a href="${esc(kit[l].tarxeta)}" download>${esc(C.kitTarxeta)}</a> · <a href="${esc(kit[l].caderno)}" download>${esc(C.kitCaderno)}</a></li>`).join('')}</ul></section>` : ''}
+${Object.keys(kit).length ? `<section><h2><span class="n">02</span>${esc(C.kit)}</h2><ul class="descargas">${['gl', 'es'].filter((l) => kit[l]).map((l) => `<li>${esc(C.langs[l])}: <a href="${esc(kit[l].tarxeta)}" download>${esc(C.kitTarxeta)}</a> · <a href="${esc(kit[l].caderno)}" download>${esc(C.kitCaderno)}</a>${kit[l].tarxetaOdt ? ` · <a href="${esc(kit[l].tarxetaOdt)}" download>ODT</a> · <a href="${esc(kit[l].cadernoOdt)}" download>ODT</a>` : ''}</li>`).join('')}</ul></section>` : ''}
 </main>
 <script>
 (function () {

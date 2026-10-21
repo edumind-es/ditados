@@ -66,7 +66,7 @@ Group=dev-www
 WorkingDirectory=/var/www/ditados
 Environment=DITADOS_PUERTO=9170
 Environment=DITADOS_AUTORES=luis
-# Opcional: Environment=DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010
+Environment=DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010
 ExecStart=/usr/bin/node bin/ditados.js servir
 Restart=on-failure
 NoNewPrivileges=true
@@ -107,8 +107,8 @@ Los bloques `/outpost.goauthentik.io/` y `@goauthentik_proxy_signin` son los mis
 
 ### LanguageTool (opcional)
 
-El contenedor oficial `erikvl87/languagetool` escucha en 8010 y tiene gallego y castellano. Si se arranca, basta con `DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010` en la unidad. No está instalado: pedir permiso antes.
+Instalado el 2026-10-21: `deploy/languagetool/docker-compose.yml` (imagen `erikvl87/languagetool:6.5`; la 6.6 falla por una versión de Java incompatible). Escucha solo en `127.0.0.1:8010`. En la unidad del editor: `DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010`.
 
-### ODT (pendiente)
+### ODT
 
-Generar ODT exige LibreOffice (`libreoffice-writer` sin interfaz, unos 300 MB) para convertir los HTML de impresión. No está instalado: pedir permiso antes. La alternativa sin instalar nada es la API de conversión del ONLYOFFICE que ya corre para Nextcloud, pero acopla los dos sistemas.
+LibreOffice Writer sin interfaz instalado el 2026-10-21 con `/var/www/.edumind_ops/instalar_libreoffice_dictados.py` (`libreoffice-writer-nogui`, sin recomendados). La compilación convierte los HTML de impresión con `soffice --headless` (`src/odt.js`).

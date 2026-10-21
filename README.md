@@ -20,13 +20,14 @@ Solo llegan a la web los dictados con `estado: publicado`, y nada se publica sin
 
 ## Cómo se usa
 
-Requisitos ya presentes en el servidor: Node 22, ffmpeg, `pdfinfo` (poppler), el Chromium de Playwright en `~/.cache/ms-playwright` y el motor de voz aHoTTS de `edumind_escribe`. No hay dependencias de npm.
+Requisitos en el servidor: Node 22, ffmpeg, `pdfinfo` (poppler), el Chromium de Playwright en `~/.cache/ms-playwright`, el motor de voz aHoTTS de `edumind_escribe` y LibreOffice Writer sin interfaz (ODT). No hay dependencias de npm.
 
 ```bash
 node bin/ditados.js validar          # valida todos los dictados y explica los errores en lenguaje llano
 node bin/ditados.js build            # compila la web completa en dist/ (con audio y PDF)
 node bin/ditados.js build --sin-audio --sin-pdf   # compilación rápida para probar el catálogo
 node bin/ditados.js build --solo gl-02            # un solo dictado
+DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010 node bin/ditados.js corregir   # corrector automático
 DITADOS_SIN_AUTH=1 node bin/ditados.js servir     # editor en http://127.0.0.1:9170/editor/ (solo en local; en producción va con Authentik)
 npm test                             # validaciones, marcado, contraste y páginas de la ficha
 NODE_PATH=/var/www/edumind_miclase/node_modules node herramientas/comprobar_web.js   # errores JS, 390 px, teclado, terceros
@@ -58,11 +59,14 @@ docs/           Fase 0, decisiones y despliegue (nginx, Authentik, systemd del e
 dist/           salida compilada (no se versiona)
 ```
 
+## ODT y corrector
+
+- Los ODT (ficha, dictado repetido, tarjeta y cuaderno) se generan con LibreOffice Writer sin interfaz, instalado el 2026-10-21. Son versiones editables; la referencia de maquetación es el PDF.
+- LanguageTool corre en el contenedor `dictados-languagetool` (`deploy/languagetool/docker-compose.yml`, solo en `127.0.0.1:8010`). `node bin/ditados.js corregir` lo pasa por todos los dictados; el editor lo usa con `DITADOS_LANGUAGETOOL_URL`. Filtra el ruido (letras sueltas, palabras citadas entre comillas latinas) y sigue siendo una ayuda: la revisión humana contra la RAG y la RAE es obligatoria.
+
 ## Lo que falta
 
-- ODT descargables: exigen LibreOffice en el servidor (no instalado).
-- LanguageTool: el editor lo usa si se configura `DITADOS_LANGUAGETOOL_URL` (contenedor no instalado).
-- Despliegue: DNS, certificado y vhost (ver `docs/DESPLIEGUE.md`).
+- El editor en producción detrás de Authentik (ver `docs/DESPLIEGUE.md`).
 
 ## Voces y licencias
 

@@ -30,7 +30,7 @@ function generarPaquete(d, carpeta, kit, dist) {
   fs.cpSync(path.join(carpeta, 'descargas'), path.join(raiz, 'descargas'), { recursive: true });
   if (kit) {
     fs.mkdirSync(path.join(raiz, 'kit'));
-    for (const k of Object.values(kit)) fs.copyFileSync(path.join(dist, k), path.join(raiz, 'kit', path.basename(k)));
+    for (const k of Object.values(kit)) if (typeof k === 'string') fs.copyFileSync(path.join(dist, k), path.join(raiz, 'kit', path.basename(k)));
   }
   fs.writeFileSync(path.join(raiz, 'LEEME.txt'), LEEME[d.lang](d.titulo));
   const destino = path.join(carpeta, nombre);

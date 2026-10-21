@@ -1,0 +1,22 @@
+# LanguageTool para el editor de Ditados: corrector de gallego y castellano.
+# Solo escucha en localhost; el editor lo usa con DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010.
+# Es una ayuda: no sustituye la revisión humana contra la RAG y la RAE.
+# Arranque: docker compose -f /var/www/ditados/deploy/languagetool/docker-compose.yml up -d
+services:
+  languagetool:
+    image: erikvl87/languagetool:6.5
+    container_name: dictados-languagetool
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8010:8010"
+    environment:
+      - Java_Xms=256m
+      - Java_Xmx=1g
+    volumes:
+      - ngrams:/ngrams
+    deploy:
+      resources:
+        limits:
+          memory: 1536m
+volumes:
+  ngrams:
