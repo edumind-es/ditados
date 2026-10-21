@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor de ditados</title>
+<style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-display:swap;src:url('/editor/fonts/Archivo.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url('/editor/fonts/JetBrainsMono.woff2') format('woff2')}
+/* EDUmind-Lámina: papel crudo, sin radios ni sombras ni emoji */
+:root{--papel:#ece9e1;--tinta:#1a1a1a;--tinta-2:#5c5a55;--filete:#1a1a1a;--fino:#b8b4aa;--blanco:#fbfaf7;--marca:#fff3c4;--f:'Archivo',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f);line-height:1.45}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.franja{display:grid;grid-template-columns:repeat(5,1fr);height:6px}
+.franja span:nth-child(1){background:#6b8f71}.franja span:nth-child(2){background:#5b7a99}.franja span:nth-child(3){background:#c08a4a}.franja span:nth-child(4){background:#a3627a}.franja span:nth-child(5){background:#7a6a99}
+header{padding:16px 20px;border-bottom:2px solid var(--filete);display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+header h1{font-size:1.4rem;margin:0}
+.kicker{font-family:var(--m);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr) 300px;gap:0;min-height:calc(100vh - 70px)}
+@media (max-width:1100px){.layout{grid-template-columns:1fr}}
+aside{padding:16px 20px;border-right:1px solid var(--fino)}
+aside.der{border-right:0;border-left:1px solid var(--fino)}
+main{padding:16px 20px}
+h2{font-size:1.05rem;margin:18px 0 8px;padding-top:6px;border-top:1px solid var(--filete)}
+h2 .n{font-family:var(--m);font-size:.75rem;color:var(--tinta-2);margin-right:8px}
+h3{font-size:1rem;margin:14px 0 6px}
+.lista{list-style:none;margin:0;padding:0}
+.lista li{border-bottom:1px solid var(--fino)}
+.lista button{width:100%;text-align:left;background:none;border:0;padding:8px 4px;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.lista button[aria-current="true"]{background:var(--blanco);font-weight:700}
+.estado{font-family:var(--m);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}
+label{display:block;font-family:var(--m);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);margin:10px 0 4px}
+input[type=text],input[type=date],input[type=number],select,textarea{width:100%;background:var(--blanco);border:1px solid var(--filete);padding:8px 10px;min-height:40px}
+textarea{min-height:90px;resize:vertical}
+textarea.texto{min-height:150px;font-size:1.05rem;line-height:1.5}
+.fila{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0 16px}
+.btn{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:2px solid var(--tinta);background:var(--tinta);color:var(--papel);cursor:pointer;font-weight:700;margin:4px 6px 4px 0}
+.btn.alt{background:transparent;color:var(--tinta)}
+.btn.peq{min-height:32px;padding:2px 10px;font-weight:400;font-size:.9rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.opcion{border:1px solid var(--filete);padding:12px 16px;margin:12px 0;background:var(--blanco)}
+.opcion summary{cursor:pointer;font-weight:700;padding:4px 0}
+.palabras{line-height:2.1;font-size:1.05rem;padding:8px;border:1px dashed var(--fino);margin:6px 0}
+.palabras button{background:none;border:0;border-bottom:2px solid transparent;padding:0 2px;cursor:pointer;font:inherit}
+.palabras button:hover{border-bottom-color:var(--tinta)}
+.palabras button.clave{font-weight:700;border-bottom-color:var(--tinta);background:var(--marca)}
+.palabras .num{font-family:var(--m);font-size:.7rem;vertical-align:super}
+.foco{display:grid;grid-template-columns:minmax(120px,1fr) minmax(100px,.7fr) minmax(200px,2fr) auto;gap:6px;align-items:start;padding:8px 0;border-bottom:1px solid var(--fino)}
+.foco .n{font-family:var(--m);font-size:.8rem;color:var(--tinta-2);padding-top:10px}
+.foco textarea{min-height:40px}
+.foco label{margin:0 0 2px}
+@media (max-width:800px){.foco{grid-template-columns:1fr}}
+.segs{font-family:var(--m);font-size:.95rem;min-height:200px}
+.panel{border:1px solid var(--filete);padding:10px 12px;margin:10px 0;background:var(--blanco)}
+.panel.error{border-width:2px}
+ul.msg{margin:0;padding-left:18px}ul.msg li{margin:4px 0}
+.ok{font-family:var(--m);font-size:.85rem}
+.audio{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:6px 10px;align-items:center;padding:4px 0;border-bottom:1px solid var(--fino);font-size:.95rem}
+.audio .n{font-family:var(--m);font-size:.8rem;color:var(--tinta-2)}
+.audio audio{height:32px;max-width:100%}
+.aviso{border-left:3px solid var(--tinta);padding:6px 12px;margin:10px 0;color:var(--tinta-2);font-size:.95rem}
+.check{list-style:none;padding:0;margin:0;font-size:.92rem}
+.check li{padding:6px 0;border-bottom:1px solid var(--fino)}
+pre.reg{font-family:var(--m);font-size:.8rem;white-space:pre-wrap;max-height:260px;overflow:auto;background:var(--blanco);border:1px solid var(--fino);padding:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="franja" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<header>
+  <div><p class="kicker" style="margin:0">EDUmind · Ditados</p><h1>Editor del autor</h1></div>
+  <p class="kicker" id="quien"></p>
+</header>
+<div class="layout">
+<aside>
+  <h2><span class="n">01</span>Dictados</h2>
+  <ul class="lista" id="lista"></ul>
+  <h3>Nuevo dictado</h3>
+  <form id="nuevo">
+    <div class="fila">
+      <div><label for="n-lang">Lengua</label><select id="n-lang"><option value="gl">Galego</option><option value="es">Castellano</option></select></div>
+      <div><label for="n-num">Número</label><input id="n-num" type="number" min="1" value="3"></div>
+      <div><label for="n-curso">Curso</label><select id="n-curso"></select></div>
+    </div>
+    <button class="btn alt" type="submit">Crear borrador</button>
+  </form>
+</aside>
+
+<main>
+  <p id="sin" class="aviso">Elige un dictado de la lista o crea uno nuevo.</p>
+  <form id="form" hidden autocomplete="off">
+    <div class="panel" id="estado-panel">
+      <span class="estado">Estado: <b id="estado"></b> · <span id="id-txt"></span></span>
+      <div>
+        <button class="btn" type="submit" id="guardar">Guardar</button>
+        <button class="btn alt" type="button" id="a-revisado">Pasar a revisado</button>
+        <button class="btn alt" type="button" id="a-publicado">Publicar</button>
+        <button class="btn alt peq" type="button" id="a-borrador">Volver a borrador</button>
+      </div>
+      <p class="ok" id="resultado" aria-live="polite"></p>
+      <div id="tarea" hidden><p class="estado">Generación: <b id="tarea-estado"></b></p><pre class="reg" id="tarea-reg"></pre></div>
+    </div>
+
+    <div class="panel error" id="errores" hidden><b>No se puede guardar hasta corregir esto:</b><ul class="msg" id="errores-l"></ul></div>
+    <div class="panel" id="avisos" hidden><b>Avisos (no impiden guardar):</b><ul class="msg" id="avisos-l"></ul></div>
+
+    <h2><span class="n">02</span>Cabecera</h2>
+    <div class="fila">
+      <div><label for="f-titulo">Título (Ditado 2 · Tema)</label><input id="f-titulo" type="text"></div>
+      <div><label for="f-ud">Unidad didáctica</label><input id="f-ud" type="text"></div>
+      <div><label for="f-semana">Semana (opcional)</label><input id="f-semana" type="text"></div>
+      <div><label for="f-voz">Voz del audio</label><select id="f-voz"></select></div>
+    </div>
+    <label for="f-regra">Regla trabajada (resumen)</label><input id="f-regra" type="text">
+    <label for="f-etiquetas">Etiquetas, separadas por comas</label><input id="f-etiquetas" type="text">
+    <label for="f-fixome">«Hoy me fijo en»: 3 o 4 frases, una por línea</label><textarea id="f-fixome"></textarea>
+
+    <h2><span class="n">03</span>Opciones de texto</h2>
+    <p class="aviso">Textos interesantes y verificables: curiosidades, noticias, ciencia, naturaleza o textos funcionales. Si un texto o una explicación los propone una IA, entran como borrador y se verifican contra la RAG o la RAE antes de pasar a revisado.</p>
+    <div id="opciones"></div>
+    <button class="btn alt" type="button" id="add-op">Añadir opción</button>
+
+    <h2><span class="n">04</span>Revisión</h2>
+    <div class="fila">
+      <div><label for="r-fecha">Fecha</label><input id="r-fecha" type="date"></div>
+      <div><label for="r-revisor">Revisor</label><input id="r-revisor" type="text"></div>
+    </div>
+    <label for="r-fuentes">Fuentes (URL de la RAG o la RAE), una por línea</label><textarea id="r-fuentes"></textarea>
+    <label for="r-notas">Notas</label><textarea id="r-notas"></textarea>
+    <p><button class="btn" type="submit">Guardar</button></p>
+  </form>
+</main>
+
+<aside class="der">
+  <h2><span class="n">05</span>Lista de comprobación</h2>
+  <p class="estado">Errores que ya se cometieron una vez. Revísalos antes de pasar a revisado.</p>
+  <ul class="check" id="check-gl">
+    <li>En gallego, «¿» y «¡» de apertura son opcionales, no un error.</li>
+    <li>Plural en -l: monosílabos y graves añaden -es (mil, miles; túnel, túneles); agudas de más de una sílaba cambian -l por -is (animal, animais); agudas en -il, por -ís (funil, funís).</li>
+    <li>La regla del diptongo decreciente sin tilde vale solo para las agudas.</li>
+    <li>Delante de e, i la g suena como j.</li>
+    <li>No van dos puntos entre el verbo y su complemento: anticipa la enumeración.</li>
+    <li>Cada dato lleva fuente en «datos». Cifras defendibles: «una veintena», no «más de veinte».</li>
+  </ul>
+  <ul class="check" id="check-es">
+    <li>«más» lleva tilde siempre, salvo «mas» con el sentido de «pero».</li>
+    <li>«cuándo», «cómo», «qué» llevan tilde también en preguntas indirectas, sin signos.</li>
+    <li>Delante de e, i la g suena como j.</li>
+    <li>Clasificación silábica: contártelo es esdrújula, no sobresdrújula.</li>
+    <li>No van dos puntos entre el verbo y su complemento: anticipa la enumeración.</li>
+    <li>Cada dato lleva fuente en «datos». Cifras defendibles: «una veintena», no «más de veinte».</li>
+  </ul>
+  <h3>Corrector automático</h3>
+  <p class="estado" id="lt-estado"></p>
+  <button class="btn alt peq" type="button" id="lt-btn">Pasar LanguageTool</button>
+  <div id="lt-res"></div>
+</aside>
+</div>
+
+<script>
+'use strict';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const api = async (ruta, opts = {}) => {
+  const r = await fetch('/api/' + ruta, { headers: { 'Content-Type': 'application/json' }, ...opts, body: opts.body ? JSON.stringify(opts.body) : undefined });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok && r.status !== 422) throw new Error(j.error || ('Error ' + r.status));
+  // Devuelve el JSON tal cual; si fue 422 (errores de validación) se marca con status.
+  if (r.status === 422) return { status: 422, ...j };
+  return j;
+};
+
+let CONFIG = null, LT = false, HAY_AUDIO = false;
+let D = null;          // dictado en edición (objeto)
+let timer = null;
+
+/* ---------- Carga inicial ---------- */
+(async function init() {
+  const c = await api('config');
+  CONFIG = c.config; LT = c.languagetool; HAY_AUDIO = c.audio;
+  $('#lt-estado').textContent = LT ? 'LanguageTool activo: ayuda, no sustituye la revisión humana.' : 'LanguageTool no está configurado en el servidor.';
+  $('#lt-btn').disabled = !LT;
+  $('#n-curso').innerHTML = Object.keys(CONFIG.cursos).map((k) => `<option value="${k}"${k === '6' ? ' selected' : ''}>${k}.º</option>`).join('');
+  await cargarLista();
+  const id = location.hash.slice(1);
+  if (id) abrir(id);
+})();
+
+async function cargarLista() {
+  const lista = await api('ditados');
+  $('#lista').innerHTML = lista.map((d) => `<li><button type="button" data-id="${d.id}" aria-current="${D && d.id === idDe(D)}"><span>${esc(d.id)} · ${esc(d.titulo)}</span><span class="estado">${esc(d.estado)}</span></button></li>`).join('');
+  $$('#lista button').forEach((b) => b.addEventListener('click', () => abrir(b.dataset.id)));
+}
+const idDe = (d) => `${d.lang}-${String(d.num).padStart(2, '0')}`;
+
+$('#nuevo').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const lang = $('#n-lang').value, num = +$('#n-num').value, curso = $('#n-curso').value;
+  D = { lang, num, curso, titulo: `${lang === 'gl' ? 'Ditado' : 'Dictado'} ${num} · `, semana: '', ud: '', regra: '', etiquetas: [], fixome: ['', '', ''], estado: 'borrador',
+    revision: { fecha: '', revisor: '', fuentes: [], notas: '' }, opcions: [opcionVacia('A')] };
+  pintar(); location.hash = idDe(D);
+});
+const opcionVacia = (letra) => ({ letra, tipo: '', titulo: '', texto: '', segmentos: [], foco: [], datos: '' });
+
+async function abrir(id) {
+  try { D = await api('ditados/' + id); } catch (e) { $('#resultado').textContent = e.message; return; }
+  location.hash = id; pintar(); cargarLista();
+}
+
+/* ---------- Pintar el formulario desde D ---------- */
+function pintar() {
+  $('#sin').hidden = true; $('#form').hidden = false;
+  $('#estado').textContent = D.estado; $('#id-txt').textContent = idDe(D);
+  $('#a-revisado').disabled = D.estado !== 'borrador';
+  $('#a-publicado').disabled = D.estado !== 'revisado';
+  $('#a-borrador').disabled = D.estado === 'borrador';
+  $('#f-titulo').value = D.titulo; $('#f-ud').value = D.ud; $('#f-semana').value = D.semana || ''; $('#f-regra').value = D.regra;
+  $('#f-etiquetas').value = (D.etiquetas || []).join(', '); $('#f-fixome').value = (D.fixome || []).join('\n');
+  const voces = CONFIG.voces[D.lang];
+  $('#f-voz').innerHTML = voces.disponibles.length ? voces.disponibles.map((v) => `<option value="${v}"${(D.voz || voces.defecto) === v ? ' selected' : ''}>${v}</option>`).join('') : '<option value="">Voz del navegador (sin audio)</option>';
+  const r = D.revision || {};
+  $('#r-fecha').value = r.fecha || ''; $('#r-revisor').value = r.revisor || ''; $('#r-fuentes').value = (r.fuentes || []).join('\n'); $('#r-notas').value = r.notas || '';
+  $('#check-gl').hidden = D.lang !== 'gl'; $('#check-es').hidden = D.lang !== 'es';
+  pintarOpciones();
+  validarVivo();
+}
+
+function pintarOpciones() {
+  const tipos = CONFIG.tipos[D.lang];
+  $('#opciones').innerHTML = D.opcions.map((o, k) => `
+<details class="opcion" open data-k="${k}">
+  <summary>Opción ${esc(o.letra)} · ${esc(o.titulo || '(sin título)')} <span class="estado" id="np-${k}"></span></summary>
+  <div class="fila">
+    <div><label>Letra</label><input type="text" data-campo="letra" value="${esc(o.letra)}" maxlength="2"></div>
+    <div><label>Tipo</label><input type="text" data-campo="tipo" list="tipos" value="${esc(o.tipo)}"></div>
+    <div><label>Título</label><input type="text" data-campo="titulo" value="${esc(o.titulo)}"></div>
+  </div>
+  <label>Texto (salto de línea solo con sentido, como en una carta)</label>
+  <textarea class="texto" data-campo="texto">${esc(o.texto)}</textarea>
+  <label>Trozos para dictar, uno por línea</label>
+  <button class="btn alt peq" type="button" data-accion="segmentar">Proponer segmentación</button>
+  <textarea class="segs" data-campo="segmentos">${esc((o.segmentos || []).join('\n'))}</textarea>
+  <label>Palabras clave: toca una palabra del texto para añadirla o quitarla</label>
+  <div class="palabras" data-palabras></div>
+  <button class="btn alt peq" type="button" data-accion="frase">Añadir una frase como clave (puntuación)</button>
+  <div data-foco></div>
+  <label>Datos y fuentes para el docente</label>
+  <textarea data-campo="datos">${esc(o.datos || '')}</textarea>
+  <div data-audio></div>
+  <p><button class="btn alt peq" type="button" data-accion="quitar">Quitar esta opción</button></p>
+</details>`).join('') + `<datalist id="tipos">${tipos.map((t) => `<option value="${esc(t)}">`).join('')}</datalist>`;
+  D.opcions.forEach((o, k) => { pintarPalabras(k); pintarFoco(k); pintarAudio(k); });
+}
+
+function tokens(texto) { return texto.split(/(\s+)/); }
+// Palabra sin la puntuación que la rodea: «corais.» → «corais». Una clave puede ser la palabra o la palabra con su signo («abuela:»).
+const base = (t) => t.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+function pintarPalabras(k) {
+  const o = D.opcions[k];
+  const cont = $(`.opcion[data-k="${k}"] [data-palabras]`);
+  const indice = (t) => { let i = o.foco.findIndex((f) => f.p === t); if (i < 0) i = o.foco.findIndex((f) => f.p === base(t)); return i; };
+  cont.innerHTML = tokens(o.texto).map((t) => {
+    if (/^\s*$/.test(t)) return t.includes('\n') ? '<br>' : ' ';
+    const i = indice(t);
+    return `<button type="button" data-tok="${esc(t)}" class="${i >= 0 ? 'clave' : ''}">${i >= 0 ? `<span class="num">${i + 1}</span>` : ''}${esc(t)}</button>`;
+  }).join('');
+  $$('button[data-tok]', cont).forEach((b) => b.addEventListener('click', () => {
+    const t = b.dataset.tok; const i = indice(t);
+    if (i >= 0) o.foco.splice(i, 1); else o.foco.push({ p: base(t) || t, por: '' });
+    pintarPalabras(k); pintarFoco(k); validarVivo();
+  }));
+}
+function pintarFoco(k) {
+  const o = D.opcions[k];
+  const cont = $(`.opcion[data-k="${k}"] [data-foco]`);
+  cont.innerHTML = o.foco.map((f, i) => `
+<div class="foco" data-i="${i}">
+  <div><span class="n">${i + 1}</span> <label>Tal como está en el texto</label><input type="text" data-f="p" value="${esc(f.p)}"></div>
+  <div><label>Etiqueta corta (si es una frase)</label><input type="text" data-f="e" value="${esc(f.e || '')}"></div>
+  <div><label>Por qué se escribe así (verifícalo en la RAG o la RAE)</label><textarea data-f="por">${esc(f.por)}</textarea></div>
+  <div><button class="btn alt peq" type="button" data-f-accion="subir" ${i === 0 ? 'disabled' : ''}>Subir</button><button class="btn alt peq" type="button" data-f-accion="quitar">Quitar</button></div>
+</div>`).join('') + `<p class="estado">${o.foco.length} palabras clave (entre ${CONFIG.claves[0]} y ${CONFIG.claves[1]})</p>`;
+  $$('.foco', cont).forEach((fila) => {
+    const i = +fila.dataset.i;
+    $$('[data-f]', fila).forEach((inp) => inp.addEventListener('input', () => { o.foco[i][inp.dataset.f] = inp.value; if (inp.dataset.f === 'e' && !inp.value) delete o.foco[i].e; if (inp.dataset.f === 'p') pintarPalabras(k); validarVivo(); }));
+    $('[data-f-accion="quitar"]', fila).addEventListener('click', () => { o.foco.splice(i, 1); pintarPalabras(k); pintarFoco(k); validarVivo(); });
+    $('[data-f-accion="subir"]', fila).addEventListener('click', () => { [o.foco[i - 1], o.foco[i]] = [o.foco[i], o.foco[i - 1]]; pintarPalabras(k); pintarFoco(k); validarVivo(); });
+  });
+}
+function pintarAudio(k) {
+  const o = D.opcions[k];
+  const cont = $(`.opcion[data-k="${k}"] [data-audio]`);
+  if (!HAY_AUDIO || !CONFIG.voces[D.lang].disponibles.length) { cont.innerHTML = '<p class="estado">Sin motor de voz en este servidor: la presentación usará la voz del navegador.</p>'; return; }
+  const id = idDe(D), voz = $('#f-voz').value, ident = id + o.letra.toLowerCase();
+  const filas = [['completo', 'Lectura completa'], ...o.segmentos.map((s, i) => [String(i + 1), s])];
+  cont.innerHTML = '<h3>Audio por trozo</h3>' + filas.map(([n, txt]) => {
+    const f = n === 'completo' ? `${ident}-completo.mp3` : `${ident}-s${String(n).padStart(2, '0')}.mp3`;
+    return `<div class="audio"><span class="n">${n === 'completo' ? 'C' : n}</span><span>${esc(txt)}</span><audio controls preload="none" src="/api/audio/${id}/${voz}/${f}" data-f="${f}"></audio><button class="btn alt peq" type="button" data-regen="${n}">Regenerar</button></div>`;
+  }).join('');
+  $$('[data-regen]', cont).forEach((b) => b.addEventListener('click', async () => {
+    b.disabled = true; b.textContent = 'Generando…';
+    try {
+      const r = await api(`audio/${id}/${o.letra}/${b.dataset.regen}?voz=${encodeURIComponent($('#f-voz').value)}`, { method: 'POST' });
+      const a = $('audio', b.parentElement); a.src = r.fichero + '?t=' + Date.now(); a.play();
+    } catch (e) { $('#resultado').textContent = e.message; }
+    b.disabled = false; b.textContent = 'Regenerar';
+  }));
+}
+
+/* ---------- Recoger el formulario en D ---------- */
+function recoger() {
+  D.titulo = $('#f-titulo').value.trim(); D.ud = $('#f-ud').value.trim(); D.semana = $('#f-semana').value.trim(); D.regra = $('#f-regra').value.trim();
+  D.etiquetas = $('#f-etiquetas').value.split(',').map((s) => s.trim()).filter(Boolean);
+  D.fixome = $('#f-fixome').value.split('\n').map((s) => s.trim()).filter(Boolean);
+  if ($('#f-voz').value) D.voz = $('#f-voz').value; else delete D.voz;
+  D.revision = { fecha: $('#r-fecha').value, revisor: $('#r-revisor').value.trim(), fuentes: $('#r-fuentes').value.split('\n').map((s) => s.trim()).filter(Boolean), notas: $('#r-notas').value.trim() };
+  $$('.opcion').forEach((det) => {
+    const o = D.opcions[+det.dataset.k];
+    $$('[data-campo]', det).forEach((inp) => {
+      const c = inp.dataset.campo;
+      if (c === 'segmentos') o.segmentos = inp.value.split('\n').map((s) => s.trim()).filter(Boolean);
+      else o[c] = c === 'texto' ? inp.value.replace(/\r/g, '').trim() : inp.value.trim();
+    });
+  });
+  return D;
+}
+
+$('#form').addEventListener('input', (e) => {
+  const inp = e.target;
+  if (inp.dataset.campo === 'texto') { recoger(); const k = +inp.closest('.opcion').dataset.k; pintarPalabras(k); }
+  if (inp.dataset.campo === 'segmentos' || inp.id === 'f-voz') { recoger(); $$('.opcion').forEach((d) => pintarAudio(+d.dataset.k)); }
+  validarVivo();
+});
+$('#form').addEventListener('click', async (e) => {
+  const b = e.target.closest('[data-accion]'); if (!b) return;
+  const det = b.closest('.opcion'); const k = +det.dataset.k; const o = D.opcions[k];
+  recoger();
+  if (b.dataset.accion === 'segmentar') {
+    const r = await api('segmentar', { method: 'POST', body: { texto: o.texto } });
+    o.segmentos = r.segmentos; $('[data-campo="segmentos"]', det).value = r.segmentos.join('\n'); pintarAudio(k);
+  }
+  if (b.dataset.accion === 'frase') {
+    const p = prompt('Escribe la frase exactamente como está en el texto (por ejemplo «¿Sabías que …?»):');
+    if (p) { o.foco.push({ p: p.trim(), e: '', por: '' }); pintarPalabras(k); pintarFoco(k); }
+  }
+  if (b.dataset.accion === 'quitar' && confirm(`¿Quitar la opción ${o.letra}?`)) { D.opcions.splice(k, 1); pintarOpciones(); }
+  validarVivo();
+});
+$('#add-op').addEventListener('click', () => { recoger(); D.opcions.push(opcionVacia(String.fromCharCode(65 + D.opcions.length))); pintarOpciones(); validarVivo(); });
+
+/* ---------- Validación en vivo ---------- */
+function validarVivo() {
+  clearTimeout(timer);
+  timer = setTimeout(async () => {
+    const r = await api('validar', { method: 'POST', body: recoger() });
+    mostrar(r.errores, r.avisos);
+    D.opcions.forEach((o, k) => { const el = $(`#np-${k}`); if (el) el.textContent = `${o.texto.trim() ? o.texto.trim().split(/\s+/).length : 0} palabras · ${o.foco.length} claves`; });
+  }, 400);
+}
+function mostrar(errores = [], avisos = []) {
+  $('#errores').hidden = !errores.length; $('#errores-l').innerHTML = errores.map((e) => `<li>${esc(e)}</li>`).join('');
+  $('#avisos').hidden = !avisos.length; $('#avisos-l').innerHTML = avisos.map((a) => `<li>${esc(a)}</li>`).join('');
+}
+
+/* ---------- Guardar y estados ---------- */
+$('#form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const d = recoger();
+  const r = await api('ditados/' + idDe(d), { method: 'PUT', body: d });
+  if (r.status === 422) { mostrar(r.errores, r.avisos); $('#resultado').textContent = 'No se ha guardado: corrige los errores.'; return; }
+  mostrar([], r.avisos); $('#resultado').textContent = 'Guardado ' + new Date().toLocaleTimeString(); cargarLista();
+});
+async function cambiarEstado(estado) {
+  const d = recoger();
+  const g = await api('ditados/' + idDe(d), { method: 'PUT', body: d });
+  if (g.status === 422) { mostrar(g.errores, g.avisos); $('#resultado').textContent = 'Primero hay que corregir los errores.'; return; }
+  if (estado === 'revisado' && LT) {
+    const lt = await api('languagetool', { method: 'POST', body: { ditado: d } }).catch(() => ({ avisos: [] }));
+    pintarLT(lt.avisos || []);
+    if ((lt.avisos || []).length && !confirm(`LanguageTool señala ${lt.avisos.length} posibles problemas. ¿Pasar a revisado de todos modos?`)) return;
+  }
+  const textos = { revisado: '¿Confirmas que has revisado los textos y las explicaciones contra la RAG o la RAE? Se generarán el audio y los PDF.', publicado: '¿Publicar? El dictado aparecerá en la web tras la compilación.', borrador: '¿Volver a borrador? Dejará de publicarse en la próxima compilación.' };
+  if (!confirm(textos[estado])) return;
+  const r = await api(`ditados/${idDe(d)}/estado`, { method: 'POST', body: { estado } });
+  if (r.status === 422) { mostrar(r.errores, r.avisos); return; }
+  D.estado = r.estado; pintar(); cargarLista();
+  $('#resultado').textContent = `Ahora está en «${r.estado}».`;
+  if (r.tarea) seguirTarea(r.tarea);
+}
+$('#a-revisado').addEventListener('click', () => cambiarEstado('revisado'));
+$('#a-publicado').addEventListener('click', () => cambiarEstado('publicado'));
+$('#a-borrador').addEventListener('click', () => cambiarEstado('borrador'));
+async function seguirTarea(n) {
+  $('#tarea').hidden = false;
+  const t = await api('tareas/' + n);
+  $('#tarea-estado').textContent = t.estado; $('#tarea-reg').textContent = t.registro.split('\n').filter((l) => !/^\s+audio /.test(l)).join('\n');
+  if (t.estado === 'en marcha') setTimeout(() => seguirTarea(n), 2000);
+  else $$('.opcion').forEach((d) => pintarAudio(+d.dataset.k));
+}
+
+/* ---------- LanguageTool ---------- */
+$('#lt-btn').addEventListener('click', async () => {
+  $('#lt-res').innerHTML = '<p class="estado">Comprobando…</p>';
+  try { const r = await api('languagetool', { method: 'POST', body: { ditado: recoger() } }); pintarLT(r.avisos); } catch (e) { $('#lt-res').innerHTML = `<p class="estado">${esc(e.message)}</p>`; }
+});
+function pintarLT(avisos) {
+  $('#lt-res').innerHTML = avisos.length ? `<ul class="msg">${avisos.map((a) => `<li><b>${esc(a.donde)}</b>: ${esc(a.mensaje)} («${esc(a.fragmento)}»${a.sugerencias.length ? ' → ' + esc(a.sugerencias.join(', ')) : ''})</li>`).join('')}</ul>` : '<p class="estado">Sin avisos del corrector. Sigue haciendo falta la revisión humana.</p>';
+}
+</script>
+</body>
+</html>

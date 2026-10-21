@@ -95,7 +95,7 @@ ${datos ? `<section><h2><span class="n">04</span>${esc(C.datos)}</h2><dl>${datos
 }
 
 /** Índice con filtros. `entradas` = [{d, ficheros, voz}] solo de dictados publicados. */
-function paginaIndice(entradas) {
+function paginaIndice(entradas, kit = {}) {
   const valores = (fn) => [...new Set(entradas.flatMap(fn))].sort((a, b) => a.localeCompare(b, 'es'));
   const cursos = valores(({ d }) => [d.curso]);
   const uds = valores(({ d }) => [d.ud]);
@@ -137,6 +137,7 @@ function paginaIndice(entradas) {
 ${items}
 </ul>
 <p id="vacio" hidden>${esc(C.sinResultados)}</p>
+${Object.keys(kit).length ? `<section><h2><span class="n">02</span>${esc(C.kit)}</h2><ul class="descargas">${['gl', 'es'].filter((l) => kit[l]).map((l) => `<li>${esc(C.langs[l])}: <a href="${esc(kit[l].tarxeta)}" download>${esc(C.kitTarxeta)}</a> · <a href="${esc(kit[l].caderno)}" download>${esc(C.kitCaderno)}</a></li>`).join('')}</ul></section>` : ''}
 </main>
 <script>
 (function () {

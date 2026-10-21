@@ -45,3 +45,68 @@ server {
 ```
 
 Nota: `script-src 'unsafe-inline'` hace falta porque la presentación es un único fichero autónomo con su script dentro (requisito de uso sin conexión). Si se quiere una CSP más estricta, se puede añadir un hash del script en la fase 2.
+
+## Editor del autor (fase 2)
+
+El editor es un servicio Node sin dependencias que escucha solo en `127.0.0.1:9170`. Nginx lo expone en `https://ditados.edumind.es/editor/` detrás de Authentik, igual que las demás apps: la sesión la gestiona Authentik y el servicio solo acepta peticiones con la cabecera `X-Authentik-Username` de un usuario de la lista `DITADOS_AUTORES`.
+
+### Unidad systemd propuesta (`/etc/systemd/system/ditados-editor.service`)
+
+```ini
+[Unit]
+Description=Ditados EDUmind - editor del autor
+After=network-online.target
+
+[Service]
+Type=simple
+User=nuevoadmin
+Group=dev-www
+WorkingDirectory=/var/www/ditados
+Environment=DITADOS_PUERTO=9170
+Environment=DITADOS_AUTORES=luis
+# Opcional: Environment=DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010
+ExecStart=/usr/bin/node bin/ditados.js servir
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Bloque de nginx (dentro del `server` de ditados.edumind.es)
+
+```nginx
+    # Editor: solo con sesión de Authentik (auth_request, como en las otras apps)
+    location /editor/ {
+        auth_request /outpost.goauthentik.io/auth/nginx;
+        error_page 401 = @goauthentik_proxy_signin;
+        auth_request_set $authentik_username $upstream_http_x_authentik_username;
+        proxy_set_header X-Authentik-Username $authentik_username;
+        proxy_pass http://127.0.0.1:9170;
+    }
+    location /api/ {
+        auth_request /outpost.goauthentik.io/auth/nginx;
+        error_page 401 = @goauthentik_proxy_signin;
+        auth_request_set $authentik_username $upstream_http_x_authentik_username;
+        proxy_set_header X-Authentik-Username $authentik_username;
+        proxy_pass http://127.0.0.1:9170;
+        client_max_body_size 2m;
+    }
+```
+
+Los bloques `/outpost.goauthentik.io/` y `@goauthentik_proxy_signin` son los mismos que usan board, pasos y motion. En Authentik hace falta dar de alta la aplicación `ditados` con proveedor proxy (forward auth, single application) y asignarla solo al grupo del autor.
+
+### Qué hace el editor al cambiar de estado
+
+- `borrador → revisado`: valida, pasa LanguageTool si está configurado, y lanza `build --solo <id>` en segundo plano (audio con la voz elegida, PDF, MiClase). El registro se ve en el propio editor.
+- `revisado → publicado`: vuelve a lanzar la generación. El dictado aparece en la web en esa compilación. La compilación del catálogo completo (`build`) se hace a mano o por cron.
+- `→ borrador`: deja de publicarse en la siguiente compilación completa.
+
+### LanguageTool (opcional)
+
+El contenedor oficial `erikvl87/languagetool` escucha en 8010 y tiene gallego y castellano. Si se arranca, basta con `DITADOS_LANGUAGETOOL_URL=http://127.0.0.1:8010` en la unidad. No está instalado: pedir permiso antes.
+
+### ODT (pendiente)
+
+Generar ODT exige LibreOffice (`libreoffice-writer` sin interfaz, unos 300 MB) para convertir los HTML de impresión. No está instalado: pedir permiso antes. La alternativa sin instalar nada es la API de conversión del ONLYOFFICE que ya corre para Nextcloud, pero acopla los dos sistemas.

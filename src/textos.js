@@ -187,6 +187,7 @@ const CATALOGO = {
   pe: PE,
   licencia: 'Textos, fichas y audio: CC BY-SA 4.0. Programa: AGPL-3.0-or-later o EUPL-1.2.',
   voz: 'Voces',
+  kit: 'Tarjeta y cuaderno de reglas (PDF)', kitTarxeta: 'Tarjeta de reglas, 2 páginas', kitCaderno: 'Cuaderno de reglas acumulativo, 1 página',
 };
 
 module.exports = { PRESENTACION, FICHA, DOCENTE, CATALOGO, VOCES, PE };

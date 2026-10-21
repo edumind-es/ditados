@@ -9,6 +9,7 @@ const { generarImpresos, nombresImpresos } = require('./gen_impresos');
 const { miclase, textosDocente, nombresDocente } = require('./gen_docente');
 const { paginaIndice, paginaDitado } = require('./gen_catalogo');
 const { htmlAPdf } = require('./pdf');
+const { generarKit, nombresKit } = require('./gen_kit');
 const audio = require('./audio');
 const { FUENTES_DIR, RAIZ } = require('./html');
 
@@ -118,7 +119,21 @@ function build(opts = {}) {
     entradas.push({ d, ficheros, voz: pres.conAudio ? voz : null });
   }
 
-  if (!opts.solo) fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas));
+  // Kit fijo por lengua: tarjeta (2 páginas) y cuaderno de reglas (1 página)
+  const kit = {};
+  if (!opts.sinPdf && !opts.solo) {
+    fs.mkdirSync(path.join(dist, 'kit'), { recursive: true });
+    for (const lang of ['gl', 'es']) {
+      const k = generarKit(lang); const n = nombresKit(lang);
+      const pT = htmlAPdf(k.tarxeta, path.join(dist, 'kit', n.tarxeta));
+      const pC = htmlAPdf(k.caderno, path.join(dist, 'kit', n.caderno));
+      if (pT !== 2) problemas.push(`kit ${lang}: la tarjeta ocupa ${pT} páginas y tiene que ocupar 2.`);
+      if (pC !== 1) problemas.push(`kit ${lang}: el cuaderno ocupa ${pC} páginas y tiene que ocupar 1.`);
+      kit[lang] = { tarxeta: `kit/${n.tarxeta}`, caderno: `kit/${n.caderno}` };
+      log(`kit ${lang}: tarjeta ${pT} páginas · cuaderno ${pC} página(s)`);
+    }
+  }
+  if (!opts.solo) fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas, kit));
   return { publicados: entradas.length, problemas };
 }
 
