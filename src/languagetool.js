@@ -19,12 +19,27 @@ async function comprobar(texto, lang) {
   });
   if (!r.ok) throw new Error(`LanguageTool respondió ${r.status}`);
   const j = await r.json();
-  return (j.matches || []).map((m) => ({
+  return (j.matches || []).filter((m) => !esRuido(m, texto)).map((m) => ({
     mensaje: m.message,
     fragmento: texto.slice(m.offset, m.offset + m.length),
     sugerencias: (m.replacements || []).slice(0, 3).map((x) => x.value),
     regla: m.rule ? m.rule.id : '',
   }));
+}
+
+// Avisos que en este material son ruido: letras sueltas de las explicaciones («con -n», «a i tónica»),
+// y palabras citadas entre comillas latinas (los castellanismos se citan a propósito para contrastarlos).
+const REGLAS_RUIDO = new Set(['SINGLE_CHARACTER', 'E_SINGLE_CHAR', 'GL_WORDINESS_REPLACE', 'GENERAL_GENDER_AGREEMENT_ERRORS']);
+function esRuido(m, texto) {
+  const id = m.rule ? m.rule.id : '';
+  if (REGLAS_RUIDO.has(id)) return true;
+  const frag = texto.slice(m.offset, m.offset + m.length);
+  if (frag.replace(/[^\p{L}]/gu, '').length <= 2) return true;
+  // Dentro de «…» o de comillas rectas: cita deliberada
+  const antes = texto.slice(0, m.offset);
+  const abiertas = (antes.match(/«/g) || []).length - (antes.match(/»/g) || []).length;
+  if (abiertas > 0) return true;
+  return false;
 }
 
 /** Revisa todas las opciones y las explicaciones de un dictado. */

@@ -11,6 +11,7 @@ const { paginaIndice, paginaDitado } = require('./gen_catalogo');
 const { htmlAPdf } = require('./pdf');
 const { generarKit, nombresKit } = require('./gen_kit');
 const { generarPaquete } = require('./gen_paquete');
+const odt = require('./odt');
 const audio = require('./audio');
 const { FUENTES_DIR, RAIZ } = require('./html');
 
@@ -52,6 +53,10 @@ function build(opts = {}) {
 
   const entradas = [];
   const problemas = [];
+  const hayAudio = !opts.sinAudio && audio.disponible();
+  const hayOdt = !opts.sinPdf && odt.disponible();
+  if (!opts.sinPdf && !hayOdt) log('aviso: LibreOffice no disponible; no se generan ODT.');
+  if (!opts.sinAudio && !hayAudio) log('aviso: aHoTTS o ffmpeg no disponibles; la presentación usará la voz del navegador.');
 
   // Kit fijo por lengua: tarjeta (2 páginas) y cuaderno de reglas (1 página). Va antes porque el paquete de cada dictado lo incluye.
   const kit = {};
@@ -64,11 +69,17 @@ function build(opts = {}) {
       if (pT !== 2) problemas.push(`kit ${lang}: la tarjeta ocupa ${pT} páginas y tiene que ocupar 2.`);
       if (pC !== 1) problemas.push(`kit ${lang}: el cuaderno ocupa ${pC} páginas y tiene que ocupar 1.`);
       kit[lang] = { tarxeta: `kit/${n.tarxeta}`, caderno: `kit/${n.caderno}` };
+      if (hayOdt) {
+        try {
+          odt.htmlAOdt(k.tarxeta, path.join(dist, 'kit', n.tarxeta.replace(/\.pdf$/, '.odt')));
+          odt.htmlAOdt(k.caderno, path.join(dist, 'kit', n.caderno.replace(/\.pdf$/, '.odt')));
+          kit[lang].tarxetaOdt = `kit/${n.tarxeta.replace(/\.pdf$/, '.odt')}`;
+          kit[lang].cadernoOdt = `kit/${n.caderno.replace(/\.pdf$/, '.odt')}`;
+        } catch (e) { problemas.push(`kit ${lang}: odt: ${e.message}`); }
+      }
       log(`kit ${lang}: tarjeta ${pT} páginas · cuaderno ${pC} página(s)`);
     }
   }
-  const hayAudio = !opts.sinAudio && audio.disponible();
-  if (!opts.sinAudio && !hayAudio) log('aviso: aHoTTS o ffmpeg no disponibles; la presentación usará la voz del navegador.');
 
   for (const { fichero, d } of leerDitados()) {
     const id = idDitado(d);
@@ -125,6 +136,17 @@ function build(opts = {}) {
       }
       ficheros.ficha = ficheros.formatos.A4.ficha;
       ficheros.repetido = ficheros.formatos.A4.repetido;
+      // ODT editables (solo A4), si hay LibreOffice
+      if (hayOdt) {
+        const impresos = generarImpresos(d, config, 'A4');
+        const n = nombresImpresos(d, 'A4');
+        try {
+          odt.htmlAOdt(impresos.ficha, path.join(descargas, n.ficha.replace(/\.pdf$/, '.odt')));
+          odt.htmlAOdt(impresos.repetido, path.join(descargas, n.repetido.replace(/\.pdf$/, '.odt')));
+          ficheros.odt = { ficha: `descargas/${n.ficha.replace(/\.pdf$/, '.odt')}`, repetido: `descargas/${n.repetido.replace(/\.pdf$/, '.odt')}` };
+          log('  odt: ficha y repetido');
+        } catch (e) { problemas.push(`${id}: odt: ${e.message}`); }
+      }
     }
 
     // Documentos del docente
