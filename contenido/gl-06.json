@@ -1,0 +1,125 @@
+{
+  "lang": "gl",
+  "num": 6,
+  "curso": "4",
+  "titulo": "Ditado 6 · Agudas, graves e esdrúxulas",
+  "tema": "Agudas, graves e esdrúxulas · o x · a raia do diálogo",
+  "regra": "Agudas: til se rematan en vogal, -n, -s ou -ns · graves: til se rematan en consoante que non sexa -n nin -s · esdrúxulas: til sempre · o x galego (paxaro, xogo) · a raia abre cada intervención do diálogo",
+  "etiquetas": ["acentuación", "agudas", "graves", "esdrúxulas", "x", "raia de diálogo", "til diacrítico"],
+  "fixome": [
+    "Agudas: a tónica é a última sílaba. Til se rematan en vogal, -n, -s ou -ns: colibrí, Xoán, atrás, millóns.",
+    "Graves: a tónica é a penúltima. Til se rematan en consoante que non sexa -n nin -s: néctar, fácil. Sen til: incrible, animal non é grave, é aguda en -l.",
+    "Esdrúxulas: a tónica é a antepenúltima. Til sempre: único, sábado, plástico.",
+    "No diálogo, cada intervención empeza con raia (—) e o que di o narrador vai entre raias."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "O colibrí, o paxaro máis pequeno",
+      "texto": "O colibrí é o paxaro máis pequeno do mundo. Bate as ás tantas veces por segundo que parece que está quieto no aire. É o único paxaro que pode voar cara a atrás. Aliméntase do néctar das flores e, para conseguilo, mete o seu longo pico dentro delas. Cada día visita centos de flores. Que animal tan incrible!",
+      "segmentos": [
+        "O colibrí é o paxaro",
+        "máis pequeno do mundo.",
+        "Bate as ás tantas veces por segundo",
+        "que parece que está quieto no aire.",
+        "É o único paxaro",
+        "que pode voar cara a atrás.",
+        "Aliméntase do néctar das flores",
+        "e, para conseguilo,",
+        "mete o seu longo pico dentro delas.",
+        "Cada día visita centos de flores.",
+        "Que animal tan incrible!"
+      ],
+      "foco": [
+        { "p": "colibrí", "por": "Aguda rematada en vogal: leva til." },
+        { "p": "paxaro", "por": "Con x. É grave rematada en vogal: sen til." },
+        { "p": "máis", "por": "Til diacrítico: máis indica cantidade. Mais, sen til, significa «pero»." },
+        { "p": "ás", "por": "Á significa «ala» e leva til para distinguila do artigo a. En plural, ás." },
+        { "p": "está", "por": "Aguda rematada en vogal: leva til." },
+        { "p": "único", "por": "Esdrúxula: leva til sempre." },
+        { "p": "atrás", "por": "Aguda rematada en -s: leva til." },
+        { "p": "Aliméntase", "por": "Alimenta + se. A tónica queda na antepenúltima: esdrúxula, leva til." },
+        { "p": "néctar", "por": "Grave rematada en consoante que non é -n nin -s: leva til." },
+        { "p": "animal", "por": "Aguda rematada en -l: sen til." },
+        { "p": "incrible", "por": "Grave rematada en vogal: sen til. En galego é incrible, non «increíble»." }
+      ],
+      "datos": "O colibrí é a familia de paxaros máis pequenos do mundo (a especie menor, o colibrí abella de Cuba, mide uns 5 cm); baten as ás decenas de veces por segundo, son os únicos paxaros que voan cara a atrás e aliméntanse de néctar, visitando centos de flores ao día. Datos de coñecemento xeral sobre os colibrís, comprobables en guías de aves."
+    },
+    {
+      "letra": "B",
+      "tipo": "Narración",
+      "titulo": "Na biblioteca",
+      "texto": "—Podo levar este libro? —preguntou Xoán.\n—Claro que si —respondeu a bibliotecaria—. Tes quince días para devolvelo.\n—E se non o acabo?\n—Entón vés e renóvalo. Non hai problema.\nXoán saíu contento. O libro contaba a historia dun dragón que tiña medo do lume. Parecíalle unha idea tan rara que quería lela esa mesma tarde.",
+      "segmentos": [
+        "—Podo levar este libro?",
+        "—preguntou Xoán.",
+        "—Claro que si",
+        "—respondeu a bibliotecaria—.",
+        "Tes quince días para devolvelo.",
+        "—E se non o acabo?",
+        "—Entón vés e renóvalo.",
+        "Non hai problema.",
+        "Xoán saíu contento.",
+        "O libro contaba a historia dun dragón",
+        "que tiña medo do lume.",
+        "Parecíalle unha idea tan rara",
+        "que quería lela esa mesma tarde."
+      ],
+      "foco": [
+        { "p": "—Podo levar este libro?", "por": "Cada intervención do diálogo empeza con raia (—), pegada á primeira palabra. A pregunta leva o signo ao final.", "e": "—Podo … libro?" },
+        { "p": "Xoán", "por": "Con x. Aguda rematada en -n: leva til." },
+        { "p": "—respondeu a bibliotecaria—.", "por": "O que di o narrador vai entre raias; o punto vai despois da raia de peche.", "e": "—respondeu … bibliotecaria—." },
+        { "p": "Entón", "por": "Aguda rematada en -n: leva til." },
+        { "p": "vés", "por": "Til diacrítico: vés é do verbo vir. Ves, sen til, é do verbo ver." },
+        { "p": "renóvalo", "por": "Renova + o. A tónica queda na antepenúltima: esdrúxula, leva til." },
+        { "p": "saíu", "por": "A i é tónica e vai separada da a (hiato): leva til." },
+        { "p": "dragón", "por": "Aguda rematada en -n: leva til." },
+        { "p": "Parecíalle", "por": "Parecía + lle. A i tónica forma hiato coa a e leva til; a palabra é esdrúxula." },
+        { "p": "quería", "por": "A i é tónica e vai separada da a (hiato): leva til." }
+      ],
+      "datos": "Narración sen datos que verificar. Os nomes son ficticios."
+    },
+    {
+      "letra": "C",
+      "tipo": "Narración",
+      "titulo": "Un sábado na praia",
+      "texto": "O sábado pasado, un grupo de voluntarias e voluntarios limpou unha praia da costa galega. En tres horas recolleron máis de cen bolsas de lixo: botellas, redes, xoguetes rotos e moitísimos anacos de plástico. A idea naceu nunha escola e axiña se sumaron as familias. Os organizadores explicaron que o mellor xeito de limpar o mar é non ensucialo.",
+      "segmentos": [
+        "O sábado pasado,",
+        "un grupo de voluntarias e voluntarios",
+        "limpou unha praia da costa galega.",
+        "En tres horas recolleron",
+        "máis de cen bolsas de lixo:",
+        "botellas, redes, xoguetes rotos",
+        "e moitísimos anacos de plástico.",
+        "A idea naceu nunha escola",
+        "e axiña se sumaron as familias.",
+        "Os organizadores explicaron",
+        "que o mellor xeito de limpar o mar",
+        "é non ensucialo."
+      ],
+      "foco": [
+        { "p": "sábado", "por": "Esdrúxula: leva til sempre." },
+        { "p": "máis", "por": "Til diacrítico: máis indica cantidade. Mais, sen til, significa «pero»." },
+        { "p": "lixo: botellas, redes, xoguetes rotos e moitísimos anacos", "por": "Dous puntos antes da enumeración anunciada; coma entre os elementos e e antes do último.", "e": "lixo: … anacos" },
+        { "p": "lixo", "por": "Con x." },
+        { "p": "xoguetes", "por": "Con x. Gu diante de e: o u non soa." },
+        { "p": "moitísimos", "por": "Esdrúxula: leva til sempre." },
+        { "p": "plástico", "por": "Esdrúxula: leva til sempre." },
+        { "p": "axiña", "por": "Con x. Grave rematada en vogal: sen til." },
+        { "p": "explicaron", "por": "Con x, que aquí soa «ks»." },
+        { "p": "xeito", "por": "Con x." },
+        { "p": "é", "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción." }
+      ],
+      "datos": "Narración ficticia inspirada nas limpezas de praias que organizan asociacións e centros educativos; non se refire a ningún feito nin lugar concreto. Sen datos que verificar."
+    }
+  ]
+}

@@ -39,11 +39,11 @@ Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (car
 
 ## Formato de un dictado
 
-Ver `contenido/gl-02.json` como ejemplo completo y `contenido/config.json` para los rangos de palabras por curso, los tipos de texto y las voces. Las validaciones viven en `src/validar.js`:
+Ver `contenido/gl-02.json` como ejemplo completo y `contenido/config.json` para los parámetros por curso (rango de palabras, número de palabras clave, tamaño de los trozos y renglones de la ficha), los tipos de texto y las voces. Cada dictado lleva `tema` (la regla o el contenido que trabaja), nunca el nombre de una unidad didáctica: el catálogo es público. Las validaciones viven en `src/validar.js`:
 
 - los trozos (`segmentos`), unidos con un espacio, reproducen exactamente el texto;
 - cada palabra clave (`foco.p`) aparece literalmente en el texto;
-- el texto tiene las palabras que marca el curso (6.º: de 60 a 90) y entre 10 y 18 palabras clave;
+- el texto tiene las palabras y las palabras clave que marca el curso (6.º: de 60 a 90 palabras y de 10 a 18 claves; 1.º: de 20 a 35 y de 4 a 8);
 - no se pasa a «revisado» ni a «publicado» sin fecha, revisor y fuentes.
 
 ## Estructura
@@ -58,6 +58,10 @@ herramientas/   migración del prototipo, comprobación de la web, prototipo ori
 docs/           Fase 0, decisiones y despliegue (nginx, Authentik, systemd del editor)
 dist/           salida compilada (no se versiona)
 ```
+
+## Dictados incluidos
+
+De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º a 5.º, un dictado por curso y lengua con tres textos cada uno (`gl-03`…`gl-07`, `es-03`…`es-07`), escritos con ayuda de IA y guardados como **borrador**: el autor los revisa contra la RAG y la RAE y los publica desde el editor. Nada escrito por IA llega al alumnado sin revisión humana.
 
 ## ODT y corrector
 
