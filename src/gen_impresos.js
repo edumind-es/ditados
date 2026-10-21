@@ -13,7 +13,7 @@ function renglones(n) {
 }
 
 function cabecera(t, d) {
-  return `<p class="cab">${esc(t.area)} · ${esc(d.curso)}.º · ${esc(t.tipo)} ${d.num} <span>· ${esc(d.ud)}</span></p>`;
+  return `<p class="cab">${esc(t.area)} · ${esc(d.curso)}.º · ${esc(t.tipo)} ${d.num} <span>· ${esc(d.tema)}</span></p>`;
 }
 
 function nombreFecha(t) {

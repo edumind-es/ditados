@@ -39,7 +39,7 @@ function validar(d, config) {
     err(`El curso («curso») tiene que ser uno de: ${Object.keys(config.cursos).join(', ')}.`);
   }
   if (!esCadena(d.titulo)) err('Falta el título del dictado («titulo»).');
-  if (!esCadena(d.ud)) err('Falta la unidad didáctica («ud»): cada dictado va anclado a una unidad.');
+  if (!esCadena(d.tema)) err('Falta el tema («tema»): la regla o el contenido que trabaja el dictado, sin nombres de unidades didácticas.');
   if (!esCadena(d.regra)) err('Falta el resumen de la regla trabajada («regra»).');
   if (!Array.isArray(d.etiquetas) || d.etiquetas.length === 0) {
     err('Hacen falta etiquetas («etiquetas»): al menos una, para que el catálogo pueda filtrar por regla.');
@@ -50,9 +50,10 @@ function validar(d, config) {
   if (!ESTADOS.includes(d.estado)) err(`El estado tiene que ser uno de: ${ESTADOS.join(', ')}.`);
 
   // --- Opciones ---
-  const rango = config.cursos[d.curso] ? config.cursos[d.curso].palabras : null;
-  const [minClaves, maxClaves] = config.claves;
-  const [minSeg, maxSeg] = config.segmento_palabras;
+  const cfgCurso = config.cursos[d.curso] || {};
+  const rango = cfgCurso.palabras || null;
+  const [minClaves, maxClaves] = cfgCurso.claves || config.claves;
+  const [minSeg, maxSeg] = cfgCurso.segmento_palabras || config.segmento_palabras;
 
   if (!Array.isArray(d.opcions) || d.opcions.length === 0) {
     err('El dictado necesita al menos una opción de texto («opcions»).');

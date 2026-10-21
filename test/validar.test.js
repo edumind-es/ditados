@@ -13,7 +13,7 @@ function ditadoBase() {
   const palabras = texto.split(' ');
   for (let i = 0; i < palabras.length; i += 5) segmentos.push(palabras.slice(i, i + 5).join(' '));
   return {
-    lang: 'gl', num: 9, curso: '6', titulo: 'Ditado 9 · Proba', ud: 'Unidade 1', regra: 'Regra', etiquetas: ['proba'],
+    lang: 'gl', num: 9, curso: '6', titulo: 'Ditado 9 · Proba', tema: 'Proba', regra: 'Regra', etiquetas: ['proba'],
     fixome: ['a', 'b', 'c'], estado: 'borrador',
     opcions: [{
       letra: 'A', tipo: 'Curiosidade', titulo: 'Un texto', texto, segmentos,

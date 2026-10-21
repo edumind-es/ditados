@@ -1,0 +1,246 @@
+{
+  "lang": "es",
+  "num": 6,
+  "curso": "4",
+  "titulo": "Dictado 6 · Agudas, llanas y esdrújulas",
+  "tema": "Agudas, llanas y esdrújulas · g y j · la raya del diálogo",
+  "regra": "Agudas: tilde si terminan en vocal, -n o -s · llanas: tilde si no terminan en vocal, -n ni -s · esdrújulas: tilde siempre · la g ante e, i suena como j · la raya abre cada intervención del diálogo",
+  "etiquetas": [
+    "acentuación",
+    "agudas",
+    "llanas",
+    "esdrújulas",
+    "g y j",
+    "raya de diálogo",
+    "tilde diacrítica"
+  ],
+  "fixome": [
+    "Agudas: tilde si terminan en vocal, -n o -s (colibrí, dragón, atrás). Llanas: tilde si no terminan en vocal, -n ni -s (néctar, árbol).",
+    "Esdrújulas: la tónica es la antepenúltima. Tilde siempre: único, sábado, plástico.",
+    "La g delante de e, i suena como j: recogieron, agita. Para que suene suave se escribe gu: juguetes, enseguida.",
+    "En el diálogo, cada intervención empieza con raya (—) y lo que dice el narrador va entre rayas."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": [
+      "https://dle.rae.es",
+      "https://www.rae.es/dpd",
+      "Ortografía de la lengua española (RAE, 2010)"
+    ],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "El colibrí, el pájaro más pequeño",
+      "texto": "El colibrí es el pájaro más pequeño del mundo. Agita las alas tantas veces por segundo que parece quieto en el aire. Es el único pájaro que puede volar hacia atrás. Se alimenta del néctar de las flores y, para conseguirlo, mete su largo pico dentro de ellas. Cada día visita cientos de flores. ¡Qué animal tan increíble!",
+      "segmentos": [
+        "El colibrí es el pájaro",
+        "más pequeño del mundo.",
+        "Agita las alas tantas veces por segundo",
+        "que parece quieto en el aire.",
+        "Es el único pájaro",
+        "que puede volar hacia atrás.",
+        "Se alimenta del néctar de las flores",
+        "y, para conseguirlo,",
+        "mete su largo pico dentro de ellas.",
+        "Cada día visita cientos de flores.",
+        "¡Qué animal tan increíble!"
+      ],
+      "foco": [
+        {
+          "p": "colibrí",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "pájaro",
+          "por": "Esdrújula: lleva tilde siempre. Va con j."
+        },
+        {
+          "p": "más",
+          "por": "Lleva tilde siempre, salvo «mas» con el sentido de «pero»."
+        },
+        {
+          "p": "Agita",
+          "por": "La g delante de i suena como j, pero se escribe g (de agitar)."
+        },
+        {
+          "p": "único",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "atrás",
+          "por": "Aguda terminada en -s: lleva tilde."
+        },
+        {
+          "p": "néctar",
+          "por": "Llana terminada en consonante distinta de -n y -s: lleva tilde."
+        },
+        {
+          "p": "conseguirlo",
+          "por": "Gu delante de i: la u no suena y la g suena suave."
+        },
+        {
+          "p": "animal",
+          "por": "Aguda terminada en -l: sin tilde."
+        },
+        {
+          "p": "increíble",
+          "por": "La i es tónica y va separada de la e (hiato): lleva tilde."
+        },
+        {
+          "p": "¡Qué animal tan increíble!",
+          "por": "La exclamación se abre y se cierra. Qué lleva tilde porque es exclamativo.",
+          "e": "¡Qué … increíble!"
+        }
+      ],
+      "datos": "Los colibríes son la familia de aves más pequeñas del mundo (la especie menor, el colibrí abeja de Cuba, mide unos 5 cm); baten las alas decenas de veces por segundo, son las únicas aves que vuelan hacia atrás y se alimentan de néctar, visitando cientos de flores al día. Datos de conocimiento general sobre los colibríes, comprobables en guías de aves."
+    },
+    {
+      "letra": "B",
+      "tipo": "Narración",
+      "titulo": "En la biblioteca",
+      "texto": "—¿Puedo llevarme este libro? —preguntó Jorge.\n—Claro que sí —respondió la bibliotecaria—. Tienes quince días para devolverlo.\n—¿Y si no lo termino?\n—Entonces vienes y lo renuevas. No hay problema.\nJorge salió contento. El libro contaba la historia de un dragón que tenía miedo del fuego. Le pareció una idea tan rara que quería leerlo esa misma tarde.",
+      "segmentos": [
+        "—¿Puedo llevarme este libro?",
+        "—preguntó Jorge.",
+        "—Claro que sí",
+        "—respondió la bibliotecaria—.",
+        "Tienes quince días para devolverlo.",
+        "—¿Y si no lo termino?",
+        "—Entonces vienes y lo renuevas.",
+        "No hay problema.",
+        "Jorge salió contento.",
+        "El libro contaba la historia de un dragón",
+        "que tenía miedo del fuego.",
+        "Le pareció una idea tan rara",
+        "que quería leerlo esa misma tarde."
+      ],
+      "foco": [
+        {
+          "p": "—¿Puedo llevarme este libro?",
+          "por": "Cada intervención del diálogo empieza con raya (—), pegada a la primera palabra. La pregunta se abre y se cierra.",
+          "e": "—¿Puedo … libro?"
+        },
+        {
+          "p": "preguntó",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "Jorge",
+          "por": "Jo con j; ge con g, que delante de e suena como j."
+        },
+        {
+          "p": "sí",
+          "por": "Tilde diacrítica: sí de afirmación. Si, sin tilde, es condición."
+        },
+        {
+          "p": "—respondió la bibliotecaria—.",
+          "por": "Lo que dice el narrador va entre rayas; el punto va después de la raya de cierre.",
+          "e": "—respondió … bibliotecaria—."
+        },
+        {
+          "p": "¿Y si no lo termino?",
+          "por": "La pregunta se abre con ¿ y se cierra con ?",
+          "e": "¿Y … termino?"
+        },
+        {
+          "p": "dragón",
+          "por": "Aguda terminada en -n: lleva tilde."
+        },
+        {
+          "p": "tenía",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "fuego",
+          "por": "La g delante de o suena suave; no lleva u."
+        },
+        {
+          "p": "pareció",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "quería",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        }
+      ],
+      "datos": "Narración sin datos que verificar. Los nombres son ficticios."
+    },
+    {
+      "letra": "C",
+      "tipo": "Narración",
+      "titulo": "Un sábado en la playa",
+      "texto": "El sábado pasado, un grupo de vecinas y vecinos limpió una playa cercana. En tres horas recogieron más de cien bolsas de basura: botellas, redes, juguetes rotos y muchísimos trozos de plástico. La idea nació en una escuela y enseguida se sumaron las familias. Los organizadores explicaron que la mejor manera de limpiar el mar es no ensuciarlo.",
+      "segmentos": [
+        "El sábado pasado,",
+        "un grupo de vecinas y vecinos",
+        "limpió una playa cercana.",
+        "En tres horas recogieron",
+        "más de cien bolsas de basura:",
+        "botellas, redes, juguetes rotos",
+        "y muchísimos trozos de plástico.",
+        "La idea nació en una escuela",
+        "y enseguida se sumaron las familias.",
+        "Los organizadores explicaron",
+        "que la mejor manera de limpiar el mar",
+        "es no ensuciarlo."
+      ],
+      "foco": [
+        {
+          "p": "sábado",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "limpió",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "recogieron",
+          "por": "De recoger: la g delante de i suena como j, pero se escribe g."
+        },
+        {
+          "p": "más",
+          "por": "Lleva tilde siempre, salvo «mas» con el sentido de «pero»."
+        },
+        {
+          "p": "basura: botellas, redes, juguetes rotos y muchísimos trozos",
+          "por": "Dos puntos antes de la enumeración anunciada; coma entre los elementos e y antes del último.",
+          "e": "basura: … trozos"
+        },
+        {
+          "p": "juguetes",
+          "por": "Ju con j; gu delante de e: la u no suena."
+        },
+        {
+          "p": "muchísimos",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "plástico",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "nació",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "enseguida",
+          "por": "Gu delante de i: la u no suena. Se escribe en una sola palabra."
+        },
+        {
+          "p": "mejor",
+          "por": "Con j. Aguda terminada en -r: sin tilde."
+        },
+        {
+          "p": "organizadores",
+          "por": "La g delante de a suena suave. Llana terminada en -s: sin tilde."
+        }
+      ],
+      "datos": "Narración ficticia inspirada en las limpiezas de playas que organizan asociaciones y centros educativos; no se refiere a ningún hecho ni lugar concreto. Sin datos que verificar."
+    }
+  ]
+}

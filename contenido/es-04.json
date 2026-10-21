@@ -1,0 +1,110 @@
+{
+  "lang": "es",
+  "num": 4,
+  "curso": "2",
+  "titulo": "Dictado 4 · La r fuerte y la r suave",
+  "tema": "La r fuerte y la r suave · m antes de p y b · signos de interrogación y exclamación",
+  "regra": "El sonido fuerte de r se escribe rr entre vocales y r al principio de palabra o después de consonante · antes de p y de b va siempre m · las preguntas y exclamaciones se abren y se cierran",
+  "etiquetas": ["r y rr", "m antes de p y b", "signos de interrogación", "signos de exclamación"],
+  "fixome": [
+    "Entre vocales, el sonido fuerte se escribe rr: carro, tierra.",
+    "Al principio de palabra y después de consonante, el sonido fuerte lleva una sola r: rana, honra.",
+    "Antes de p y de b va siempre m: campo, cambio.",
+    "Las preguntas y las exclamaciones se abren y se cierran: ¿Qué? ¡Bien!"
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "Un tren diminuto",
+      "texto": "Las hormigas viven en un hormiguero bajo la tierra. Siempre trabajan en equipo: unas buscan comida y otras cuidan a las crías. Una hormiga puede cargar cosas mucho más pesadas que ella. ¿Has visto alguna vez una fila de hormigas? ¡Parece un tren diminuto!",
+      "segmentos": [
+        "Las hormigas viven en un hormiguero",
+        "bajo la tierra.",
+        "Siempre trabajan en equipo:",
+        "unas buscan comida",
+        "y otras cuidan a las crías.",
+        "Una hormiga puede cargar cosas",
+        "mucho más pesadas que ella.",
+        "¿Has visto alguna vez",
+        "una fila de hormigas?",
+        "¡Parece un tren diminuto!"
+      ],
+      "foco": [
+        { "p": "hormigas", "por": "Empieza por h, que no suena. La r al final de sílaba suena suave: hor-mi-gas." },
+        { "p": "Siempre", "por": "Antes de p va siempre m. Mayúscula porque empieza la frase." },
+        { "p": "trabajan", "por": "Después de consonante, una sola r suena fuerte: tra-ba-jan." },
+        { "p": "tierra", "por": "Entre vocales, el sonido fuerte se escribe rr." },
+        { "p": "crías", "por": "Después de consonante, una sola r suena fuerte: crí-as." },
+        { "p": "cargar", "por": "La r al final de sílaba y de palabra suena suave." },
+        { "p": "¿Has visto alguna vez una fila de hormigas?", "por": "La pregunta se abre con ¿ y se cierra con ?", "e": "¿ … ?" },
+        { "p": "¡Parece un tren diminuto!", "por": "La exclamación se abre con ¡ y se cierra con !", "e": "¡ … !" }
+      ],
+      "datos": "Las hormigas viven en colonias con reparto de tareas y pueden transportar cargas de varias veces su propio peso. Datos de conocimiento general sobre las hormigas, comprobables en una enciclopedia escolar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "El erizo",
+      "texto": "El erizo es pequeño y redondo. Tiene el lomo cubierto de púas. Cuando se asusta, se enrosca como una bola. Sale de noche a buscar caracoles y lombrices. En invierno duerme muchas semanas seguidas. ¿Sabías que un erizo puede tener más de cinco mil púas?",
+      "segmentos": [
+        "El erizo es pequeño y redondo.",
+        "Tiene el lomo cubierto de púas.",
+        "Cuando se asusta,",
+        "se enrosca como una bola.",
+        "Sale de noche",
+        "a buscar caracoles y lombrices.",
+        "En invierno duerme",
+        "muchas semanas seguidas.",
+        "¿Sabías que un erizo",
+        "puede tener más de cinco mil púas?"
+      ],
+      "foco": [
+        { "p": "erizo", "por": "Entre vocales, el sonido suave lleva una sola r." },
+        { "p": "redondo", "por": "Al principio de palabra, el sonido fuerte se escribe con una sola r." },
+        { "p": "enrosca", "por": "Después de n, una sola r suena fuerte: en-ros-ca." },
+        { "p": "lombrices", "por": "Antes de b va siempre m." },
+        { "p": "invierno", "por": "Antes de v va n, no m." },
+        { "p": "duerme", "por": "La r al final de sílaba suena suave: duer-me." },
+        { "p": "¿Sabías que un erizo puede tener más de cinco mil púas?", "por": "La pregunta se abre con ¿ y se cierra con ?", "e": "¿ … ?" }
+      ],
+      "datos": "El erizo europeo tiene entre cinco mil y siete mil púas, se enrosca para defenderse, es nocturno, come caracoles, lombrices e insectos, e hiberna en invierno. Datos de conocimiento general, comprobables en guías de mamíferos."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instructivo",
+      "titulo": "Cómo sembrar lentejas",
+      "texto": "Primero, pon algodón en un vaso. Después, coloca tres lentejas encima y moja el algodón con un poco de agua. Deja siempre el vaso cerca de una ventana. ¡Ten paciencia! En pocos días verás una raíz y un tallo verde. ¿Cuánto crecerá?",
+      "segmentos": [
+        "Primero, pon algodón en un vaso.",
+        "Después, coloca tres lentejas encima",
+        "y moja el algodón",
+        "con un poco de agua.",
+        "Deja siempre el vaso",
+        "cerca de una ventana.",
+        "¡Ten paciencia!",
+        "En pocos días verás",
+        "una raíz y un tallo verde.",
+        "¿Cuánto crecerá?"
+      ],
+      "foco": [
+        { "p": "Primero", "por": "Después de consonante, una sola r suena fuerte; entre vocales, suave: pri-me-ro. Mayúscula porque empieza la frase." },
+        { "p": "siempre", "por": "Antes de p va siempre m." },
+        { "p": "tres", "por": "Después de consonante, una sola r suena fuerte." },
+        { "p": "cerca", "por": "La r al final de sílaba suena suave: cer-ca." },
+        { "p": "raíz", "por": "Al principio de palabra, el sonido fuerte se escribe con una sola r." },
+        { "p": "verde", "por": "La r al final de sílaba suena suave: ver-de." },
+        { "p": "¡Ten paciencia!", "por": "La exclamación se abre con ¡ y se cierra con !", "e": "¡ … !" },
+        { "p": "¿Cuánto crecerá?", "por": "La pregunta se abre con ¿ y se cierra con ?", "e": "¿ … ?" }
+      ],
+      "datos": "Texto instructivo: germinación de lentejas en algodón húmedo, experimento escolar habitual; la raíz y el tallo aparecen en pocos días. Sin otros datos que verificar."
+    }
+  ]
+}

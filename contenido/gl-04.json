@@ -1,0 +1,107 @@
+{
+  "lang": "gl",
+  "num": 4,
+  "curso": "2",
+  "titulo": "Ditado 4 · O r forte e o r suave",
+  "tema": "O r forte e o r suave · m antes de p e b · signos de interrogación e exclamación",
+  "regra": "O son forte do r escríbese rr entre vogais e r ao principio de palabra ou despois de consoante · antes de p e de b vai sempre m · as preguntas e exclamacións levan o signo ao final",
+  "etiquetas": ["r e rr", "m antes de p e b", "signos de interrogación", "signos de exclamación"],
+  "fixome": [
+    "Entre vogais, o son forte escríbese con rr: carro, terra.",
+    "Ao principio de palabra e despois de consoante, o son forte leva un só r: rato, honra.",
+    "Antes de p e de b vai sempre m: campo, cambio.",
+    "As preguntas e as exclamacións levan o signo ao final: Que sorpresa!"
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "A serpe cambia de pel",
+      "texto": "A serpe cambia de pel varias veces ao ano. Primeiro, a pel vella rompe polo fociño. Despois, a serpe arrástrase entre as pedras e sae enteira pola outra punta. Que sorpresa! A pel vella queda no campo como unha media baleira.",
+      "segmentos": [
+        "A serpe cambia de pel",
+        "varias veces ao ano.",
+        "Primeiro, a pel vella",
+        "rompe polo fociño.",
+        "Despois, a serpe arrástrase",
+        "entre as pedras",
+        "e sae enteira pola outra punta.",
+        "Que sorpresa!",
+        "A pel vella queda no campo",
+        "como unha media baleira."
+      ],
+      "foco": [
+        { "p": "cambia", "por": "Antes de b vai sempre m." },
+        { "p": "rompe", "por": "Antes de p vai sempre m. O r inicial soa forte cun só r." },
+        { "p": "Primeiro", "por": "Despois de consoante, o r soa forte e escríbese cun só r. Maiúscula porque empeza a frase." },
+        { "p": "arrástrase", "por": "Entre vogais, o son forte escríbese rr." },
+        { "p": "sorpresa", "por": "Despois de consoante, un só r soa forte: sor-pre-sa." },
+        { "p": "campo", "por": "Antes de p vai sempre m." },
+        { "p": "Que sorpresa!", "por": "A exclamación leva o signo ao final. En galego, o de apertura é opcional.", "e": "Que sorpresa!" }
+      ],
+      "datos": "As serpes mudan a pel varias veces ao ano; a pel vella empeza a soltarse polo fociño e sae do revés, dunha peza. Dato de coñecemento xeral sobre os réptiles, comprobable en calquera enciclopedia escolar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "O carballo",
+      "texto": "O carballo é unha árbore moi grande e moi forte. As súas follas caen sempre en outono e volven nacer na primavera. Das súas ramas colgan as landras, que lles gustan moito aos xabarís. Sabes cantos anos pode vivir un carballo? Máis de cen!",
+      "segmentos": [
+        "O carballo é unha árbore",
+        "moi grande e moi forte.",
+        "As súas follas caen sempre en outono",
+        "e volven nacer na primavera.",
+        "Das súas ramas colgan as landras,",
+        "que lles gustan moito aos xabarís.",
+        "Sabes cantos anos",
+        "pode vivir un carballo?",
+        "Máis de cen!"
+      ],
+      "foco": [
+        { "p": "carballo", "por": "Entre vogais, o son forte escríbese rr." },
+        { "p": "árbore", "por": "Entre vogais, o son suave leva un só r. Leva til." },
+        { "p": "sempre", "por": "Antes de p vai sempre m." },
+        { "p": "ramas", "por": "Ao principio de palabra, o son forte escríbese cun só r." },
+        { "p": "primavera", "por": "Entre vogais, o son suave leva un só r: pri-ma-ve-ra." },
+        { "p": "Sabes cantos anos pode vivir un carballo?", "por": "A pregunta leva o signo ao final. En galego, o de apertura é opcional.", "e": "Sabes … carballo?" },
+        { "p": "Máis de cen!", "por": "A exclamación leva o signo ao final.", "e": "Máis de cen!" }
+      ],
+      "datos": "O carballo (Quercus robur) é unha árbore caducifolia; as súas landras forman parte da alimentación do xabaril; pode vivir varios séculos. Datos de coñecemento xeral sobre a árbore, comprobables en guías de árbores de Galicia."
+    },
+    {
+      "letra": "C",
+      "tipo": "Carta",
+      "titulo": "Unha carta para a avoa",
+      "texto": "Querida avoa:\nOnte fun ao campo coa clase. Vimos un rabaño de ovellas e un can que as coidaba. Comemos o bocadillo debaixo dunha árbore e despois corremos moito. Cando volvo á túa casa? Teño moitas ganas de verte.\nUn bico enorme, Sara.",
+      "segmentos": [
+        "Querida avoa:",
+        "Onte fun ao campo coa clase.",
+        "Vimos un rabaño de ovellas",
+        "e un can que as coidaba.",
+        "Comemos o bocadillo",
+        "debaixo dunha árbore",
+        "e despois corremos moito.",
+        "Cando volvo á túa casa?",
+        "Teño moitas ganas de verte.",
+        "Un bico enorme, Sara."
+      ],
+      "foco": [
+        { "p": "Querida avoa:", "por": "Despois do saúdo dunha carta van dous puntos.", "e": "avoa:" },
+        { "p": "campo", "por": "Antes de p vai sempre m." },
+        { "p": "rabaño", "por": "Ao principio de palabra, o son forte escríbese cun só r." },
+        { "p": "corremos", "por": "Entre vogais, o son forte escríbese rr." },
+        { "p": "árbore", "por": "Entre vogais, o son suave leva un só r. Leva til." },
+        { "p": "Cando volvo á túa casa?", "por": "A pregunta leva o signo ao final. En galego, o de apertura é opcional.", "e": "Cando … casa?" },
+        { "p": "enorme", "por": "O r ao final de sílaba soa suave: e-nor-me." }
+      ],
+      "datos": "Carta sen datos que verificar. O nome da nena é ficticio."
+    }
+  ]
+}
