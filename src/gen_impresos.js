@@ -80,27 +80,51 @@ function cuerpoRepetido(d, t) {
 </section>`;
 }
 
-function envolver(d, titulo, cuerpo) {
+// Formatos de impresión (apartado 6: la versión común no sustituye el material de baja visión).
+//  - A4: el estándar, 14 pt, ficha de 2 páginas.
+//  - A3: la misma ficha ampliada (20 pt, renglones de 15,5 mm), 2 páginas A3.
+//  - grande: A4 a 18 pt con renglones de 14 mm; cada cara ocupa dos páginas (4 en total).
+const FORMATOS = {
+  A4: { css: '', renglones: (n) => n, paginasFicha: 2, paginasRep: 1 },
+  A3: { css: '@page{size:A3 portrait;margin:20mm} body{font-size:20pt} h1{font-size:31pt} h2{font-size:23pt} .cab{font-size:17pt} .pe{font-size:14pt} .renglons td{height:15.5mm} table.clasif td{height:13mm} .casilla{width:7mm;height:7mm} .liña{min-width:54mm}.liña.curta{min-width:31mm}.liña.longa{min-width:88mm}', renglones: (n) => n, paginasFicha: 2, paginasRep: 1 },
+  grande: { css: 'body{font-size:18pt;line-height:1.3} h1{font-size:26pt} h2{font-size:20pt} .cab{font-size:14pt} .renglons td{height:14mm} table.clasif td{height:12mm} .casilla{width:6.5mm;height:6.5mm} .pagina.sigue{page-break-before:always}', renglones: (n) => n, paginasFicha: 4, paginasRep: 2 },
+};
+
+function envolver(d, titulo, cuerpo, formato = 'A4') {
   return rellenar(leerPlantilla('impreso.html'), {
-    FONTS: cssFuentes({ inline: true }), LANG: d.lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(FICHA[d.lang].pe),
+    FONTS: cssFuentes({ inline: true }), EXTRA: FORMATOS[formato].css, LANG: d.lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(FICHA[d.lang].pe),
   });
 }
 
-/** @returns {{ficha: string, repetido: string}} HTML de cada impreso. */
-function generarImpresos(d, config) {
+/**
+ * @param {'A4'|'A3'|'grande'} formato
+ * @returns {{ficha: string, repetido: string, paginas: {ficha: number, repetido: number}}} HTML de cada impreso y páginas esperadas.
+ */
+function generarImpresos(d, config, formato = 'A4') {
   const t = FICHA[d.lang];
-  const nRenglones = (config.cursos[d.curso] || {}).renglones || 10;
+  const f = FORMATOS[formato];
+  const nRenglones = f.renglones((config.cursos[d.curso] || {}).renglones || 10);
   const pre = `${t.tipo} ${d.num} · ${tituloCorto(d)}`;
+  let ficha = cuerpoFicha(d, t, nRenglones);
+  let repetido = cuerpoRepetido(d, t);
+  if (formato === 'grande') {
+    // En letra grande, cada cara se parte en dos páginas por un punto previsible: antes de los renglones y antes del punto 4.
+    ficha = ficha.replace('<h2>' + esc(t.escribo) + '</h2>', '</section><section class="pagina sigue"><h2>' + esc(t.escribo) + '</h2>')
+      .replace('<h2>' + esc(t.p4) + '</h2>', '</section><section class="pagina sigue"><h2>' + esc(t.p4) + '</h2>');
+    repetido = repetido.replace('<h2>' + esc(t.p3.replace(/^\d+\. /, '')) + '</h2>', '</section><section class="pagina sigue"><h2>' + esc(t.p3.replace(/^\d+\. /, '')) + '</h2>');
+  }
   return {
-    ficha: envolver(d, pre, cuerpoFicha(d, t, nRenglones)),
-    repetido: envolver(d, `${pre} · ${t.rep}`, cuerpoRepetido(d, t)),
+    ficha: envolver(d, pre, ficha, formato),
+    repetido: envolver(d, `${pre} · ${t.rep}`, repetido, formato),
+    paginas: { ficha: f.paginasFicha, repetido: f.paginasRep },
   };
 }
 
-/** Nombres de fichero: Ditado02_ficha_gl.pdf, Ditado02_repetido_gl.pdf */
-function nombresImpresos(d) {
+/** Nombres de fichero: Ditado02_ficha_gl.pdf, Ditado02_ficha_gl_A3.pdf, Ditado02_ficha_gl_grande.pdf… */
+function nombresImpresos(d, formato = 'A4') {
   const pre = (d.lang === 'gl' ? 'Ditado' : 'Dictado') + String(d.num).padStart(2, '0');
-  return { ficha: `${pre}_ficha_${d.lang}.pdf`, repetido: `${pre}_repetido_${d.lang}.pdf` };
+  const suf = formato === 'A4' ? '' : `_${formato}`;
+  return { ficha: `${pre}_ficha_${d.lang}${suf}.pdf`, repetido: `${pre}_repetido_${d.lang}${suf}.pdf` };
 }
 
-module.exports = { generarImpresos, nombresImpresos };
+module.exports = { generarImpresos, nombresImpresos, FORMATOS };

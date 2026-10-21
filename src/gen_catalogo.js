@@ -26,6 +26,9 @@ function pagina({ lang, titulo, descripcion, cuerpo, prefijo, vocesUsadas }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="${esc(descripcion)}">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="manifest" href="${prefijo}manifest.webmanifest">
+<link rel="icon" href="${prefijo}icono.svg" type="image/svg+xml">
 <title>${esc(titulo)}</title>
 <style>
 ${fuentesLamina(prefijo + 'fonts/')}
@@ -35,6 +38,22 @@ ${CSS}
 <body>
 ${franja}
 ${cuerpo}
+<script>
+/* PWA: el catálogo se puede instalar y lo visitado queda disponible sin conexión. Sin datos de nadie. */
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  navigator.serviceWorker.register('${prefijo}sw.js').then(function (reg) {
+    var b = document.getElementById('guardar-sc'), est = document.getElementById('sc-estado');
+    if (!b) return;
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      var rutas = Array.prototype.map.call(document.querySelectorAll('a[download], a.boton[href]'), function (a) { return new URL(a.getAttribute('href'), location.href).href; }).filter(function (u, i, arr) { return arr.indexOf(u) === i; });
+      est.hidden = false; est.textContent = ${JSON.stringify(C.guardando)};
+      navigator.serviceWorker.addEventListener('message', function (e) { if (e.data && e.data.tipo === 'guardado') est.textContent = ${JSON.stringify(C.guardado)}; if (e.data && e.data.tipo === 'error') est.textContent = e.data.mensaje; });
+      (reg.active || navigator.serviceWorker.controller).postMessage({ tipo: 'guardar', rutas: rutas });
+    });
+  }).catch(function () {});
+}
+</script>
 <footer class="pe"><div class="wrap">
 <p>${esc(C.pe)}</p>
 <p>${esc(C.licencia)}</p>
@@ -45,17 +64,22 @@ ${voces}
 }
 
 /** Ficha de un dictado dentro del catálogo. */
-function paginaDitado(d, ficheros, voz) {
+function paginaDitado(d, ficheros, voz, kit) {
   const t = PRESENTACION[d.lang];
   const id = idDitado(d);
   const opciones = d.opcions.map((o) => `
 <tr><th scope="row">${esc(o.letra)}</th><td>${esc(o.titulo)}</td><td>${esc(o.tipo)}</td><td>${contarPalabras(textoPlano(o.texto))}</td><td>${o.foco.length}</td></tr>`).join('');
   const datos = d.opcions.filter((o) => o.datos).map((o) => `<dt>${esc(o.letra)} · ${esc(o.titulo)}</dt><dd>${esc(o.datos)}</dd>`).join('');
+  const fm = ficheros.formatos || {};
   const descargas = [
+    [ficheros.paquete, C.paquete],
     [ficheros.presentacion, C.presDescarga],
     [ficheros.ficha, C.ficha], [ficheros.repetido, C.repetido],
+    [fm.A3 && fm.A3.ficha, C.fichaA3], [fm.A3 && fm.A3.repetido, C.repetidoA3],
+    [fm.grande && fm.grande.ficha, C.fichaGrande], [fm.grande && fm.grande.repetido, C.repetidoGrande],
     [ficheros.textos, C.textosDocente],
     ...ficheros.miclase.map((m, i) => [m, `${C.miclase} · ${d.opcions[i].letra}`]),
+    [kit && '../' + kit.tarxeta, C.kitTarxeta], [kit && '../' + kit.caderno, C.kitCaderno],
   ].filter(([f]) => f).map(([f, l]) => `<li><a href="${esc(f)}" download>${esc(l)}</a></li>`).join('');
   const audio = ficheros.audio.length
     ? `<li>${esc(C.audio)}: ${ficheros.audio.map((a) => `<a href="${esc(a)}" download>${esc(path.basename(a, '.mp3'))}</a>`).join(' · ')}</li>` : '';
@@ -67,7 +91,8 @@ function paginaDitado(d, ficheros, voz) {
 </div></header>
 <main class="wrap">
 <section>
-  <p><a class="boton" href="${esc(ficheros.presentacion)}">${esc(C.presentacion)}</a></p>
+  <p><a class="boton" href="${esc(ficheros.presentacion)}">${esc(C.presentacion)}</a> <button class="boton alt" type="button" id="guardar-sc" hidden>${esc(C.guardarSC)}</button></p>
+  <p class="aviso" id="sc-estado" hidden></p>
 </section>
 <section>
   <h2><span class="n">01</span>${esc(C.fixome)}</h2>

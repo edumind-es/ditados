@@ -159,7 +159,7 @@ const CSS_KIT = `
 function generarKit(lang) {
   const k = K[lang];
   const envolver = (titulo, cuerpo) => rellenar(leerPlantilla('impreso.html'), {
-    FONTS: cssFuentes({ inline: true }) + CSS_KIT, LANG: lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(PE),
+    FONTS: cssFuentes({ inline: true }), EXTRA: CSS_KIT, LANG: lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(PE),
   });
   return { tarxeta: envolver(k.titulo, cuerpoTarxeta(k)), caderno: envolver(k.cad, cuerpoCaderno(k)) };
 }

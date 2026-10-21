@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#ece9e1"/>
+  <rect x="0" y="0" width="102.4" height="28" fill="#6b8f71"/><rect x="102.4" y="0" width="102.4" height="28" fill="#5b7a99"/><rect x="204.8" y="0" width="102.4" height="28" fill="#c08a4a"/><rect x="307.2" y="0" width="102.4" height="28" fill="#a3627a"/><rect x="409.6" y="0" width="102.4" height="28" fill="#7a6a99"/>
+  <g stroke="#1a1a1a" stroke-width="10" stroke-linecap="round">
+    <line x1="96" y1="190" x2="416" y2="190"/><line x1="96" y1="260" x2="416" y2="260"/><line x1="96" y1="330" x2="300" y2="330"/>
+  </g>
+  <text x="96" y="150" font-family="Archivo, Arial, sans-serif" font-size="92" font-weight="700" fill="#1a1a1a">Dd</text>
+</svg>

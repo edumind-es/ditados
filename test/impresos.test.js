@@ -17,11 +17,13 @@ const config = leerConfig();
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ditados-test-'));
 
 for (const { fichero, d } of leerDitados()) {
-  test(`${fichero}: ficha de 2 páginas y repetido de 1`, { skip: pdf ? false : 'sin Chromium o pdfinfo' }, () => {
-    const h = generarImpresos(d, config);
-    assert.equal(pdf.htmlAPdf(h.ficha, path.join(tmp, `${fichero}-ficha.pdf`)), 2);
-    assert.equal(pdf.htmlAPdf(h.repetido, path.join(tmp, `${fichero}-rep.pdf`)), 1);
-  });
+  for (const formato of ['A4', 'A3', 'grande']) {
+    test(`${fichero} ${formato}: la ficha y el repetido ocupan las páginas previstas`, { skip: pdf ? false : 'sin Chromium o pdfinfo' }, () => {
+      const h = generarImpresos(d, config, formato);
+      assert.equal(pdf.htmlAPdf(h.ficha, path.join(tmp, `${fichero}-${formato}-ficha.pdf`)), h.paginas.ficha);
+      assert.equal(pdf.htmlAPdf(h.repetido, path.join(tmp, `${fichero}-${formato}-rep.pdf`)), h.paginas.repetido);
+    });
+  }
 }
 
 for (const lang of ['gl', 'es']) {
