@@ -3,6 +3,7 @@
 // Línea de comandos del proyecto.
 //   node bin/ditados.js validar            valida todos los dictados de contenido/
 //   node bin/ditados.js build [--sin-audio] [--sin-pdf] [--solo gl-02]   compila la web en dist/
+//   node bin/ditados.js servir           arranca el servicio del editor (ver src/servidor.js)
 const { build, validarTodo } = require('../src/build');
 
 const [, , orden, ...resto] = process.argv;
@@ -19,7 +20,9 @@ if (orden === 'validar') {
     r.problemas.forEach((p) => console.error('  ✗ ' + p));
     process.exit(1);
   }
+} else if (orden === 'servir') {
+  require('../src/servidor');
 } else {
-  console.log('Uso: node bin/ditados.js validar | build [--sin-audio] [--sin-pdf] [--solo <id>]');
+  console.log('Uso: node bin/ditados.js validar | build [--sin-audio] [--sin-pdf] [--solo <id>] | servir');
   process.exit(orden ? 1 : 0);
 }

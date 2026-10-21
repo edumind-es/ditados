@@ -9,6 +9,8 @@ const { generarImpresos, nombresImpresos } = require('./gen_impresos');
 const { miclase, textosDocente, nombresDocente } = require('./gen_docente');
 const { paginaIndice, paginaDitado } = require('./gen_catalogo');
 const { htmlAPdf } = require('./pdf');
+const { generarKit, nombresKit } = require('./gen_kit');
+const { generarPaquete } = require('./gen_paquete');
 const audio = require('./audio');
 const { FUENTES_DIR, RAIZ } = require('./html');
 
@@ -50,6 +52,21 @@ function build(opts = {}) {
 
   const entradas = [];
   const problemas = [];
+
+  // Kit fijo por lengua: tarjeta (2 páginas) y cuaderno de reglas (1 página). Va antes porque el paquete de cada dictado lo incluye.
+  const kit = {};
+  if (!opts.sinPdf) {
+    fs.mkdirSync(path.join(dist, 'kit'), { recursive: true });
+    for (const lang of ['gl', 'es']) {
+      const k = generarKit(lang); const n = nombresKit(lang);
+      const pT = htmlAPdf(k.tarxeta, path.join(dist, 'kit', n.tarxeta));
+      const pC = htmlAPdf(k.caderno, path.join(dist, 'kit', n.caderno));
+      if (pT !== 2) problemas.push(`kit ${lang}: la tarjeta ocupa ${pT} páginas y tiene que ocupar 2.`);
+      if (pC !== 1) problemas.push(`kit ${lang}: el cuaderno ocupa ${pC} páginas y tiene que ocupar 1.`);
+      kit[lang] = { tarxeta: `kit/${n.tarxeta}`, caderno: `kit/${n.caderno}` };
+      log(`kit ${lang}: tarjeta ${pT} páginas · cuaderno ${pC} página(s)`);
+    }
+  }
   const hayAudio = !opts.sinAudio && audio.disponible();
   if (!opts.sinAudio && !hayAudio) log('aviso: aHoTTS o ffmpeg no disponibles; la presentación usará la voz del navegador.');
 
@@ -94,15 +111,20 @@ function build(opts = {}) {
     // Impresos
     const nombres = nombresImpresos(d);
     const ficheros = { presentacion: nombrePres, ficha: null, repetido: null, textos: null, miclase: [], audio: ficherosAudio };
+    ficheros.formatos = {};
     if (!opts.sinPdf) {
-      const impresos = generarImpresos(d, config);
-      const pFicha = htmlAPdf(impresos.ficha, path.join(descargas, nombres.ficha));
-      const pRep = htmlAPdf(impresos.repetido, path.join(descargas, nombres.repetido));
-      log(`  ficha: ${pFicha} páginas · repetido: ${pRep} página(s)`);
-      if (pFicha !== 2) problemas.push(`${id}: la ficha ocupa ${pFicha} páginas y tiene que ocupar exactamente 2.`);
-      if (pRep !== 1) problemas.push(`${id}: el dictado repetido ocupa ${pRep} páginas y tiene que ocupar 1.`);
-      ficheros.ficha = `descargas/${nombres.ficha}`;
-      ficheros.repetido = `descargas/${nombres.repetido}`;
+      for (const formato of ['A4', 'A3', 'grande']) {
+        const impresos = generarImpresos(d, config, formato);
+        const n = nombresImpresos(d, formato);
+        const pFicha = htmlAPdf(impresos.ficha, path.join(descargas, n.ficha));
+        const pRep = htmlAPdf(impresos.repetido, path.join(descargas, n.repetido));
+        log(`  ficha ${formato}: ${pFicha} páginas · repetido: ${pRep} página(s)`);
+        if (pFicha !== impresos.paginas.ficha) problemas.push(`${id}: la ficha ${formato} ocupa ${pFicha} páginas y tiene que ocupar ${impresos.paginas.ficha}.`);
+        if (pRep !== impresos.paginas.repetido) problemas.push(`${id}: el dictado repetido ${formato} ocupa ${pRep} páginas y tiene que ocupar ${impresos.paginas.repetido}.`);
+        ficheros.formatos[formato] = { ficha: `descargas/${n.ficha}`, repetido: `descargas/${n.repetido}` };
+      }
+      ficheros.ficha = ficheros.formatos.A4.ficha;
+      ficheros.repetido = ficheros.formatos.A4.repetido;
     }
 
     // Documentos del docente
@@ -114,12 +136,35 @@ function build(opts = {}) {
       ficheros.miclase.push(`descargas/${nd.miclase(o)}`);
     }
 
-    fs.writeFileSync(path.join(carpeta, 'index.html'), paginaDitado(d, ficheros, pres.conAudio ? voz : null));
+    // Paquete sin conexión (ZIP) con todo lo del dictado y el kit de su lengua
+    try {
+      ficheros.paquete = generarPaquete(d, carpeta, kit[d.lang], dist);
+      log(`  paquete: ${ficheros.paquete} (${Math.round(fs.statSync(path.join(carpeta, ficheros.paquete)).size / 1024)} KB)`);
+    } catch (e) { problemas.push(`${id}: paquete: ${e.message}`); }
+
+    fs.writeFileSync(path.join(carpeta, 'index.html'), paginaDitado(d, ficheros, pres.conAudio ? voz : null, kit[d.lang]));
     entradas.push({ d, ficheros, voz: pres.conAudio ? voz : null });
   }
 
-  if (!opts.solo) fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas));
+  if (!opts.solo) {
+    fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas, kit));
+    escribirPwa(dist);
+  }
   return { publicados: entradas.length, problemas };
+}
+
+/** Manifest, service worker e icono de la PWA del catálogo. */
+function escribirPwa(dist) {
+  const version = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
+  const fuentes = fs.readdirSync(FUENTES_DIR).filter((f) => f.endsWith('.woff2')).map((f) => JSON.stringify(`./fonts/${f}`)).join(', ');
+  const sw = fs.readFileSync(path.join(RAIZ, 'plantillas', 'sw.js'), 'utf8').replace('{{VERSION}}', version).replace('{{FUENTES}}', fuentes);
+  fs.writeFileSync(path.join(dist, 'sw.js'), sw);
+  fs.copyFileSync(path.join(RAIZ, 'public', 'icono.svg'), path.join(dist, 'icono.svg'));
+  fs.writeFileSync(path.join(dist, 'manifest.webmanifest'), JSON.stringify({
+    name: 'Ditados EDUmind', short_name: 'Ditados', description: 'Dictados de Lingua Galega y Lengua Castellana para primaria',
+    start_url: './', scope: './', display: 'standalone', background_color: '#ece9e1', theme_color: '#1a1a1a', lang: 'es',
+    icons: [{ src: 'icono.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
+  }, null, 2));
 }
 
 module.exports = { build, validarTodo, leerDitados, leerConfig };
