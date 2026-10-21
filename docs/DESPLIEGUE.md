@@ -1,12 +1,14 @@
-# Despliegue de ditados.edumind.es
+# Despliegue de dictados.edumind.es
 
-Propuesta, no aplicada. El sitio es estático: Nginx sirve la carpeta `dist/` compilada. No hay proceso en marcha, ni base de datos, ni cookies.
+El sitio es estático: Nginx sirve la carpeta `dist/` compilada. No hay proceso en marcha, ni base de datos, ni cookies.
+
+**Instalado el 2026-10-21** con `sudo python3 /var/www/.edumind_ops/dictados_site_install.py`, que copia `deploy/dictados.edumind.es.conf` y `deploy/dictados-security-headers.inc` (los ficheros vivos del repo; el bloque de abajo es la propuesta original). Para publicar una compilación nueva basta con `node bin/ditados.js build`: Nginx sirve `dist/` directamente.
 
 ## Pasos (los hace Luis o se piden expresamente)
 
-1. DNS: registro A/AAAA de `ditados.edumind.es` al servidor.
+1. DNS: registro A/AAAA de `dictados.edumind.es` al servidor.
 2. Certificado: con el script de certbot de `.edumind_ops`.
-3. Vhost: el de abajo, en `/etc/nginx/sites-available/ditados.edumind.es`, enlazado en `sites-enabled` y `nginx -t && systemctl reload nginx`.
+3. Vhost: el de abajo, en `/etc/nginx/sites-available/dictados.edumind.es`, enlazado en `sites-enabled` y `nginx -t && systemctl reload nginx`.
 4. Compilar: `cd /var/www/ditados && node bin/ditados.js build`.
 
 ## Vhost propuesto
@@ -15,7 +17,7 @@ Propuesta, no aplicada. El sitio es estático: Nginx sirve la carpeta `dist/` co
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name ditados.edumind.es;
+    server_name dictados.edumind.es;
     # ssl_certificate / ssl_certificate_key: los del certbot
 
     root /var/www/ditados/dist;
@@ -39,7 +41,7 @@ server {
 }
 server {
     listen 80; listen [::]:80;
-    server_name ditados.edumind.es;
+    server_name dictados.edumind.es;
     return 301 https://$host$request_uri;
 }
 ```
@@ -48,7 +50,7 @@ Nota: `script-src 'unsafe-inline'` hace falta porque la presentación es un úni
 
 ## Editor del autor (fase 2)
 
-El editor es un servicio Node sin dependencias que escucha solo en `127.0.0.1:9170`. Nginx lo expone en `https://ditados.edumind.es/editor/` detrás de Authentik, igual que las demás apps: la sesión la gestiona Authentik y el servicio solo acepta peticiones con la cabecera `X-Authentik-Username` de un usuario de la lista `DITADOS_AUTORES`.
+El editor es un servicio Node sin dependencias que escucha solo en `127.0.0.1:9170`. Nginx lo expone en `https://dictados.edumind.es/editor/` detrás de Authentik, igual que las demás apps: la sesión la gestiona Authentik y el servicio solo acepta peticiones con la cabecera `X-Authentik-Username` de un usuario de la lista `DITADOS_AUTORES`.
 
 ### Unidad systemd propuesta (`/etc/systemd/system/ditados-editor.service`)
 
@@ -74,7 +76,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
-### Bloque de nginx (dentro del `server` de ditados.edumind.es)
+### Bloque de nginx (dentro del `server` de dictados.edumind.es)
 
 ```nginx
     # Editor: solo con sesión de Authentik (auth_request, como en las otras apps)

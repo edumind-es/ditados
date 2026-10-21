@@ -2,7 +2,7 @@
 
 Aplicación web para preparar, proyectar, imprimir y corregir dictados en Lingua Galega y Lengua Castellana en primaria. Cada dictado ofrece varios textos que trabajan la misma regla; el docente elige uno en clase, lo proyecta con el audio, imprime la ficha de dos caras y corrige con el alumnado separando el despiste del desconocimiento.
 
-Web: `ditados.edumind.es`. Fases 1 a 3 construidas en octubre de 2026 (pendientes de despliegue).
+Web: `dictados.edumind.es`. Fases 1 a 3 construidas en octubre de 2026 (pendientes de despliegue).
 
 ## Qué hace
 
