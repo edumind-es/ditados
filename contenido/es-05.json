@@ -1,0 +1,123 @@
+{
+  "lang": "es",
+  "num": 5,
+  "curso": "3",
+  "titulo": "Dictado 5 · B, v, h y la coma",
+  "tema": "La sílaba tónica · b y v · la h · la coma en las enumeraciones",
+  "regra": "Palabras con b y con v que hay que memorizar · la h no suena · la sílaba tónica es la que suena más fuerte · en las enumeraciones, coma entre los elementos e y antes del último",
+  "etiquetas": ["b y v", "h", "sílaba tónica", "coma", "enumeración", "dos puntos"],
+  "fixome": [
+    "La sílaba tónica es la que suena más fuerte: ti-bu-RÓN, den-TIS-ta.",
+    "Con b: boca, botella, bien, cambiar. Con v: vida, vuela, varias, vacía.",
+    "La h no suena, pero se escribe: hacer, hueco, búho.",
+    "En las enumeraciones pongo coma entre los elementos e y antes del último: cepillo, pasta y vaso."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "Los dientes del tiburón",
+      "texto": "El tiburón nunca va al dentista. Cuando pierde un diente, otro ocupa su lugar en pocos días. A lo largo de su vida puede cambiar miles de dientes. Tiene varias filas en la boca: la de delante muerde y las de atrás esperan su turno. ¡Por eso no necesita cepillo, pasta ni vaso!",
+      "segmentos": [
+        "El tiburón nunca va al dentista.",
+        "Cuando pierde un diente,",
+        "otro ocupa su lugar",
+        "en pocos días.",
+        "A lo largo de su vida",
+        "puede cambiar miles de dientes.",
+        "Tiene varias filas en la boca:",
+        "la de delante muerde",
+        "y las de atrás esperan su turno.",
+        "¡Por eso no necesita",
+        "cepillo, pasta ni vaso!"
+      ],
+      "foco": [
+        { "p": "tiburón", "por": "Con b. La sílaba tónica es la última (ti-bu-RÓN) y termina en -n: lleva tilde." },
+        { "p": "va", "por": "Del verbo ir: con v." },
+        { "p": "dentista", "por": "La sílaba tónica es la penúltima: den-TIS-ta." },
+        { "p": "cambiar", "por": "Con b, y antes de b va m." },
+        { "p": "vida", "por": "Con v, como vivir." },
+        { "p": "varias", "por": "Con v." },
+        { "p": "boca", "por": "Con b." },
+        { "p": "atrás", "por": "La sílaba tónica es la última y termina en -s: lleva tilde." },
+        { "p": "necesita", "por": "Con c antes de e y con s: ne-ce-SI-ta." },
+        { "p": "cepillo, pasta ni vaso!", "por": "Enumeración: coma entre los elementos y ni antes del último. Vaso va con v.", "e": "cepillo, pasta ni vaso" }
+      ],
+      "datos": "Los tiburones renuevan los dientes durante toda la vida: tienen varias filas y los de atrás sustituyen a los que se caen, de modo que cambian miles de dientes. Dato de conocimiento general sobre los tiburones, comprobable en una enciclopedia escolar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "El búho",
+      "texto": "El búho es un ave de la noche. Tiene los ojos muy grandes y gira la cabeza casi del todo para mirar hacia atrás. Vuela sin hacer ruido gracias a sus plumas suaves. Caza ratones, insectos y pequeños pájaros. Durante el día descansa escondido en un hueco de un árbol viejo.",
+      "segmentos": [
+        "El búho es un ave de la noche.",
+        "Tiene los ojos muy grandes",
+        "y gira la cabeza casi del todo",
+        "para mirar hacia atrás.",
+        "Vuela sin hacer ruido",
+        "gracias a sus plumas suaves.",
+        "Caza ratones, insectos",
+        "y pequeños pájaros.",
+        "Durante el día descansa escondido",
+        "en un hueco de un árbol viejo."
+      ],
+      "foco": [
+        { "p": "búho", "por": "Lleva h en medio, que no suena. La u es tónica y va separada de la o: lleva tilde." },
+        { "p": "ave", "por": "Con v." },
+        { "p": "cabeza", "por": "Con b y con z." },
+        { "p": "hacia", "por": "Con h, que no suena." },
+        { "p": "Vuela", "por": "Del verbo volar: con v. Mayúscula porque empieza la frase." },
+        { "p": "hacer", "por": "Con h, que no suena." },
+        { "p": "suaves", "por": "Con v." },
+        { "p": "ratones, insectos y pequeños pájaros", "por": "Enumeración: coma entre los elementos e y antes del último.", "e": "ratones, insectos y pequeños pájaros" },
+        { "p": "hueco", "por": "Las palabras que empiezan por el sonido ue llevan h: hueco, huevo, hueso." },
+        { "p": "árbol", "por": "La sílaba tónica es la penúltima y termina en -l: lleva tilde." },
+        { "p": "viejo", "por": "Con v y con j." }
+      ],
+      "datos": "El búho es un ave nocturna, gira la cabeza hasta unos tres cuartos de vuelta, vuela casi sin ruido por la forma de sus plumas y caza roedores, insectos y aves pequeñas; descansa de día en huecos de árboles. Datos de conocimiento general sobre los búhos, comprobables en guías de aves."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instructivo",
+      "titulo": "Un comedero para pájaros",
+      "texto": "Para hacer un comedero necesitas estas cosas: una botella vacía, una cuchara de madera, un cordel y semillas. Primero, lava bien la botella. Después, haz dos agujeros y mete la cuchara: será el posadero. Llena la botella de semillas y cuélgala de una rama. En pocos días vendrán pájaros a visitarte.",
+      "segmentos": [
+        "Para hacer un comedero",
+        "necesitas estas cosas:",
+        "una botella vacía,",
+        "una cuchara de madera,",
+        "un cordel y semillas.",
+        "Primero, lava bien la botella.",
+        "Después, haz dos agujeros",
+        "y mete la cuchara:",
+        "será el posadero.",
+        "Llena la botella de semillas",
+        "y cuélgala de una rama.",
+        "En pocos días vendrán pájaros",
+        "a visitarte."
+      ],
+      "foco": [
+        { "p": "hacer", "por": "Con h, que no suena." },
+        { "p": "necesitas estas cosas:", "por": "Antes de una enumeración anunciada van dos puntos.", "e": "cosas:" },
+        { "p": "una botella vacía, una cuchara de madera, un cordel y semillas", "por": "Enumeración: coma entre los elementos e y antes del último.", "e": "botella, cuchara, cordel y semillas" },
+        { "p": "botella", "por": "Con b." },
+        { "p": "vacía", "por": "Con v. La i es tónica y va separada de la a: lleva tilde." },
+        { "p": "lava", "por": "Del verbo lavar: con v." },
+        { "p": "bien", "por": "Con b." },
+        { "p": "haz", "por": "Del verbo hacer: con h y con z." },
+        { "p": "vendrán", "por": "Del verbo venir: con v. La sílaba tónica es la última y termina en -n: lleva tilde." },
+        { "p": "pájaros", "por": "La sílaba tónica es la antepenúltima: lleva tilde siempre." },
+        { "p": "visitarte", "por": "Con v." }
+      ],
+      "datos": "Texto instructivo: comedero de botella, manualidad escolar habitual. Los agujeros se hacen con ayuda de una persona adulta. Sin otros datos que verificar."
+    }
+  ]
+}

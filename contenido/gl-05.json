@@ -1,0 +1,222 @@
+{
+  "lang": "gl",
+  "num": 5,
+  "curso": "3",
+  "titulo": "Ditado 5 · B, v, h e a coma",
+  "tema": "A sílaba tónica · b e v · o h · a coma nas enumeracións",
+  "regra": "Palabras con b e con v que hai que memorizar · o h non soa · a sílaba tónica é a que soa máis forte · nas enumeracións, coma entre os elementos e e antes do último",
+  "etiquetas": [
+    "b e v",
+    "h",
+    "sílaba tónica",
+    "coma",
+    "enumeración",
+    "dous puntos"
+  ],
+  "fixome": [
+    "A sílaba tónica é a que soa máis forte: ca-ra-COL, den-TIS-ta.",
+    "Con b: boca, bosque, botella, cambiar. Con v: vida, vivir, varias, inverno.",
+    "O h non soa, pero escríbese: hortas, hai, hiberna.",
+    "Nas enumeracións poño coma entre os elementos e e antes do último: cepillo, pasta e vaso."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": [
+      "https://academia.gal/dicionario",
+      "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
+    ],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "Os dentes da quenlla",
+      "texto": "A quenlla nunca vai ao dentista. Cando perde un dente, outro ocupa o seu lugar en poucos días. Ao longo da vida pode cambiar miles de dentes. Ten varias filas na boca: a de diante morde e as de atrás agardan a súa quenda. Por iso non lle fai falta cepillo, pasta nin vaso!",
+      "segmentos": [
+        "A quenlla nunca vai ao dentista.",
+        "Cando perde un dente,",
+        "outro ocupa o seu lugar",
+        "en poucos días.",
+        "Ao longo da vida",
+        "pode cambiar miles de dentes.",
+        "Ten varias filas na boca:",
+        "a de diante morde",
+        "e as de atrás agardan a súa quenda.",
+        "Por iso non lle fai falta",
+        "cepillo, pasta nin vaso!"
+      ],
+      "foco": [
+        {
+          "p": "quenlla",
+          "por": "É o nome galego do tiburón. Vai con ll e a sílaba tónica é a penúltima: QUEN-lla."
+        },
+        {
+          "p": "vai",
+          "por": "Do verbo ir: con v."
+        },
+        {
+          "p": "dentista",
+          "por": "A sílaba tónica é a penúltima: den-TIS-ta."
+        },
+        {
+          "p": "cambiar",
+          "por": "Con b, e antes de b vai m."
+        },
+        {
+          "p": "vida",
+          "por": "Con v, como vivir."
+        },
+        {
+          "p": "varias",
+          "por": "Con v."
+        },
+        {
+          "p": "boca",
+          "por": "Con b."
+        },
+        {
+          "p": "atrás",
+          "por": "A sílaba tónica é a última e remata en -s: leva til."
+        },
+        {
+          "p": "cepillo, pasta nin vaso!",
+          "por": "Enumeración: coma entre os elementos e nin antes do último. Vaso vai con v.",
+          "e": "cepillo, pasta nin vaso"
+        }
+      ],
+      "datos": "As quenllas (tiburóns) renovan os dentes durante toda a vida: teñen varias filas e os de atrás substitúen os que caen, de xeito que cambian miles de dentes. Dato de coñecemento xeral, comprobable en calquera enciclopedia escolar. «Quenlla» é a forma do Dicionario da RAG."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "O ourizo cacho",
+      "texto": "O ourizo cacho vive nos bosques e nas hortas. De día dorme nun niño de follas e de noite sae a buscar caracois, vermes e insectos. Cando ten medo, enrólase e só se ven as súas púas. No inverno hiberna: dorme varias semanas seguidas, ata que volve a calor. Hai que coidalo sempre.",
+      "segmentos": [
+        "O ourizo cacho vive",
+        "nos bosques e nas hortas.",
+        "De día dorme nun niño de follas",
+        "e de noite sae a buscar",
+        "caracois, vermes e insectos.",
+        "Cando ten medo, enrólase",
+        "e só se ven as súas púas.",
+        "No inverno hiberna:",
+        "dorme varias semanas seguidas,",
+        "ata que volve a calor.",
+        "Hai que coidalo sempre."
+      ],
+      "foco": [
+        {
+          "p": "ourizo",
+          "por": "A sílaba tónica é a penúltima: ou-RI-zo."
+        },
+        {
+          "p": "vive",
+          "por": "Do verbo vivir: con v."
+        },
+        {
+          "p": "bosques",
+          "por": "Con b."
+        },
+        {
+          "p": "hortas",
+          "por": "Con h, que non soa."
+        },
+        {
+          "p": "caracois, vermes e insectos",
+          "por": "Enumeración: coma entre os elementos e e antes do último.",
+          "e": "caracois, vermes e insectos"
+        },
+        {
+          "p": "vermes",
+          "por": "Con v."
+        },
+        {
+          "p": "inverno",
+          "por": "Con v, e antes de v vai n."
+        },
+        {
+          "p": "hiberna",
+          "por": "Con h, que non soa, e con b."
+        },
+        {
+          "p": "varias",
+          "por": "Con v."
+        },
+        {
+          "p": "Hai",
+          "por": "Do verbo haber: con h. Maiúscula porque empeza a frase."
+        }
+      ],
+      "datos": "O ourizo cacho é un animal nocturno que come caracois, vermes e insectos, enrólase para defenderse e hiberna no inverno. Datos de coñecemento xeral sobre o ourizo europeo, comprobables en guías de mamíferos."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instrutivo",
+      "titulo": "Un comedeiro para paxaros",
+      "texto": "Para facer un comedeiro necesitas estas cousas: unha botella baleira, unha culler de pau, un cordel e sementes. Primeiro, lava ben a botella. Despois, fai dous buratos e mete a culler: será o pousadoiro. Enche a botella de sementes e cólgaa dunha póla. En poucos días virán paxaros a visitarte.",
+      "segmentos": [
+        "Para facer un comedeiro",
+        "necesitas estas cousas:",
+        "unha botella baleira,",
+        "unha culler de pau,",
+        "un cordel e sementes.",
+        "Primeiro, lava ben a botella.",
+        "Despois, fai dous buratos",
+        "e mete a culler:",
+        "será o pousadoiro.",
+        "Enche a botella de sementes",
+        "e cólgaa dunha póla.",
+        "En poucos días virán paxaros",
+        "a visitarte."
+      ],
+      "foco": [
+        {
+          "p": "necesitas estas cousas:",
+          "por": "Antes dunha enumeración anunciada van dous puntos.",
+          "e": "cousas:"
+        },
+        {
+          "p": "unha botella baleira, unha culler de pau, un cordel e sementes",
+          "por": "Enumeración: coma entre os elementos e e antes do último.",
+          "e": "botella, culler, cordel e sementes"
+        },
+        {
+          "p": "botella",
+          "por": "Con b."
+        },
+        {
+          "p": "baleira",
+          "por": "Con b."
+        },
+        {
+          "p": "lava",
+          "por": "Do verbo lavar: con v."
+        },
+        {
+          "p": "buratos",
+          "por": "Con b."
+        },
+        {
+          "p": "será",
+          "por": "A sílaba tónica é a última e remata en vogal: leva til."
+        },
+        {
+          "p": "póla",
+          "por": "Leva til para distinguila de pola (por + a). Póla é a rama da árbore."
+        },
+        {
+          "p": "virán",
+          "por": "Do verbo vir: con v. A sílaba tónica é a última e remata en -n: leva til."
+        },
+        {
+          "p": "visitarte",
+          "por": "Con v."
+        }
+      ],
+      "datos": "Texto instrutivo: comedeiro de botella, manualidade escolar habitual. Facer os buratos coa axuda dunha persoa adulta. Sen outros datos que verificar."
+    }
+  ]
+}
