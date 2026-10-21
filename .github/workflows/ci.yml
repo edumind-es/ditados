@@ -1,0 +1,20 @@
+# Integración continua: valida los dictados y pasa las pruebas. Nunca despliega.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar los dictados
+        run: node bin/ditados.js validar
+      - name: Pruebas (la de páginas de la ficha se omite si no hay Chromium)
+        run: npm test
+      - name: Compilar el catálogo sin audio ni PDF
+        run: node bin/ditados.js build --sin-audio --sin-pdf
