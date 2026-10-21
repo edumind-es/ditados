@@ -5,18 +5,28 @@
   "titulo": "Ditado 7 · Ditongos, hiatos e til diacrítico",
   "tema": "Ditongos e hiatos · til diacrítico · formas verbais",
   "regra": "Ditongo: dúas vogais na mesma sílaba (auga, beira) · hiato: dúas vogais en sílabas distintas; a i ou a u tónicas levan til (ríos, súa) · til diacrítico: é/e, máis/mais, vés/ves, á/a · tempos e formas verbais con pronome (quéntase, botámoste)",
-  "etiquetas": ["ditongos", "hiatos", "til diacrítico", "formas verbais", "acentuación", "x"],
+  "etiquetas": [
+    "ditongos",
+    "hiatos",
+    "til diacrítico",
+    "formas verbais",
+    "acentuación",
+    "x"
+  ],
   "fixome": [
-    "Ditongo: dúas vogais xuntas na mesma sílaba: au-ga, bei-ra, chu-via.",
-    "Hiato: dúas vogais xuntas en sílabas distintas. Se a i ou a u son tónicas, levan til: rí-os, sú-a, ra-í-ces. Caen e sae non levan til.",
-    "Til diacrítico: é (ser) / e; máis (cantidade) / mais (pero); vés (vir) / ves (ver); á (a + a) / a.",
-    "Os verbos con pronome detrás acentúanse como unha soa palabra: quéntase, botámoste, escríbeme."
+    "Ditongo: dúas vogais na mesma sílaba: au-ga, bei-ra, chu-via.",
+    "Hiato: vogais en sílabas distintas. Se a i ou a u son tónicas, levan til: rí-os, sú-a, ra-í-ces.",
+    "Til diacrítico: é / e, máis / mais, vés / ves, á / a.",
+    "Verbo con pronome detrás: acentúase como unha soa palabra: quéntase, escríbeme."
   ],
   "estado": "borrador",
   "revision": {
     "fecha": "",
     "revisor": "",
-    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "fuentes": [
+      "https://academia.gal/dicionario",
+      "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
+    ],
     "notas": "Texto proposto por IA: pendente de revisión humana."
   },
   "opcions": [
@@ -40,21 +50,66 @@
         "Non che parece unha viaxe incrible?"
       ],
       "foco": [
-        { "p": "auga", "por": "Au é ditongo: unha soa sílaba. Grave rematada en vogal: sen til." },
-        { "p": "quéntase", "por": "Quenta + se. Acentúase como unha soa palabra: esdrúxula, leva til." },
-        { "p": "Alí", "por": "Aguda rematada en vogal: leva til." },
-        { "p": "arrefría", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "máis", "por": "Til diacrítico: máis indica cantidade. Mais, sen til, significa «pero»." },
-        { "p": "caen", "por": "A e e o e están en sílabas distintas (hiato), pero ningunha é i nin u tónica: sen til." },
-        { "p": "chuvia", "por": "Ia é ditongo: chu-via. Grave rematada en vogal: sen til." },
-        { "p": "ríos", "por": "A i é tónica e vai separada da o (hiato): leva til." },
-        { "p": "É", "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción." },
-        { "p": "hoxe", "por": "Con h, que non soa, e con x." },
-        { "p": "beberon", "por": "Pretérito do verbo beber: grave rematada en -n, sen til." },
-        { "p": "dinosauros", "por": "Au é ditongo: di-no-sau-ros." },
-        { "p": "millóns", "por": "Aguda rematada en -ns: leva til." },
-        { "p": "viaxe", "por": "Ia é ditongo. Con x." },
-        { "p": "incrible", "por": "Grave rematada en vogal: sen til. En galego é incrible." }
+        {
+          "p": "auga",
+          "por": "Au é ditongo: unha soa sílaba. Grave rematada en vogal: sen til."
+        },
+        {
+          "p": "quéntase",
+          "por": "Quenta + se. Acentúase como unha soa palabra: esdrúxula, leva til."
+        },
+        {
+          "p": "Alí",
+          "por": "Aguda rematada en vogal: leva til."
+        },
+        {
+          "p": "arrefría",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "máis",
+          "por": "Til diacrítico: máis indica cantidade. Mais, sen til, significa «pero»."
+        },
+        {
+          "p": "caen",
+          "por": "A e e o e están en sílabas distintas (hiato), pero ningunha é i nin u tónica: sen til."
+        },
+        {
+          "p": "chuvia",
+          "por": "Ia é ditongo: chu-via. Grave rematada en vogal: sen til."
+        },
+        {
+          "p": "ríos",
+          "por": "A i é tónica e vai separada da o (hiato): leva til."
+        },
+        {
+          "p": "É",
+          "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción."
+        },
+        {
+          "p": "hoxe",
+          "por": "Con h, que non soa, e con x."
+        },
+        {
+          "p": "beberon",
+          "por": "Pretérito do verbo beber: grave rematada en -n, sen til."
+        },
+        {
+          "p": "dinosauros",
+          "por": "Au é ditongo: di-no-sau-ros."
+        },
+        {
+          "p": "millóns",
+          "por": "Aguda rematada en -ns: leva til."
+        },
+        {
+          "p": "viaxe",
+          "por": "Ia é ditongo. Con x."
+        },
+        {
+          "p": "incrible",
+          "por": "Grave rematada en vogal: sen til. En galego é incrible."
+        }
       ],
       "datos": "O ciclo da auga: evaporación, condensación en nubes, precipitación e retorno ao mar polos ríos. A auga da Terra recíclase desde hai centos de millóns de anos, así que a que bebemos hoxe xa existía na época dos dinosauros (que viviron ata hai uns 66 millóns de anos). Datos de coñecemento xeral de ciencias naturais."
     },
@@ -80,21 +135,66 @@
         "con atención."
       ],
       "foco": [
-        { "p": "ríos", "por": "A i é tónica e vai separada da o (hiato): leva til." },
-        { "p": "rías", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "timón", "por": "Aguda rematada en -n: leva til." },
-        { "p": "peixes", "por": "Ei é ditongo: pei-xes. Con x." },
-        { "p": "cangrexos", "por": "Con x." },
-        { "p": "día", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "raíces", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "beira", "por": "Ei é ditongo: bei-ra. Grave rematada en vogal: sen til." },
-        { "p": "sae", "por": "Hiato a-e, pero ningunha é i nin u tónica: sen til." },
-        { "p": "río", "por": "A i é tónica e vai separada da o (hiato): leva til." },
-        { "p": "é", "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción." },
-        { "p": "súa", "por": "A u é tónica e vai separada da a (hiato): leva til." },
-        { "p": "está", "por": "Aguda rematada en vogal: leva til." },
-        { "p": "científicos", "por": "Esdrúxula: leva til sempre. A i e a e forman hiato: ci-en-tí-fi-cos." },
-        { "p": "atención", "por": "Aguda rematada en -n: leva til. Ió é ditongo." }
+        {
+          "p": "ríos",
+          "por": "A i é tónica e vai separada da o (hiato): leva til."
+        },
+        {
+          "p": "rías",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "timón",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "peixes",
+          "por": "Ei é ditongo: pei-xes. Con x."
+        },
+        {
+          "p": "cangrexos",
+          "por": "Con x."
+        },
+        {
+          "p": "día",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "raíces",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "beira",
+          "por": "Ei é ditongo: bei-ra. Grave rematada en vogal: sen til."
+        },
+        {
+          "p": "sae",
+          "por": "Hiato a-e, pero ningunha é i nin u tónica: sen til."
+        },
+        {
+          "p": "río",
+          "por": "A i é tónica e vai separada da o (hiato): leva til."
+        },
+        {
+          "p": "é",
+          "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción."
+        },
+        {
+          "p": "súa",
+          "por": "A u é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "está",
+          "por": "Aguda rematada en vogal: leva til."
+        },
+        {
+          "p": "científicos",
+          "por": "Esdrúxula: leva til sempre. A i e a e forman hiato: ci-en-tí-fi-cos."
+        },
+        {
+          "p": "atención",
+          "por": "Aguda rematada en -n: leva til. Ió é ditongo."
+        }
       ],
       "datos": "A lontra europea vive en ríos limpos e nas rías galegas, nada con patas palmadas e rabo forte, come peixes, cangrexos e anfibios, é sobre todo nocturna e considérase un indicador de boa calidade da auga. Datos de coñecemento xeral sobre a lontra, comprobables en guías de mamíferos de Galicia."
     },
@@ -123,21 +223,67 @@
         "Antón"
       ],
       "foco": [
-        { "p": "túa", "por": "A u é tónica e vai separada da a (hiato): leva til." },
-        { "p": "Como che vai na túa nova cidade?", "por": "A pregunta leva o signo ao final; o de apertura é opcional. Como non leva til en galego.", "e": "Como … cidade?" },
-        { "p": "Aquí", "por": "Aguda rematada en vogal: leva til." },
-        { "p": "botámoste", "por": "Botamos + te. Acentúase como unha soa palabra: esdrúxula, leva til." },
-        { "p": "aínda", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "foi", "por": "Oi é ditongo. Monosílabo: sen til." },
-        { "p": "Mencía", "por": "A i é tónica e vai separada da a (hiato): leva til." },
-        { "p": "último", "por": "Esdrúxula: leva til sempre." },
-        { "p": "veñas", "por": "Presente de subxuntivo do verbo vir: que ti veñas." },
-        { "p": "á", "por": "Contracción de a + a: leva til." },
-        { "p": "avó", "por": "Aguda rematada en vogal: leva til. Avó é o home; avoa, a muller." },
-        { "p": "Escríbeme", "por": "Escribe + me. Acentúase como unha soa palabra: esdrúxula, leva til." },
-        { "p": "é", "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción." },
-        { "p": "colexio", "por": "Con x." },
-        { "p": "Antón", "por": "Aguda rematada en -n: leva til." }
+        {
+          "p": "túa",
+          "por": "A u é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "Como che vai na túa nova cidade?",
+          "por": "A pregunta leva o signo ao final; o de apertura é opcional. Como non leva til en galego.",
+          "e": "Como … cidade?"
+        },
+        {
+          "p": "Aquí",
+          "por": "Aguda rematada en vogal: leva til."
+        },
+        {
+          "p": "botámoste",
+          "por": "Botamos + te. Acentúase como unha soa palabra: esdrúxula, leva til."
+        },
+        {
+          "p": "aínda",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "foi",
+          "por": "Oi é ditongo. Monosílabo: sen til."
+        },
+        {
+          "p": "Mencía",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "último",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "veñas",
+          "por": "Presente de subxuntivo do verbo vir: que ti veñas."
+        },
+        {
+          "p": "á",
+          "por": "Contracción de a + a: leva til."
+        },
+        {
+          "p": "avó",
+          "por": "Aguda rematada en vogal: leva til. Avó é o home; avoa, a muller."
+        },
+        {
+          "p": "Escríbeme",
+          "por": "Escribe + me. Acentúase como unha soa palabra: esdrúxula, leva til."
+        },
+        {
+          "p": "é",
+          "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción."
+        },
+        {
+          "p": "colexio",
+          "por": "Con x."
+        },
+        {
+          "p": "Antón",
+          "por": "Aguda rematada en -n: leva til."
+        }
       ],
       "datos": "Carta ficticia; os nomes son ficticios e non se nomea ningún centro. Sen datos que verificar."
     }

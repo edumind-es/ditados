@@ -5,18 +5,29 @@
   "titulo": "Dictado 7 · Diptongos, hiatos y tilde diacrítica",
   "tema": "Diptongos e hiatos · tilde diacrítica · formas verbales",
   "regra": "Diptongo: dos vocales en la misma sílaba (agua, nieve) · hiato: dos vocales en sílabas distintas; la i o la u tónicas llevan tilde (ríos, raíces) · tilde diacrítica: sí/si, tú/tu, más/mas, cómo/como · formas verbales (pretéritos, subjuntivo, verbos con h)",
-  "etiquetas": ["diptongos", "hiatos", "tilde diacrítica", "formas verbales", "acentuación", "interrogativos"],
+  "etiquetas": [
+    "diptongos",
+    "hiatos",
+    "tilde diacrítica",
+    "formas verbales",
+    "acentuación",
+    "interrogativos"
+  ],
   "fixome": [
-    "Diptongo: dos vocales juntas en la misma sílaba: a-gua, nie-ve, llu-via.",
-    "Hiato: dos vocales juntas en sílabas distintas. Si la i o la u son tónicas, llevan tilde: rí-os, en-frí-a, ra-í-ces. Caen no lleva tilde.",
-    "Tilde diacrítica: sí (afirmación) / si; tú (pronombre) / tu; más (cantidad) / mas; cómo (pregunta, también sin signos) / como.",
-    "Formas verbales: fue y vio no llevan tilde; vengas es subjuntivo de venir; hacer y haber se escriben con h."
+    "Diptongo: dos vocales en la misma sílaba: a-gua, nie-ve, llu-via.",
+    "Hiato: vocales en sílabas distintas. Si la i o la u son tónicas, llevan tilde: rí-os, en-frí-a, ra-í-ces.",
+    "Tilde diacrítica: sí / si, tú / tu, más / mas, cómo / como.",
+    "Formas verbales: fue y vio sin tilde; vengas es subjuntivo; hacer y haber llevan h."
   ],
   "estado": "borrador",
   "revision": {
     "fecha": "",
     "revisor": "",
-    "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
+    "fuentes": [
+      "https://dle.rae.es",
+      "https://www.rae.es/dpd",
+      "Ortografía de la lengua española (RAE, 2010)"
+    ],
     "notas": "Texto propuesto por IA: pendiente de revisión humana."
   },
   "opcions": [
@@ -40,21 +51,66 @@
         "¿No te parece un viaje increíble?"
       ],
       "foco": [
-        { "p": "agua", "por": "Ua es diptongo: una sola sílaba. Llana terminada en vocal: sin tilde." },
-        { "p": "calienta", "por": "Ie es diptongo: ca-lien-ta." },
-        { "p": "cielo", "por": "Ie es diptongo: cie-lo." },
-        { "p": "Allí", "por": "Aguda terminada en vocal: lleva tilde." },
-        { "p": "enfría", "por": "La i es tónica y va separada de la a (hiato): lleva tilde." },
-        { "p": "caen", "por": "La a y la e van en sílabas distintas (hiato), pero ninguna es i ni u tónica: sin tilde." },
-        { "p": "lluvia", "por": "Ia es diptongo: llu-via. Llana terminada en vocal: sin tilde." },
-        { "p": "nieve", "por": "Ie es diptongo: nie-ve." },
-        { "p": "ríos", "por": "La i es tónica y va separada de la o (hiato): lleva tilde." },
-        { "p": "vuelve", "por": "Ue es diptongo. Del verbo volver, con v." },
-        { "p": "bebieron", "por": "Pretérito del verbo beber: llana terminada en -n, sin tilde. Ie es diptongo." },
-        { "p": "dinosaurios", "por": "Au e io son diptongos: di-no-sau-rios." },
-        { "p": "hace", "por": "Del verbo hacer: con h." },
-        { "p": "viaje", "por": "Ia es diptongo. Con j." },
-        { "p": "increíble", "por": "La i es tónica y va separada de la e (hiato): lleva tilde." }
+        {
+          "p": "agua",
+          "por": "Ua es diptongo: una sola sílaba. Llana terminada en vocal: sin tilde."
+        },
+        {
+          "p": "calienta",
+          "por": "Ie es diptongo: ca-lien-ta."
+        },
+        {
+          "p": "cielo",
+          "por": "Ie es diptongo: cie-lo."
+        },
+        {
+          "p": "Allí",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "enfría",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "caen",
+          "por": "La a y la e van en sílabas distintas (hiato), pero ninguna es i ni u tónica: sin tilde."
+        },
+        {
+          "p": "lluvia",
+          "por": "Ia es diptongo: llu-via. Llana terminada en vocal: sin tilde."
+        },
+        {
+          "p": "nieve",
+          "por": "Ie es diptongo: nie-ve."
+        },
+        {
+          "p": "ríos",
+          "por": "La i es tónica y va separada de la o (hiato): lleva tilde."
+        },
+        {
+          "p": "vuelve",
+          "por": "Ue es diptongo. Del verbo volver, con v."
+        },
+        {
+          "p": "bebieron",
+          "por": "Pretérito del verbo beber: llana terminada en -n, sin tilde. Ie es diptongo."
+        },
+        {
+          "p": "dinosaurios",
+          "por": "Au e io son diptongos: di-no-sau-rios."
+        },
+        {
+          "p": "hace",
+          "por": "Del verbo hacer: con h."
+        },
+        {
+          "p": "viaje",
+          "por": "Ia es diptongo. Con j."
+        },
+        {
+          "p": "increíble",
+          "por": "La i es tónica y va separada de la e (hiato): lleva tilde."
+        }
       ],
       "datos": "El ciclo del agua: evaporación, condensación en nubes, precipitación y retorno al mar por los ríos. El agua de la Tierra se recicla desde hace cientos de millones de años, así que la que bebemos hoy ya existía en la época de los dinosaurios (que vivieron hasta hace unos 66 millones de años). Datos de conocimiento general de ciencias naturales."
     },
@@ -80,21 +136,66 @@
         "con atención."
       ],
       "foco": [
-        { "p": "nutria", "por": "Ia es diptongo: nu-tria. Llana terminada en vocal: sin tilde." },
-        { "p": "ríos", "por": "La i es tónica y va separada de la o (hiato): lleva tilde." },
-        { "p": "rías", "por": "La i es tónica y va separada de la a (hiato): lleva tilde." },
-        { "p": "tiene", "por": "Ie es diptongo: tie-ne." },
-        { "p": "cuerpo", "por": "Ue es diptongo: cuer-po." },
-        { "p": "timón", "por": "Aguda terminada en -n: lleva tilde." },
-        { "p": "cangrejos", "por": "Con j." },
-        { "p": "día", "por": "La i es tónica y va separada de la a (hiato): lleva tilde." },
-        { "p": "raíces", "por": "La i es tónica y va separada de la a (hiato): lleva tilde." },
-        { "p": "sale", "por": "Del verbo salir: presente, sin tilde." },
-        { "p": "Si", "por": "Sin tilde: aquí es condición. Sí, con tilde, es afirmación." },
-        { "p": "río", "por": "La i es tónica y va separada de la o (hiato): lleva tilde." },
-        { "p": "está", "por": "Aguda terminada en vocal: lleva tilde." },
-        { "p": "científicos", "por": "Esdrújula: lleva tilde siempre. Ie es diptongo: cien-tí-fi-cos." },
-        { "p": "atención", "por": "Aguda terminada en -n: lleva tilde. Ió es diptongo." }
+        {
+          "p": "nutria",
+          "por": "Ia es diptongo: nu-tria. Llana terminada en vocal: sin tilde."
+        },
+        {
+          "p": "ríos",
+          "por": "La i es tónica y va separada de la o (hiato): lleva tilde."
+        },
+        {
+          "p": "rías",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "tiene",
+          "por": "Ie es diptongo: tie-ne."
+        },
+        {
+          "p": "cuerpo",
+          "por": "Ue es diptongo: cuer-po."
+        },
+        {
+          "p": "timón",
+          "por": "Aguda terminada en -n: lleva tilde."
+        },
+        {
+          "p": "cangrejos",
+          "por": "Con j."
+        },
+        {
+          "p": "día",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "raíces",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "sale",
+          "por": "Del verbo salir: presente, sin tilde."
+        },
+        {
+          "p": "Si",
+          "por": "Sin tilde: aquí es condición. Sí, con tilde, es afirmación."
+        },
+        {
+          "p": "río",
+          "por": "La i es tónica y va separada de la o (hiato): lleva tilde."
+        },
+        {
+          "p": "está",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "científicos",
+          "por": "Esdrújula: lleva tilde siempre. Ie es diptongo: cien-tí-fi-cos."
+        },
+        {
+          "p": "atención",
+          "por": "Aguda terminada en -n: lleva tilde. Ió es diptongo."
+        }
       ],
       "datos": "La nutria europea vive en ríos limpios y en las rías, nada con patas palmeadas y cola fuerte, come peces, cangrejos y anfibios, es sobre todo nocturna y se considera un indicador de buena calidad del agua. Datos de conocimiento general sobre la nutria, comprobables en guías de mamíferos."
     },
@@ -123,21 +224,67 @@
         "Antón"
       ],
       "foco": [
-        { "p": "¿Cómo te va en tu nueva ciudad?", "por": "La pregunta se abre y se cierra. Cómo lleva tilde porque es interrogativo.", "e": "¿Cómo … ciudad?" },
-        { "p": "tu", "por": "Sin tilde: es posesivo (tu ciudad). Tú, con tilde, es el pronombre." },
-        { "p": "Aquí", "por": "Aguda terminada en vocal: lleva tilde." },
-        { "p": "sigue", "por": "Gu delante de e: la u no suena." },
-        { "p": "sábado", "por": "Esdrújula: lleva tilde siempre." },
-        { "p": "fue", "por": "Monosílabo: no lleva tilde. Ue es diptongo." },
-        { "p": "Mencía", "por": "La i es tónica y va separada de la a (hiato): lleva tilde." },
-        { "p": "marcó", "por": "Aguda terminada en vocal: lleva tilde." },
-        { "p": "último", "por": "Esdrújula: lleva tilde siempre." },
-        { "p": "vengas", "por": "Presente de subjuntivo del verbo venir: cuando tú vengas." },
-        { "p": "haremos", "por": "Del verbo hacer: con h." },
-        { "p": "huerta", "por": "Las palabras que empiezan por el sonido ue llevan h: huerta, hueco, huevo." },
-        { "p": "Escríbeme", "por": "Escribe + me. Se acentúa como una sola palabra: esdrújula, lleva tilde." },
-        { "p": "cómo", "por": "Lleva tilde también en las preguntas indirectas, sin signos: cuéntame cómo es." },
-        { "p": "colegio", "por": "La g delante de i suena como j, pero se escribe g." }
+        {
+          "p": "¿Cómo te va en tu nueva ciudad?",
+          "por": "La pregunta se abre y se cierra. Cómo lleva tilde porque es interrogativo.",
+          "e": "¿Cómo … ciudad?"
+        },
+        {
+          "p": "tu",
+          "por": "Sin tilde: es posesivo (tu ciudad). Tú, con tilde, es el pronombre."
+        },
+        {
+          "p": "Aquí",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "sigue",
+          "por": "Gu delante de e: la u no suena."
+        },
+        {
+          "p": "sábado",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "fue",
+          "por": "Monosílabo: no lleva tilde. Ue es diptongo."
+        },
+        {
+          "p": "Mencía",
+          "por": "La i es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "marcó",
+          "por": "Aguda terminada en vocal: lleva tilde."
+        },
+        {
+          "p": "último",
+          "por": "Esdrújula: lleva tilde siempre."
+        },
+        {
+          "p": "vengas",
+          "por": "Presente de subjuntivo del verbo venir: cuando tú vengas."
+        },
+        {
+          "p": "haremos",
+          "por": "Del verbo hacer: con h."
+        },
+        {
+          "p": "huerta",
+          "por": "Las palabras que empiezan por el sonido ue llevan h: huerta, hueco, huevo."
+        },
+        {
+          "p": "Escríbeme",
+          "por": "Escribe + me. Se acentúa como una sola palabra: esdrújula, lleva tilde."
+        },
+        {
+          "p": "cómo",
+          "por": "Lleva tilde también en las preguntas indirectas, sin signos: cuéntame cómo es."
+        },
+        {
+          "p": "colegio",
+          "por": "La g delante de i suena como j, pero se escribe g."
+        }
       ],
       "datos": "Carta ficticia; los nombres son ficticios y no se nombra ningún centro. Sin datos que verificar."
     }
