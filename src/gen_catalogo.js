@@ -75,7 +75,7 @@ function paginaDitado(d, ficheros, voz) {
 </section>
 <section>
   <h2><span class="n">02</span>${esc(C.opcionesH)}</h2>
-  <table class="tabla"><thead><tr><th scope="col">${esc(t.opcion)}</th><th scope="col">Título</th><th scope="col">Tipo</th><th scope="col">${esc(C.palabras)}</th><th scope="col">${esc(C.claves)}</th></tr></thead><tbody>${opciones}</tbody></table>
+  <div class="tabla-wrap"><table class="tabla"><thead><tr><th scope="col">${esc(t.opcion)}</th><th scope="col">Título</th><th scope="col">Tipo</th><th scope="col">${esc(C.palabras)}</th><th scope="col">${esc(C.claves)}</th></tr></thead><tbody>${opciones}</tbody></table></div>
   <ul class="etq">${d.etiquetas.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>
 </section>
 <section>

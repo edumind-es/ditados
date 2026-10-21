@@ -7,7 +7,7 @@
 *{box-sizing:border-box}
 html{font-size:17px}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);line-height:1.5;overflow-x:hidden}
-a{color:var(--tinta);text-decoration:underline;text-underline-offset:3px}
+a{color:var(--tinta);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .franja{display:grid;grid-template-columns:repeat(5,1fr);height:6px}
 .franja span:nth-child(1){background:var(--m-fisico)}.franja span:nth-child(2){background:var(--m-mental)}.franja span:nth-child(3){background:var(--m-emocional)}.franja span:nth-child(4){background:var(--m-social)}.franja span:nth-child(5){background:var(--m-interior)}
@@ -34,12 +34,13 @@ section{margin:28px 0}
 .acciones{display:flex;flex-direction:column;gap:8px;align-self:start}
 .boton{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;border:2px solid var(--tinta);background:var(--tinta);color:var(--papel);text-decoration:none;font-weight:700;white-space:nowrap}
 .boton.alt{background:transparent;color:var(--tinta)}
-table.tabla{width:100%;border-collapse:collapse;margin:8px 0 16px}
+.tabla-wrap{overflow-x:auto;margin:8px 0 16px}
+table.tabla{width:100%;min-width:480px;border-collapse:collapse;margin:0}
 table.tabla th,table.tabla td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--filete-fino)}
 table.tabla th{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);border-bottom:1px solid var(--filete)}
 .texto-op{white-space:pre-line;margin:0 0 10px}
-dl{margin:0}dt{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);margin-top:10px}dd{margin:2px 0 0}
-ul.descargas{list-style:none;padding:0;margin:0}ul.descargas li{padding:8px 0;border-bottom:1px solid var(--filete-fino)}
+dl{margin:0;overflow-wrap:anywhere}dt{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);margin-top:10px}dd{margin:2px 0 0}
+ul.descargas{list-style:none;padding:0;margin:0}ul.descargas li{padding:8px 0;border-bottom:1px solid var(--filete-fino);overflow-wrap:anywhere}
 .aviso{border-left:3px solid var(--tinta);padding:6px 12px;margin:12px 0;color:var(--tinta-2)}
 footer.pe{margin-top:40px;padding:16px 0 32px;border-top:2px solid var(--filete);font-family:var(--f-mono);font-size:.78rem;color:var(--tinta-2)}
 footer.pe p{margin:4px 0}
