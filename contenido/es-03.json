@@ -1,0 +1,96 @@
+{
+  "lang": "es",
+  "num": 3,
+  "curso": "1",
+  "titulo": "Dictado 3 · Los sonidos de la c, la q y la g",
+  "tema": "Los sonidos de la c, la q y la g",
+  "regra": "El sonido fuerte de c se escribe c ante a, o, u y qu ante e, i · el sonido de g se escribe g ante a, o, u y gu ante e, i · la diéresis hace sonar la u",
+  "etiquetas": ["c y qu", "g y gu", "diéresis", "sonidos y letras", "signos de exclamación"],
+  "fixome": [
+    "Casa, cosa, cuna: c delante de a, o, u.",
+    "Queso, quince: qu delante de e, i. La u no suena.",
+    "Gato, goma, gusano: g delante de a, o, u.",
+    "Guerra, guitarra: gu delante de e, i. Si la u tiene que sonar, lleva diéresis: pingüino."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "El pingüino no vuela",
+      "texto": "El pingüino es un ave, pero no vuela. Nada muy rápido con sus alas. Vive en lugares fríos y camina con pasos pequeños. ¡Qué gracioso es!",
+      "segmentos": [
+        "El pingüino es un ave,",
+        "pero no vuela.",
+        "Nada muy rápido con sus alas.",
+        "Vive en lugares fríos",
+        "y camina con pasos pequeños.",
+        "¡Qué gracioso es!"
+      ],
+      "foco": [
+        { "p": "pingüino", "por": "La u lleva diéresis para que suene: pin-güi-no." },
+        { "p": "lugares", "por": "Ga: g delante de a." },
+        { "p": "camina", "por": "Ca: c delante de a suena fuerte." },
+        { "p": "pequeños", "por": "Qu delante de e: la u no suena." },
+        { "p": "gracioso", "por": "Ci suena suave, como en cine." },
+        { "p": "¡Qué gracioso es!", "por": "La exclamación se abre con ¡ y se cierra con !", "e": "¡ … !" }
+      ],
+      "datos": "Los pingüinos son aves que no vuelan y nadan impulsándose con las alas; viven en el hemisferio sur, muchos en zonas frías. Datos de conocimiento general que el docente puede confirmar en una enciclopedia escolar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "La cigüeña de la torre",
+      "texto": "La cigüeña hace su nido en lo alto de la torre. Es blanca y negra, con el pico largo. Come ranas y pequeños peces. Cuando llega la primavera, vuelve a su casa.",
+      "segmentos": [
+        "La cigüeña hace su nido",
+        "en lo alto de la torre.",
+        "Es blanca y negra,",
+        "con el pico largo.",
+        "Come ranas y pequeños peces.",
+        "Cuando llega la primavera,",
+        "vuelve a su casa."
+      ],
+      "foco": [
+        { "p": "cigüeña", "por": "Ci suena suave. La u lleva diéresis para que suene: ci-güe-ña." },
+        { "p": "hace", "por": "Ce suena suave. Empieza por h, que no suena." },
+        { "p": "pico", "por": "Co: c delante de o suena fuerte." },
+        { "p": "pequeños", "por": "Qu delante de e: la u no suena." },
+        { "p": "peces", "por": "Ce suena suave, como en cena." },
+        { "p": "Cuando", "por": "Mayúscula porque empieza la frase. Cu: c delante de u suena fuerte." },
+        { "p": "llega", "por": "Ga: g delante de a." }
+      ],
+      "datos": "La cigüeña blanca anida en lugares altos como torres y campanarios, es blanca con las alas negras y tiene el pico largo y rojo; se alimenta de ranas, peces pequeños, insectos y otros animales. Vuelve al mismo nido cada año. Datos de conocimiento general sobre la cigüeña blanca (Ciconia ciconia)."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instructivo",
+      "titulo": "Un gusano de papel",
+      "texto": "Corta una tira de papel. Dóblala como un acordeón. Pega dos ojos de papel en un extremo. Ya tienes un gusano que camina cuando soplas.",
+      "segmentos": [
+        "Corta una tira de papel.",
+        "Dóblala como un acordeón.",
+        "Pega dos ojos de papel",
+        "en un extremo.",
+        "Ya tienes un gusano",
+        "que camina cuando soplas."
+      ],
+      "foco": [
+        { "p": "Corta", "por": "Mayúscula porque empieza la frase. Co: c delante de o suena fuerte." },
+        { "p": "como", "por": "Co: c delante de o suena fuerte." },
+        { "p": "Pega", "por": "Mayúscula porque empieza la frase. Ga: g delante de a." },
+        { "p": "gusano", "por": "Gu: g delante de u. Aquí la u sí suena." },
+        { "p": "que", "por": "Qu delante de e: la u no suena." },
+        { "p": "camina", "por": "Ca: c delante de a suena fuerte." },
+        { "p": "cuando", "por": "Cu: c delante de u suena fuerte." }
+      ],
+      "datos": "Texto instructivo sin datos que verificar: manualidad sencilla de papel plegado en acordeón."
+    }
+  ]
+}

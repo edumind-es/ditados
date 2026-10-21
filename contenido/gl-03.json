@@ -1,0 +1,94 @@
+{
+  "lang": "gl",
+  "num": 3,
+  "curso": "1",
+  "titulo": "Ditado 3 · O son forte e o son suave",
+  "tema": "O son forte e o son suave: c, qu, g, gu",
+  "regra": "O son forte [k] escríbese c diante de a, o, u e qu diante de e, i · o son [g] escríbese g diante de a, o, u e gu diante de e, i",
+  "etiquetas": ["c e qu", "g e gu", "sons e letras", "maiúscula e punto"],
+  "fixome": [
+    "Casa, cor, cuco: c diante de a, o, u.",
+    "Queixo, quilo: qu diante de e, i. O u non soa.",
+    "Gato, goma, gusto: g diante de a, o, u.",
+    "Guerra, guitarra: gu diante de e, i. O u non soa."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "Un caracol na horta",
+      "texto": "O caracol leva a casa ás costas. Camiña moi amodo e deixa un camiño brillante. Cando chove, sae a buscar leituga. Que bonito é!",
+      "segmentos": [
+        "O caracol leva a casa ás costas.",
+        "Camiña moi amodo",
+        "e deixa un camiño brillante.",
+        "Cando chove,",
+        "sae a buscar leituga.",
+        "Que bonito é!"
+      ],
+      "foco": [
+        { "p": "caracol", "por": "Ca e co: c diante de a e de o soa forte." },
+        { "p": "casa", "por": "Ca: c diante de a soa forte." },
+        { "p": "camiño", "por": "Ca: c diante de a soa forte." },
+        { "p": "Cando", "por": "Maiúscula porque empeza a frase. Ca: c diante de a." },
+        { "p": "Que", "por": "Qu diante de e: o u non soa." }
+      ],
+      "datos": "O caracol leva a cuncha ás costas, deixa un rastro de baba brillante ao camiñar e sae sobre todo con tempo húmido ou chuvioso. Datos de coñecemento xeral sobre o caracol común (Helix aspersa), que o docente pode confirmar en calquera enciclopedia escolar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "A galiña e os pitos",
+      "texto": "A galiña ten cinco pitos. Son pequenos e amarelos. A galiña cacarexa e os pitos seguen o seu rastro polo galiñeiro. Que guapos son!",
+      "segmentos": [
+        "A galiña ten cinco pitos.",
+        "Son pequenos e amarelos.",
+        "A galiña cacarexa",
+        "e os pitos seguen o seu rastro",
+        "polo galiñeiro.",
+        "Que guapos son!"
+      ],
+      "foco": [
+        { "p": "galiña", "por": "Ga: g diante de a." },
+        { "p": "cinco", "por": "Ci soa suave, como en cine. Co soa forte." },
+        { "p": "pequenos", "por": "Qu diante de e: o u non soa." },
+        { "p": "cacarexa", "por": "Ca: c diante de a soa forte. Vai con x." },
+        { "p": "seguen", "por": "Gu diante de e: o u non soa." },
+        { "p": "guapos", "por": "Gua: aquí o u si que soa." }
+      ],
+      "datos": "Narración sen datos que verificar. Os pitos acabados de nacer seguen a nai: comportamento coñecido das galiñas domésticas."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instrutivo",
+      "titulo": "Masa de sal para facer figuras",
+      "texto": "Para facer masa de sal, colle un vaso de fariña, medio vaso de sal e un pouco de auga. Mestura todo coas mans. Agora podes facer figuras e deixalas secar.",
+      "segmentos": [
+        "Para facer masa de sal,",
+        "colle un vaso de fariña,",
+        "medio vaso de sal",
+        "e un pouco de auga.",
+        "Mestura todo coas mans.",
+        "Agora podes facer figuras",
+        "e deixalas secar."
+      ],
+      "foco": [
+        { "p": "facer", "por": "Ce soa suave. Non leva qu." },
+        { "p": "colle", "por": "Co: c diante de o soa forte." },
+        { "p": "pouco", "por": "Co: c diante de o soa forte." },
+        { "p": "coas", "por": "Co: c diante de o soa forte. Coas é con + as." },
+        { "p": "Agora", "por": "Maiúscula porque empeza a frase. Go: g diante de o." },
+        { "p": "figuras", "por": "Gu diante de u: aquí o u si que soa." },
+        { "p": "secar", "por": "Ca: c diante de a soa forte." }
+      ],
+      "datos": "Receita de masa de sal: a proporción habitual é de dúas partes de fariña por unha de sal e unha de auga; aquí está simplificada para a idade. Facer en clase con axuda dunha persoa adulta e lavar as mans ao rematar."
+    }
+  ]
+}
