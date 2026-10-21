@@ -1,22 +1,147 @@
 {
-  "_comentario": "Parámetros por curso. Los rangos de palabras son una propuesta de partida sin fuente normativa; ajústalos aquí y todo el sistema los aplica. renglones = líneas de escritura en la cara A de la ficha (11 mm cada una).",
+  "_comentario": "Parámetros por curso: rango de palabras del texto, número de palabras clave, tamaño de los trozos (palabras) y renglones de la cara A (11 mm). Son una propuesta de partida sin fuente normativa; ajústalos aquí y todo el sistema los aplica.",
   "cursos": {
-    "1": { "palabras": [20, 35], "renglones": 6 },
-    "2": { "palabras": [30, 45], "renglones": 7 },
-    "3": { "palabras": [40, 55], "renglones": 8 },
-    "4": { "palabras": [50, 65], "renglones": 9 },
-    "5": { "palabras": [55, 75], "renglones": 10 },
-    "6": { "palabras": [60, 90], "renglones": 10 }
+    "1": {
+      "palabras": [
+        20,
+        35
+      ],
+      "claves": [
+        4,
+        8
+      ],
+      "segmento_palabras": [
+        2,
+        5
+      ],
+      "renglones": 6
+    },
+    "2": {
+      "palabras": [
+        30,
+        45
+      ],
+      "claves": [
+        5,
+        9
+      ],
+      "segmento_palabras": [
+        2,
+        6
+      ],
+      "renglones": 7
+    },
+    "3": {
+      "palabras": [
+        40,
+        55
+      ],
+      "claves": [
+        6,
+        11
+      ],
+      "segmento_palabras": [
+        3,
+        7
+      ],
+      "renglones": 8
+    },
+    "4": {
+      "palabras": [
+        50,
+        65
+      ],
+      "claves": [
+        8,
+        13
+      ],
+      "segmento_palabras": [
+        3,
+        8
+      ],
+      "renglones": 9
+    },
+    "5": {
+      "palabras": [
+        55,
+        75
+      ],
+      "claves": [
+        9,
+        15
+      ],
+      "segmento_palabras": [
+        3,
+        8
+      ],
+      "renglones": 10
+    },
+    "6": {
+      "palabras": [
+        60,
+        90
+      ],
+      "claves": [
+        10,
+        18
+      ],
+      "segmento_palabras": [
+        3,
+        8
+      ],
+      "renglones": 10
+    }
   },
-  "claves": [10, 18],
-  "segmento_palabras": [3, 8],
+  "claves": [
+    10,
+    18
+  ],
+  "segmento_palabras": [
+    3,
+    8
+  ],
   "opciones_recomendadas": 4,
   "tipos": {
-    "gl": ["Curiosidade", "Noticia", "Ciencia", "Natureza", "Texto instrutivo", "Carta", "Narración", "Historia", "Deporte", "Arte"],
-    "es": ["Curiosidad", "Noticia", "Ciencia", "Naturaleza", "Texto instructivo", "Carta", "Narración", "Historia", "Deporte", "Arte"]
+    "gl": [
+      "Curiosidade",
+      "Noticia",
+      "Ciencia",
+      "Natureza",
+      "Texto instrutivo",
+      "Carta",
+      "Narración",
+      "Historia",
+      "Deporte",
+      "Arte"
+    ],
+    "es": [
+      "Curiosidad",
+      "Noticia",
+      "Ciencia",
+      "Naturaleza",
+      "Texto instructivo",
+      "Carta",
+      "Narración",
+      "Historia",
+      "Deporte",
+      "Arte"
+    ]
   },
   "voces": {
-    "gl": { "defecto": "brais", "disponibles": ["brais", "celtia", "sabela", "icia"] },
-    "es": { "defecto": "alejandro", "disponibles": ["alejandro"] }
+    "gl": {
+      "defecto": "brais",
+      "disponibles": [
+        "brais",
+        "celtia",
+        "sabela",
+        "icia"
+      ]
+    },
+    "es": {
+      "defecto": "alejandro",
+      "disponibles": [
+        "alejandro"
+      ]
+    }
   }
 }

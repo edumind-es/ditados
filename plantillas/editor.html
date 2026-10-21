@@ -112,7 +112,7 @@ pre.reg{font-family:var(--m);font-size:.8rem;white-space:pre-wrap;max-height:260
     <h2><span class="n">02</span>Cabecera</h2>
     <div class="fila">
       <div><label for="f-titulo">Título (Ditado 2 · Tema)</label><input id="f-titulo" type="text"></div>
-      <div><label for="f-ud">Unidad didáctica</label><input id="f-ud" type="text"></div>
+      <div><label for="f-tema">Tema (regla o contenido; sin nombres de unidades)</label><input id="f-tema" type="text"></div>
       <div><label for="f-semana">Semana (opcional)</label><input id="f-semana" type="text"></div>
       <div><label for="f-voz">Voz del audio</label><select id="f-voz"></select></div>
     </div>
@@ -202,7 +202,7 @@ const idDe = (d) => `${d.lang}-${String(d.num).padStart(2, '0')}`;
 $('#nuevo').addEventListener('submit', (e) => {
   e.preventDefault();
   const lang = $('#n-lang').value, num = +$('#n-num').value, curso = $('#n-curso').value;
-  D = { lang, num, curso, titulo: `${lang === 'gl' ? 'Ditado' : 'Dictado'} ${num} · `, semana: '', ud: '', regra: '', etiquetas: [], fixome: ['', '', ''], estado: 'borrador',
+  D = { lang, num, curso, titulo: `${lang === 'gl' ? 'Ditado' : 'Dictado'} ${num} · `, semana: '', tema: '', regra: '', etiquetas: [], fixome: ['', '', ''], estado: 'borrador',
     revision: { fecha: '', revisor: '', fuentes: [], notas: '' }, opcions: [opcionVacia('A')] };
   pintar(); location.hash = idDe(D);
 });
@@ -220,7 +220,7 @@ function pintar() {
   $('#a-revisado').disabled = D.estado !== 'borrador';
   $('#a-publicado').disabled = D.estado !== 'revisado';
   $('#a-borrador').disabled = D.estado === 'borrador';
-  $('#f-titulo').value = D.titulo; $('#f-ud').value = D.ud; $('#f-semana').value = D.semana || ''; $('#f-regra').value = D.regra;
+  $('#f-titulo').value = D.titulo; $('#f-tema').value = D.tema || ''; $('#f-semana').value = D.semana || ''; $('#f-regra').value = D.regra;
   $('#f-etiquetas').value = (D.etiquetas || []).join(', '); $('#f-fixome').value = (D.fixome || []).join('\n');
   const voces = CONFIG.voces[D.lang];
   $('#f-voz').innerHTML = voces.disponibles.length ? voces.disponibles.map((v) => `<option value="${v}"${(D.voz || voces.defecto) === v ? ' selected' : ''}>${v}</option>`).join('') : '<option value="">Voz del navegador (sin audio)</option>';
@@ -285,7 +285,7 @@ function pintarFoco(k) {
   <div><label>Etiqueta corta (si es una frase)</label><input type="text" data-f="e" value="${esc(f.e || '')}"></div>
   <div><label>Por qué se escribe así (verifícalo en la RAG o la RAE)</label><textarea data-f="por">${esc(f.por)}</textarea></div>
   <div><button class="btn alt peq" type="button" data-f-accion="subir" ${i === 0 ? 'disabled' : ''}>Subir</button><button class="btn alt peq" type="button" data-f-accion="quitar">Quitar</button></div>
-</div>`).join('') + `<p class="estado">${o.foco.length} palabras clave (entre ${CONFIG.claves[0]} y ${CONFIG.claves[1]})</p>`;
+</div>`).join('') + `<p class="estado">${o.foco.length} palabras clave (entre ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[0]} y ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[1]} en ${D.curso}.º)</p>`;
   $$('.foco', cont).forEach((fila) => {
     const i = +fila.dataset.i;
     $$('[data-f]', fila).forEach((inp) => inp.addEventListener('input', () => { o.foco[i][inp.dataset.f] = inp.value; if (inp.dataset.f === 'e' && !inp.value) delete o.foco[i].e; if (inp.dataset.f === 'p') pintarPalabras(k); validarVivo(); }));
@@ -315,7 +315,7 @@ function pintarAudio(k) {
 
 /* ---------- Recoger el formulario en D ---------- */
 function recoger() {
-  D.titulo = $('#f-titulo').value.trim(); D.ud = $('#f-ud').value.trim(); D.semana = $('#f-semana').value.trim(); D.regra = $('#f-regra').value.trim();
+  D.titulo = $('#f-titulo').value.trim(); D.tema = $('#f-tema').value.trim(); D.semana = $('#f-semana').value.trim(); D.regra = $('#f-regra').value.trim();
   D.etiquetas = $('#f-etiquetas').value.split(',').map((s) => s.trim()).filter(Boolean);
   D.fixome = $('#f-fixome').value.split('\n').map((s) => s.trim()).filter(Boolean);
   if ($('#f-voz').value) D.voz = $('#f-voz').value; else delete D.voz;
@@ -342,7 +342,7 @@ $('#form').addEventListener('click', async (e) => {
   const det = b.closest('.opcion'); const k = +det.dataset.k; const o = D.opcions[k];
   recoger();
   if (b.dataset.accion === 'segmentar') {
-    const r = await api('segmentar', { method: 'POST', body: { texto: o.texto } });
+    const r = await api('segmentar?curso=' + encodeURIComponent(D.curso), { method: 'POST', body: { texto: o.texto } });
     o.segmentos = r.segmentos; $('[data-campo="segmentos"]', det).value = r.segmentos.join('\n'); pintarAudio(k);
   }
   if (b.dataset.accion === 'frase') {

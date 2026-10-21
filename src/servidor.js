@@ -141,7 +141,7 @@ async function manejar(req, res) {
   }
   if (req.method === 'POST' && partes[1] === 'segmentar') {
     const { texto } = await leerCuerpo(req);
-    return json(res, 200, { segmentos: segmentar(String(texto || ''), { min: config.segmento_palabras[0], max: config.segmento_palabras[1] }) });
+    return json(res, 200, { segmentos: segmentar(String(texto || ''), { min: (config.cursos[url.searchParams.get('curso')] || {}).segmento_palabras ? config.cursos[url.searchParams.get('curso')].segmento_palabras[0] : config.segmento_palabras[0], max: (config.cursos[url.searchParams.get('curso')] || {}).segmento_palabras ? config.cursos[url.searchParams.get('curso')].segmento_palabras[1] : config.segmento_palabras[1] }) });
   }
   if (req.method === 'POST' && partes[1] === 'languagetool') {
     if (!lt.activo()) return json(res, 200, { activo: false, avisos: [] });

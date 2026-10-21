@@ -18,7 +18,7 @@ function miclase(d, o) {
 function textosDocente(d) {
   const l = DOCENTE[d.lang];
   const md = ['---', `title: "${l.tipo} ${d.num} · ${tituloCorto(d)} · ${l.tit}"`, 'author: "Luis Vilela Acuña"', `lang: ${d.lang}`, '---', '',
-    `${d.ud} · ${l.intro}`, '', `> ${l.miclaseAviso}`, ''];
+    `${d.tema} · ${l.intro}`, '', `> ${l.miclaseAviso}`, ''];
   for (const o of d.opcions) {
     md.push(`# ${o.letra} · ${o.titulo} (${o.tipo}, ${contarPalabras(textoPlano(o.texto))} ${l.pal})`, '', o.texto.replace(/\n/g, '  \n'), '', `**${l.clave}**`, '');
     o.foco.forEach((f, i) => md.push(`${i + 1}. **${f.e || f.p}**: ${f.por}`));

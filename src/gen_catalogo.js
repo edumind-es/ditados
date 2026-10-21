@@ -87,7 +87,7 @@ function paginaDitado(d, ficheros, voz, kit) {
     ? `<li>${esc(C.audio)}: ${ficheros.audio.map((a) => `<a href="${esc(a)}" download>${esc(path.basename(a, '.mp3'))}</a>`).join(' · ')}</li>` : '';
   const cuerpo = `
 <header class="cab"><div class="wrap">
-  <p class="kicker"><a href="../">${esc(C.titulo)}</a> · ${esc(C.langs[d.lang])} · ${esc(d.curso)}.º · ${esc(d.ud)}</p>
+  <p class="kicker"><a href="../">${esc(C.titulo)}</a> · ${esc(C.langs[d.lang])} · ${esc(d.curso)}.º · ${esc(d.tema)}</p>
   <h1>${esc(t.tipo)} ${d.num} · ${esc(tituloCorto(d))}</h1>
   <p class="sub">${esc(d.regra)}</p>
 </div></header>
@@ -125,7 +125,7 @@ ${datos ? `<section><h2><span class="n">04</span>${esc(C.datos)}</h2><dl>${datos
 function paginaIndice(entradas, kit = {}) {
   const valores = (fn) => [...new Set(entradas.flatMap(fn))].sort((a, b) => a.localeCompare(b, 'es'));
   const cursos = valores(({ d }) => [d.curso]);
-  const uds = valores(({ d }) => [d.ud]);
+  const temas = valores(({ d }) => [d.tema]);
   const etiquetas = valores(({ d }) => d.etiquetas);
   const tipos = valores(({ d }) => d.opcions.map((o) => o.tipo));
   const opt = (xs, todas) => `<option value="">${esc(todas)}</option>` + xs.map((x) => `<option value="${esc(x)}">${esc(x)}</option>`).join('');
@@ -133,9 +133,9 @@ function paginaIndice(entradas, kit = {}) {
     const t = PRESENTACION[d.lang];
     const id = idDitado(d);
     const nPal = d.opcions.map((o) => contarPalabras(textoPlano(o.texto)));
-    return `<li data-lang="${d.lang}" data-curso="${esc(d.curso)}" data-ud="${esc(d.ud)}" data-etq="${esc(d.etiquetas.join('|'))}" data-tipo="${esc(d.opcions.map((o) => o.tipo).join('|'))}" data-texto="${esc([d.titulo, d.regra, ...d.opcions.map((o) => o.titulo)].join(' ').toLowerCase())}">
+    return `<li data-lang="${d.lang}" data-curso="${esc(d.curso)}" data-tema="${esc(d.tema)}" data-etq="${esc(d.etiquetas.join('|'))}" data-tipo="${esc(d.opcions.map((o) => o.tipo).join('|'))}" data-texto="${esc([d.titulo, d.regra, ...d.opcions.map((o) => o.titulo)].join(' ').toLowerCase())}">
   <div>
-    <p class="meta">${esc(C.langs[d.lang])} · ${esc(d.curso)}.º · ${esc(d.ud)}</p>
+    <p class="meta">${esc(C.langs[d.lang])} · ${esc(d.curso)}.º · ${esc(d.tema)}</p>
     <h3><a href="${id}/">${esc(t.tipo)} ${d.num} · ${esc(tituloCorto(d))}</a></h3>
     <p class="regra">${esc(d.regra)}</p>
     <p class="meta">${d.opcions.length === 1 ? '1 ' + esc(C.opcion) : d.opcions.length + ' ' + esc(C.opciones)} · ${Math.min(...nPal) === Math.max(...nPal) ? Math.min(...nPal) : Math.min(...nPal) + '–' + Math.max(...nPal)} ${esc(C.palabras)} · ${d.opcions.map((o) => esc(o.tipo)).join(', ')}</p>
@@ -154,7 +154,7 @@ function paginaIndice(entradas, kit = {}) {
 <form class="filtros" id="filtros" role="search" aria-label="${esc(C.filtros.buscar)}">
   <label>${esc(C.filtros.lang)}<select name="lang"><option value="">${esc(C.todas)}</option><option value="gl">${esc(C.langs.gl)}</option><option value="es">${esc(C.langs.es)}</option></select></label>
   <label>${esc(C.filtros.curso)}<select name="curso">${opt(cursos, C.todos)}</select></label>
-  <label>${esc(C.filtros.ud)}<select name="ud">${opt(uds, C.todas)}</select></label>
+  <label>${esc(C.filtros.tema)}<select name="tema">${opt(temas, C.todos)}</select></label>
   <label>${esc(C.filtros.etiqueta)}<select name="etq">${opt(etiquetas, C.todas)}</select></label>
   <label>${esc(C.filtros.tipo)}<select name="tipo">${opt(tipos, C.todos)}</select></label>
   <label>${esc(C.filtros.buscar)}<input type="search" name="q" autocomplete="off"></label>
@@ -175,7 +175,7 @@ ${Object.keys(kit).length ? `<section><h2><span class="n">02</span>${esc(C.kit)}
     var v = {}; [].forEach.call(f.elements, function (e) { if (e.name) v[e.name] = e.value; });
     var q = (v.q || '').toLowerCase().trim(), n = 0;
     items.forEach(function (li) {
-      var ok = (!v.lang || li.dataset.lang === v.lang) && (!v.curso || li.dataset.curso === v.curso) && (!v.ud || li.dataset.ud === v.ud)
+      var ok = (!v.lang || li.dataset.lang === v.lang) && (!v.curso || li.dataset.curso === v.curso) && (!v.tema || li.dataset.tema === v.tema)
         && (!v.etq || li.dataset.etq.split('|').indexOf(v.etq) >= 0) && (!v.tipo || li.dataset.tipo.split('|').indexOf(v.tipo) >= 0)
         && (!q || li.dataset.texto.indexOf(q) >= 0);
       li.hidden = !ok; if (ok) n++;

@@ -173,7 +173,7 @@ const DOCENTE = {
 const CATALOGO = {
   titulo: 'Ditados · Dictados',
   sub: 'Dictados para preparar, proyectar, imprimir y corregir en Lingua Galega y Lengua Castellana.',
-  filtros: { lang: 'Lengua', curso: 'Curso', ud: 'Unidad', etiqueta: 'Regla o etiqueta', tipo: 'Tipo de texto', buscar: 'Buscar' },
+  filtros: { lang: 'Lengua', curso: 'Curso', tema: 'Tema', etiqueta: 'Regla o etiqueta', tipo: 'Tipo de texto', buscar: 'Buscar' },
   langs: { gl: 'Galego', es: 'Castellano' },
   todos: 'Todos', todas: 'Todas',
   opciones: 'opciones', opcion: 'opción', palabras: 'palabras', claves: 'palabras clave',
