@@ -28,7 +28,8 @@ function segmentar(texto, { min = 3, max = 8 } = {}) {
   const plano = textoPlano(texto);
   if (!plano) return [];
   // 1. Frases: cortes tras . ! ? … ; :
-  const frases = plano.match(/[^.!?…;:]+[.!?…;:]+(?:\s*[»”")\]]+)?|[^.!?…;:]+$/g).map((f) => f.trim()).filter(Boolean);
+  // Frase = texto + puntuación fuerte, con sus comillas de cierre y la puntuación que las sigue («…!».)
+  const frases = plano.match(/[^.!?…;:]+[.!?…;:]+(?:\s*[»”")\]]+[.!?…;:]*)?|[^.!?…;:]+$/g).map((f) => f.trim()).filter(Boolean);
   const trozos = [];
   for (const frase of frases) {
     // 2. Dentro de la frase, por comas

@@ -1,0 +1,117 @@
+{
+  "lang": "es",
+  "num": 10,
+  "curso": "3",
+  "titulo": "Dictado 10 · Y, ll, nombres propios y punto y coma",
+  "tema": "Y y ll · mayúscula en los nombres propios · dos puntos y punto y coma",
+  "regra": "Palabras con y (mayor, Yago, voy) y con ll (ella, llega, Gallego) · los nombres de personas y lugares van con mayúscula · dos puntos antes de una explicación o de una cita · punto y coma para separar partes relacionadas",
+  "etiquetas": ["y y ll", "mayúscula", "nombres propios", "dos puntos", "punto y coma", "h"],
+  "fixome": [
+    "Con y: mayor, voy, Yago. Con ll: ella, llega, Gallego.",
+    "Los nombres de personas y de lugares van con mayúscula: José, Santiago, Museo del Pueblo Gallego.",
+    "Dos puntos antes de una explicación o de lo que alguien dice: grita: «¡Ya voy!».",
+    "Punto y coma para separar dos partes muy relacionadas de la misma frase."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Ciencia",
+      "titulo": "El hielo que flota",
+      "texto": "El hielo flota en el agua porque pesa menos que ella. Por eso los icebergs navegan por el mar como barcos blancos. Solo vemos la punta: la mayor parte va debajo del agua. En los polos, el hielo cubre el mar. Cuando llega el verano, parte de él se derrite y vuelve a ser agua.",
+      "segmentos": [
+        "El hielo flota en el agua",
+        "porque pesa menos que ella.",
+        "Por eso los icebergs navegan por el mar",
+        "como barcos blancos.",
+        "Solo vemos la punta:",
+        "la mayor parte va debajo del agua.",
+        "En los polos, el hielo cubre el mar.",
+        "Cuando llega el verano,",
+        "parte de él se derrite",
+        "y vuelve a ser agua."
+      ],
+      "foco": [
+        { "p": "hielo", "por": "Las palabras que empiezan por el sonido ie llevan h: hielo, hierba, hierro." },
+        { "p": "ella", "por": "Con ll." },
+        { "p": "blancos", "por": "Con bl." },
+        { "p": "Solo vemos la punta:", "por": "Dos puntos antes de una explicación. Solo no lleva tilde.", "e": "punta:" },
+        { "p": "mayor", "por": "Con y." },
+        { "p": "debajo", "por": "Con j. Se escribe en una sola palabra." },
+        { "p": "llega", "por": "Con ll." },
+        { "p": "él", "por": "Tilde diacrítica: él es el pronombre. El, sin tilde, es el artículo." },
+        { "p": "vuelve", "por": "Del verbo volver: con v." }
+      ],
+      "datos": "El hielo es menos denso que el agua líquida, por eso flota; de un iceberg solo sobresale alrededor de una décima parte. En las regiones polares el mar se congela en invierno y parte del hielo se derrite en verano. Datos de conocimiento general de ciencias naturales."
+    },
+    {
+      "letra": "B",
+      "tipo": "Narración",
+      "titulo": "Un viaje a Santiago",
+      "texto": "El fin de semana, Yago y su abuelo José fueron a Santiago de Compostela en tren. Vieron la catedral, pasearon por la plaza del Obradoiro y comieron tarta de almendra. Después visitaron el Museo del Pueblo Gallego. Yago compró una postal y le escribió a su amiga Isabel: «¡Santiago es genial!».",
+      "segmentos": [
+        "El fin de semana,",
+        "Yago y su abuelo José",
+        "fueron a Santiago de Compostela en tren.",
+        "Vieron la catedral,",
+        "pasearon por la plaza del Obradoiro",
+        "y comieron tarta de almendra.",
+        "Después visitaron",
+        "el Museo del Pueblo Gallego.",
+        "Yago compró una postal",
+        "y le escribió a su amiga Isabel:",
+        "«¡Santiago es genial!»."
+      ],
+      "foco": [
+        { "p": "Yago", "por": "Nombre de persona: mayúscula. Con y." },
+        { "p": "José", "por": "Nombre de persona: mayúscula. Aguda terminada en vocal: lleva tilde." },
+        { "p": "Santiago de Compostela", "por": "Nombre de lugar: mayúscula en Santiago y en Compostela.", "e": "Santiago de Compostela" },
+        { "p": "catedral", "por": "Nombre común: minúscula." },
+        { "p": "Obradoiro", "por": "Nombre propio de la plaza: mayúscula. Plaza, que es nombre común, va en minúscula." },
+        { "p": "Museo del Pueblo Gallego", "por": "Nombre propio de una institución: las palabras principales van con mayúscula. Gallego lleva ll.", "e": "Museo del Pueblo Gallego" },
+        { "p": "escribió", "por": "Aguda terminada en vocal: lleva tilde." },
+        { "p": "Isabel:", "por": "Dos puntos antes de lo que alguien escribe o dice.", "e": "Isabel:" },
+        { "p": "genial", "por": "La g delante de e suena como j, pero se escribe g." }
+      ],
+      "datos": "Santiago de Compostela: catedral, plaza del Obradoiro, tarta de Santiago (de almendra) y Museo del Pueblo Gallego son reales. Los nombres de las personas son ficticios."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instructivo",
+      "titulo": "Cómo jugar al escondite",
+      "texto": "Para jugar al escondite necesitáis un grupo de amigos y un lugar seguro. Un jugador se tapa los ojos y cuenta hasta veinte. Los demás se esconden sin hacer ruido. Cuando acaba de contar, grita: «¡Ya voy!». Después busca a los compañeros; el primero que encuentra será quien cuente en la siguiente partida.",
+      "segmentos": [
+        "Para jugar al escondite",
+        "necesitáis un grupo de amigos",
+        "y un lugar seguro.",
+        "Un jugador se tapa los ojos",
+        "y cuenta hasta veinte.",
+        "Los demás se esconden sin hacer ruido.",
+        "Cuando acaba de contar, grita:",
+        "«¡Ya voy!».",
+        "Después busca a los compañeros;",
+        "el primero que encuentra",
+        "será quien cuente en la siguiente partida."
+      ],
+      "foco": [
+        { "p": "jugar", "por": "Con j." },
+        { "p": "necesitáis", "por": "Lleva tilde en la última sílaba: ne-ce-si-TÁIS." },
+        { "p": "jugador", "por": "Con j." },
+        { "p": "ojos", "por": "Con j." },
+        { "p": "hasta", "por": "Con h, que no suena." },
+        { "p": "hacer", "por": "Con h, que no suena." },
+        { "p": "grita: «¡Ya voy!»", "por": "Dos puntos antes de lo que alguien dice. Ya y voy llevan y.", "e": "grita: «¡Ya voy!»" },
+        { "p": "compañeros;", "por": "Punto y coma: separa dos partes muy relacionadas de la misma frase.", "e": "compañeros;" },
+        { "p": "será", "por": "Aguda terminada en vocal: lleva tilde." },
+        { "p": "siguiente", "por": "Gu delante de i: la u no suena." }
+      ],
+      "datos": "Reglas del juego tradicional del escondite. Sin datos que verificar."
+    }
+  ]
+}

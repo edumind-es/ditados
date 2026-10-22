@@ -1,0 +1,131 @@
+{
+  "lang": "gl",
+  "num": 11,
+  "curso": "4",
+  "titulo": "Ditado 11 · Os verbos: -aba, -ía e o h",
+  "tema": "Formas verbais: o pretérito imperfecto en -aba e -ía · o h do verbo haber · b e v nos verbos",
+  "regra": "O pretérito imperfecto escríbese con b (cantaba, xogabamos) ou con -ía (comía, tiña non: tiña é irregular) · as formas do verbo haber levan h: hai, había · verbos con v: vir, vivir, volver, avisar",
+  "etiquetas": ["verbos", "imperfecto", "b e v", "h", "punto e coma", "til diacrítico"],
+  "fixome": [
+    "Imperfecto dos verbos en -ar: con b: gardaba, tocaba, xogabamos, cantabamos.",
+    "Imperfecto dos verbos en -er e -ir: con -ía: facía, recollían, oía. En galego, comiamos e iamos non levan til.",
+    "As formas do verbo haber levan h: hai, había.",
+    "Con v: vir (viña, vés), vivir, volver (volvo), avisar."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "Cando non había neveiras",
+      "texto": "Hai cen anos case ninguén tiña neveira. A xente gardaba a comida nas adegas, onde facía fresco, e salgaba o peixe para que durase meses. No inverno, algúns recollían neve da montaña e gardábana en pozos fondos; así, no verán había xeo para refrescar as bebidas. Hoxe abrimos a porta da neveira sen pensar canto cambiou a vida.",
+      "segmentos": [
+        "Hai cen anos",
+        "case ninguén tiña neveira.",
+        "A xente gardaba a comida nas adegas,",
+        "onde facía fresco,",
+        "e salgaba o peixe",
+        "para que durase meses.",
+        "No inverno, algúns recollían neve da montaña",
+        "e gardábana en pozos fondos;",
+        "así, no verán había xeo",
+        "para refrescar as bebidas.",
+        "Hoxe abrimos a porta da neveira",
+        "sen pensar canto cambiou a vida."
+      ],
+      "foco": [
+        { "p": "Hai", "por": "Do verbo haber: con h." },
+        { "p": "tiña", "por": "Imperfecto do verbo ter: ti-ña, con ñ." },
+        { "p": "neveira", "por": "Con v. Vén de neve." },
+        { "p": "gardaba", "por": "Imperfecto dun verbo en -ar: con b." },
+        { "p": "facía", "por": "Imperfecto dun verbo en -er: con -ía. A i tónica leva til." },
+        { "p": "salgaba", "por": "Imperfecto dun verbo en -ar: con b." },
+        { "p": "recollían", "por": "Imperfecto dun verbo en -er: con -ía. Con ll." },
+        { "p": "gardábana", "por": "Gardaban + a. Acentúase como unha soa palabra: esdrúxula, leva til." },
+        { "p": "fondos;", "por": "Punto e coma: separa dúas partes moi relacionadas da mesma frase.", "e": "fondos;" },
+        { "p": "había", "por": "Do verbo haber: con h e con -ía." },
+        { "p": "bebidas", "por": "Con b, como beber." },
+        { "p": "cambiou", "por": "Pretérito de cambiar: con b, e antes de b vai m." }
+      ],
+      "datos": "Antes da neveira eléctrica, a comida conservábase en adegas frescas, salgada ou afumada, e en moitas zonas de montaña gardábase neve en pozos (as neveiras tradicionais) para ter xeo no verán. Datos de coñecemento xeral sobre a vida cotiá de hai un século."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "O cuco",
+      "texto": "O cuco non fai niño. A femia pon o ovo no niño doutro paxaro e marcha. Cando o cuquiño nace, bota fóra os outros ovos e os pais adoptivos alimentan só a el, aínda que xa é máis grande ca eles. Hai anos, a xente sabía que chegaba a primavera cando oía o cuco cantar. Dicían que se viña antes, o ano sería bo.",
+      "segmentos": [
+        "O cuco non fai niño.",
+        "A femia pon o ovo",
+        "no niño doutro paxaro e marcha.",
+        "Cando o cuquiño nace,",
+        "bota fóra os outros ovos",
+        "e os pais adoptivos alimentan só a el,",
+        "aínda que xa é máis grande ca eles.",
+        "Hai anos, a xente sabía",
+        "que chegaba a primavera",
+        "cando oía o cuco cantar.",
+        "Dicían que se viña antes,",
+        "o ano sería bo."
+      ],
+      "foco": [
+        { "p": "fai", "por": "Do verbo facer: terceira persoa do presente." },
+        { "p": "ovo", "por": "Con v." },
+        { "p": "bota", "por": "Do verbo botar: con b." },
+        { "p": "fóra", "por": "Til diacrítico: fóra é o adverbio (bota fóra). Fora, sen til, é do verbo ser ou ir." },
+        { "p": "adoptivos", "por": "Con v." },
+        { "p": "só", "por": "Til diacrítico: só significa «soamente»." },
+        { "p": "Hai", "por": "Do verbo haber: con h." },
+        { "p": "sabía", "por": "Imperfecto de saber: con b e con -ía." },
+        { "p": "chegaba", "por": "Imperfecto dun verbo en -ar: con b." },
+        { "p": "oía", "por": "Imperfecto de oír: a i tónica forma hiato e leva til." },
+        { "p": "Dicían", "por": "Imperfecto de dicir: con -ía." },
+        { "p": "viña", "por": "Imperfecto do verbo vir: con v." },
+        { "p": "sería", "por": "Condicional de ser: con -ía." }
+      ],
+      "datos": "O cuco é un parasito de cría: a femia pon os ovos en niños doutras aves e o pitiño expulsa os ovos ou crías do hóspede. O canto do cuco anuncia tradicionalmente a primavera e hai refráns populares sobre el. Datos de coñecemento xeral sobre o cuco europeo, comprobables en guías de aves."
+    },
+    {
+      "letra": "C",
+      "tipo": "Carta",
+      "titulo": "Carta a unha amiga do campamento",
+      "texto": "Ola, Noa:\nLembras o campamento do verán pasado? Eu penso moito nel. Cada mañá iamos nadar ao río, despois comiamos á sombra dos carballos e pola tarde xogabamos ao balón ata que anoitecía. Había un monitor que tocaba a guitarra e nós cantabamos sen afinar. Este ano volvo. Vés ti tamén? Avísame pronto!\nUnha aperta, Iria",
+      "segmentos": [
+        "Ola, Noa:",
+        "Lembras o campamento do verán pasado?",
+        "Eu penso moito nel.",
+        "Cada mañá iamos nadar ao río,",
+        "despois comiamos á sombra dos carballos",
+        "e pola tarde xogabamos ao balón",
+        "ata que anoitecía.",
+        "Había un monitor que tocaba a guitarra",
+        "e nós cantabamos sen afinar.",
+        "Este ano volvo.",
+        "Vés ti tamén?",
+        "Avísame pronto!",
+        "Unha aperta, Iria"
+      ],
+      "foco": [
+        { "p": "Lembras o campamento do verán pasado?", "por": "A pregunta leva o signo ao final; o de apertura é opcional.", "e": "Lembras … pasado?" },
+        { "p": "campamento", "por": "Antes de p vai m." },
+        { "p": "iamos", "por": "Imperfecto do verbo ir: iamos, sen til en galego." },
+        { "p": "comiamos", "por": "Imperfecto dun verbo en -er: comiamos, sen til en galego." },
+        { "p": "xogabamos", "por": "Imperfecto dun verbo en -ar: con b e sen til en galego." },
+        { "p": "anoitecía", "por": "Imperfecto de anoitecer: con -ía." },
+        { "p": "Había", "por": "Do verbo haber: con h e con -ía." },
+        { "p": "tocaba", "por": "Imperfecto dun verbo en -ar: con b." },
+        { "p": "cantabamos", "por": "Imperfecto dun verbo en -ar: con b e sen til en galego." },
+        { "p": "volvo", "por": "Do verbo volver: con v." },
+        { "p": "Vés ti tamén?", "por": "Vés, do verbo vir, leva til diacrítico (ves é do verbo ver).", "e": "Vés ti tamén?" },
+        { "p": "Avísame", "por": "Avisa + me: esdrúxula, leva til. Con v." }
+      ],
+      "datos": "Carta ficticia; nomes ficticios. Sen datos que verificar."
+    }
+  ]
+}

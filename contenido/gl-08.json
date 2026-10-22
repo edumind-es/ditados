@@ -1,0 +1,95 @@
+{
+  "lang": "gl",
+  "num": 8,
+  "curso": "1",
+  "titulo": "Ditado 8 · Ñ, ll, ch e a maiúscula",
+  "tema": "As letras ñ, ll e ch · a maiúscula ao empezar e despois de punto",
+  "regra": "Ñ, ll e ch representan un só son cada unha · a primeira palabra dunha frase vai con maiúscula · despois de punto, maiúscula",
+  "etiquetas": ["ñ", "ll", "ch", "maiúscula", "punto"],
+  "fixome": [
+    "Ñ: castaña, muíño. Ll: ovella, colle. Ch: chove, cheira.",
+    "A primeira palabra da frase vai con maiúscula.",
+    "Despois de punto, outra vez maiúscula.",
+    "A exclamación leva o signo ao final: Que ben!"
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Natureza",
+      "titulo": "As castañas do castiñeiro",
+      "texto": "No outono, o castiñeiro deixa caer os ourizos. Dentro van as castañas, marróns e brillantes. Chégalles o frío e nós asamos castañas na lareira. Que ben cheiran!",
+      "segmentos": [
+        "No outono,",
+        "o castiñeiro deixa caer os ourizos.",
+        "Dentro van as castañas,",
+        "marróns e brillantes.",
+        "Chégalles o frío",
+        "e nós asamos castañas na lareira.",
+        "Que ben cheiran!"
+      ],
+      "foco": [
+        { "p": "No", "por": "Maiúscula porque é a primeira palabra da frase." },
+        { "p": "castiñeiro", "por": "Con ñ: cas-ti-ñei-ro." },
+        { "p": "castañas", "por": "Con ñ." },
+        { "p": "brillantes", "por": "Con ll." },
+        { "p": "Chégalles", "por": "Maiúscula porque vai despois de punto. Con ch e con ll." },
+        { "p": "cheiran", "por": "Con ch." }
+      ],
+      "datos": "O castiñeiro bota os ourizos no outono e dentro van as castañas; o magosto é a festa tradicional de asar castañas. Datos de coñecemento xeral sobre o castiñeiro en Galicia."
+    },
+    {
+      "letra": "B",
+      "tipo": "Curiosidade",
+      "titulo": "A la das ovellas",
+      "texto": "As ovellas teñen a la moi mesta. Con ela fanse xerseis e mantas para o inverno. Cada primavera, o pastor rápalles a la e elas quedan fresquiñas. Que ledas corren polo monte!",
+      "segmentos": [
+        "As ovellas teñen a la moi mesta.",
+        "Con ela fanse xerseis",
+        "e mantas para o inverno.",
+        "Cada primavera,",
+        "o pastor rápalles a la",
+        "e elas quedan fresquiñas.",
+        "Que ledas corren polo monte!"
+      ],
+      "foco": [
+        { "p": "ovellas", "por": "Con ll." },
+        { "p": "teñen", "por": "Con ñ." },
+        { "p": "Cada", "por": "Maiúscula porque vai despois de punto." },
+        { "p": "rápalles", "por": "Con ll." },
+        { "p": "fresquiñas", "por": "Con ñ. Qu diante de i: o u non soa." },
+        { "p": "Que ledas corren polo monte!", "por": "A exclamación leva o signo ao final. Que vai con maiúscula porque empeza a frase.", "e": "Que … monte!" }
+      ],
+      "datos": "A la das ovellas rápase na primavera e con ela fanse pezas de roupa. Datos de coñecemento xeral sobre a gandaría ovina."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instrutivo",
+      "titulo": "Un muíño de papel",
+      "texto": "Colle un cadrado de papel. Dobra as puntas cara ao centro. Pincha un alfinete no medio e pégao a un pau. Sopra ben forte e mira como xira o muíño!",
+      "segmentos": [
+        "Colle un cadrado de papel.",
+        "Dobra as puntas cara ao centro.",
+        "Pincha un alfinete no medio",
+        "e pégao a un pau.",
+        "Sopra ben forte",
+        "e mira como xira o muíño!"
+      ],
+      "foco": [
+        { "p": "Colle", "por": "Maiúscula porque empeza a frase. Con ll." },
+        { "p": "papel.", "por": "A frase remata con punto.", "e": "papel." },
+        { "p": "Dobra", "por": "Maiúscula porque vai despois de punto." },
+        { "p": "Pincha", "por": "Maiúscula despois de punto. Con ch." },
+        { "p": "xira", "por": "Con x." },
+        { "p": "muíño", "por": "Con ñ. O i leva til porque é tónico e vai separado do u." }
+      ],
+      "datos": "Texto instrutivo: muíño de vento de papel, manualidade clásica. O alfinete pínchao unha persoa adulta. Sen outros datos que verificar."
+    }
+  ]
+}

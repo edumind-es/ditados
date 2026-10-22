@@ -1,0 +1,221 @@
+{
+  "lang": "gl",
+  "num": 10,
+  "curso": "3",
+  "titulo": "Ditado 10 · O x, os nomes propios e o punto e coma",
+  "tema": "O x galego · maiúscula nos nomes propios · dous puntos e punto e coma",
+  "regra": "Moitas palabras galegas levan x onde o castelán leva j ou g (xeo, xogar, Xosé) · os nomes de persoas e de lugares van con maiúscula · dous puntos antes dunha explicación ou dunha cita · punto e coma para separar partes relacionadas",
+  "etiquetas": [
+    "x",
+    "maiúscula",
+    "nomes propios",
+    "dous puntos",
+    "punto e coma",
+    "verbos con pronome"
+  ],
+  "fixome": [
+    "Con x: xeo, xogar, xenial, debaixo, Xiana.",
+    "Os nomes de persoas e de lugares van con maiúscula: Xosé, Compostela, Museo do Pobo Galego.",
+    "Dous puntos antes dunha explicación ou do que alguén di: berra: Alá vou!",
+    "Punto e coma para separar dúas partes moi relacionadas da mesma frase."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": [
+      "https://academia.gal/dicionario",
+      "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
+    ],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Ciencia",
+      "titulo": "O xeo que flota",
+      "texto": "O xeo flota na auga porque pesa menos ca ela. Por iso as montañas de xeo navegan polo mar coma barcos brancos. Só vemos a punta: a maior parte vai debaixo da auga. Nos polos, o xeo cobre o mar durante meses. Cando chega o verán, parte del derrétese e volve ser auga.",
+      "segmentos": [
+        "O xeo flota na auga",
+        "porque pesa menos ca ela.",
+        "Por iso as montañas de xeo navegan polo mar",
+        "coma barcos brancos.",
+        "Só vemos a punta:",
+        "a maior parte vai debaixo da auga.",
+        "Nos polos, o xeo cobre o mar",
+        "durante meses.",
+        "Cando chega o verán,",
+        "parte del derrétese",
+        "e volve ser auga."
+      ],
+      "foco": [
+        {
+          "p": "xeo",
+          "por": "Con x. En castelán dise «hielo»."
+        },
+        {
+          "p": "montañas",
+          "por": "Con ñ. Grave rematada en -s: sen til."
+        },
+        {
+          "p": "coma",
+          "por": "Coma significa «como» nas comparacións: coma barcos. Non leva til."
+        },
+        {
+          "p": "brancos",
+          "por": "Con br. En castelán dise «blancos»."
+        },
+        {
+          "p": "Só vemos a punta:",
+          "por": "Dous puntos antes dunha explicación. Só leva til diacrítico: significa «soamente».",
+          "e": "punta:"
+        },
+        {
+          "p": "debaixo",
+          "por": "Con x. Escríbese nunha soa palabra."
+        },
+        {
+          "p": "Nos",
+          "por": "Maiúscula porque vai despois de punto. Nos é en + os."
+        },
+        {
+          "p": "verán",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "derrétese",
+          "por": "Derrete + se. Acentúase como unha soa palabra: esdrúxula, leva til."
+        }
+      ],
+      "datos": "O xeo é menos denso ca a auga líquida, por iso flota; dun iceberg só sobresae arredor dunha décima parte. Nas rexións polares o mar conxélase en inverno e parte do xeo derrétese en verán. Datos de coñecemento xeral de ciencias naturais."
+    },
+    {
+      "letra": "B",
+      "tipo": "Narración",
+      "titulo": "Unha viaxe a Compostela",
+      "texto": "Na fin de semana, Xiana e o seu avó Xosé foron a Compostela en tren. Viron a catedral, pasearon pola praza do Obradoiro e comeron unha tarta de améndoa. Despois, visitaron o Museo do Pobo Galego. Xiana mercou unha postal e escribiulle á súa amiga Sabela: «Compostela é xenial!».",
+      "segmentos": [
+        "Na fin de semana,",
+        "Xiana e o seu avó Xosé",
+        "foron a Compostela en tren.",
+        "Viron a catedral,",
+        "pasearon pola praza do Obradoiro",
+        "e comeron unha tarta de améndoa.",
+        "Despois, visitaron",
+        "o Museo do Pobo Galego.",
+        "Xiana mercou unha postal",
+        "e escribiulle á súa amiga Sabela:",
+        "«Compostela é xenial!»."
+      ],
+      "foco": [
+        {
+          "p": "Xiana",
+          "por": "Nome de persoa: maiúscula. Con x."
+        },
+        {
+          "p": "Xosé",
+          "por": "Nome de persoa: maiúscula. Con x. Aguda rematada en vogal: leva til."
+        },
+        {
+          "p": "Compostela",
+          "por": "Nome de lugar: maiúscula."
+        },
+        {
+          "p": "catedral",
+          "por": "Nome común: minúscula."
+        },
+        {
+          "p": "Obradoiro",
+          "por": "Nome propio da praza: maiúscula. Praza, que é nome común, vai en minúscula."
+        },
+        {
+          "p": "améndoa",
+          "por": "Esdrúxula: leva til sempre. En castelán dise «almendra»."
+        },
+        {
+          "p": "Museo do Pobo Galego",
+          "por": "Nome propio dunha institución: as palabras principais van con maiúscula.",
+          "e": "Museo do Pobo Galego"
+        },
+        {
+          "p": "escribiulle",
+          "por": "Escribiu + lle: o pronome vai pegado ao verbo."
+        },
+        {
+          "p": "Sabela:",
+          "por": "Dous puntos antes do que alguén escribe ou di.",
+          "e": "Sabela:"
+        },
+        {
+          "p": "xenial",
+          "por": "Con x. En castelán dise «genial»."
+        }
+      ],
+      "datos": "Santiago de Compostela: catedral, praza do Obradoiro, tarta de Santiago (de améndoa) e Museo do Pobo Galego son reais. Os nomes das persoas son ficticios."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instrutivo",
+      "titulo": "Como xogar ás agachadas",
+      "texto": "Para xogar ás agachadas necesitades un grupo de amigos e un lugar seguro. Un xogador tapa os ollos e conta ata vinte en voz alta. Os demais escóndense sen facer ruído. Cando acaba de contar, berra: Alá vou! Despois busca os compañeiros; o primeiro que atopa será quen conte na seguinte partida.",
+      "segmentos": [
+        "Para xogar ás agachadas",
+        "necesitades un grupo de amigos",
+        "e un lugar seguro.",
+        "Un xogador tapa os ollos",
+        "e conta ata vinte en voz alta.",
+        "Os demais escóndense sen facer ruído.",
+        "Cando acaba de contar, berra:",
+        "Alá vou!",
+        "Despois busca os compañeiros;",
+        "o primeiro que atopa",
+        "será quen conte na seguinte partida."
+      ],
+      "foco": [
+        {
+          "p": "xogar",
+          "por": "Con x. En castelán dise «jugar»."
+        },
+        {
+          "p": "ás",
+          "por": "Contracción de a + as: leva til."
+        },
+        {
+          "p": "xogador",
+          "por": "Con x."
+        },
+        {
+          "p": "ollos",
+          "por": "Con ll."
+        },
+        {
+          "p": "voz",
+          "por": "Remata en z."
+        },
+        {
+          "p": "escóndense",
+          "por": "Esconden + se. Acentúase como unha soa palabra: esdrúxula, leva til."
+        },
+        {
+          "p": "ruído",
+          "por": "A i é tónica e vai separada da u (hiato): leva til."
+        },
+        {
+          "p": "berra: Alá vou!",
+          "por": "Dous puntos antes do que alguén di. A exclamación leva o signo ao final.",
+          "e": "berra: Alá vou!"
+        },
+        {
+          "p": "compañeiros;",
+          "por": "Punto e coma: separa dúas partes moi relacionadas da mesma frase.",
+          "e": "compañeiros;"
+        },
+        {
+          "p": "seguinte",
+          "por": "Gu diante de i: o u non soa."
+        }
+      ],
+      "datos": "Regras do xogo tradicional das agachadas (o escondite). Sen datos que verificar."
+    }
+  ]
+}

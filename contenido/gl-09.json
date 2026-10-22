@@ -1,0 +1,107 @@
+{
+  "lang": "gl",
+  "num": 9,
+  "curso": "2",
+  "titulo": "Ditado 9 · O son suave de z e c · o plural",
+  "tema": "O son suave: z diante de a, o, u e c diante de e, i · o plural en -s e en -es",
+  "regra": "O son suave escríbese z diante de a, o, u (zapato, zoo) e c diante de e, i (cebra, cinco) · plural: -s se remata en vogal (cebra, cebras) e -es se remata en -r, -z ou -s (flor, flores; rapaz, rapaces)",
+  "etiquetas": ["z e c", "plural", "ch", "x", "dous puntos"],
+  "fixome": [
+    "Z diante de a, o, u: zapato, zoo, azul. C diante de e, i: cebra, cereixa, cinco.",
+    "Plural en -s se a palabra remata en vogal: cebra, cebras.",
+    "Plural en -es se remata en -r ou en -s: flor, flores. Se remata en -z, cambia a -ces: rapaz, rapaces.",
+    "Algunhas non cambian: o lapis, os lapis."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidade",
+      "titulo": "Cabalos con pixama",
+      "texto": "As cebras parecen cabalos con pixama. Cada cebra ten as súas raias, distintas das demais, como as nosas pegadas dactilares. Viven en grupos grandes na sabana e, cando un león se achega, corren todas xuntas para confundilo.",
+      "segmentos": [
+        "As cebras parecen cabalos con pixama.",
+        "Cada cebra ten as súas raias,",
+        "distintas das demais,",
+        "como as nosas pegadas dactilares.",
+        "Viven en grupos grandes na sabana",
+        "e, cando un león se achega,",
+        "corren todas xuntas para confundilo."
+      ],
+      "foco": [
+        { "p": "cebras", "por": "Ce soa suave. Plural en -s porque remata en vogal." },
+        { "p": "parecen", "por": "Ce soa suave." },
+        { "p": "cabalos", "por": "Plural en -s. Cabalo vai cun só l." },
+        { "p": "raias", "por": "Plural en -s. En galego escríbese con i: raia." },
+        { "p": "dactilares", "por": "Plural en -es porque remata en -r: dactilar, dactilares." },
+        { "p": "león", "por": "Remata en -n e a sílaba forte é a última: leva til." },
+        { "p": "achega", "por": "Con ch." },
+        { "p": "xuntas", "por": "Con x." }
+      ],
+      "datos": "As raias de cada cebra son únicas, como as pegadas dactilares; viven en manadas na sabana africana e os científicos cren que as raias axudan a confundir os depredadores. Datos de coñecemento xeral sobre as cebras, comprobables en guías de mamíferos."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "A cereixeira",
+      "texto": "Na primavera, a cereixeira énchese de flores brancas. Despois, as flores caen e nacen as cereixas, pequenas e verdes. Co sol vólvense vermellas e doces. Os merlos e os rapaces chegan antes ca ninguén a comelas. Hai que ser rápido!",
+      "segmentos": [
+        "Na primavera,",
+        "a cereixeira énchese de flores brancas.",
+        "Despois, as flores caen",
+        "e nacen as cereixas,",
+        "pequenas e verdes.",
+        "Co sol vólvense vermellas e doces.",
+        "Os merlos e os rapaces",
+        "chegan antes ca ninguén a comelas.",
+        "Hai que ser rápido!"
+      ],
+      "foco": [
+        { "p": "cereixeira", "por": "Ce soa suave. Con x." },
+        { "p": "flores", "por": "Plural en -es porque remata en -r: flor, flores." },
+        { "p": "nacen", "por": "Ce soa suave." },
+        { "p": "cereixas", "por": "Ce soa suave. Plural en -s." },
+        { "p": "doces", "por": "Ce soa suave. Plural de doce." },
+        { "p": "rapaces", "por": "Plural de rapaz: a z cambia a c e engade -es." },
+        { "p": "chegan", "por": "Con ch." },
+        { "p": "ninguén", "por": "Remata en -n e a sílaba forte é a última: leva til." }
+      ],
+      "datos": "A cereixeira florece na primavera e as cereixas maduran co sol a principios do verán; os merlos comen cereixas. Datos de coñecemento xeral sobre a cereixeira."
+    },
+    {
+      "letra": "C",
+      "tipo": "Carta",
+      "titulo": "Unha carta desde o zoo",
+      "texto": "Querido Lucas:\nOnte fomos ao zoo. Vimos dez pingüíns, tres cebras e un oso enorme. Os monos facían caras e nós riamos sen parar. Ao final merquei un lapis con forma de serpe. Cando veñas, lévote.\nUn bico, Carme.",
+      "segmentos": [
+        "Querido Lucas:",
+        "Onte fomos ao zoo.",
+        "Vimos dez pingüíns,",
+        "tres cebras e un oso enorme.",
+        "Os monos facían caras",
+        "e nós riamos sen parar.",
+        "Ao final merquei un lapis",
+        "con forma de serpe.",
+        "Cando veñas, lévote.",
+        "Un bico, Carme."
+      ],
+      "foco": [
+        { "p": "Querido Lucas:", "por": "Despois do saúdo dunha carta van dous puntos.", "e": "Lucas:" },
+        { "p": "zoo", "por": "Z diante de o soa suave." },
+        { "p": "dez", "por": "Remata en z." },
+        { "p": "pingüíns", "por": "Plural en -s. A diérese fai soar o u." },
+        { "p": "cebras", "por": "Ce soa suave. Plural en -s." },
+        { "p": "facían", "por": "Ci soa suave." },
+        { "p": "lapis", "por": "Un lapis, dous lapis: non cambia en plural." },
+        { "p": "serpe", "por": "Remata en e. En castelán dise «serpiente»." }
+      ],
+      "datos": "Carta ficticia; nomes ficticios. Sen datos que verificar."
+    }
+  ]
+}
