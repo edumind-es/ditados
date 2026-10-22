@@ -1,0 +1,108 @@
+{
+  "lang": "es",
+  "num": 9,
+  "curso": "2",
+  "titulo": "Dictado 9 · Za, ce, ci, zo, zu y el plural",
+  "tema": "El sonido suave: z delante de a, o, u y c delante de e, i · el plural en -s y en -es",
+  "regra": "El sonido suave se escribe z delante de a, o, u (zapato, zoo) y c delante de e, i (cebra, cinco) · plural: -s si termina en vocal (cebra, cebras) y -es si termina en consonante (flor, flores; lápiz, lápices)",
+  "etiquetas": ["z y c", "plural", "ll", "j", "dos puntos"],
+  "fixome": [
+    "Z delante de a, o, u: zapato, zoo, azul. C delante de e, i: cebra, cereza, cinco.",
+    "Plural en -s si la palabra termina en vocal: cebra, cebras.",
+    "Plural en -es si termina en consonante: flor, flores. Si termina en -z, cambia a -ces: lápiz, lápices.",
+    "Después del saludo de una carta van dos puntos."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "Caballos con pijama",
+      "texto": "Las cebras parecen caballos con pijama. Cada cebra tiene sus rayas, distintas de las de las demás, como nuestras huellas. Viven en grupos grandes en la sabana y, cuando un león se acerca, corren todas juntas para confundirlo.",
+      "segmentos": [
+        "Las cebras parecen caballos con pijama.",
+        "Cada cebra tiene sus rayas,",
+        "distintas de las de las demás,",
+        "como nuestras huellas.",
+        "Viven en grupos grandes en la sabana",
+        "y, cuando un león se acerca,",
+        "corren todas juntas para confundirlo."
+      ],
+      "foco": [
+        { "p": "cebras", "por": "Ce suena suave. Plural en -s porque termina en vocal." },
+        { "p": "parecen", "por": "Ce suena suave." },
+        { "p": "caballos", "por": "Con b y con ll. Plural en -s." },
+        { "p": "pijama", "por": "Con j." },
+        { "p": "rayas", "por": "Con y. Plural en -s." },
+        { "p": "demás", "por": "Termina en -s y la sílaba fuerte es la última: lleva tilde." },
+        { "p": "huellas", "por": "Empieza por h, que no suena. Con ll." },
+        { "p": "acerca", "por": "Ce suena suave." },
+        { "p": "león", "por": "Termina en -n y la sílaba fuerte es la última: lleva tilde." }
+      ],
+      "datos": "Las rayas de cada cebra son únicas, como las huellas dactilares; viven en manadas en la sabana africana y los científicos creen que las rayas ayudan a confundir a los depredadores. Datos de conocimiento general sobre las cebras, comprobables en guías de mamíferos."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "El cerezo",
+      "texto": "En primavera, el cerezo se llena de flores blancas. Después, las flores caen y nacen las cerezas, pequeñas y verdes. Con el sol se vuelven rojas y dulces. Los mirlos y los niños llegan antes que nadie a comerlas. ¡Hay que ser rápido!",
+      "segmentos": [
+        "En primavera,",
+        "el cerezo se llena de flores blancas.",
+        "Después, las flores caen",
+        "y nacen las cerezas,",
+        "pequeñas y verdes.",
+        "Con el sol se vuelven rojas y dulces.",
+        "Los mirlos y los niños",
+        "llegan antes que nadie a comerlas.",
+        "¡Hay que ser rápido!"
+      ],
+      "foco": [
+        { "p": "cerezo", "por": "Ce suena suave; zo se escribe con z." },
+        { "p": "flores", "por": "Plural en -es porque termina en consonante: flor, flores." },
+        { "p": "nacen", "por": "Ce suena suave." },
+        { "p": "cerezas", "por": "Ce y za. Plural en -s." },
+        { "p": "dulces", "por": "Ce suena suave. Plural de dulce." },
+        { "p": "rojas", "por": "Con j." },
+        { "p": "llegan", "por": "Con ll." },
+        { "p": "¡Hay que ser rápido!", "por": "La exclamación se abre y se cierra. Hay va con h.", "e": "¡Hay … rápido!" }
+      ],
+      "datos": "El cerezo florece en primavera y las cerezas maduran con el sol a principios del verano; los mirlos comen cerezas. Datos de conocimiento general sobre el cerezo."
+    },
+    {
+      "letra": "C",
+      "tipo": "Carta",
+      "titulo": "Una carta desde el zoo",
+      "texto": "Querido Lucas:\nAyer fuimos al zoo. Vimos diez pingüinos, tres cebras y un oso enorme. Los monos hacían muecas y nosotros reíamos sin parar. Al final compré un lápiz con forma de serpiente. Cuando vengas, te llevo.\nUn beso, Carmen.",
+      "segmentos": [
+        "Querido Lucas:",
+        "Ayer fuimos al zoo.",
+        "Vimos diez pingüinos,",
+        "tres cebras y un oso enorme.",
+        "Los monos hacían muecas",
+        "y nosotros reíamos sin parar.",
+        "Al final compré un lápiz",
+        "con forma de serpiente.",
+        "Cuando vengas, te llevo.",
+        "Un beso, Carmen."
+      ],
+      "foco": [
+        { "p": "Querido Lucas:", "por": "Después del saludo de una carta van dos puntos.", "e": "Lucas:" },
+        { "p": "zoo", "por": "Z delante de o suena suave." },
+        { "p": "diez", "por": "Termina en z." },
+        { "p": "pingüinos", "por": "Plural en -s. La diéresis hace sonar la u." },
+        { "p": "cebras", "por": "Ce suena suave. Plural en -s." },
+        { "p": "hacían", "por": "Con h, que no suena. Ci suena suave." },
+        { "p": "compré", "por": "Antes de p va m. Lleva tilde en la última sílaba." },
+        { "p": "lápiz", "por": "Termina en z. Su plural es lápices." }
+      ],
+      "datos": "Carta ficticia; nombres ficticios. Sin datos que verificar."
+    }
+  ]
+}

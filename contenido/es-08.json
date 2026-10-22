@@ -1,0 +1,96 @@
+{
+  "lang": "es",
+  "num": 8,
+  "curso": "1",
+  "titulo": "Dictado 8 · Ñ, ll, ch y la mayúscula",
+  "tema": "Las letras ñ, ll y ch · la mayúscula al empezar, después de punto y en los nombres propios",
+  "regra": "Ñ, ll y ch representan un solo sonido cada una · la primera palabra de una frase va con mayúscula · después de punto, mayúscula · los nombres propios van con mayúscula",
+  "etiquetas": ["ñ", "ll", "ch", "mayúscula", "punto", "nombres propios"],
+  "fixome": [
+    "Ñ: castaña, montaña. Ll: llama, cuello. Ch: chimenea, estrecho.",
+    "La primera palabra de la frase va con mayúscula.",
+    "Después de punto, otra vez mayúscula.",
+    "Los nombres de lugares y de personas van con mayúscula: América, Carmen."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Naturaleza",
+      "titulo": "Las castañas del castaño",
+      "texto": "En otoño, el castaño deja caer los erizos. Dentro van las castañas, marrones y brillantes. Llega el frío y asamos castañas en la chimenea. ¡Qué bien huelen!",
+      "segmentos": [
+        "En otoño,",
+        "el castaño deja caer los erizos.",
+        "Dentro van las castañas,",
+        "marrones y brillantes.",
+        "Llega el frío",
+        "y asamos castañas en la chimenea.",
+        "¡Qué bien huelen!"
+      ],
+      "foco": [
+        { "p": "otoño", "por": "Con ñ." },
+        { "p": "castaño", "por": "Con ñ." },
+        { "p": "brillantes", "por": "Con ll." },
+        { "p": "Llega", "por": "Mayúscula porque va después de punto. Con ll." },
+        { "p": "chimenea", "por": "Con ch." },
+        { "p": "¡Qué bien huelen!", "por": "La exclamación se abre con ¡ y se cierra con !", "e": "¡ … !" }
+      ],
+      "datos": "El castaño suelta en otoño los erizos, que guardan las castañas; asarlas es una tradición de otoño. Datos de conocimiento general."
+    },
+    {
+      "letra": "B",
+      "tipo": "Curiosidad",
+      "titulo": "La llama",
+      "texto": "La llama vive en las montañas de América del Sur. Tiene el cuello largo y la lana muy suave. Puede cargar cosas pesadas por caminos estrechos. Cuando se enfada, escupe. ¡Mucho cuidado!",
+      "segmentos": [
+        "La llama vive en las montañas",
+        "de América del Sur.",
+        "Tiene el cuello largo",
+        "y la lana muy suave.",
+        "Puede cargar cosas pesadas",
+        "por caminos estrechos.",
+        "Cuando se enfada, escupe.",
+        "¡Mucho cuidado!"
+      ],
+      "foco": [
+        { "p": "llama", "por": "Con ll." },
+        { "p": "montañas", "por": "Con ñ." },
+        { "p": "América del Sur", "por": "Nombre de un lugar: va con mayúscula.", "e": "América del Sur" },
+        { "p": "cuello", "por": "Con ll." },
+        { "p": "estrechos", "por": "Con ch." },
+        { "p": "¡Mucho cuidado!", "por": "La exclamación se abre y se cierra. Mucho va con ch.", "e": "¡Mucho cuidado!" }
+      ],
+      "datos": "La llama es un animal de los Andes, en América del Sur; se usa como animal de carga por caminos de montaña y escupe cuando se siente molesta. Datos de conocimiento general, comprobables en una enciclopedia escolar."
+    },
+    {
+      "letra": "C",
+      "tipo": "Texto instructivo",
+      "titulo": "Un molinillo de papel",
+      "texto": "Coge un cuadrado de papel. Dobla las puntas hacia el centro. Pincha un alfiler en el medio y pégalo a un palo. Sopla muy fuerte y mira cómo gira el molinillo.",
+      "segmentos": [
+        "Coge un cuadrado de papel.",
+        "Dobla las puntas hacia el centro.",
+        "Pincha un alfiler en el medio",
+        "y pégalo a un palo.",
+        "Sopla muy fuerte",
+        "y mira cómo gira el molinillo."
+      ],
+      "foco": [
+        { "p": "Coge", "por": "Mayúscula porque empieza la frase. La g delante de e suena como j." },
+        { "p": "papel.", "por": "La frase termina con punto.", "e": "papel." },
+        { "p": "Dobla", "por": "Mayúscula porque va después de punto." },
+        { "p": "hacia", "por": "Con h, que no suena." },
+        { "p": "Pincha", "por": "Mayúscula después de punto. Con ch." },
+        { "p": "molinillo", "por": "Con ll." }
+      ],
+      "datos": "Texto instructivo: molinillo de viento de papel, manualidad clásica. El alfiler lo pincha una persona adulta. Sin otros datos que verificar."
+    }
+  ]
+}
