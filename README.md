@@ -61,7 +61,7 @@ dist/           salida compilada (no se versiona)
 
 ## Dictados incluidos
 
-De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º a 5.º, un dictado por curso y lengua con tres textos cada uno (`gl-03`…`gl-07`, `es-03`…`es-07`), escritos con ayuda de IA y guardados como **borrador**: el autor los revisa contra la RAG y la RAE y los publica desde el editor. Nada escrito por IA llega al alumnado sin revisión humana.
+De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º a 5.º, dos dictados por curso y lengua con tres textos cada uno (`gl-03`…`gl-12`, `es-03`…`es-12`), escritos con ayuda de IA y guardados como **borrador**: el autor los revisa contra la RAG y la RAE y los publica desde el editor. Nada escrito por IA llega al alumnado sin revisión humana.
 
 ## ODT y corrector
 

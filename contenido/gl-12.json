@@ -1,0 +1,139 @@
+{
+  "lang": "gl",
+  "num": 12,
+  "curso": "5",
+  "titulo": "Ditado 12 · B, v, h e os signos que ordenan",
+  "tema": "Palabras con b e con v · o h · dous puntos e punto e coma · verbos con pronome",
+  "regra": "Con b: abella, obreira, sobre, bosque, libro · con v: vivir, visitar, avisar, novo, aventura · con h: hai, había · dous puntos antes dunha explicación · punto e coma entre partes relacionadas · o pronome pegado ao verbo cambia o acento: gárdao, pásallo, Chámanlle",
+  "etiquetas": ["b e v", "h", "dous puntos", "punto e coma", "verbos con pronome", "esdrúxulas"],
+  "fixome": [
+    "Con b: abella, obreira, sobre, bosque, libro, biblioteca.",
+    "Con v: vivir, visitar, avisar, evaporar, novo, aventura.",
+    "Dous puntos antes dunha explicación: Anda en manda: unha parella e as súas crías. Punto e coma entre dúas partes moi relacionadas.",
+    "Co pronome pegado, o verbo faise esdrúxulo e leva til: gárdao, pásallo, Chámanlle."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
+    "notas": "Texto proposto por IA: pendente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Ciencia",
+      "titulo": "Como fan o mel as abellas",
+      "texto": "Para facer un só quilo de mel, as abellas dunha colmea visitan millóns de flores. Cada obreira sorbe o néctar coa lingua e gárdao nun estómago especial; na colmea pásallo a outra abella, que o deposita nas celas de cera. Alí, abanando coas ás, evaporan a auga que sobra ata que o mel espesa. Hai colmeas que producen vinte quilos nun verán.",
+      "segmentos": [
+        "Para facer un só quilo de mel,",
+        "as abellas dunha colmea",
+        "visitan millóns de flores.",
+        "Cada obreira sorbe o néctar coa lingua",
+        "e gárdao nun estómago especial;",
+        "na colmea pásallo a outra abella,",
+        "que o deposita nas celas de cera.",
+        "Alí, abanando coas ás,",
+        "evaporan a auga que sobra",
+        "ata que o mel espesa.",
+        "Hai colmeas que producen",
+        "vinte quilos nun verán."
+      ],
+      "foco": [
+        { "p": "abellas", "por": "Con b e con ll." },
+        { "p": "visitan", "por": "Con v." },
+        { "p": "obreira", "por": "Con b: vén de obra." },
+        { "p": "sorbe", "por": "Do verbo sorber: con b." },
+        { "p": "gárdao", "por": "Garda + o. Co pronome pegado faise esdrúxula: leva til." },
+        { "p": "estómago", "por": "Esdrúxula: leva til sempre." },
+        { "p": "especial;", "por": "Punto e coma: separa dúas partes moi relacionadas da mesma frase.", "e": "especial;" },
+        { "p": "pásallo", "por": "Pasa + lle + o = pásallo. Esdrúxula: leva til. Con ll." },
+        { "p": "abella", "por": "Con b e con ll." },
+        { "p": "abanando", "por": "Do verbo abanar: con b." },
+        { "p": "ás", "por": "Á significa «ala» e leva til; en plural, ás." },
+        { "p": "evaporan", "por": "Con v: vén de vapor." },
+        { "p": "sobra", "por": "Do verbo sobrar: con b." },
+        { "p": "Hai", "por": "Do verbo haber: con h." },
+        { "p": "verán", "por": "Aguda rematada en -n: leva til." }
+      ],
+      "datos": "Para producir un quilo de mel as abellas visitan uns millóns de flores (as estimacións habituais van de dous a catro millóns); o néctar pásase de abella en abella e evapórase abanando coas ás ata que madura nas celas. Unha colmea produtiva pode dar vinte quilos ou máis nunha tempada. Datos de coñecemento xeral de apicultura."
+    },
+    {
+      "letra": "B",
+      "tipo": "Natureza",
+      "titulo": "O lobo",
+      "texto": "O lobo vive en case toda Galicia, sobre todo nas serras do interior. Anda en manda: unha parella e as súas crías, que aprenden a cazar observando os adultos. Come xabarís, corzos e, ás veces, gando, por iso hai conflito cos gandeiros. Avisa dos perigos ouveando e ouve a manda a quilómetros de distancia. Vive nos bosques galegos desde hai miles de anos.",
+      "segmentos": [
+        "O lobo vive en case toda Galicia,",
+        "sobre todo nas serras do interior.",
+        "Anda en manda:",
+        "unha parella e as súas crías,",
+        "que aprenden a cazar observando os adultos.",
+        "Come xabarís, corzos e, ás veces, gando,",
+        "por iso hai conflito cos gandeiros.",
+        "Avisa dos perigos ouveando",
+        "e ouve a manda a quilómetros de distancia.",
+        "Vive nos bosques galegos",
+        "desde hai miles de anos."
+      ],
+      "foco": [
+        { "p": "lobo", "por": "Con b." },
+        { "p": "vive", "por": "Do verbo vivir: con v." },
+        { "p": "sobre", "por": "Con b." },
+        { "p": "manda:", "por": "Dous puntos antes dunha explicación do que acabamos de dicir.", "e": "manda:" },
+        { "p": "observando", "por": "Con b e con v." },
+        { "p": "xabarís", "por": "Plural de xabaril: as agudas en -il cambian a -ís. Con x e con b." },
+        { "p": "ás veces", "por": "Ás é a + as: leva til.", "e": "ás veces" },
+        { "p": "hai", "por": "Do verbo haber: con h." },
+        { "p": "conflito", "por": "En galego é conflito, sen c antes do t." },
+        { "p": "Avisa", "por": "Do verbo avisar: con v." },
+        { "p": "ouveando", "por": "Do verbo ouvear: con v." },
+        { "p": "quilómetros", "por": "Esdrúxula: leva til sempre. Con qu." },
+        { "p": "bosques", "por": "Con b." },
+        { "p": "galegos", "por": "Os xentilicios van en minúscula." },
+        { "p": "Vive", "por": "Do verbo vivir: con v. Maiúscula despois de punto." }
+      ],
+      "datos": "O lobo ibérico vive en boa parte de Galicia, sobre todo nas serras; anda en mandas familiares, caza xabarís e corzos e ás veces ataca o gando, o que provoca conflitos cos gandeiros; comunícase ouveando. Datos de coñecemento xeral sobre o lobo en Galicia, comprobables en guías de fauna."
+    },
+    {
+      "letra": "C",
+      "tipo": "Narración",
+      "titulo": "A biblioteca ambulante",
+      "texto": "Todos os xoves, unha furgoneta chea de libros percorre as aldeas do concello. Chámanlle a biblioteca ambulante. Para pola mañá diante da escola e pola tarde na praza; os veciños devolven os libros da semana anterior e levan outros novos. Hai quen prefire novelas de aventuras; hai quen busca libros de receitas ou de historia. A condutora, Vanesa, coñece os gustos de todos e sempre garda algunha sorpresa debaixo do asento.",
+      "segmentos": [
+        "Todos os xoves,",
+        "unha furgoneta chea de libros",
+        "percorre as aldeas do concello.",
+        "Chámanlle a biblioteca ambulante.",
+        "Para pola mañá diante da escola",
+        "e pola tarde na praza;",
+        "os veciños devolven os libros da semana anterior",
+        "e levan outros novos.",
+        "Hai quen prefire novelas de aventuras;",
+        "hai quen busca libros de receitas ou de historia.",
+        "A condutora, Vanesa,",
+        "coñece os gustos de todos",
+        "e sempre garda algunha sorpresa",
+        "debaixo do asento."
+      ],
+      "foco": [
+        { "p": "xoves", "por": "Con x. Os días da semana van en minúscula." },
+        { "p": "libros", "por": "Con b." },
+        { "p": "Chámanlle", "por": "Chaman + lle. Esdrúxula: leva til. Con ch e con ll." },
+        { "p": "biblioteca", "por": "Con b as dúas veces." },
+        { "p": "ambulante", "por": "Antes de b vai m." },
+        { "p": "praza;", "por": "Punto e coma: separa dúas partes moi relacionadas da mesma frase.", "e": "praza;" },
+        { "p": "veciños", "por": "Con ñ. En castelán dise «vecinos»." },
+        { "p": "devolven", "por": "Do verbo devolver: con v." },
+        { "p": "novos", "por": "Con v." },
+        { "p": "Hai", "por": "Do verbo haber: con h." },
+        { "p": "aventuras;", "por": "Con v. Punto e coma entre dúas partes paralelas da frase.", "e": "aventuras;" },
+        { "p": "historia", "por": "Con h, que non soa." },
+        { "p": "Vanesa", "por": "Nome propio: maiúscula. Con v." },
+        { "p": "debaixo", "por": "Con x. Nunha soa palabra." },
+        { "p": "sorpresa", "por": "Con s: sor-pre-sa." }
+      ],
+      "datos": "En Galicia existen bibliotecas móbiles (bibliobuses) que percorren as aldeas. A narración e os nomes son ficticios."
+    }
+  ]
+}

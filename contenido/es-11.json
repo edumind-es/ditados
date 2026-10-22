@@ -1,0 +1,131 @@
+{
+  "lang": "es",
+  "num": 11,
+  "curso": "4",
+  "titulo": "Dictado 11 · Los verbos: -aba, -ía y la h",
+  "tema": "Formas verbales: el pretérito imperfecto en -aba y -ía · la h de haber y hacer · b y v en los verbos",
+  "regra": "El pretérito imperfecto se escribe con b (cantaba, jugábamos, íbamos) o con -ía (comía, hacía) · las formas de haber y hacer llevan h: hay, había, hace · verbos con v: venir, vivir, volver, avisar · verbos con b: beber, saber, cambiar",
+  "etiquetas": ["verbos", "imperfecto", "b y v", "h", "punto y coma", "tilde diacrítica"],
+  "fixome": [
+    "Imperfecto de los verbos en -ar: con b: guardaba, tocaba, jugábamos, cantábamos. También íbamos, de ir.",
+    "Imperfecto de los verbos en -er e -ir: con -ía: hacía, recogían, oía, comíamos.",
+    "Las formas de haber y de hacer llevan h: hay, había, ha cambiado, hace.",
+    "Con v: venir (venía, vienes), vivir, volver (vuelvo), avisar. Con b: beber, saber (sabía), cambiar."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Curiosidad",
+      "titulo": "Cuando no había neveras",
+      "texto": "Hace cien años casi nadie tenía nevera. La gente guardaba la comida en las bodegas, donde hacía fresco, y salaba el pescado para que durase meses. En invierno, algunos recogían nieve de la montaña y la guardaban en pozos hondos; así, en verano había hielo para enfriar las bebidas. Hoy abrimos la puerta de la nevera sin pensar cuánto ha cambiado la vida.",
+      "segmentos": [
+        "Hace cien años",
+        "casi nadie tenía nevera.",
+        "La gente guardaba la comida en las bodegas,",
+        "donde hacía fresco,",
+        "y salaba el pescado",
+        "para que durase meses.",
+        "En invierno, algunos recogían nieve de la montaña",
+        "y la guardaban en pozos hondos;",
+        "así, en verano había hielo",
+        "para enfriar las bebidas.",
+        "Hoy abrimos la puerta de la nevera",
+        "sin pensar cuánto ha cambiado la vida."
+      ],
+      "foco": [
+        { "p": "Hace", "por": "Del verbo hacer: con h." },
+        { "p": "tenía", "por": "Imperfecto de tener: con -ía." },
+        { "p": "guardaba", "por": "Imperfecto de un verbo en -ar: con b." },
+        { "p": "hacía", "por": "Imperfecto de hacer: con h y con -ía." },
+        { "p": "salaba", "por": "Imperfecto de un verbo en -ar: con b." },
+        { "p": "recogían", "por": "Imperfecto de recoger: con -ía. La g delante de i suena como j." },
+        { "p": "hondos;", "por": "Hondos lleva h. Punto y coma: separa dos partes muy relacionadas de la misma frase.", "e": "hondos;" },
+        { "p": "había", "por": "Del verbo haber: con h y con -ía." },
+        { "p": "hielo", "por": "Las palabras que empiezan por el sonido ie llevan h." },
+        { "p": "bebidas", "por": "Con b, como beber." },
+        { "p": "ha cambiado", "por": "Ha, del verbo haber, lleva h. Cambiado va con b, y antes de b va m.", "e": "ha cambiado" },
+        { "p": "cuánto", "por": "Lleva tilde porque es interrogativo, aunque no haya signos: sin pensar cuánto." }
+      ],
+      "datos": "Antes de la nevera eléctrica, la comida se conservaba en bodegas frescas, salada o ahumada, y en muchas zonas de montaña se guardaba nieve en pozos (los pozos de nieve o neveras tradicionales) para tener hielo en verano. Datos de conocimiento general sobre la vida cotidiana de hace un siglo."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "El cuco",
+      "texto": "El cuco no hace nido. La hembra pone el huevo en el nido de otro pájaro y se va. Cuando el pollito nace, echa fuera los demás huevos y los padres adoptivos lo alimentan solo a él, aunque ya es más grande que ellos. Antes, la gente sabía que llegaba la primavera cuando oía al cuco. Decían que si venía pronto, el año sería bueno.",
+      "segmentos": [
+        "El cuco no hace nido.",
+        "La hembra pone el huevo",
+        "en el nido de otro pájaro y se va.",
+        "Cuando el pollito nace,",
+        "echa fuera los demás huevos",
+        "y los padres adoptivos lo alimentan solo a él,",
+        "aunque ya es más grande que ellos.",
+        "Antes, la gente sabía",
+        "que llegaba la primavera",
+        "cuando oía al cuco.",
+        "Decían que si venía pronto,",
+        "el año sería bueno."
+      ],
+      "foco": [
+        { "p": "hace", "por": "Del verbo hacer: con h." },
+        { "p": "hembra", "por": "Con h, y antes de b va m." },
+        { "p": "huevo", "por": "Las palabras que empiezan por el sonido ue llevan h." },
+        { "p": "echa", "por": "Del verbo echar: sin h. Hecho, con h, es del verbo hacer." },
+        { "p": "adoptivos", "por": "Con v." },
+        { "p": "él", "por": "Tilde diacrítica: él es el pronombre. El, sin tilde, es el artículo." },
+        { "p": "sabía", "por": "Imperfecto de saber: con b y con -ía." },
+        { "p": "llegaba", "por": "Imperfecto de un verbo en -ar: con b. Con ll." },
+        { "p": "oía", "por": "Imperfecto de oír: la i tónica forma hiato y lleva tilde." },
+        { "p": "Decían", "por": "Imperfecto de decir: con -ía." },
+        { "p": "venía", "por": "Imperfecto de venir: con v y con -ía." },
+        { "p": "sería", "por": "Condicional de ser: con -ía." }
+      ],
+      "datos": "El cuco es un parásito de cría: la hembra pone los huevos en nidos de otras aves y el pollo expulsa los huevos o crías del hospedador. El canto del cuco anuncia tradicionalmente la primavera y hay refranes populares sobre él. Datos de conocimiento general sobre el cuco común, comprobables en guías de aves."
+    },
+    {
+      "letra": "C",
+      "tipo": "Carta",
+      "titulo": "Carta a una amiga del campamento",
+      "texto": "Hola, Noa:\n¿Recuerdas el campamento del verano pasado? Yo pienso mucho en él. Cada mañana íbamos a nadar al río, después comíamos a la sombra de los robles y por la tarde jugábamos al balón hasta que anochecía. Había un monitor que tocaba la guitarra y nosotros cantábamos sin afinar. Este año vuelvo. ¿Vienes tú también? ¡Avísame pronto!\nUn abrazo, Iria",
+      "segmentos": [
+        "Hola, Noa:",
+        "¿Recuerdas el campamento del verano pasado?",
+        "Yo pienso mucho en él.",
+        "Cada mañana íbamos a nadar al río,",
+        "después comíamos a la sombra de los robles",
+        "y por la tarde jugábamos al balón",
+        "hasta que anochecía.",
+        "Había un monitor que tocaba la guitarra",
+        "y nosotros cantábamos sin afinar.",
+        "Este año vuelvo.",
+        "¿Vienes tú también?",
+        "¡Avísame pronto!",
+        "Un abrazo, Iria"
+      ],
+      "foco": [
+        { "p": "Hola", "por": "Con h. Ola, sin h, es la del mar." },
+        { "p": "¿Recuerdas el campamento del verano pasado?", "por": "La pregunta se abre y se cierra. Campamento lleva m antes de p.", "e": "¿Recuerdas … pasado?" },
+        { "p": "íbamos", "por": "Imperfecto de ir: con b y con tilde en la í." },
+        { "p": "comíamos", "por": "Imperfecto de un verbo en -er: con -íamos, con tilde." },
+        { "p": "jugábamos", "por": "Imperfecto de un verbo en -ar: con b y con tilde (esdrújula)." },
+        { "p": "anochecía", "por": "Imperfecto de anochecer: con -ía." },
+        { "p": "Había", "por": "Del verbo haber: con h y con -ía." },
+        { "p": "hasta", "por": "Con h, que no suena." },
+        { "p": "tocaba", "por": "Imperfecto de un verbo en -ar: con b." },
+        { "p": "cantábamos", "por": "Imperfecto de un verbo en -ar: con b y con tilde (esdrújula)." },
+        { "p": "vuelvo", "por": "Del verbo volver: con v." },
+        { "p": "¿Vienes tú también?", "por": "Vienes, de venir, va con v. Tú lleva tilde diacrítica porque es el pronombre.", "e": "¿Vienes tú también?" },
+        { "p": "Avísame", "por": "Avisa + me: esdrújula, lleva tilde. Con v." }
+      ],
+      "datos": "Carta ficticia; nombres ficticios. Sin datos que verificar."
+    }
+  ]
+}

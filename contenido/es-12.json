@@ -1,0 +1,139 @@
+{
+  "lang": "es",
+  "num": 12,
+  "curso": "5",
+  "titulo": "Dictado 12 · B, v, h y los signos que ordenan",
+  "tema": "Palabras con b y con v · la h: hay, hace, historia · dos puntos y punto y coma",
+  "regra": "Con b: abeja, obrera, sobre, bosque, libro, biblioteca · con v: vivir, visitar, avisar, nuevo, aventura · con h: hay, hace, hasta, historia · dos puntos antes de una explicación · punto y coma entre partes relacionadas",
+  "etiquetas": ["b y v", "h", "dos puntos", "punto y coma", "plural en -íes", "esdrújulas"],
+  "fixome": [
+    "Con b: abeja, obrera, sobre, bosque, libro, biblioteca.",
+    "Con v: vivir, visitar, avisar, evaporar, nuevo, aventura.",
+    "Con h: hay (de haber), hace (de hacer), hasta, historia.",
+    "Dos puntos antes de una explicación: Anda en manada: una pareja y sus crías. Punto y coma entre dos partes muy relacionadas."
+  ],
+  "estado": "borrador",
+  "revision": {
+    "fecha": "",
+    "revisor": "",
+    "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
+    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+  },
+  "opcions": [
+    {
+      "letra": "A",
+      "tipo": "Ciencia",
+      "titulo": "Cómo hacen la miel las abejas",
+      "texto": "Para hacer un solo kilo de miel, las abejas de una colmena visitan millones de flores. Cada obrera sorbe el néctar con la lengua y lo guarda en un estómago especial; en la colmena se lo pasa a otra abeja, que lo deposita en las celdas de cera. Allí, abanicando con las alas, evaporan el agua que sobra hasta que la miel espesa. Hay colmenas que producen veinte kilos en un verano.",
+      "segmentos": [
+        "Para hacer un solo kilo de miel,",
+        "las abejas de una colmena",
+        "visitan millones de flores.",
+        "Cada obrera sorbe el néctar con la lengua",
+        "y lo guarda en un estómago especial;",
+        "en la colmena se lo pasa a otra abeja,",
+        "que lo deposita en las celdas de cera.",
+        "Allí, abanicando con las alas,",
+        "evaporan el agua que sobra",
+        "hasta que la miel espesa.",
+        "Hay colmenas que producen",
+        "veinte kilos en un verano."
+      ],
+      "foco": [
+        { "p": "hacer", "por": "Con h, que no suena." },
+        { "p": "abejas", "por": "Con b y con j." },
+        { "p": "visitan", "por": "Con v." },
+        { "p": "obrera", "por": "Con b: viene de obra." },
+        { "p": "sorbe", "por": "Del verbo sorber: con b." },
+        { "p": "néctar", "por": "Llana terminada en -r: lleva tilde." },
+        { "p": "estómago", "por": "Esdrújula: lleva tilde siempre." },
+        { "p": "especial;", "por": "Punto y coma: separa dos partes muy relacionadas de la misma frase.", "e": "especial;" },
+        { "p": "abeja", "por": "Con b y con j." },
+        { "p": "Allí", "por": "Con ll. Aguda terminada en vocal: lleva tilde." },
+        { "p": "abanicando", "por": "Del verbo abanicar: con b." },
+        { "p": "evaporan", "por": "Con v: viene de vapor." },
+        { "p": "sobra", "por": "Del verbo sobrar: con b." },
+        { "p": "hasta", "por": "Con h, que no suena." },
+        { "p": "Hay", "por": "Del verbo haber: con h y con y." }
+      ],
+      "datos": "Para producir un kilo de miel las abejas visitan millones de flores (las estimaciones habituales van de dos a cuatro millones); el néctar pasa de abeja en abeja y se evapora abanicando con las alas hasta que madura en las celdas. Una colmena productiva puede dar veinte kilos o más en una temporada. Datos de conocimiento general de apicultura."
+    },
+    {
+      "letra": "B",
+      "tipo": "Naturaleza",
+      "titulo": "El lobo",
+      "texto": "El lobo vive en casi toda Galicia, sobre todo en las sierras del interior. Anda en manada: una pareja y sus crías, que aprenden a cazar observando a los adultos. Come jabalíes, corzos y, a veces, ganado; por eso hay conflictos con los ganaderos. Avisa de los peligros aullando y oye a la manada a kilómetros de distancia. Vive en los bosques gallegos desde hace miles de años.",
+      "segmentos": [
+        "El lobo vive en casi toda Galicia,",
+        "sobre todo en las sierras del interior.",
+        "Anda en manada:",
+        "una pareja y sus crías,",
+        "que aprenden a cazar observando a los adultos.",
+        "Come jabalíes, corzos y, a veces, ganado;",
+        "por eso hay conflictos con los ganaderos.",
+        "Avisa de los peligros aullando",
+        "y oye a la manada a kilómetros de distancia.",
+        "Vive en los bosques gallegos",
+        "desde hace miles de años."
+      ],
+      "foco": [
+        { "p": "lobo", "por": "Con b." },
+        { "p": "vive", "por": "Del verbo vivir: con v." },
+        { "p": "sobre", "por": "Con b." },
+        { "p": "manada:", "por": "Dos puntos antes de una explicación de lo que acabamos de decir.", "e": "manada:" },
+        { "p": "observando", "por": "Con b y con v." },
+        { "p": "jabalíes", "por": "Plural de jabalí: las palabras agudas terminadas en -í hacen el plural en -íes. Con j y con b." },
+        { "p": "ganado;", "por": "Punto y coma: separa dos partes muy relacionadas de la misma frase.", "e": "ganado;" },
+        { "p": "hay", "por": "Del verbo haber: con h y con y." },
+        { "p": "Avisa", "por": "Del verbo avisar: con v." },
+        { "p": "aullando", "por": "Del verbo aullar: con ll." },
+        { "p": "oye", "por": "Del verbo oír: con y." },
+        { "p": "kilómetros", "por": "Esdrújula: lleva tilde siempre. Se escribe con k." },
+        { "p": "bosques", "por": "Con b." },
+        { "p": "gallegos", "por": "Los gentilicios van en minúscula. Con ll." },
+        { "p": "hace", "por": "Del verbo hacer: con h." }
+      ],
+      "datos": "El lobo ibérico vive en buena parte de Galicia, sobre todo en las sierras; anda en manadas familiares, caza jabalíes y corzos y a veces ataca al ganado, lo que provoca conflictos con los ganaderos; se comunica aullando. Datos de conocimiento general sobre el lobo en Galicia, comprobables en guías de fauna."
+    },
+    {
+      "letra": "C",
+      "tipo": "Narración",
+      "titulo": "La biblioteca ambulante",
+      "texto": "Todos los jueves, una furgoneta llena de libros recorre las aldeas del municipio. La llaman la biblioteca ambulante. Para por la mañana delante de la escuela y por la tarde en la plaza; los vecinos devuelven los libros y se llevan otros nuevos. Hay quien prefiere novelas de aventuras; hay quien busca libros de recetas o de historia. La conductora, Vanesa, conoce los gustos de todos y siempre guarda alguna sorpresa debajo del asiento.",
+      "segmentos": [
+        "Todos los jueves,",
+        "una furgoneta llena de libros",
+        "recorre las aldeas del municipio.",
+        "La llaman la biblioteca ambulante.",
+        "Para por la mañana delante de la escuela",
+        "y por la tarde en la plaza;",
+        "los vecinos devuelven los libros",
+        "y se llevan otros nuevos.",
+        "Hay quien prefiere novelas de aventuras;",
+        "hay quien busca libros de recetas o de historia.",
+        "La conductora, Vanesa,",
+        "conoce los gustos de todos",
+        "y siempre guarda alguna sorpresa",
+        "debajo del asiento."
+      ],
+      "foco": [
+        { "p": "jueves", "por": "Con j. Los días de la semana van en minúscula." },
+        { "p": "llena", "por": "Con ll." },
+        { "p": "libros", "por": "Con b." },
+        { "p": "llaman", "por": "Con ll." },
+        { "p": "biblioteca", "por": "Con b las dos veces." },
+        { "p": "ambulante", "por": "Antes de b va m." },
+        { "p": "plaza;", "por": "Punto y coma: separa dos partes muy relacionadas de la misma frase.", "e": "plaza;" },
+        { "p": "vecinos", "por": "Con v y con c." },
+        { "p": "devuelven", "por": "Del verbo devolver: con v." },
+        { "p": "nuevos", "por": "Con v." },
+        { "p": "Hay", "por": "Del verbo haber: con h y con y." },
+        { "p": "aventuras;", "por": "Con v. Punto y coma entre dos partes paralelas de la frase.", "e": "aventuras;" },
+        { "p": "historia", "por": "Con h, que no suena." },
+        { "p": "Vanesa", "por": "Nombre propio: mayúscula. Con v." },
+        { "p": "debajo", "por": "Con j. En una sola palabra." }
+      ],
+      "datos": "Existen bibliotecas móviles (bibliobuses) que recorren pueblos y aldeas. La narración y los nombres son ficticios."
+    }
+  ]
+}
