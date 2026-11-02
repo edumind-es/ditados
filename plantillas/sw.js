@@ -4,7 +4,7 @@
    Así, una presentación abierta una vez en el aula sigue funcionando sin conexión, con su audio dentro.
    No se guarda ningún dato de nadie: solo ficheros públicos del propio sitio. */
 const VERSION = 'ditados-{{VERSION}}';
-const PRECACHE = ['./', './index.html', './manifest.webmanifest', {{FUENTES}}];
+const PRECACHE = ['./', './index.html', './rapido/', './manifest.webmanifest', {{FUENTES}}];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));

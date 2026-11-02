@@ -1,0 +1,264 @@
+<style>
+/* Dictado rápido: formulario en estilo Lámina (papel crudo, filetes, sin radios). */
+.rapido section{margin:0 0 28px}
+.rapido .sub{margin:0 0 12px}
+.rapido label{display:block;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);margin:12px 0 4px}
+.rapido input[type=text],.rapido input[type=number],.rapido select,.rapido textarea{width:100%;background:var(--blanco);border:1px solid var(--filete);padding:8px 10px;min-height:44px;font:inherit;color:inherit}
+.rapido textarea{resize:vertical;min-height:90px}
+.rapido textarea.texto{min-height:170px;font-size:1.05rem;line-height:1.55}
+.rapido textarea.segs{font-family:var(--f-mono);font-size:.95rem;min-height:180px}
+.rapido .fila{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0 16px}
+.rapido .estado{font-family:var(--f-mono);font-size:.8rem;color:var(--tinta-2);margin:8px 0}
+.rapido .estado.mal{color:var(--tinta);border-left:3px solid var(--tinta);padding-left:10px}
+.rapido .palabras{line-height:2.2;font-size:1.05rem;padding:10px;border:1px dashed var(--filete-fino);background:var(--blanco);margin:6px 0;min-height:60px}
+.rapido .palabras button{background:none;border:0;border-bottom:2px solid transparent;padding:0 2px;cursor:pointer;font:inherit;color:inherit}
+.rapido .palabras button:hover{border-bottom-color:var(--tinta)}
+.rapido .palabras button.clave{font-weight:700;border-bottom-color:var(--tinta);background:#fff3c4}
+.rapido .palabras .num{font-family:var(--f-mono);font-size:.7rem;vertical-align:super}
+.rapido .foco{display:grid;grid-template-columns:auto minmax(120px,.8fr) minmax(220px,2fr) auto;gap:6px 10px;align-items:start;padding:8px 0;border-bottom:1px solid var(--filete-fino)}
+.rapido .foco .n{font-family:var(--f-mono);font-size:.8rem;color:var(--tinta-2);padding-top:12px}
+.rapido .foco .p{font-weight:700;padding-top:10px;overflow-wrap:anywhere}
+.rapido .foco input{min-height:40px}
+.rapido .foco label{margin:0}
+.rapido .foco .acc{display:flex;gap:6px;padding-top:4px}
+@media (max-width:720px){.rapido .foco{grid-template-columns:auto 1fr}.rapido .foco input{grid-column:1 / -1}}
+.rapido .boton{cursor:pointer;font:inherit;font-weight:700;margin:4px 8px 4px 0}
+.rapido .boton.peq{min-height:34px;padding:2px 10px;font-weight:400;font-size:.9rem}
+.rapido .boton:disabled{opacity:.45;cursor:not-allowed}
+.rapido .panel{border:2px solid var(--filete);padding:10px 14px;margin:12px 0;background:var(--blanco)}
+.rapido .panel ul{margin:6px 0 0;padding-left:18px}
+.rapido .vacio{color:var(--tinta-2)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+[hidden]{display:none!important}
+</style>
+
+<header class="cab"><div class="wrap">
+  <p class="kicker"><a href="../">{{CATALOGO}}</a> · EDUmind</p>
+  <h1>{{RAPIDO}}</h1>
+  <p class="sub">{{SUB}}</p>
+</div></header>
+
+<main class="wrap rapido">
+
+<section aria-labelledby="h-texto">
+  <h2 id="h-texto"><span class="n">01</span>Texto</h2>
+  <div class="fila">
+    <div><label for="lang">Lengua</label><select id="lang"><option value="gl">Galego</option><option value="es">Castellano</option></select></div>
+    <div><label for="curso">Curso</label><select id="curso"></select></div>
+    <div><label for="num">Número del dictado</label><input id="num" type="number" min="1" value="1"></div>
+    <div><label for="tipo">Tipo de texto</label><select id="tipo"></select></div>
+  </div>
+  <label for="texto">Texto del dictado: pégalo o escríbelo aquí</label>
+  <textarea id="texto" class="texto" autocomplete="off" spellcheck="true"></textarea>
+  <p class="estado" id="cuenta" aria-live="polite"></p>
+  <div class="fila">
+    <div><label for="titulo">Título (si lo dejas vacío, se toma del texto)</label><input id="titulo" type="text"></div>
+    <div><label for="tema">Regla o contenido que trabaja (opcional)</label><input id="tema" type="text"></div>
+  </div>
+  <label for="fixome">«Hoy me fijo en»: hasta 4 frases breves, una por línea (opcional)</label>
+  <textarea id="fixome"></textarea>
+</section>
+
+<section aria-labelledby="h-trozos">
+  <h2 id="h-trozos"><span class="n">02</span>Trozos para dictar</h2>
+  <p class="sub">Se proponen solos al pegar el texto. Un trozo por línea; puedes juntarlos o partirlos. Unidos tienen que reproducir el texto.</p>
+  <label for="segs" class="sr">Trozos, uno por línea</label>
+  <textarea id="segs" class="segs" autocomplete="off" spellcheck="false"></textarea>
+  <p><button class="boton alt peq" type="button" id="reseg">Proponer de nuevo</button></p>
+  <p class="estado" id="segs-estado" aria-live="polite"></p>
+</section>
+
+<section aria-labelledby="h-claves">
+  <h2 id="h-claves"><span class="n">03</span>Palabras clave</h2>
+  <p class="sub">Toca una palabra del texto para marcarla como clave; tócala otra vez para quitarla. Después, si quieres, escribe por qué se escribe así: el alumnado lo verá al corregir.</p>
+  <div class="palabras" id="palabras" aria-label="Texto para marcar palabras clave"></div>
+  <div id="foco"></div>
+  <p class="estado" id="foco-estado" aria-live="polite"></p>
+</section>
+
+<section aria-labelledby="h-pres">
+  <h2 id="h-pres"><span class="n">04</span>Presentación</h2>
+  <div class="panel" id="errores" hidden><b>Antes de generar hay que arreglar esto:</b><ul id="errores-l"></ul></div>
+  <p>
+    <button class="boton" type="button" id="abrir">Abrir la presentación</button>
+    <button class="boton alt" type="button" id="descargar">Descargar HTML</button>
+    <button class="boton alt peq" type="button" id="limpiar">Empezar de cero</button>
+  </p>
+  <p class="aviso">La presentación tiene los cinco pasos (Preparo, Escucho, Escribo, Corrijo, Pienso) y lee el texto con la voz del navegador. No se envía nada al servidor: el borrador queda solo en este navegador hasta que lo borres.</p>
+</section>
+
+</main>
+
+<script>/*BUNDLE*/</script>
+<script>
+'use strict';
+const DATOS = /*DATOS*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const { esc, segmentar, textoPlano, contarPalabras, generarPresentacion, nombrePresentacion, PRESENTACION } = Ditados;
+
+/* ---------- Estado (borrador guardado solo en este navegador, siempre con try/catch) ---------- */
+const CLAVE = 'ditados.rapido';
+const vacio = () => ({ lang: 'gl', curso: '4', num: 1, tipo: '', texto: '', titulo: '', tema: '', fixome: '', segs: '', segsManual: false, foco: [] });
+let S = vacio();
+try { S = { ...vacio(), ...JSON.parse(localStorage.getItem(CLAVE) || '{}') }; } catch (e) { /* sin almacenamiento: se trabaja igual */ }
+function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(S)); } catch (e) { /* nada */ } }
+
+const cfgCurso = () => DATOS.cursos[S.curso] || {};
+const rangoSeg = () => cfgCurso().segmento_palabras || DATOS.segmento_palabras;
+const rangoClaves = () => cfgCurso().claves || DATOS.claves;
+
+/* ---------- Pintar el formulario desde el estado ---------- */
+function pintarSelectores() {
+  $('#curso').innerHTML = Object.keys(DATOS.cursos).map((k) => `<option value="${k}"${k === S.curso ? ' selected' : ''}>${k}.º</option>`).join('');
+  $('#tipo').innerHTML = DATOS.tipos[S.lang].map((t) => `<option value="${esc(t)}"${t === S.tipo ? ' selected' : ''}>${esc(t)}</option>`).join('');
+  if (!DATOS.tipos[S.lang].includes(S.tipo)) { S.tipo = DATOS.tipos[S.lang][0]; $('#tipo').value = S.tipo; }
+  $('#lang').value = S.lang;
+}
+function pintarTodo() {
+  pintarSelectores();
+  $('#num').value = S.num; $('#texto').value = S.texto; $('#titulo').value = S.titulo; $('#tema').value = S.tema; $('#fixome').value = S.fixome;
+  $('#segs').value = S.segs;
+  pintarCuenta(); pintarSegs(); pintarPalabras(); pintarFoco(); comprobar();
+}
+
+function pintarCuenta() {
+  const n = contarPalabras(textoPlano(S.texto));
+  const r = cfgCurso().palabras;
+  $('#cuenta').textContent = n ? `${n} palabras` + (r ? ` · para ${S.curso}.º se recomiendan de ${r[0]} a ${r[1]}` : '') : '';
+  $('#cuenta').classList.toggle('mal', Boolean(n && r && (n < r[0] || n > r[1])));
+}
+
+/* ---------- Trozos ---------- */
+function proponerSegs() {
+  const [min, max] = rangoSeg();
+  S.segs = segmentar(S.texto, { min, max }).join('\n');
+  S.segsManual = false;
+  $('#segs').value = S.segs;
+}
+const listaSegs = () => S.segs.split('\n').map((s) => s.trim()).filter(Boolean);
+function pintarSegs() {
+  const segs = listaSegs();
+  const el = $('#segs-estado');
+  if (!segs.length) { el.textContent = ''; el.classList.remove('mal'); return; }
+  const plano = textoPlano(S.texto);
+  const [min, max] = rangoSeg();
+  const fuera = segs.filter((s) => contarPalabras(s) < min || contarPalabras(s) > max).length;
+  if (segs.join(' ') !== plano) { el.textContent = 'Los trozos, unidos con un espacio, no reproducen el texto. Revisa que no falte ni sobre nada.'; el.classList.add('mal'); return; }
+  el.classList.remove('mal');
+  el.textContent = `${segs.length} trozos` + (fuera ? ` · ${fuera} fuera de lo recomendado (de ${min} a ${max} palabras)` : '');
+}
+
+/* ---------- Palabras clave (mismo criterio que el editor) ---------- */
+const base = (t) => t.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+function indiceClave(t) { let i = S.foco.findIndex((f) => f.p === t); if (i < 0) i = S.foco.findIndex((f) => f.p === base(t)); return i; }
+function pintarPalabras() {
+  const cont = $('#palabras');
+  if (!S.texto.trim()) { cont.innerHTML = '<span class="vacio">Pega el texto en el paso 01 para poder marcar palabras.</span>'; return; }
+  cont.innerHTML = S.texto.split(/(\s+)/).map((t) => {
+    if (/^\s*$/.test(t)) return t.includes('\n') ? '<br>' : ' ';
+    const i = indiceClave(t);
+    return `<button type="button" data-tok="${esc(t)}" class="${i >= 0 ? 'clave' : ''}" aria-pressed="${i >= 0}">${i >= 0 ? `<span class="num">${i + 1}</span>` : ''}${esc(t)}</button>`;
+  }).join('');
+  $$('button[data-tok]', cont).forEach((b) => b.addEventListener('click', () => {
+    const t = b.dataset.tok; const i = indiceClave(t);
+    if (i >= 0) S.foco.splice(i, 1); else S.foco.push({ p: base(t) || t, por: '' });
+    pintarPalabras(); pintarFoco(); comprobar(); guardar();
+  }));
+}
+function pintarFoco() {
+  const cont = $('#foco');
+  cont.innerHTML = S.foco.map((f, i) => `
+<div class="foco" data-i="${i}">
+  <span class="n">${i + 1}</span>
+  <span class="p">${esc(f.p)}</span>
+  <div><label for="por-${i}" class="sr">Por qué se escribe así</label><input id="por-${i}" type="text" data-por value="${esc(f.por)}" placeholder="Por qué se escribe así (opcional)"></div>
+  <div class="acc"><button class="boton alt peq" type="button" data-subir ${i === 0 ? 'disabled' : ''}>Subir</button><button class="boton alt peq" type="button" data-quitar>Quitar</button></div>
+</div>`).join('');
+  const [a, b] = rangoClaves();
+  $('#foco-estado').textContent = S.texto.trim() ? `${S.foco.length} palabras clave · para ${S.curso}.º se recomiendan de ${a} a ${b}` : '';
+  $$('.foco', cont).forEach((fila) => {
+    const i = +fila.dataset.i;
+    $('[data-por]', fila).addEventListener('input', (e) => { S.foco[i].por = e.target.value; guardar(); });
+    $('[data-quitar]', fila).addEventListener('click', () => { S.foco.splice(i, 1); pintarPalabras(); pintarFoco(); comprobar(); guardar(); });
+    $('[data-subir]', fila).addEventListener('click', () => { [S.foco[i - 1], S.foco[i]] = [S.foco[i], S.foco[i - 1]]; pintarPalabras(); pintarFoco(); guardar(); });
+  });
+}
+
+/* ---------- Construir el dictado y generar ---------- */
+function tituloPorDefecto() {
+  // Las primeras palabras del texto, cortando en el primer signo fuerte: «Querida abuela: hoy fui» → «Querida abuela»
+  const palabras = textoPlano(S.texto).split(' ').slice(0, 5).join(' ').split(/[.;:!?…]/)[0].replace(/[,¡¿]+$/, '').trim();
+  return palabras ? palabras + '…' : 'Dictado';
+}
+function construir() {
+  const errores = [];
+  const t = PRESENTACION[S.lang];
+  const plano = textoPlano(S.texto);
+  const segs = listaSegs();
+  if (!plano) errores.push('Falta el texto del dictado.');
+  if (plano && segs.join(' ') !== plano) errores.push('Los trozos no reproducen el texto. Corrígelos o pulsa «Proponer de nuevo».');
+  const foco = S.foco.filter((f) => S.texto.includes(f.p));
+  if (foco.length !== S.foco.length) errores.push('Alguna palabra clave ya no está en el texto. Quítala y márcala de nuevo.');
+  const num = Math.max(1, parseInt(S.num, 10) || 1);
+  const titulo = S.titulo.trim() || tituloPorDefecto();
+  const tema = S.tema.trim() || titulo;
+  const sinPor = S.lang === 'gl' ? 'Fíxate en como se escribe esta palabra.' : 'Fíjate en cómo se escribe esta palabra.';
+  const d = {
+    lang: S.lang, num, curso: S.curso,
+    titulo: `${t.tipo} ${num} · ${titulo}`, tema, regra: tema, etiquetas: [],
+    fixome: S.fixome.split('\n').map((s) => s.trim()).filter(Boolean).slice(0, 4),
+    estado: 'borrador',
+    opcions: [{ letra: 'A', tipo: S.tipo || DATOS.tipos[S.lang][0], titulo, texto: S.texto.trim(), segmentos: segs, foco: foco.map((f) => ({ p: f.p, por: f.por.trim() || sinPor })) }],
+  };
+  return { d, errores };
+}
+function comprobar() {
+  const { errores } = construir();
+  $('#errores').hidden = !errores.length;
+  $('#errores-l').innerHTML = errores.map((e) => `<li>${esc(e)}</li>`).join('');
+  $('#abrir').disabled = $('#descargar').disabled = Boolean(errores.length);
+  return !errores.length;
+}
+function generar() {
+  const { d, errores } = construir();
+  if (errores.length) return null;
+  const { html } = generarPresentacion(d, { plantilla: DATOS.plantilla, fuentesCss: DATOS.fuentes, licencia: DATOS.licencia });
+  return { html, nombre: nombrePresentacion(d) };
+}
+$('#abrir').addEventListener('click', () => {
+  const g = generar(); if (!g) return;
+  const url = URL.createObjectURL(new Blob([g.html], { type: 'text/html;charset=utf-8' }));
+  const w = window.open(url, '_blank');
+  if (!w) { location.href = url; }
+});
+$('#descargar').addEventListener('click', () => {
+  const g = generar(); if (!g) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([g.html], { type: 'text/html;charset=utf-8' }));
+  a.download = g.nombre; document.body.append(a); a.click(); a.remove();
+});
+$('#limpiar').addEventListener('click', () => {
+  if (!confirm('¿Borrar el texto, los trozos y las palabras clave de este borrador?')) return;
+  S = vacio(); guardar(); pintarTodo();
+});
+
+/* ---------- Cambios en el formulario ---------- */
+$('#lang').addEventListener('change', (e) => { S.lang = e.target.value; pintarSelectores(); guardar(); comprobar(); });
+$('#curso').addEventListener('change', (e) => { S.curso = e.target.value; if (!S.segsManual) proponerSegs(); pintarCuenta(); pintarSegs(); pintarFoco(); guardar(); });
+$('#tipo').addEventListener('change', (e) => { S.tipo = e.target.value; guardar(); });
+$('#num').addEventListener('input', (e) => { S.num = e.target.value; guardar(); });
+$('#titulo').addEventListener('input', (e) => { S.titulo = e.target.value; guardar(); });
+$('#tema').addEventListener('input', (e) => { S.tema = e.target.value; guardar(); });
+$('#fixome').addEventListener('input', (e) => { S.fixome = e.target.value; guardar(); });
+$('#texto').addEventListener('input', (e) => {
+  S.texto = e.target.value;
+  if (!S.segsManual) proponerSegs();
+  S.foco = S.foco.filter((f) => S.texto.includes(f.p));   // las claves que ya no están en el texto se quitan
+  pintarCuenta(); pintarSegs(); pintarPalabras(); pintarFoco(); comprobar(); guardar();
+});
+$('#segs').addEventListener('input', (e) => { S.segs = e.target.value; S.segsManual = true; pintarSegs(); comprobar(); guardar(); });
+$('#reseg').addEventListener('click', () => { proponerSegs(); pintarSegs(); comprobar(); guardar(); });
+
+pintarTodo();
+</script>

@@ -20,7 +20,8 @@ function audioBase64(audioDir, ident, nSeg) {
 
 /**
  * @param {object} d  Dictado validado.
- * @param {{audioDir?: string, voz?: string}} opts
+ * @param {{audioDir?: string, voz?: string, plantilla?: string, fuentesCss?: string, licencia?: string}} opts
+ *   «plantilla», «fuentesCss» y «licencia» permiten generar la presentación fuera de Node (dictado rápido en el navegador).
  * @returns {{html: string, conAudio: boolean}}
  */
 function generarPresentacion(d, opts = {}) {
@@ -55,8 +56,8 @@ function generarPresentacion(d, opts = {}) {
   };
   const voz = conAudio && opts.voz && VOCES[opts.voz] ? VOCES[opts.voz] : t.vozNav;
 
-  const html = rellenar(leerPlantilla('presentacion.html'), {
-    FONTS: cssFuentes({ inline: true }),
+  const html = rellenar(opts.plantilla || leerPlantilla('presentacion.html'), {
+    FONTS: opts.fuentesCss !== undefined ? opts.fuentesCss : cssFuentes({ inline: true }),
     LANG: d.lang, TITLE: esc(`${t.tipo} ${d.num} · ${titulo}`), TIPO: esc(t.tipo), NUM: String(d.num), CURSO: esc(d.curso),
     TITULO: esc(ops.length === 1 ? titulo : `${titulo} · ${ops[0].titulo}`), UD: esc(d.tema), PASOS: pasos, NAV: esc(t.nav),
     A11Y: esc(t.a11y), S1T: esc(t.s1t), S1P: esc(t.s1p), S1L: li(t.s1l), S2T: esc(t.s2t),
@@ -65,7 +66,7 @@ function generarPresentacion(d, opts = {}) {
     PLAY: esc(t.play), START: esc(t.start), PAUSE: esc(t.pause), REP: esc(t.rep), PREV: esc(t.prev), NEXT: esc(t.next),
     TEMPO: esc(t.tempo), TC: esc(t.tCurto), TM: esc(t.tMedio), TL: esc(t.tLongo), VEL: esc(t.vel), VLE: esc(t.vLenta), VNO: esc(t.vNormal),
     S4T: esc(t.s4t), MODO1: esc(t.modo1), MODO2: esc(t.modo2), M1P: esc(t.m1p), M2P: esc(t.m2p), AMOSAR: esc(t.amosar),
-    S5T: esc(t.s5t), S5L: li(t.s5l), S5P: esc(t.s5p), VOZ: esc(voz), PE: esc(t.pe), AREA: esc(t.area), LICENCIA: esc(CATALOGO.licencia),
+    S5T: esc(t.s5t), S5L: li(t.s5l), S5P: esc(t.s5p), VOZ: esc(voz), PE: esc(t.pe), AREA: esc(t.area), LICENCIA: esc(opts.licencia || CATALOGO.licencia),
     ANT: esc(t.anterior), SEG: esc(t.seguinte), NSEG: String(ops[0].segmentos.length), ANACO: esc(t.anaco), DE: esc(t.de),
     DATA: JSON.stringify(data).replace(/<\//g, '<\\/'),
   });

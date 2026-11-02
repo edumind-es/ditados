@@ -14,6 +14,7 @@ De cada dictado (un JSON en `contenido/`) se generan:
 - **Ficha en A3 y en A4 con letra grande** para alumnado con baja visión, y **tarjeta y cuaderno de reglas** por lengua.
 - **Paquete sin conexión** (ZIP) por dictado, para el NAS o un lápiz USB, con la presentación, los impresos y el kit.
 - **Catálogo** con filtros por lengua, curso, unidad, etiqueta y tipo de texto, instalable como PWA: lo que se visita queda disponible sin conexión y hay un botón para guardar un dictado entero.
+- **Dictado rápido** (`/rapido/`, público): el docente pega un texto, elige lengua y curso, acepta o retoca los trozos propuestos, marca las palabras clave con un clic y la presentación de cinco pasos se genera en su propio navegador (voz del navegador, fuentes dentro, descargable). No se envía ni se guarda nada en el servidor: el borrador vive solo en ese navegador. Usa exactamente el mismo código que la compilación, empaquetado por `src/navegador.js`.
 - **Editor del autor** (`/editor/`, detrás de Authentik): clic en el texto para elegir las palabras clave, segmentación propuesta y editable, validación en vivo, lista de comprobación normativa, audio por trozo con regeneración y elección de voz, y flujo borrador → revisado → publicado que lanza la generación.
 
 Solo llegan a la web los dictados con `estado: publicado`, y nada se publica sin el bloque `revision` (fecha, revisor y fuentes).
@@ -50,8 +51,8 @@ Ver `contenido/gl-02.json` como ejemplo completo y `contenido/config.json` para 
 
 ```
 contenido/      dictados (JSON) y config.json
-src/            validar, marcar, generadores (presentación, impresos, docente, catálogo), pdf, audio, build
-plantillas/     presentacion.html, impreso.html, lamina.css
+src/            validar, marcar, generadores (presentación, impresos, docente, catálogo, dictado rápido), navegador (paquete JS), pdf, audio, build
+plantillas/     presentacion.html, impreso.html, rapido.html, editor.html, lamina.css
 public/fonts/   Fraunces, Space Grotesk, Atkinson Hyperlegible, Archivo, JetBrains Mono (OFL), alojadas aquí
 test/           pruebas con node:test
 herramientas/   migración del prototipo, comprobación de la web, prototipo original de referencia

@@ -11,6 +11,7 @@ const { paginaIndice, paginaDitado } = require('./gen_catalogo');
 const { htmlAPdf } = require('./pdf');
 const { generarKit, nombresKit } = require('./gen_kit');
 const { generarPaquete } = require('./gen_paquete');
+const { generarRapido } = require('./gen_rapido');
 const odt = require('./odt');
 const audio = require('./audio');
 const { FUENTES_DIR, RAIZ } = require('./html');
@@ -170,6 +171,9 @@ function build(opts = {}) {
 
   if (!opts.solo) {
     fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas, kit));
+    // Dictado rápido: página pública que genera la presentación en el navegador a partir de un texto pegado
+    fs.mkdirSync(path.join(dist, 'rapido'), { recursive: true });
+    fs.writeFileSync(path.join(dist, 'rapido', 'index.html'), generarRapido(config));
     escribirPwa(dist);
   }
   return { publicados: entradas.length, problemas };
