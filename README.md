@@ -51,7 +51,7 @@ Por niveles, de menos a más:
 
 La comprobación con navegador real necesita Playwright accesible por `NODE_PATH` (en EDUmind se toma de otro proyecto; fuera, basta un `npm i -g playwright`).
 
-Para proponer cambios: `CONTRIBUTING.md`. Para avisar de un fallo de seguridad: `SECURITY.md`. Para hacer tu propia versión: bifurca el repositorio, cambia `contenido/` y la marca (ver `TRADEMARKS.md`) y publica `dist/` en cualquier hosting estático.
+Para proponer cambios: `CONTRIBUTING.md`. Para avisar de un fallo de seguridad: `SECURITY.md`. Para hacer tu propia versión: bifurca el repositorio, cambia lo que quieras y publica `dist/` en cualquier hosting estático. Puedes usarlo tal cual, con el nombre EDUmind incluido; solo si publicas una versión modificada como servicio propio, dale un nombre que la distinga de la oficial (ver `TRADEMARKS.md`).
 
 ## Formato de un dictado
 
@@ -100,6 +100,6 @@ El alumnado no tiene cuenta, no escribe en la web y no se guarda ningún dato su
 
 ## Licencia
 
-Programa: AGPL-3.0-or-later o EUPL-1.2, a elección (ver `LICENSE`). Contenido (textos, fichas, audio): CC BY-SA 4.0 (ver `LICENSE-CONTENT.md`). La marca EDUmind® no se licencia con el código (ver `TRADEMARKS.md`).
+Programa: AGPL-3.0-or-later o EUPL-1.2, a elección (ver `LICENSE`). Contenido (textos, fichas, audio): CC BY-SA 4.0 (ver `LICENSE-CONTENT.md`). EDUmind® es marca registrada; eso no limita ninguna de las libertades de las licencias (ver `TRADEMARKS.md`).
 
 EDUmind® es marca registrada. Autoría: Luis Vilela Acuña.
