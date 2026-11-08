@@ -2,7 +2,7 @@
 
 Aplicación web para preparar, proyectar, imprimir y corregir dictados en Lingua Galega y Lengua Castellana en primaria. Cada dictado ofrece varios textos que trabajan la misma regla; el docente elige uno en clase, lo proyecta con el audio, imprime la ficha de dos caras y corrige con el alumnado separando el despiste del desconocimiento.
 
-Web: `dictados.edumind.es`. Fases 1 a 3 construidas en octubre de 2026 (pendientes de despliegue).
+Web: <https://dictados.edumind.es>. Código: <https://github.com/edumind-es/ditados>. Proyecto abierto: cualquiera puede usarlo, instalarlo en su centro, mejorarlo o continuarlo (ver «Continuar el proyecto»).
 
 ## Qué hace
 
@@ -36,7 +36,22 @@ NODE_PATH=/var/www/edumind_miclase/node_modules node herramientas/comprobar_web.
 
 El audio se guarda en `.cache/audio/<id>/<voz>/` y se reutiliza en cada compilación; para regenerar una voz basta con borrar esa carpeta.
 
-Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (carpeta de aHoTTS), `DITADOS_AUDIO` (caché de audio).
+Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (carpeta de aHoTTS), `DITADOS_PYTHON_HF` (Python con `huggingface_hub` para descargar voces), `DITADOS_VOCES` (caché de voces), `DITADOS_AUDIO` (caché de audio).
+
+## Continuar el proyecto
+
+Este repositorio es la fuente completa: no hay nada privado que haga falta para compilar, probar o publicar la web. Las rutas de `/var/www/…` que aparecen en el código y en `docs/` son solo los valores por defecto del servidor de EDUmind y se cambian con las variables de arriba.
+
+Por niveles, de menos a más:
+
+1. **Solo Node 22**: `npm test` y `node bin/ditados.js build --sin-audio --sin-pdf` generan el catálogo, las presentaciones (con la voz del navegador) y el dictado rápido. Es lo que hace la integración continua en cada PR.
+2. **Con audio**: clona [aHoTTS](https://github.com/hitz-zentroa/aHoTTS) (HiTZ, UPV/EHU), instala ffmpeg y apunta `DITADOS_AHOTTS` a esa carpeta. Las voces se descargan de Hugging Face (`HiTZ/TTS-<lengua>_<voz>`) con el Python de `DITADOS_PYTHON_HF`.
+3. **Con PDF y ODT**: Chromium (por ejemplo, `npx playwright install chromium`, o `DITADOS_CHROME`), `pdfinfo` de poppler y LibreOffice Writer sin interfaz.
+4. **Editor del autor**: `node bin/ditados.js servir` detrás de cualquier proxy que autentique y pase el usuario en la cabecera `X-Authentik-Username` (ver `docs/DESPLIEGUE.md`; Authentik es la opción de EDUmind, no un requisito).
+
+La comprobación con navegador real necesita Playwright accesible por `NODE_PATH` (en EDUmind se toma de otro proyecto; fuera, basta un `npm i -g playwright`).
+
+Para proponer cambios: `CONTRIBUTING.md`. Para avisar de un fallo de seguridad: `SECURITY.md`. Para hacer tu propia versión: bifurca el repositorio, cambia lo que quieras y publica `dist/` en cualquier hosting estático. Puedes usarlo tal cual, con el nombre EDUmind incluido; solo si publicas una versión modificada como servicio propio, dale un nombre que la distinga de la oficial (ver `TRADEMARKS.md`).
 
 ## Formato de un dictado
 
@@ -85,6 +100,6 @@ El alumnado no tiene cuenta, no escribe en la web y no se guarda ningún dato su
 
 ## Licencia
 
-Programa: AGPL-3.0-or-later o EUPL-1.2, a elección (ver `LICENSE`). Contenido (textos, fichas, audio): CC BY-SA 4.0.
+Programa: AGPL-3.0-or-later o EUPL-1.2, a elección (ver `LICENSE`). Contenido (textos, fichas, audio): CC BY-SA 4.0 (ver `LICENSE-CONTENT.md`). EDUmind® es marca registrada; eso no limita ninguna de las libertades de las licencias (ver `TRADEMARKS.md`).
 
 EDUmind® es marca registrada. Autoría: Luis Vilela Acuña.
