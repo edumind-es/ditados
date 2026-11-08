@@ -46,3 +46,5 @@ footer.pe{margin-top:40px;padding:16px 0 32px;border-top:2px solid var(--filete)
 footer.pe p{margin:4px 0}
 @media (max-width:640px){.lista li{grid-template-columns:1fr}.acciones{flex-direction:row;flex-wrap:wrap}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Enlace al dictado rápido en la cabecera del catálogo */
+.acciones-cab{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:16px 0 0}

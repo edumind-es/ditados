@@ -191,6 +191,8 @@ const CATALOGO = {
   fichaOdt: 'Ficha de dos caras, editable (ODT)', repetidoOdt: 'Dictado repetido, editable (ODT)',
   fichaA3: 'Ficha en A3, letra grande (PDF)', repetidoA3: 'Dictado repetido en A3 (PDF)', fichaGrande: 'Ficha en A4 con letra grande, 4 páginas (PDF)', repetidoGrande: 'Dictado repetido en A4 con letra grande (PDF)',
   guardarSC: 'Guardar este dictado para usarlo sin conexión', guardando: 'Guardando en este navegador…', guardado: 'Listo: este dictado y sus descargas funcionan sin conexión en este navegador.',
+  rapido: 'Dictado rápido', rapidoSub: 'Pega un texto, marca las palabras clave y genera la presentación proyectable al momento, sin guardar nada.',
+  licenciaRapido: 'Texto del dictado: de quien lo preparó. Programa: AGPL-3.0-or-later o EUPL-1.2.',
   kit: 'Tarjeta y cuaderno de reglas (PDF)', kitTarxeta: 'Tarjeta de reglas, 2 páginas', kitCaderno: 'Cuaderno de reglas acumulativo, 1 página',
 };
 

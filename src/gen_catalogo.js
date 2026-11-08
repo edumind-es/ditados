@@ -149,6 +149,7 @@ function paginaIndice(entradas, kit = {}) {
   <p class="kicker">EDUmind</p>
   <h1>${esc(C.titulo)}</h1>
   <p class="sub">${esc(C.sub)}</p>
+  <p class="acciones-cab"><a class="boton alt" href="rapido/">${esc(C.rapido)}</a> <span class="sub">${esc(C.rapidoSub)}</span></p>
 </div></header>
 <main class="wrap">
 <form class="filtros" id="filtros" role="search" aria-label="${esc(C.filtros.buscar)}">
@@ -190,4 +191,4 @@ ${Object.keys(kit).length ? `<section><h2><span class="n">02</span>${esc(C.kit)}
   return pagina({ lang: 'es', titulo: C.titulo, descripcion: C.sub, cuerpo, prefijo: '', vocesUsadas: voces });
 }
 
-module.exports = { paginaIndice, paginaDitado };
+module.exports = { pagina, paginaIndice, paginaDitado };
