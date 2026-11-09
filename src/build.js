@@ -57,7 +57,7 @@ function build(opts = {}) {
   const hayAudio = !opts.sinAudio && audio.disponible();
   const hayOdt = !opts.sinPdf && odt.disponible();
   if (!opts.sinPdf && !hayOdt) log('aviso: LibreOffice no disponible; no se generan ODT.');
-  if (!opts.sinAudio && !hayAudio) log('aviso: aHoTTS o ffmpeg no disponibles; la presentación usará la voz del navegador.');
+  if (!opts.sinAudio && !hayAudio) log('aviso: ni Kokoro ni aHoTTS disponibles, o falta ffmpeg; la presentación usará la voz del navegador.');
 
   // Kit fijo por lengua: tarjeta (2 páginas) y cuaderno de reglas (1 página). Va antes porque el paquete de cada dictado lo incluye.
   const kit = {};
