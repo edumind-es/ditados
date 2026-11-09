@@ -81,6 +81,10 @@ const VOCES = {
   celtia: 'Voz: Celtia, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
   sabela: 'Voz: Sabela, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
   icia: 'Voz: Icía, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
+  dora: 'Voz sintética: Dora, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  santa: 'Voz sintética: Santa, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  alex: 'Voz sintética: Alex, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  laura: 'Voz sintética: Laura, de aHoTTS (HiTZ y Aholab, UPV/EHU). Modelo Apache 2.0; voz grabada del corpus ELRA-S0309.',
   alejandro: 'Voz sintética: Alejandro, de aHoTTS (HiTZ y Aholab, UPV/EHU). Modelo Apache 2.0; datos CC BY 4.0 (Multilingual LibriSpeech, LibriVox).',
 };
 

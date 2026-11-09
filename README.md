@@ -21,7 +21,7 @@ Solo llegan a la web los dictados con `estado: publicado`, y nada se publica sin
 
 ## Cómo se usa
 
-Requisitos en el servidor: Node 22, ffmpeg, `pdfinfo` (poppler), el Chromium de Playwright en `~/.cache/ms-playwright`, el motor de voz aHoTTS de `edumind_escribe` y LibreOffice Writer sin interfaz (ODT). No hay dependencias de npm.
+Requisitos en el servidor: Node 22, ffmpeg, `pdfinfo` (poppler), el Chromium de Playwright en `~/.cache/ms-playwright`, los motores de voz (Kokoro en `.cache/tts-venv` para castellano y aHoTTS de `edumind_escribe` para gallego) y LibreOffice Writer sin interfaz (ODT). No hay dependencias de npm.
 
 ```bash
 node bin/ditados.js validar          # valida todos los dictados y explica los errores en lenguaje llano
@@ -36,7 +36,7 @@ NODE_PATH=/var/www/edumind_miclase/node_modules node herramientas/comprobar_web.
 
 El audio se guarda en `.cache/audio/<id>/<voz>/` y se reutiliza en cada compilación; para regenerar una voz basta con borrar esa carpeta.
 
-Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (carpeta de aHoTTS), `DITADOS_PYTHON_HF` (Python con `huggingface_hub` para descargar voces), `DITADOS_VOCES` (caché de voces), `DITADOS_AUDIO` (caché de audio).
+Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (carpeta de aHoTTS), `DITADOS_KOKORO_PYTHON` (Python del entorno con Kokoro), `DITADOS_PYTHON_HF` (Python con `huggingface_hub` para descargar voces), `DITADOS_VOCES` (caché de voces), `DITADOS_AUDIO` (caché de audio).
 
 ## Continuar el proyecto
 
@@ -45,7 +45,9 @@ Este repositorio es la fuente completa: no hay nada privado que haga falta para 
 Por niveles, de menos a más:
 
 1. **Solo Node 22**: `npm test` y `node bin/ditados.js build --sin-audio --sin-pdf` generan el catálogo, las presentaciones (con la voz del navegador) y el dictado rápido. Es lo que hace la integración continua en cada PR.
-2. **Con audio**: clona [aHoTTS](https://github.com/hitz-zentroa/aHoTTS) (HiTZ, UPV/EHU), instala ffmpeg y apunta `DITADOS_AHOTTS` a esa carpeta. Las voces se descargan de Hugging Face (`HiTZ/TTS-<lengua>_<voz>`) con el Python de `DITADOS_PYTHON_HF`.
+2. **Con audio**: hace falta ffmpeg y un motor por lengua.
+   - Castellano: [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache 2.0), voces `dora` (por defecto), `santa` y `alex`. Se instala en un entorno Python aparte, sin tarjeta gráfica: `python3 -m venv .cache/tts-venv && .cache/tts-venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu && .cache/tts-venv/bin/pip install kokoro espeakng-loader phonemizer-fork soundfile`. El modelo (unos 330 MB) se descarga de Hugging Face la primera vez. Otro entorno: `DITADOS_KOKORO_PYTHON`.
+   - Gallego: clona [aHoTTS](https://github.com/hitz-zentroa/aHoTTS) (HiTZ, UPV/EHU) y apunta `DITADOS_AHOTTS` a esa carpeta. Las voces se descargan de Hugging Face (`HiTZ/TTS-<lengua>_<voz>`) con el Python de `DITADOS_PYTHON_HF`. Las voces castellanas de aHoTTS (`laura`, `alejandro`) siguen disponibles, pero se entienden peor.
 3. **Con PDF y ODT**: Chromium (por ejemplo, `npx playwright install chromium`, o `DITADOS_CHROME`), `pdfinfo` de poppler y LibreOffice Writer sin interfaz.
 4. **Editor del autor**: `node bin/ditados.js servir` detrás de cualquier proxy que autentique y pase el usuario en la cabecera `X-Authentik-Username` (ver `docs/DESPLIEGUE.md`; Authentik es la opción de EDUmind, no un requisito).
 
@@ -77,7 +79,7 @@ dist/           salida compilada (no se versiona)
 
 ## Dictados incluidos
 
-De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º a 5.º, dos dictados por curso y lengua con tres textos cada uno (`gl-03`…`gl-12`, `es-03`…`es-12`), escritos con ayuda de IA y guardados como **borrador**: el autor los revisa contra la RAG y la RAE y los publica desde el editor. Nada escrito por IA llega al alumnado sin revisión humana.
+De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º a 5.º, dos dictados por curso y lengua con tres textos cada uno (`gl-03`…`gl-12`, `es-04`…`es-13`), escritos con ayuda de IA y guardados como **borrador**: el autor los revisa contra la RAG y la RAE y los publica desde el editor. Nada escrito por IA llega al alumnado sin revisión humana.
 
 ## ODT y corrector
 

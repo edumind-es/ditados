@@ -138,8 +138,12 @@
       ]
     },
     "es": {
-      "defecto": "alejandro",
+      "defecto": "dora",
       "disponibles": [
+        "dora",
+        "santa",
+        "alex",
+        "laura",
         "alejandro"
       ]
     }

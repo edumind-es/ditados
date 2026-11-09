@@ -1,96 +1,140 @@
 {
   "lang": "es",
   "num": 3,
-  "curso": "1",
-  "titulo": "Dictado 3 · Los sonidos de la c, la q y la g",
-  "tema": "Los sonidos de la c, la q y la g",
-  "regra": "El sonido fuerte de c se escribe c ante a, o, u y qu ante e, i · el sonido de g se escribe g ante a, o, u y gu ante e, i · la diéresis hace sonar la u",
-  "etiquetas": ["c y qu", "g y gu", "diéresis", "sonidos y letras", "signos de exclamación"],
-  "fixome": [
-    "Casa, cosa, cuna: c delante de a, o, u.",
-    "Queso, quince: qu delante de e, i. La u no suena.",
-    "Gato, goma, gusano: g delante de a, o, u.",
-    "Guerra, guitarra: gu delante de e, i. Si la u tiene que sonar, lleva diéresis: pingüino."
+  "curso": "6",
+  "titulo": "Dictado 3 · Flamencos: el rosa se come",
+  "tema": "Palabras homófonas y epicenos",
+  "regra": "Palabras homófonas (tuvo, hecho) · sustantivos epicenos y nombres propios · repaso de tildes, dos puntos y signos de pregunta y exclamación",
+  "etiquetas": [
+    "homófonas",
+    "b y v",
+    "la h",
+    "epicenos",
+    "nombres propios",
+    "acentuación",
+    "esdrújulas",
+    "dos puntos",
+    "signos de interrogación",
+    "signos de exclamación",
+    "curiosidad"
   ],
-  "estado": "borrador",
+  "fixome": [
+    "Las homófonas suenan igual y se escriben distinto: el significado decide la letra. Tuvo (de tener) / tubo; hecho (de hacer) / echo (de echar).",
+    "Epicenos: una sola palabra para los dos sexos. Si hace falta, se añade macho o hembra: el flamenco macho, el flamenco hembra.",
+    "Los nombres propios van con mayúscula: Fuente de Piedra, Málaga.",
+    "Tilde: agudas acabadas en vocal, n o s (plumón); llanas que no acaban en vocal, n ni s (récord); esdrújulas, siempre (crustáceos, Málaga)."
+  ],
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
-    "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "fecha": "2026-11-08",
+    "revisor": "Luis Vilela Acuña",
+    "fuentes": [
+      "https://dle.rae.es",
+      "https://www.rae.es/dpd",
+      "Ortografía de la lengua española (RAE, 2010)"
+    ],
+    "notas": "Texto escrito por el autor para un aula de 6.º en noviembre de 2026. Los datos del texto están en «datos» de la opción."
   },
   "opcions": [
     {
       "letra": "A",
       "tipo": "Curiosidad",
-      "titulo": "El pingüino no vuela",
-      "texto": "El pingüino es un ave, pero no vuela. Nada muy rápido con sus alas. Vive en lugares fríos y camina con pasos pequeños. ¡Qué gracioso es!",
+      "titulo": "Flamencos: el rosa se come",
+      "texto": "¿Sabías que los flamencos no nacen rosas? Los pollos tienen plumón gris o blanco. El color llega con lo que comen: algas y pequeños crustáceos con pigmento rojizo. Hace años, en algunos zoos, más de un flamenco tuvo poca comida de ese tipo y perdió el color. Es un hecho: el rosa se come. El flamenco macho y el flamenco hembra se parecen mucho. Este año, en la laguna de Fuente de Piedra, en Málaga, criaron más de treinta y cinco mil parejas. ¡Es el récord desde que se cuentan!",
       "segmentos": [
-        "El pingüino es un ave,",
-        "pero no vuela.",
-        "Nada muy rápido con sus alas.",
-        "Vive en lugares fríos",
-        "y camina con pasos pequeños.",
-        "¡Qué gracioso es!"
+        "¿Sabías que los flamencos",
+        "no nacen rosas?",
+        "Los pollos tienen",
+        "plumón gris o blanco.",
+        "El color llega con lo que comen:",
+        "algas y pequeños crustáceos",
+        "con pigmento rojizo.",
+        "Hace años, en algunos zoos,",
+        "más de un flamenco tuvo",
+        "poca comida de ese tipo",
+        "y perdió el color.",
+        "Es un hecho:",
+        "el rosa se come.",
+        "El flamenco macho",
+        "y el flamenco hembra",
+        "se parecen mucho.",
+        "Este año, en la laguna",
+        "de Fuente de Piedra, en Málaga,",
+        "criaron más de treinta y cinco mil parejas.",
+        "¡Es el récord",
+        "desde que se cuentan!"
       ],
       "foco": [
-        { "p": "pingüino", "por": "La u lleva diéresis para que suene: pin-güi-no." },
-        { "p": "lugares", "por": "Ga: g delante de a." },
-        { "p": "camina", "por": "Ca: c delante de a suena fuerte." },
-        { "p": "pequeños", "por": "Qu delante de e: la u no suena." },
-        { "p": "gracioso", "por": "Ci suena suave, como en cine." },
-        { "p": "¡Qué gracioso es!", "por": "La exclamación se abre con ¡ y se cierra con !", "e": "¡ … !" }
+        {
+          "p": "¿Sabías que los flamencos no nacen rosas?",
+          "por": "La pregunta se abre y se cierra. En Sabías, la í es tónica y va separada de la a (hiato): lleva tilde.",
+          "e": "¿Sabías … rosas?"
+        },
+        {
+          "p": "plumón",
+          "por": "Se divide plu-món. Es aguda y acaba en n: lleva tilde. En plural, plumones, ya no la lleva."
+        },
+        {
+          "p": "comen:",
+          "por": "Dos puntos antes de una enumeración."
+        },
+        {
+          "p": "crustáceos",
+          "por": "Se divide crus-tá-ce-os. La tónica, tá, es la antepenúltima: es esdrújula y lleva tilde siempre."
+        },
+        {
+          "p": "rojizo",
+          "por": "Con j y con z."
+        },
+        {
+          "p": "zoos",
+          "por": "Zoo acaba en vocal: el plural se forma con -s (zoos)."
+        },
+        {
+          "p": "tuvo",
+          "por": "Es del verbo tener: va con v. Tubo, con b, es una pieza hueca, como el de la pasta de dientes. Son homófonas."
+        },
+        {
+          "p": "hecho",
+          "por": "Es del verbo hacer: lleva h. Echo, sin h, es del verbo echar. Son homófonas."
+        },
+        {
+          "p": "perdió",
+          "por": "Se divide per-dió. Es aguda y acaba en vocal: lleva tilde."
+        },
+        {
+          "p": "hembra",
+          "por": "Con h y con mb (antes de b se escribe m)."
+        },
+        {
+          "p": "El flamenco macho y el flamenco hembra",
+          "por": "Flamenco es un sustantivo epiceno: la misma palabra para los dos sexos; se añade macho o hembra.",
+          "e": "flamenco macho / hembra"
+        },
+        {
+          "p": "Fuente de Piedra",
+          "por": "Es un nombre propio de lugar: Fuente y Piedra van con mayúscula; la preposición de, no.",
+          "e": "Fuente de Piedra"
+        },
+        {
+          "p": "Málaga",
+          "por": "Nombre propio con mayúscula. Se divide Má-la-ga: es esdrújula y lleva tilde."
+        },
+        {
+          "p": "más",
+          "por": "Más lleva tilde cuando indica cantidad, aquí dos veces. Solo mas, cuando significa «pero», va sin tilde."
+        },
+        {
+          "p": "¡Es el récord desde que se cuentan!",
+          "por": "La exclamación se abre y se cierra.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "récord",
+          "por": "Se divide ré-cord. Es llana y acaba en d (no en vocal, n ni s): lleva tilde."
+        }
       ],
-      "datos": "Los pingüinos son aves que no vuelan y nadan impulsándose con las alas; viven en el hemisferio sur, muchos en zonas frías. Datos de conocimiento general que el docente puede confirmar en una enciclopedia escolar."
-    },
-    {
-      "letra": "B",
-      "tipo": "Naturaleza",
-      "titulo": "La cigüeña de la torre",
-      "texto": "La cigüeña hace su nido en lo alto de la torre. Es blanca y negra, con el pico largo. Come ranas y pequeños peces. Cuando llega la primavera, vuelve a su casa.",
-      "segmentos": [
-        "La cigüeña hace su nido",
-        "en lo alto de la torre.",
-        "Es blanca y negra,",
-        "con el pico largo.",
-        "Come ranas y pequeños peces.",
-        "Cuando llega la primavera,",
-        "vuelve a su casa."
-      ],
-      "foco": [
-        { "p": "cigüeña", "por": "Ci suena suave. La u lleva diéresis para que suene: ci-güe-ña." },
-        { "p": "hace", "por": "Ce suena suave. Empieza por h, que no suena." },
-        { "p": "pico", "por": "Co: c delante de o suena fuerte." },
-        { "p": "pequeños", "por": "Qu delante de e: la u no suena." },
-        { "p": "peces", "por": "Ce suena suave, como en cena." },
-        { "p": "Cuando", "por": "Mayúscula porque empieza la frase. Cu: c delante de u suena fuerte." },
-        { "p": "llega", "por": "Ga: g delante de a." }
-      ],
-      "datos": "La cigüeña blanca anida en lugares altos como torres y campanarios, es blanca con las alas negras y tiene el pico largo y rojo; se alimenta de ranas, peces pequeños, insectos y otros animales. Vuelve al mismo nido cada año. Datos de conocimiento general sobre la cigüeña blanca (Ciconia ciconia)."
-    },
-    {
-      "letra": "C",
-      "tipo": "Texto instructivo",
-      "titulo": "Un gusano de papel",
-      "texto": "Corta una tira de papel. Dóblala como un acordeón. Pega dos ojos de papel en un extremo. Ya tienes un gusano que camina cuando soplas.",
-      "segmentos": [
-        "Corta una tira de papel.",
-        "Dóblala como un acordeón.",
-        "Pega dos ojos de papel",
-        "en un extremo.",
-        "Ya tienes un gusano",
-        "que camina cuando soplas."
-      ],
-      "foco": [
-        { "p": "Corta", "por": "Mayúscula porque empieza la frase. Co: c delante de o suena fuerte." },
-        { "p": "como", "por": "Co: c delante de o suena fuerte." },
-        { "p": "Pega", "por": "Mayúscula porque empieza la frase. Ga: g delante de a." },
-        { "p": "gusano", "por": "Gu: g delante de u. Aquí la u sí suena." },
-        { "p": "que", "por": "Qu delante de e: la u no suena." },
-        { "p": "camina", "por": "Ca: c delante de a suena fuerte." },
-        { "p": "cuando", "por": "Cu: c delante de u suena fuerte." }
-      ],
-      "datos": "Texto instructivo sin datos que verificar: manualidad sencilla de papel plegado en acordeón."
+      "datos": "Flamenco común (Phoenicopterus roseus): los pollos nacen con plumón gris o blanco y el color rosa procede de los carotenoides de algas y pequeños crustáceos (artemia) que comen; en cautividad, sin esa dieta, el plumaje palidece. Fuente de Piedra (Málaga): en la temporada de 2026 la Junta de Andalucía censó 35.177 parejas reproductoras, la cifra más alta desde que se sigue la colonia (1984); el récord anterior era de 33.900 parejas (2025). Fuentes: nota de la Junta de Andalucía del 8 de agosto de 2026 recogida por ECOticias («Fuente de Piedra celebra un año histórico para los flamencos»); Consejería de Sostenibilidad y Medio Ambiente, seguimiento de la Reserva Natural Laguna de Fuente de Piedra."
     }
   ]
 }
