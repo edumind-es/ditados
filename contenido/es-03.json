@@ -24,6 +24,23 @@
     "Los nombres propios van con mayúscula: Fuente de Piedra, Málaga.",
     "Tilde: agudas acabadas en vocal, n o s (plumón); llanas que no acaban en vocal, n ni s (récord); esdrújulas, siempre (crustáceos, Málaga)."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.3",
+      "CE6.7"
+    ],
+    "contenidos": [
+      "B3.19",
+      "B6.12",
+      "B6.10"
+    ],
+    "evaluar": [
+      "Distingue por el sentido las palabras homófonas del texto (tuvo y tubo, hecho y echo).",
+      "Reconoce los sustantivos epicenos y escribe con mayúscula los nombres propios.",
+      "Pone las tildes de las palabras clave y los signos de puntuación que se dictan."
+    ]
+  },
   "estado": "publicado",
   "revision": {
     "fecha": "2026-11-08",

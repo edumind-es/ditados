@@ -12,6 +12,21 @@
     "Gato, goma, gusano: g delante de a, o, u.",
     "Guerra, guitarra: gu delante de e, i. Si la u tiene que sonar, lleva diéresis: pingüino."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.20",
+      "B6.2"
+    ],
+    "evaluar": [
+      "Elige c o qu según la vocal que va después (ca, co, cu; que, qui).",
+      "Elige g o gu según la vocal que va después (ga, go, gu; gue, gui) y pone diéresis cuando la u suena.",
+      "Abre y cierra los signos de exclamación."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -91,6 +106,34 @@
         { "p": "cuando", "por": "Cu: c delante de u suena fuerte." }
       ],
       "datos": "Texto instructivo sin datos que verificar: manualidad sencilla de papel plegado en acordeón."
+    },
+    {
+      "letra": "D",
+      "tipo": "Cuento",
+      "titulo": "El mago Quique",
+      "texto": "El mago Quique guarda un conejo en su gorro. Toca la guitarra y el conejo sale con una corona. Luego saca un paraguas pequeño. ¡Qué mago tan curioso!",
+      "segmentos": [
+        "El mago Quique",
+        "guarda un conejo",
+        "en su gorro.",
+        "Toca la guitarra",
+        "y el conejo sale",
+        "con una corona.",
+        "Luego saca",
+        "un paraguas pequeño.",
+        "¡Qué mago tan curioso!"
+      ],
+      "foco": [
+        { "p": "mago", "por": "Go: g delante de o." },
+        { "p": "Quique", "por": "Nombre de una persona: va con mayúscula. Qu delante de i y de e: la u no suena." },
+        { "p": "guarda", "por": "Gua: aquí la u sí suena." },
+        { "p": "conejo", "por": "Co: c delante de o suena fuerte." },
+        { "p": "guitarra", "por": "Gu delante de i: la u no suena." },
+        { "p": "paraguas", "por": "Gua: aquí la u sí suena." },
+        { "p": "pequeño", "por": "Qu delante de e: la u no suena." },
+        { "p": "curioso", "por": "Cu: c delante de u suena fuerte." }
+      ],
+      "datos": "Cuento inventado: sin datos que verificar."
     }
   ]
 }

@@ -7,7 +7,8 @@ const { validar, idDitado } = require('./validar');
 const { generarPresentacion, nombrePresentacion } = require('./gen_presentacion');
 const { generarImpresos, nombresImpresos } = require('./gen_impresos');
 const { miclase, textosDocente, nombresDocente } = require('./gen_docente');
-const { paginaIndice, paginaDitado } = require('./gen_catalogo');
+const { paginaIndice, paginaDitado, paginaVoces } = require('./gen_catalogo');
+const { MUESTRAS_VOZ } = require('./textos');
 const { htmlAPdf } = require('./pdf');
 const { generarKit, nombresKit } = require('./gen_kit');
 const { generarPaquete } = require('./gen_paquete');
@@ -15,11 +16,15 @@ const { generarRapido } = require('./gen_rapido');
 const odt = require('./odt');
 const audio = require('./audio');
 const { FUENTES_DIR, RAIZ } = require('./html');
+const { leerCurriculo } = require('./curriculo');
 
 const CONTENIDO = path.join(RAIZ, 'contenido');
 const AUDIO_CACHE = process.env.DITADOS_AUDIO || path.join(RAIZ, '.cache', 'audio');
 
-function leerConfig() { return JSON.parse(fs.readFileSync(path.join(CONTENIDO, 'config.json'), 'utf8')); }
+/** Configuración más el currículo por lengua (contenido/curriculo/), que usan la validación y el catálogo. */
+function leerConfig() {
+  return { ...JSON.parse(fs.readFileSync(path.join(CONTENIDO, 'config.json'), 'utf8')), curriculo: leerCurriculo() };
+}
 
 function leerDitados() {
   return fs.readdirSync(CONTENIDO).filter((f) => /^(gl|es)-\d+\.json$/.test(f)).sort()
@@ -124,6 +129,26 @@ function build(opts = {}) {
     const nombres = nombresImpresos(d);
     const ficheros = { presentacion: nombrePres, ficha: null, repetido: null, textos: null, miclase: [], audio: ficherosAudio };
     ficheros.formatos = {};
+    // Voces entre las que elige el docente: la del dictado y las «publicadas» de su lengua. Cada voz extra lleva su propia
+    // presentación (en voz-<voz>/, fuera del paquete ZIP) y solo el audio completo de cada texto, para escucharlo en la ficha.
+    ficheros.voces = [];
+    if (pres.conAudio) {
+      ficheros.voces.push({ voz, presentacion: nombrePres, audio: 'audio' });
+      for (const otra of (config.voces[d.lang].publicadas || []).filter((v) => v !== voz)) {
+        try {
+          const dir = path.join(AUDIO_CACHE, id, otra);
+          const res = audio.generarAudio(d, dir, otra, { log });
+          const p = generarPresentacion(d, { audioDir: dir, voz: otra });
+          if (!p.conAudio) continue;
+          fs.mkdirSync(path.join(carpeta, `voz-${otra}`), { recursive: true });
+          fs.writeFileSync(path.join(carpeta, `voz-${otra}`, nombrePres), p.html);
+          fs.mkdirSync(path.join(carpeta, 'audio', otra), { recursive: true });
+          for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('-completo.mp3'))) fs.copyFileSync(path.join(dir, f), path.join(carpeta, 'audio', otra, f));
+          ficheros.voces.push({ voz: otra, presentacion: `voz-${otra}/${nombrePres}`, audio: `audio/${otra}` });
+          log(`  voz ${otra}: ${res.generados} clips nuevos, ${res.reutilizados} reutilizados`);
+        } catch (e) { problemas.push(`${id}: voz ${otra}: ${e.message}`); }
+      }
+    }
     if (!opts.sinPdf) {
       for (const formato of ['A4', 'A3', 'grande']) {
         const impresos = generarImpresos(d, config, formato);
@@ -152,7 +177,7 @@ function build(opts = {}) {
 
     // Documentos del docente
     const nd = nombresDocente(d);
-    fs.writeFileSync(path.join(descargas, nd.textos), textosDocente(d));
+    fs.writeFileSync(path.join(descargas, nd.textos), textosDocente(d, config.curriculo));
     ficheros.textos = `descargas/${nd.textos}`;
     for (const o of d.opcions) {
       fs.writeFileSync(path.join(descargas, nd.miclase(o)), miclase(d, o));
@@ -165,12 +190,31 @@ function build(opts = {}) {
       log(`  paquete: ${ficheros.paquete} (${Math.round(fs.statSync(path.join(carpeta, ficheros.paquete)).size / 1024)} KB)`);
     } catch (e) { problemas.push(`${id}: paquete: ${e.message}`); }
 
-    fs.writeFileSync(path.join(carpeta, 'index.html'), paginaDitado(d, ficheros, pres.conAudio ? voz : null, kit[d.lang]));
+    fs.writeFileSync(path.join(carpeta, 'index.html'), paginaDitado(d, ficheros, pres.conAudio ? voz : null, kit[d.lang], config.curriculo));
     entradas.push({ d, ficheros, voz: pres.conAudio ? voz : null });
   }
 
   if (!opts.solo) {
-    fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas, kit));
+    // Página «Voces»: las mismas frases de muestra en cada voz publicada, para escuchar antes de elegir
+    const muestras = {};
+    if (hayAudio) {
+      for (const lang of ['gl', 'es']) {
+        for (const v of config.voces[lang].publicadas || []) {
+          try {
+            const dir = path.join(AUDIO_CACHE, '_muestras', lang, v);
+            audio.generarClips(MUESTRAS_VOZ[lang].map((texto, i) => ({ nombre: `${v}-${i + 1}`, texto })), lang, v, dir, { log });
+            const dest = path.join(dist, 'voces', 'audio', lang);
+            fs.mkdirSync(dest, { recursive: true });
+            const clips = MUESTRAS_VOZ[lang].map((_, i) => `${v}-${i + 1}.mp3`);
+            for (const f of clips) fs.copyFileSync(path.join(dir, f), path.join(dest, f));
+            (muestras[lang] = muestras[lang] || []).push({ voz: v, clips: clips.map((f) => `audio/${lang}/${f}`) });
+          } catch (e) { problemas.push(`voces: ${lang} ${v}: ${e.message}`); }
+        }
+      }
+    }
+    const hayVoces = Object.keys(muestras).length > 0;
+    if (hayVoces) fs.writeFileSync(path.join(dist, 'voces', 'index.html'), paginaVoces(muestras, config));
+    fs.writeFileSync(path.join(dist, 'index.html'), paginaIndice(entradas, kit, config, { voces: hayVoces }));
     // Dictado rápido: página pública que genera la presentación en el navegador a partir de un texto pegado
     fs.mkdirSync(path.join(dist, 'rapido'), { recursive: true });
     fs.writeFileSync(path.join(dist, 'rapido', 'index.html'), generarRapido(config));

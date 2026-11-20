@@ -24,6 +24,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { validar, idDitado, idOpcion, textoPlano } = require('./validar');
+const { leerCurriculo } = require('./curriculo');
 const { segmentar } = require('./segmentar');
 const lt = require('./languagetool');
 const audio = require('./audio');
@@ -37,7 +38,7 @@ const SIN_AUTH = process.env.DITADOS_SIN_AUTH === '1';
 const tareas = new Map();
 let nTarea = 0;
 
-const leerConfig = () => JSON.parse(fs.readFileSync(path.join(CONTENIDO, 'config.json'), 'utf8'));
+const leerConfig = () => ({ ...JSON.parse(fs.readFileSync(path.join(CONTENIDO, 'config.json'), 'utf8')), curriculo: leerCurriculo() });
 const rutaDitado = (id) => { if (!/^(gl|es)-\d{2}$/.test(id)) throw new Error('id no válido'); return path.join(CONTENIDO, `${id}.json`); };
 
 function json(res, codigo, cuerpo) {
@@ -93,7 +94,8 @@ async function manejar(req, res) {
   const config = leerConfig();
 
   if (req.method === 'GET' && partes[1] === 'config') {
-    return json(res, 200, { config, languagetool: lt.activo(), audio: audio.disponible() });
+    // El currículo completo no viaja al editor: solo se usa aquí, para validar.
+    return json(res, 200, { config: { ...config, curriculo: undefined }, languagetool: lt.activo(), audio: audio.disponible() });
   }
   if (req.method === 'GET' && partes[1] === 'ditados' && partes.length === 2) {
     const lista = fs.readdirSync(CONTENIDO).filter((f) => /^(gl|es)-\d\d\.json$/.test(f)).sort().map((f) => {
@@ -164,7 +166,7 @@ async function manejar(req, res) {
     fs.mkdirSync(dir, { recursive: true });
     const wav = path.join(dir, `${idOpcion(d, o)}-${nombre}.wav`);
     const mp3 = path.join(dir, `${idOpcion(d, o)}-${nombre}.mp3`);
-    try { audio.sintetizar(texto, d.lang, voz, wav); audio.aMp3(wav, mp3); } catch (e) { return json(res, 500, { error: e.message }); } finally { fs.rmSync(wav, { force: true }); }
+    try { audio.sintetizarClips([{ texto, wav }], d.lang, voz); audio.aMp3(wav, mp3); } catch (e) { return json(res, 500, { error: e.message }); } finally { fs.rmSync(wav, { force: true }); }
     return json(res, 200, { fichero: `/api/audio/${id}/${voz}/${path.basename(mp3)}` });
   }
   if (req.method === 'GET' && partes[1] === 'audio' && partes.length === 5) {

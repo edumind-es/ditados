@@ -12,6 +12,22 @@
     "Plural en -es se remata en -r ou en -s: flor, flores. Se remata en -z, cambia a -ces: rapaz, rapaces.",
     "Algunhas non cambian: o lapis, os lapis."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.3",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.21",
+      "B6.5"
+    ],
+    "evaluar": [
+      "Escribe za, zo, zu e ce, ci nas palabras co son suave.",
+      "Forma o plural con -s ou con -es, e cambia z por c (rapaz, rapaces).",
+      "Revisa o seu ditado co modelo e corrixe as palabras clave."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -102,6 +118,37 @@
         { "p": "serpe", "por": "Remata en e. En castelán dise «serpiente»." }
       ],
       "datos": "Carta ficticia; nomes ficticios. Sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instrutivo",
+      "titulo": "Unha macedonia de froitas",
+      "texto": "Lava dúas mazás, tres pexegos e dez cereixas. Corta as mazás e os pexegos en anacos pequenos. Bota todo nunha cunca con zume de laranxa e un pouco de azucre. Mestura amodo. Xa tes macedonia para catro rapaces!",
+      "segmentos": [
+        "Lava dúas mazás,",
+        "tres pexegos",
+        "e dez cereixas.",
+        "Corta as mazás",
+        "e os pexegos",
+        "en anacos pequenos.",
+        "Bota todo nunha cunca",
+        "con zume de laranxa",
+        "e un pouco de azucre.",
+        "Mestura amodo.",
+        "Xa tes macedonia",
+        "para catro rapaces!"
+      ],
+      "foco": [
+        { "p": "mazás", "por": "Za: z diante de a. Mazá remata en vogal: plural en -s." },
+        { "p": "pexegos", "por": "Pexego remata en vogal: plural en -s. Vai con x." },
+        { "p": "dez", "por": "Remata en z." },
+        { "p": "cereixas", "por": "Ce: c diante de e. Vai con x." },
+        { "p": "zume", "por": "Zu: z diante de u." },
+        { "p": "azucre", "por": "Zu: z diante de u. Non leva til." },
+        { "p": "macedonia", "por": "Ce: c diante de e." },
+        { "p": "rapaces", "por": "Rapaz remata en -z: o plural cambia a -ces." }
+      ],
+      "datos": "Receita sinxela de macedonia: sen datos que verificar. A froita córtaa unha persoa adulta e ás cereixas hai que quitarlles a carabuña."
     }
   ]
 }

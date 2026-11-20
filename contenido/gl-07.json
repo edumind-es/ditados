@@ -19,6 +19,22 @@
     "Til diacrítico: é / e, máis / mais, vés / ves, á / a.",
     "Verbo con pronome detrás: acentúase como unha soa palabra: quéntase, escríbeme."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.3"
+    ],
+    "contenidos": [
+      "B6.10",
+      "B3.19",
+      "B6.12"
+    ],
+    "evaluar": [
+      "Decide se leva til unha palabra con ditongo ou con hiato (ríos, súa).",
+      "Distingue polo til é e e, máis e mais, vés e ves, á e a.",
+      "Escribe ben as formas verbais con pronome (quéntase, botámoste)."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -286,6 +302,46 @@
         }
       ],
       "datos": "Carta ficticia; os nomes son ficticios e non se nomea ningún centro. Sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Diálogo",
+      "titulo": "No museo do mar",
+      "texto": "—Ti sabes como se orienta un mariñeiro sen búxola? —preguntou a guía do museo.\n—Eu si —respondeu Raúl—. Mira o ceo e busca a estrela polar.\n—Moi ben. E se é de día?\n—Entón fíxase no sol: sae polo leste e ponse polo oeste.\n—A túa resposta é perfecta. Se queres saber máis, sobe á torre do faro: desde alí ves toda a ría.",
+      "segmentos": [
+        "—Ti sabes como se orienta",
+        "un mariñeiro sen búxola?",
+        "—preguntou a guía do museo.",
+        "—Eu si —respondeu Raúl—.",
+        "Mira o ceo",
+        "e busca a estrela polar.",
+        "—Moi ben. E se é de día?",
+        "—Entón fíxase no sol:",
+        "sae polo leste",
+        "e ponse polo oeste.",
+        "—A túa resposta é perfecta.",
+        "Se queres saber máis,",
+        "sobe á torre do faro:",
+        "desde alí ves toda a ría."
+      ],
+      "foco": [
+        { "p": "orienta", "por": "Ditongo ie: o-rien-ta." },
+        { "p": "mariñeiro", "por": "Ditongo ei: ma-ri-ñei-ro." },
+        { "p": "guía", "por": "Hiato: o i tónico leva til: guí-a." },
+        { "p": "museo", "por": "Hiato: mu-se-o. Sen til." },
+        { "p": "Raúl", "por": "Hiato: o u tónico leva til: Ra-úl." },
+        { "p": "ceo", "por": "Hiato: ce-o. Sen til." },
+        { "p": "E se é de día?", "por": "E, conxunción: sen til. É, do verbo ser: con til. Día é un hiato: dí-a.", "e": "E … é … día" },
+        { "p": "fíxase", "por": "Verbo con pronome detrás: acentúase como unha soa palabra. Esdrúxula: con til." },
+        { "p": "sae", "por": "Hiato: sa-e. Sen til." },
+        { "p": "túa", "por": "Hiato: o u tónico leva til: tú-a." },
+        { "p": "máis", "por": "De cantidade: con til. Mais, sen til, significa pero." },
+        { "p": "á", "por": "Contracción de a + a: con til." },
+        { "p": "alí", "por": "Aguda rematada en vogal: con til." },
+        { "p": "ves", "por": "Do verbo ver: sen til. Vés, con til, é do verbo vir." },
+        { "p": "ría", "por": "Hiato: o i tónico leva til: rí-a." }
+      ],
+      "datos": "Diálogo inventado. No hemisferio norte, a estrela polar sinala o norte; o sol sae aproximadamente polo leste e ponse polo oeste."
     }
   ]
 }

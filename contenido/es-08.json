@@ -12,6 +12,21 @@
     "Después de punto, otra vez mayúscula.",
     "Los nombres de lugares y de personas van con mayúscula: América, Carmen."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.20",
+      "B6.4"
+    ],
+    "evaluar": [
+      "Escribe con ñ, ll y ch las palabras del dictado que llevan esos sonidos.",
+      "Empieza cada frase con mayúscula y la cierra con punto.",
+      "Escribe con mayúscula los nombres propios."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -91,6 +106,32 @@
         { "p": "molinillo", "por": "Con ll." }
       ],
       "datos": "Texto instructivo: molinillo de viento de papel, manualidad clásica. El alfiler lo pincha una persona adulta. Sin otros datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Descripción",
+      "titulo": "Mi amiga Chelo",
+      "texto": "Mi amiga Chelo vive en Sevilla. Tiene el pelo castaño y lleva una mochila amarilla. Cada mañana desayuna leche con churros. Sueña con ver las montañas de España.",
+      "segmentos": [
+        "Mi amiga Chelo",
+        "vive en Sevilla.",
+        "Tiene el pelo castaño",
+        "y lleva una mochila amarilla.",
+        "Cada mañana",
+        "desayuna leche con churros.",
+        "Sueña con ver",
+        "las montañas de España."
+      ],
+      "foco": [
+        { "p": "Chelo", "por": "Nombre de una persona: va con mayúscula. Con ch." },
+        { "p": "Sevilla", "por": "Nombre de un lugar: va con mayúscula. Con ll." },
+        { "p": "castaño", "por": "Con ñ." },
+        { "p": "amarilla", "por": "Con ll." },
+        { "p": "Cada", "por": "Mayúscula porque va después de punto." },
+        { "p": "churros", "por": "Con ch." },
+        { "p": "España", "por": "Nombre de un lugar: va con mayúscula. Con ñ." }
+      ],
+      "datos": "Descripción inventada de una persona: sin datos que verificar. Sevilla y España son nombres propios de lugar."
     }
   ]
 }

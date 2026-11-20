@@ -12,6 +12,22 @@
     "La h no suena, pero se escribe: hacer, hueco, búho.",
     "En las enumeraciones pongo coma entre los elementos e y antes del último: cepillo, pasta y vaso."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Escribe con b, con v y con h las palabras clave del dictado.",
+      "Separa con comas los elementos de una enumeración y no pone coma antes de la y final.",
+      "Señala la sílaba tónica de las palabras que se le indican."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -118,6 +134,39 @@
         { "p": "visitarte", "por": "Con v." }
       ],
       "datos": "Texto instructivo: comedero de botella, manualidad escolar habitual. Los agujeros se hacen con ayuda de una persona adulta. Sin otros datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Diario",
+      "titulo": "Un día en la huerta",
+      "texto": "Hoy he visitado la huerta de mi abuelo. Había tomates, habas, zanahorias y lechugas. He regado las plantas con una vieja regadera verde y he visto una abeja sobre una flor. Antes de volver, hemos llenado una cesta de verduras. ¡Esta noche habrá una buena sopa!",
+      "segmentos": [
+        "Hoy he visitado",
+        "la huerta de mi abuelo.",
+        "Había tomates, habas,",
+        "zanahorias y lechugas.",
+        "He regado las plantas",
+        "con una vieja regadera verde",
+        "y he visto una abeja",
+        "sobre una flor.",
+        "Antes de volver,",
+        "hemos llenado una cesta de verduras.",
+        "¡Esta noche habrá una buena sopa!"
+      ],
+      "foco": [
+        { "p": "Hoy", "por": "Con h, que no suena." },
+        { "p": "visitado", "por": "Con v. La sílaba tónica es ta: vi-si-TA-do." },
+        { "p": "huerta", "por": "Con h: las palabras que empiezan por hue- llevan h." },
+        { "p": "abuelo", "por": "Con b." },
+        { "p": "Había", "por": "Con h y con b. Lleva tilde en la i." },
+        { "p": "tomates, habas, zanahorias y lechugas", "por": "Enumeración: coma entre los elementos e y antes del último.", "e": "… , … , … y …" },
+        { "p": "zanahorias", "por": "Lleva una h en medio, que no suena." },
+        { "p": "vieja", "por": "Con v." },
+        { "p": "abeja", "por": "Con b." },
+        { "p": "volver", "por": "Con dos v." },
+        { "p": "verduras", "por": "Con v. La sílaba tónica es du: ver-DU-ras." }
+      ],
+      "datos": "Página de diario inventada: sin datos que verificar."
     }
   ]
 }

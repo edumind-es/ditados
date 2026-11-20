@@ -3,7 +3,7 @@
 // La conversión a PDF y el recuento de páginas los hace pdf.js. Aquí solo se compone el HTML.
 const { esc, rellenar, leerPlantilla, cssFuentes } = require('./html');
 const { FICHA } = require('./textos');
-const { tituloCorto } = require('./validar');
+const { tituloCorto, nombreCurso, etapaDe } = require('./validar');
 
 const casilla = (t) => `<span class="casilla" role="img" aria-label="${esc(t.casilla)}"></span>`;
 const linea = (clase = '') => `<span class="liña ${clase}" aria-hidden="true"></span>`;
@@ -13,7 +13,7 @@ function renglones(n) {
 }
 
 function cabecera(t, d) {
-  return `<p class="cab">${esc(t.area)} · ${esc(d.curso)}.º · ${esc(t.tipo)} ${d.num} <span>· ${esc(d.tema)}</span></p>`;
+  return `<p class="cab">${esc(t.area)} · ${esc(nombreCurso(d.curso))} · ${esc(t.tipo)} ${d.num} <span>· ${esc(d.tema)}</span></p>`;
 }
 
 function nombreFecha(t) {
@@ -90,9 +90,14 @@ const FORMATOS = {
   grande: { css: 'body{font-size:18pt;line-height:1.3} h1{font-size:26pt} h2{font-size:20pt} .cab{font-size:14pt} .renglons td{height:14mm} table.clasif td{height:12mm} .casilla{width:6.5mm;height:6.5mm} .pagina.sigue{page-break-before:always}', renglones: (n) => n, paginasFicha: 4, paginasRep: 2 },
 };
 
+// En ESO se escribe en pauta estrecha: renglón de 8 mm en A4 (11,5 mm en A3) para que los textos largos quepan en la cara A.
+// La letra grande conserva su renglón de 14 mm.
+const PAUTA_ESO = { A4: '.renglons td{height:8mm}', A3: '.renglons td{height:11.5mm}', grande: '' };
+
 function envolver(d, titulo, cuerpo, formato = 'A4') {
+  const pauta = etapaDe(d.curso) === 'eso' ? PAUTA_ESO[formato] : '';
   return rellenar(leerPlantilla('impreso.html'), {
-    FONTS: cssFuentes({ inline: true }), EXTRA: FORMATOS[formato].css, LANG: d.lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(FICHA[d.lang].pe),
+    FONTS: cssFuentes({ inline: true }), EXTRA: FORMATOS[formato].css + pauta, LANG: d.lang, TITLE: esc(titulo), CUERPO: cuerpo, PE: esc(FICHA[d.lang].pe),
   });
 }
 

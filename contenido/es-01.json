@@ -20,6 +20,24 @@
     "Puntos suspensivos: la lista sigue. Son siempre tres y después no va punto.",
     "En castellano las preguntas y exclamaciones se abren y se cierran: ¿…? ¡…!"
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.4",
+      "CE3.6"
+    ],
+    "contenidos": [
+      "B6.11",
+      "B3.19",
+      "B6.2"
+    ],
+    "evaluar": [
+      "Usa los dos puntos, el punto y coma y los puntos suspensivos donde el texto los pide.",
+      "Abre y cierra los signos de interrogación y de exclamación.",
+      "Pone las tildes de las palabras clave.",
+      "Reconoce las partes de una carta: saludo, cuerpo y despedida."
+    ]
+  },
   "estado": "publicado",
   "revision": {
     "fecha": "2026-10-19",

@@ -12,6 +12,22 @@
     "Dous puntos antes dunha explicación: Anda en manda: unha parella e as súas crías. Punto e coma entre dúas partes moi relacionadas.",
     "Co pronome pegado, o verbo faise esdrúxulo e leva til: gárdao, pásallo, Chámanlle."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.19",
+      "B6.11",
+      "B6.10"
+    ],
+    "evaluar": [
+      "Escribe con b, con v e con h as palabras clave do ditado.",
+      "Pon dous puntos antes dunha explicación e punto e coma entre partes relacionadas.",
+      "Pon o til que pide o verbo cando leva o pronome pegado (gárdao, pásallo)."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -134,6 +150,48 @@
         { "p": "sorpresa", "por": "Con s: sor-pre-sa." }
       ],
       "datos": "En Galicia existen bibliotecas móbiles (bibliobuses) que percorren as aldeas. A narración e os nomes son ficticios."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instrutivo",
+      "titulo": "Antes dunha excursión",
+      "texto": "Antes de saír de excursión ao bosque, revisa a mochila: debe levar auga, un bocadillo, un chuvasqueiro e un asubío. Avisa sempre a un adulto do camiño que ides seguir; se hai néboa, é mellor volver. Camiña polos sendeiros sinalados e observa as árbores sen arrincar follas nin pólas. Se atopas lixo, recólleo cunha bolsa e lévao ao colector. Cando volvas, levarás no recordo unha boa aventura e o bosque seguirá limpo.",
+      "segmentos": [
+        "Antes de saír de excursión ao bosque,",
+        "revisa a mochila:",
+        "debe levar auga, un bocadillo,",
+        "un chuvasqueiro e un asubío.",
+        "Avisa sempre a un adulto",
+        "do camiño que ides seguir;",
+        "se hai néboa, é mellor volver.",
+        "Camiña polos sendeiros sinalados",
+        "e observa as árbores",
+        "sen arrincar follas nin pólas.",
+        "Se atopas lixo,",
+        "recólleo cunha bolsa",
+        "e lévao ao colector.",
+        "Cando volvas, levarás no recordo",
+        "unha boa aventura",
+        "e o bosque seguirá limpo."
+      ],
+      "foco": [
+        { "p": "bosque", "por": "Con b." },
+        { "p": "revisa", "por": "Con v." },
+        { "p": "mochila:", "por": "Dous puntos antes dunha explicación: o que debe levar.", "e": "mochila:" },
+        { "p": "levar", "por": "Con v." },
+        { "p": "chuvasqueiro", "por": "Con v, como chuvia." },
+        { "p": "asubío", "por": "Con b. Hiato: o i tónico leva til." },
+        { "p": "Avisa", "por": "Maiúscula despois de punto. Con v." },
+        { "p": "seguir;", "por": "Punto e coma entre dúas partes moi relacionadas.", "e": "seguir;" },
+        { "p": "hai", "por": "Forma do verbo haber: con h." },
+        { "p": "néboa", "por": "Con b. Esdrúxula: leva til." },
+        { "p": "volver", "por": "Con dous v." },
+        { "p": "observa", "por": "Con b e con v." },
+        { "p": "árbores", "por": "Con b. Esdrúxula: leva til." },
+        { "p": "recólleo", "por": "Recolle + o: co pronome pegado faise esdrúxula e leva til." },
+        { "p": "lévao", "por": "Leva + o: co pronome pegado faise esdrúxula e leva til. Con v." }
+      ],
+      "datos": "Consellos xerais de seguridade e respecto polo contorno nunha saída ao monte. Sen datos concretos que verificar."
     }
   ]
 }

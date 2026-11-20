@@ -12,6 +12,21 @@
     "Gato, goma, gusto: g diante de a, o, u.",
     "Guerra, guitarra: gu diante de e, i. O u non soa."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.20",
+      "B6.2"
+    ],
+    "evaluar": [
+      "Escolle c ou qu segundo a vogal que vai despois (ca, co, cu; que, qui).",
+      "Escolle g ou gu segundo a vogal que vai despois (ga, go, gu; gue, gui).",
+      "Empeza cada frase con maiúscula e péchaa con punto."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -89,6 +104,33 @@
         { "p": "secar", "por": "Ca: c diante de a soa forte." }
       ],
       "datos": "Receita de masa de sal: a proporción habitual é de dúas partes de fariña por unha de sal e unha de auga; aquí está simplificada para a idade. Facer en clase con axuda dunha persoa adulta e lavar as mans ao rematar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Descrición",
+      "titulo": "A miña gata Quica",
+      "texto": "A miña gata chámase Quica. É gorda e ten o rabo curto. Gústalle durmir na cociña, preto do lume. Cando quere comer, mira para min e miaña.",
+      "segmentos": [
+        "A miña gata",
+        "chámase Quica.",
+        "É gorda",
+        "e ten o rabo curto.",
+        "Gústalle durmir na cociña,",
+        "preto do lume.",
+        "Cando quere comer,",
+        "mira para min e miaña."
+      ],
+      "foco": [
+        { "p": "gata", "por": "Ga: g diante de a." },
+        { "p": "Quica", "por": "Nome propio: vai con maiúscula. Qu diante de i: o u non soa." },
+        { "p": "gorda", "por": "Go: g diante de o." },
+        { "p": "curto", "por": "Cu: c diante de u soa forte." },
+        { "p": "Gústalle", "por": "Maiúscula porque empeza a frase. Gu: aquí o u si que soa." },
+        { "p": "cociña", "por": "Co soa forte. Ci soa suave, como en cine." },
+        { "p": "Cando", "por": "Maiúscula porque empeza a frase. Ca: c diante de a soa forte." },
+        { "p": "quere", "por": "Qu diante de e: o u non soa." }
+      ],
+      "datos": "Descrición inventada dun animal de compañía: sen datos que verificar."
     }
   ]
 }

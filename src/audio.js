@@ -1,6 +1,7 @@
 'use strict';
-// Audio de un dictado con dos motores, elegidos por la voz:
+// Audio de un dictado con tres motores, elegidos por la voz:
 //  - Kokoro-82M (hexgrad, Apache 2.0) para las voces castellanas dora, santa y alex, vía src/voz_kokoro.py en .cache/tts-venv;
+//  - Piper (Open Home Foundation, GPL-3.0) para las voces castellanas sharvard y davefx, vía src/voz_piper.py en el mismo entorno;
 //  - aHoTTS (HiTZ) para las voces gallegas del Proxecto Nós y las castellanas antiguas (laura, alejandro).
 // Se llama a los motores solo al generar, sin proceso residente: en clase no se sintetiza nada.
 // Salida: <id>-completo.mp3 y <id>-sNN.mp3 (mono, 64 kbps, volumen normalizado), igual que el prototipo.
@@ -18,6 +19,13 @@ const PYTHON_KOKORO = process.env.DITADOS_KOKORO_PYTHON || path.join(__dirname, 
 // Voces que sintetiza Kokoro y su nombre dentro del modelo. Cualquier otra voz va por aHoTTS.
 const KOKORO = { dora: 'ef_dora', santa: 'em_santa', alex: 'em_alex' };
 const KOKORO_VELOCIDAD = 0.9;   // algo más lento que la voz nativa: es para dictar
+// Voces de Piper y el nombre de su modelo en rhasspy/piper-voices (es/es_ES/<voz>/medium). Se guardan en <caché de voces>/piper/.
+const PIPER = { sharvard: 'es_ES-sharvard-medium', davefx: 'es_ES-davefx-medium' };
+const PIPER_ESCALA = 1.1;       // length_scale: más de 1 es más lento
+const PYTHON_PIPER = process.env.DITADOS_PIPER_PYTHON || PYTHON_KOKORO;
+
+/** Motor que sintetiza una voz: 'kokoro', 'piper' o 'ahotts'. */
+function motorDe(voz) { return KOKORO[voz] ? 'kokoro' : PIPER[voz] ? 'piper' : 'ahotts'; }
 
 function hayFfmpeg() { return spawnSync('ffmpeg', ['-version']).status === 0; }
 function hayAhotts() { return fs.existsSync(path.join(AHOTTS_DIR, 'ahotts', 'tts')); }
@@ -40,6 +48,30 @@ function sintetizarKokoro(trabajos, voz) {
   if (r.status !== 0 || !trabajos.every((t) => fs.existsSync(t.wav))) {
     throw new Error(`Kokoro falló: ${String(r.stderr || r.error || '').trim().split('\n').slice(-3).join(' · ').slice(-400)}`);
   }
+}
+
+/** Sintetiza varios textos de una vez con Piper. El modelo .onnx y su .json tienen que estar en <caché de voces>/piper/. */
+function sintetizarPiper(trabajos, voz) {
+  const modelo = path.join(VOCES_CACHE, 'piper', `${PIPER[voz]}.onnx`);
+  if (!fs.existsSync(PYTHON_PIPER) || !fs.existsSync(modelo)) {
+    throw new Error(`la voz «${voz}» necesita Piper en ${PYTHON_PIPER} y el modelo ${modelo} (ver README, «Con audio»)`);
+  }
+  const peticion = { modelo, escala: PIPER_ESCALA, trabajos: trabajos.map((t) => ({ texto: textoParaVoz(t.texto, 'es'), wav: t.wav })) };
+  const r = spawnSync(PYTHON_PIPER, ['-I', path.join(__dirname, 'voz_piper.py')], {
+    input: JSON.stringify(peticion), encoding: 'utf8', timeout: 1800000, maxBuffer: 64 * 1024 * 1024,
+  });
+  if (r.status !== 0 || !trabajos.every((t) => fs.existsSync(t.wav))) {
+    throw new Error(`Piper falló: ${String(r.stderr || r.error || '').trim().split('\n').slice(-3).join(' · ').slice(-400)}`);
+  }
+}
+
+/** Sintetiza una lista de {texto, wav} con el motor que corresponde a la voz. */
+function sintetizarClips(trabajos, lang, voz) {
+  if (!trabajos.length) return;
+  const motor = motorDe(voz);
+  if (motor === 'kokoro') sintetizarKokoro(trabajos, voz);
+  else if (motor === 'piper') sintetizarPiper(trabajos, voz);
+  else for (const t of trabajos) sintetizar(t.texto, lang, voz, t.wav);
 }
 
 /** Carpeta de la voz: primero la caché propia, después la de aHoTTS; si no existe, se descarga de Hugging Face. */
@@ -136,36 +168,39 @@ function aMp3(wav, mp3) {
  * Genera (o reutiliza, si ya existen) todos los MP3 de un dictado.
  * @returns {{generados: number, reutilizados: number}}
  */
-function generarAudio(d, outDir, voz, { forzar = false, log = () => {} } = {}) {
+function generarAudio(d, outDir, voz, opts = {}) {
+  const clips = [];
+  for (const o of d.opcions) {
+    const ident = idOpcion(d, o);
+    clips.push({ nombre: `${ident}-completo`, texto: textoPlano(o.texto) });
+    o.segmentos.forEach((s, i) => clips.push({ nombre: `${ident}-s${String(i + 1).padStart(2, '0')}`, texto: s }));
+  }
+  return generarClips(clips, d.lang, voz, outDir, opts);
+}
+
+/**
+ * Genera (o reutiliza) un MP3 por cada {nombre, texto} en outDir/<nombre>.mp3. Lo usan los dictados y las muestras de voz.
+ * @returns {{generados: number, reutilizados: number}}
+ */
+function generarClips(clips, lang, voz, outDir, { forzar = false, log = () => {} } = {}) {
   fs.mkdirSync(outDir, { recursive: true });
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ditados-audio-'));
   let generados = 0; let reutilizados = 0;
   try {
-    // Primero se decide qué falta; después se sintetiza (Kokoro, todo de una vez; aHoTTS, clip a clip) y se convierte a MP3.
+    // Primero se decide qué falta; después se sintetiza (Kokoro y Piper, todo de una vez; aHoTTS, clip a clip) y se convierte a MP3.
     const pendientes = [];
-    for (const o of d.opcions) {
-      const ident = idOpcion(d, o);
-      const trabajos = [['completo', textoPlano(o.texto)], ...o.segmentos.map((s, i) => [`s${String(i + 1).padStart(2, '0')}`, s])];
-      for (const [nombre, texto] of trabajos) {
-        const mp3 = path.join(outDir, `${ident}-${nombre}.mp3`);
-        if (!forzar && fs.existsSync(mp3)) { reutilizados++; continue; }
-        pendientes.push({ nombre: `${ident}-${nombre}`, texto, wav: path.join(tmp, `${ident}-${nombre}.wav`), mp3 });
-      }
+    for (const c of clips) {
+      const mp3 = path.join(outDir, `${c.nombre}.mp3`);
+      if (!forzar && fs.existsSync(mp3)) { reutilizados++; continue; }
+      pendientes.push({ ...c, wav: path.join(tmp, `${c.nombre}.wav`), mp3 });
     }
-    if (pendientes.length && KOKORO[voz]) {
-      log(`  audio: sintetizando ${pendientes.length} clips con Kokoro (${voz})`);
-      sintetizarKokoro(pendientes, voz);
-    }
-    for (const t of pendientes) {
-      if (!KOKORO[voz]) sintetizar(t.texto, d.lang, voz, t.wav);
-      aMp3(t.wav, t.mp3);
-      generados++;
-      log(`  audio ${t.nombre}`);
-    }
+    if (pendientes.length) log(`  audio: sintetizando ${pendientes.length} clips con ${motorDe(voz)} (${voz})`);
+    sintetizarClips(pendientes, lang, voz);
+    for (const t of pendientes) { aMp3(t.wav, t.mp3); generados++; }
   } finally {
     fs.rmSync(tmp, { recursive: true, force: true });
   }
   return { generados, reutilizados };
 }
 
-module.exports = { generarAudio, sintetizar, sintetizarKokoro, aMp3, textoParaVoz, disponible, AHOTTS_DIR, KOKORO };
+module.exports = { generarAudio, generarClips, sintetizar, sintetizarKokoro, sintetizarPiper, sintetizarClips, motorDe, aMp3, textoParaVoz, disponible, AHOTTS_DIR, KOKORO, PIPER };

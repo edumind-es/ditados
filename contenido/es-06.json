@@ -20,6 +20,22 @@
     "La g delante de e, i suena como j: recogieron, agita. Para que suene suave se escribe gu: juguetes, enseguida.",
     "En el diálogo, cada intervención empieza con raya (—) y lo que dice el narrador va entre rayas."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Pone tilde en agudas, llanas y esdrújulas según la regla y sabe explicar por qué.",
+      "Escribe g o j ante e, i en las palabras clave.",
+      "Empieza con raya cada intervención del diálogo."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -241,6 +257,41 @@
         }
       ],
       "datos": "Narración ficticia inspirada en las limpiezas de playas que organizan asociaciones y centros educativos; no se refiere a ningún hecho ni lugar concreto. Sin datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instructivo",
+      "titulo": "Un volcán en clase",
+      "texto": "Para fabricar un volcán necesitas arcilla, vinagre, bicarbonato y un vaso de plástico. Primero, cubre el vaso con la arcilla hasta formar un cráter. Después, echa dentro dos cucharadas de bicarbonato. Por último, añade el vinagre muy despacio. Enseguida saldrá una espuma que parece lava. ¡Es un experimento fácil, rápido y mágico!",
+      "segmentos": [
+        "Para fabricar un volcán",
+        "necesitas arcilla, vinagre, bicarbonato",
+        "y un vaso de plástico.",
+        "Primero, cubre el vaso con la arcilla",
+        "hasta formar un cráter.",
+        "Después, echa dentro",
+        "dos cucharadas de bicarbonato.",
+        "Por último, añade el vinagre muy despacio.",
+        "Enseguida saldrá una espuma",
+        "que parece lava.",
+        "¡Es un experimento fácil,",
+        "rápido y mágico!"
+      ],
+      "foco": [
+        { "p": "fabricar", "por": "Aguda terminada en -r: sin tilde." },
+        { "p": "volcán", "por": "Aguda terminada en -n: lleva tilde." },
+        { "p": "plástico", "por": "Esdrújula: lleva tilde siempre." },
+        { "p": "cráter", "por": "Llana terminada en -r: lleva tilde." },
+        { "p": "Después", "por": "Aguda terminada en -s: lleva tilde." },
+        { "p": "último", "por": "Esdrújula: lleva tilde siempre." },
+        { "p": "vinagre", "por": "Llana terminada en vocal: sin tilde." },
+        { "p": "Enseguida", "por": "Para que la g suene suave delante de i se escribe gu." },
+        { "p": "saldrá", "por": "Aguda terminada en vocal: lleva tilde." },
+        { "p": "fácil", "por": "Llana terminada en -l: lleva tilde." },
+        { "p": "rápido", "por": "Esdrújula: lleva tilde siempre." },
+        { "p": "mágico", "por": "Esdrújula: lleva tilde siempre. La g delante de i suena como j." }
+      ],
+      "datos": "Experimento escolar habitual: el vinagre y el bicarbonato reaccionan y desprenden dióxido de carbono, que forma la espuma. Hacerlo sobre una bandeja y con una persona adulta."
     }
   ]
 }

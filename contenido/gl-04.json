@@ -12,6 +12,21 @@
     "Antes de p e de b vai sempre m: campo, cambio.",
     "As preguntas e as exclamacións levan o signo ao final: Que sorpresa!"
   ],
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.21",
+      "B6.4"
+    ],
+    "evaluar": [
+      "Escribe rr só entre vogais e r ao principio de palabra ou despois de consoante.",
+      "Escribe m antes de p e de b.",
+      "Pecha as preguntas e as exclamacións co seu signo."
+    ]
+  },
   "estado": "borrador",
   "revision": {
     "fecha": "",
@@ -102,6 +117,37 @@
         { "p": "enorme", "por": "O r ao final de sílaba soa suave: e-nor-me." }
       ],
       "datos": "Carta sen datos que verificar. O nome da nena é ficticio."
+    },
+    {
+      "letra": "D",
+      "tipo": "Conto",
+      "titulo": "O rato Ramón",
+      "texto": "O rato Ramón vive nun burato da horta. Cada noite sobe ao carro do labrego e rouba un anaco de queixo. Onte atopou alí un gato enorme. Que susto levou! Correu tanto que chegou ao campo en tres chimpos.",
+      "segmentos": [
+        "O rato Ramón",
+        "vive nun burato da horta.",
+        "Cada noite",
+        "sobe ao carro do labrego",
+        "e rouba un anaco de queixo.",
+        "Onte atopou alí",
+        "un gato enorme.",
+        "Que susto levou!",
+        "Correu tanto",
+        "que chegou ao campo",
+        "en tres chimpos."
+      ],
+      "foco": [
+        { "p": "rato", "por": "Ao principio de palabra, o son forte leva un só r." },
+        { "p": "Ramón", "por": "Nome propio: vai con maiúscula. Ao principio de palabra, un só r." },
+        { "p": "burato", "por": "Son suave entre vogais: un só r." },
+        { "p": "carro", "por": "Son forte entre vogais: rr." },
+        { "p": "rouba", "por": "Ao principio de palabra, un só r." },
+        { "p": "Que susto levou!", "por": "A exclamación leva o signo ao final.", "e": "Que … levou!" },
+        { "p": "Correu", "por": "Maiúscula porque vai despois da exclamación. Son forte entre vogais: rr." },
+        { "p": "campo", "por": "Antes de p vai m." },
+        { "p": "chimpos", "por": "Antes de p vai m." }
+      ],
+      "datos": "Conto inventado: sen datos que verificar."
     }
   ]
 }

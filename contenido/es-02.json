@@ -20,6 +20,22 @@
     "Puntos suspensivos: la lista sigue o la frase queda en suspenso. Siempre tres.",
     "Las esdrújulas llevan tilde siempre, también los verbos con pronombres: échale, lávate."
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.11",
+      "B3.19",
+      "B6.10"
+    ],
+    "evaluar": [
+      "Usa los dos puntos, el punto y coma y los puntos suspensivos donde el texto los pide.",
+      "Abre y cierra los signos de interrogación y de exclamación.",
+      "Pone tilde en las esdrújulas y en las demás palabras clave."
+    ]
+  },
   "estado": "publicado",
   "revision": {
     "fecha": "2026-10-19",

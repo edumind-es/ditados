@@ -20,6 +20,23 @@
     "As esdrúxulas levan til sempre: música, árbores, mércores.",
     "En galego abonda normalmente co signo do final: Que bonito!"
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.3",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.10",
+      "B3.19",
+      "B6.12"
+    ],
+    "evaluar": [
+      "Pon til nas agudas, nas esdrúxulas e nos hiatos segundo a regra.",
+      "Forma o plural das palabras rematadas en -l (animal, animais; papel, papeis).",
+      "Forma o feminino das palabras rematadas en -án (irmán, irmá)."
+    ]
+  },
   "estado": "publicado",
   "revision": {
     "fecha": "2026-10-19",

@@ -13,7 +13,8 @@ De cada dictado (un JSON en `contenido/`) se generan:
 - **Textos para el docente** y **Markdown de importación en MiClase**, uno por opción.
 - **Ficha en A3 y en A4 con letra grande** para alumnado con baja visión, y **tarjeta y cuaderno de reglas** por lengua.
 - **Paquete sin conexión** (ZIP) por dictado, para el NAS o un lápiz USB, con la presentación, los impresos y el kit.
-- **Catálogo** con filtros por lengua, curso, unidad, etiqueta y tipo de texto, instalable como PWA: lo que se visita queda disponible sin conexión y hay un botón para guardar un dictado entero.
+- **Catálogo** con un mapa de niveles (de 1.º de primaria a 4.º de ESO, por lengua), filtros por lengua, curso, tema, etiqueta y tipo de texto, y vista previa de cada texto con sus palabras clave antes de abrir la presentación; instalable como PWA: lo que se visita queda disponible sin conexión y hay un botón para guardar un dictado entero.
+- **Elección de voz**: la página `/voces/` deja escuchar las mismas frases en cada voz publicada y elegir una por lengua; la ficha de cada dictado tiene además su propio selector. La elección se guarda solo en el navegador del docente y decide qué presentación se abre y con qué voz se escucha cada texto.
 - **Dictado rápido** (`/rapido/`, público): el docente pega un texto, elige lengua y curso, acepta o retoca los trozos propuestos, marca las palabras clave con un clic y la presentación de cinco pasos se genera en su propio navegador (voz del navegador, fuentes dentro, descargable). No se envía ni se guarda nada en el servidor: el borrador vive solo en ese navegador. Usa exactamente el mismo código que la compilación, empaquetado por `src/navegador.js`.
 - **Editor del autor** (`/editor/`, detrás de Authentik): clic en el texto para elegir las palabras clave, segmentación propuesta y editable, validación en vivo, lista de comprobación normativa, audio por trozo con regeneración y elección de voz, y flujo borrador → revisado → publicado que lanza la generación.
 
@@ -34,7 +35,7 @@ npm test                             # validaciones, marcado, contraste y págin
 NODE_PATH=/var/www/edumind_miclase/node_modules node herramientas/comprobar_web.js   # errores JS, 390 px, teclado, terceros
 ```
 
-El audio se guarda en `.cache/audio/<id>/<voz>/` y se reutiliza en cada compilación; para regenerar una voz basta con borrar esa carpeta.
+El audio se guarda en `.cache/audio/<id>/<voz>/` y se reutiliza en cada compilación; para regenerar una voz basta con borrar esa carpeta. En `contenido/config.json`, `voces.<lengua>.publicadas` son las voces que se compilan para que el docente elija (cada una multiplica el audio y añade una presentación por dictado en `voz-<voz>/`); `disponibles` son las que puede usar el autor en el editor.
 
 Variables opcionales: `DITADOS_CHROME` (ruta de Chromium), `DITADOS_AHOTTS` (carpeta de aHoTTS), `DITADOS_KOKORO_PYTHON` (Python del entorno con Kokoro), `DITADOS_PYTHON_HF` (Python con `huggingface_hub` para descargar voces), `DITADOS_VOCES` (caché de voces), `DITADOS_AUDIO` (caché de audio).
 
@@ -47,7 +48,8 @@ Por niveles, de menos a más:
 1. **Solo Node 22**: `npm test` y `node bin/ditados.js build --sin-audio --sin-pdf` generan el catálogo, las presentaciones (con la voz del navegador) y el dictado rápido. Es lo que hace la integración continua en cada PR.
 2. **Con audio**: hace falta ffmpeg y un motor por lengua.
    - Castellano: [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache 2.0), voces `dora` (por defecto), `santa` y `alex`. Se instala en un entorno Python aparte, sin tarjeta gráfica: `python3 -m venv .cache/tts-venv && .cache/tts-venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu && .cache/tts-venv/bin/pip install kokoro espeakng-loader phonemizer-fork soundfile`. El modelo (unos 330 MB) se descarga de Hugging Face la primera vez. Otro entorno: `DITADOS_KOKORO_PYTHON`.
-   - Gallego: clona [aHoTTS](https://github.com/hitz-zentroa/aHoTTS) (HiTZ, UPV/EHU) y apunta `DITADOS_AHOTTS` a esa carpeta. Las voces se descargan de Hugging Face (`HiTZ/TTS-<lengua>_<voz>`) con el Python de `DITADOS_PYTHON_HF`. Las voces castellanas de aHoTTS (`laura`, `alejandro`) siguen disponibles, pero se entienden peor.
+   - Castellano, voces `sharvard` y `davefx`: [Piper](https://github.com/OHF-Voice/piper1-gpl) (GPL-3.0), en el mismo entorno: `.cache/tts-venv/bin/pip install piper-tts` y `.cache/tts-venv/bin/python -m piper.download_voices es_ES-sharvard-medium es_ES-davefx-medium --download-dir .cache/voces/piper`. Otro entorno: `DITADOS_PIPER_PYTHON`.
+   - Gallego: clona [aHoTTS](https://github.com/hitz-zentroa/aHoTTS) (HiTZ, UPV/EHU) y apunta `DITADOS_AHOTTS` a esa carpeta. Las voces (`brais`, `celtia`, `sabela`, `icia`, `iago`, `paulo`) se descargan de Hugging Face (`HiTZ/TTS-<lengua>_<voz>`) con el Python de `DITADOS_PYTHON_HF`. Las voces castellanas de aHoTTS (`laura`, `alejandro`) siguen disponibles, pero se entienden peor.
 3. **Con PDF y ODT**: Chromium (por ejemplo, `npx playwright install chromium`, o `DITADOS_CHROME`), `pdfinfo` de poppler y LibreOffice Writer sin interfaz.
 4. **Editor del autor**: `node bin/ditados.js servir` detrás de cualquier proxy que autentique y pase el usuario en la cabecera `X-Authentik-Username` (ver `docs/DESPLIEGUE.md`; Authentik es la opción de EDUmind, no un requisito).
 
@@ -61,13 +63,16 @@ Ver `contenido/gl-02.json` como ejemplo completo y `contenido/config.json` para 
 
 - los trozos (`segmentos`), unidos con un espacio, reproducen exactamente el texto;
 - cada palabra clave (`foco.p`) aparece literalmente en el texto;
-- el texto tiene las palabras y las palabras clave que marca el curso (6.º: de 60 a 90 palabras y de 10 a 18 claves; 1.º: de 20 a 35 y de 4 a 8);
-- no se pasa a «revisado» ni a «publicado» sin fecha, revisor y fuentes.
+- el texto tiene las palabras y las palabras clave que marca el curso (6.º: de 60 a 90 palabras y de 10 a 18 claves; 1.º: de 20 a 35 y de 4 a 8). Los cursos son `1`…`6` (primaria) y `1eso`…`4eso` (secundaria); los rangos de ESO son una propuesta de partida todavía sin probar en aula;
+- no se pasa a «revisado» ni a «publicado» sin fecha, revisor y fuentes, ni sin el bloque `curriculo`;
+- los criterios y contenidos de `curriculo` existen en el currículo de ese curso y esa lengua.
+
+El bloque `curriculo` de cada dictado lleva `criterios` (códigos de criterios de evaluación: `CE6.6`), `contenidos` (códigos de contenidos: `B6.10`) y `evaluar` (de 2 a 5 frases con lo que se puede observar y evaluar en el propio dictado). El catálogo y los textos del docente muestran el enunciado completo. El currículo está en `contenido/curriculo/gl.json` y `es.json`: primaria (Decreto 155/2022) y ESO (Decreto 156/2022) de Galicia, generado con `herramientas/importar_curriculo.py` a partir de hojas de cálculo (solo hace falta `openpyxl` para regenerarlo, no para usar el programa). En primaria el decreto no numera los contenidos: el código es su orden dentro del bloque.
 
 ## Estructura
 
 ```
-contenido/      dictados (JSON) y config.json
+contenido/      dictados (JSON), config.json y curriculo/ (currículo por lengua y curso)
 src/            validar, marcar, generadores (presentación, impresos, docente, catálogo, dictado rápido), navegador (paquete JS), pdf, audio, build
 plantillas/     presentacion.html, impreso.html, rapido.html, editor.html, lamina.css
 public/fonts/   Fraunces, Space Grotesk, Atkinson Hyperlegible, Archivo, JetBrains Mono (OFL), alojadas aquí
@@ -94,6 +99,8 @@ De 6.º, cuatro dictados publicados (usados en aula en octubre de 2026). De 1.º
 
 - Gallego: voces del Proxecto Nós (Universidade de Santiago de Compostela), modelo Apache 2.0, sintetizadas con aHoTTS (HiTZ, UPV/EHU). Se reconoce al Proxecto Nós en el pie de cada presentación.
 - Castellano: voz Alejandro de aHoTTS (HiTZ y Aholab, UPV/EHU), modelo Apache 2.0 entrenado con datos CC BY 4.0 (Multilingual LibriSpeech, LibriVox). La voz Laura procede de un corpus de pago de ELRA y **no se usa** hasta tener confirmación escrita de HiTZ.
+- Castellano, además: voces Dora, Santa y Alex de Kokoro-82M (hexgrad, Apache 2.0) y voces Sharvard (corpus CC BY 3.0) y Davefx (grabaciones CC0) de Piper (GPL-3.0); la pronunciación la hace espeak-ng (GPL-3.0). Los motores solo se ejecutan al compilar; lo que se publica es el audio.
+- Cada voz ofrecida lleva su crédito en el pie de la ficha y de la presentación.
 - Si no hay audio, la presentación usa la voz del navegador.
 
 ## Protección de datos
