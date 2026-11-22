@@ -4,7 +4,7 @@
   "curso": "4eso",
   "titulo": "Ditado 16 · As explicacións entre comas e os conectores do razoamento",
   "tema": "A aposición e as oracións de relativo: cando levan comas · conectores de causa, consecuencia, condición e hipótese · se + subxuntivo e pospretérito · palabras propias fronte a castelanismos",
-  "regra": "A aposición e a oración de relativo que só engade unha explicación van entre comas (Castelao, que naceu en Rianxo, …); a que delimita de quen se fala non as leva (as aldeas que manteñen limpas as faixas) · os conectores de causa (xa que, posto que, dado que) e de consecuencia (polo tanto, de aí que, de xeito que) ordenan o razoamento · a condición hipotética pide pretérito de subxuntivo e pospretérito (se estivese…, cubriría) · convén escoller a forma propia do galego: a ponte, o leite, a dor, amodo, de contado",
+  "regra": "A aposición e a oración de relativo que só engade unha explicación van entre comas (Castelao, que naceu en Rianxo, …); a que delimita de quen se fala non as leva (as aldeas que manteñen limpas as faixas) · os conectores de causa (xa que, posto que, dado que) e de consecuencia (polo tanto, de aí que, de xeito que) ordenan o razoamento · a condición hipotética pide pretérito de subxuntivo e pospretérito (se estivese…, cubriría) · convén escoller a forma propia do galego: a ponte, o leite, a dor, amodo, decontado",
   "etiquetas": ["aposición", "oracións de relativo", "coma", "conectores", "pospretérito", "léxico propio"],
   "fixome": [
     "Aposición e relativa que explica: entre comas.",
@@ -211,7 +211,7 @@
       "letra": "D",
       "tipo": "Ensaio breve",
       "titulo": "O monte que arde",
-      "texto": "Cada verán, os incendios, esa ferida que non acaba de pechar, queiman miles de hectáreas en Galicia. A maioría dos lumes, que raramente son casuais, comezan pola man do ser humano. Posto que o monte abandonado arde con máis facilidade, coidalo durante o inverno é a mellor prevención. As aldeas que manteñen limpas as súas faixas de protección resisten mellor; por conseguinte, a seguridade depende tamén dos veciños. Se plantásemos máis árbores autóctonas, como carballos e castiñeiros, o lume avanzaría máis amodo. Sempre que vexamos fume, debemos avisar de contado ao teléfono de emerxencias. A non ser que cambiemos a nosa relación co monte, seguiremos chorando cada agosto. Un bosque que tarda décadas en medrar pode desaparecer nunha soa tarde.",
+      "texto": "Cada verán, os incendios, esa ferida que non acaba de pechar, queiman miles de hectáreas en Galicia. A maioría dos lumes, que raramente son casuais, comezan pola man do ser humano. Posto que o monte abandonado arde con máis facilidade, coidalo durante o inverno é a mellor prevención. As aldeas que manteñen limpas as súas faixas de protección resisten mellor; por conseguinte, a seguridade depende tamén dos veciños. Se plantásemos máis árbores autóctonas, como carballos e castiñeiros, o lume avanzaría máis amodo. Sempre que vexamos fume, debemos avisar decontado ao teléfono de emerxencias. A non ser que cambiemos a nosa relación co monte, seguiremos chorando cada agosto. Un bosque que tarda décadas en medrar pode desaparecer nunha soa tarde.",
       "segmentos": [
         "Cada verán, os incendios,",
         "esa ferida que non acaba de pechar,",
@@ -231,7 +231,7 @@
         "como carballos e castiñeiros,",
         "o lume avanzaría máis amodo.",
         "Sempre que vexamos fume,",
-        "debemos avisar de contado",
+        "debemos avisar decontado",
         "ao teléfono de emerxencias.",
         "A non ser que cambiemos",
         "a nosa relación co monte,",
@@ -256,9 +256,9 @@
         { "p": "Se plantásemos", "por": "Hipótese: se + pretérito de subxuntivo. Esdrúxula: con til.", "e": "plantásemos" },
         { "p": "árbores autóctonas", "por": "En galego, árbore é feminino. As dúas son esdrúxulas: con til.", "e": "árbores" },
         { "p": "avanzaría", "por": "Pospretérito: responde á hipótese. Con v, con z e con til no i." },
-        { "p": "amodo", "por": "Unha soa palabra: a modo, devagar." },
+        { "p": "amodo", "por": "Unha soa palabra: devagar." },
         { "p": "Sempre que vexamos", "por": "Conector de condición: pide subxuntivo. Vexamos, con v e con x.", "e": "Sempre que" },
-        { "p": "de contado", "por": "Dúas palabras: inmediatamente.", "e": "de contado" },
+        { "p": "decontado", "por": "Unha soa palabra: inmediatamente.", "e": "decontado" },
         { "p": "A non ser que", "por": "Conector de condición: catro palabras. Pide subxuntivo: cambiemos.", "e": "A non ser que" }
       ],
       "datos": "Ensaio inventado. Que a maioría dos incendios forestais en Galicia teñen orixe humana (intencionados ou por neglixencia) recólleno as estatísticas oficiais; as cifras de superficie queimada varían moito dun ano a outro. Convén contrastalo cunha fonte actual. O teléfono de emerxencias é o 112."

@@ -110,14 +110,14 @@
       "letra": "B",
       "tipo": "Narración",
       "titulo": "Unha viaxe a Compostela",
-      "texto": "Na fin de semana, Xiana e o seu avó Xosé foron a Compostela en tren. Viron a catedral, pasearon pola praza do Obradoiro e comeron unha tarta de améndoa. Despois, visitaron o Museo do Pobo Galego. Xiana mercou unha postal e escribiulle á súa amiga Sabela: «Compostela é xenial!».",
+      "texto": "Na fin de semana, Xiana e o seu avó Xosé foron a Compostela en tren. Viron a catedral, pasearon pola praza do Obradoiro e comeron unha torta de améndoa. Despois, visitaron o Museo do Pobo Galego. Xiana mercou unha postal e escribiulle á súa amiga Sabela: «Compostela é xenial!».",
       "segmentos": [
         "Na fin de semana,",
         "Xiana e o seu avó Xosé",
         "foron a Compostela en tren.",
         "Viron a catedral,",
         "pasearon pola praza do Obradoiro",
-        "e comeron unha tarta de améndoa.",
+        "e comeron unha torta de améndoa.",
         "Despois, visitaron",
         "o Museo do Pobo Galego.",
         "Xiana mercou unha postal",
@@ -168,7 +168,7 @@
           "por": "Con x. En castelán dise «genial»."
         }
       ],
-      "datos": "Santiago de Compostela: catedral, praza do Obradoiro, tarta de Santiago (de améndoa) e Museo do Pobo Galego son reais. Os nomes das persoas son ficticios."
+      "datos": "Santiago de Compostela: catedral, praza do Obradoiro, torta de Santiago (de améndoa) e Museo do Pobo Galego son reais. Os nomes das persoas son ficticios."
     },
     {
       "letra": "C",
@@ -238,7 +238,7 @@
       "letra": "D",
       "tipo": "Invitación",
       "titulo": "Unha festa na praia",
-      "texto": "Ola, Xoán! O sábado fago nove anos e celébroo na praia de Samil, en Vigo. Só necesitas dúas cousas: bañador e toalla. A miña irmá Uxía fará os bocadillos; o meu tío Xacobe traerá unha tarta de laranxa. Despois xogaremos na area ata a tardiña. Unha aperta, Xulia.",
+      "texto": "Ola, Xoán! O sábado fago nove anos e celébroo na praia de Samil, en Vigo. Só necesitas dúas cousas: bañador e toalla. A miña irmá Uxía fará os bocadillos; o meu tío Xacobe traerá unha torta de laranxa. Despois xogaremos na area ata a tardiña. Unha aperta, Xulia.",
       "segmentos": [
         "Ola, Xoán! O sábado",
         "fago nove anos e celébroo",
@@ -248,7 +248,7 @@
         "A miña irmá Uxía",
         "fará os bocadillos;",
         "o meu tío Xacobe",
-        "traerá unha tarta de laranxa.",
+        "traerá unha torta de laranxa.",
         "Despois xogaremos na area",
         "ata a tardiña.",
         "Unha aperta, Xulia."
