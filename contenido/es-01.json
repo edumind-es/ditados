@@ -47,7 +47,7 @@
       "https://www.rae.es/dpd",
       "Ortografía de la lengua española (RAE, 2010)"
     ],
-    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor."
+    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor. Los textos B, C y D se añadieron el 22 de noviembre de 2026 con ayuda de IA: revisarlos antes de compilar."
   },
   "opcions": [
     {
@@ -68,7 +68,8 @@
         "y conocer a más gente.",
         "En la mochila llevaría un mapa,",
         "una libreta y un lápiz;",
-        "en la maleta, ropa de abrigo y un bañador.",
+        "en la maleta, ropa de abrigo",
+        "y un bañador.",
         "¡Qué ganas tengo de verte",
         "y contártelo todo!",
         "Un abrazo muy fuerte."
@@ -142,7 +143,298 @@
           "por": "Se divide con-tár-te-lo. La tónica, tár, es la antepenúltima: es esdrújula y lleva tilde siempre."
         }
       ],
-      "datos": "El español es lengua oficial en una veintena de países (cifra redonda defendible: 20 países más Puerto Rico y Guinea Ecuatorial según el Instituto Cervantes). Las cuatro lenguas citadas son las cooficiales del Estado."
+      "datos": "El español es lengua oficial en una veintena de países: 21 contando Guinea Ecuatorial, además de Puerto Rico (Instituto Cervantes, «El español: una lengua viva»). Las cuatro lenguas citadas son cooficiales en sus comunidades."
+    },
+    {
+      "letra": "B",
+      "tipo": "Postal",
+      "titulo": "Postal desde el campamento",
+      "texto": "Hola, Martín:\nYa llevamos tres días en el campamento. ¡No te imaginas cuánto madrugamos! Cada mañana hacemos de todo: senderismo, piragüismo, tiro con arco… Ayer subimos a un mirador; desde allí se veía todo el valle. ¿Te acuerdas del miedo que me daban las alturas? Pues ya casi no lo tengo. En mi cabaña dormimos cinco: Lucía, Hugo, dos mellizos y yo. Por la noche, unos cuentan chistes; otros, historias de miedo. ¡Tienes que venir el próximo verano!\nUn abrazo de tu amigo.",
+      "segmentos": [
+        "Hola, Martín:",
+        "Ya llevamos tres días",
+        "en el campamento.",
+        "¡No te imaginas cuánto madrugamos!",
+        "Cada mañana hacemos de todo:",
+        "senderismo, piragüismo, tiro con arco…",
+        "Ayer subimos a un mirador;",
+        "desde allí se veía todo el valle.",
+        "¿Te acuerdas del miedo",
+        "que me daban las alturas?",
+        "Pues ya casi no lo tengo.",
+        "En mi cabaña dormimos cinco:",
+        "Lucía, Hugo, dos mellizos y yo.",
+        "Por la noche, unos cuentan chistes;",
+        "otros, historias de miedo.",
+        "¡Tienes que venir",
+        "el próximo verano!",
+        "Un abrazo de tu amigo."
+      ],
+      "foco": [
+        {
+          "p": "Martín:",
+          "por": "Dos puntos después del saludo. Martín es aguda y acaba en n: lleva tilde."
+        },
+        {
+          "p": "días",
+          "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "¡No te imaginas cuánto madrugamos!",
+          "por": "La exclamación se abre y se cierra. Cuánto exclamativo lleva tilde.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "todo:",
+          "por": "Dos puntos antes de una enumeración."
+        },
+        {
+          "p": "piragüismo",
+          "por": "Lleva diéresis: la u de güi se pronuncia."
+        },
+        {
+          "p": "arco…",
+          "por": "Puntos suspensivos: la lista sigue. Son tres y no llevan punto detrás."
+        },
+        {
+          "p": "mirador; desde allí",
+          "por": "Punto y coma: une dos oraciones muy relacionadas. Es una pausa mayor que la coma y menor que el punto.",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "allí",
+          "por": "Con ll. Es aguda y acaba en vocal: lleva tilde."
+        },
+        {
+          "p": "veía",
+          "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "¿Te acuerdas del miedo que me daban las alturas?",
+          "por": "La pregunta se abre y se cierra.",
+          "e": "¿ … ? (pregunta)"
+        },
+        {
+          "p": "cinco:",
+          "por": "Dos puntos antes de una enumeración."
+        },
+        {
+          "p": "Lucía",
+          "por": "Nombre propio con mayúscula. La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "chistes; otros, historias de miedo",
+          "por": "Punto y coma: separa dos partes que ya llevan comas dentro. La coma de «otros,» sustituye a «cuentan».",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "¡Tienes que venir el próximo verano!",
+          "por": "La exclamación se abre y se cierra.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "próximo",
+          "por": "Se divide pró-xi-mo. Es esdrújula y lleva tilde siempre."
+        },
+        {
+          "p": "abrazo",
+          "por": "Con b y con z."
+        }
+      ],
+      "datos": "Postal inventada, sin datos que verificar."
+    },
+    {
+      "letra": "C",
+      "tipo": "Correo formal",
+      "titulo": "Un club de lectura",
+      "texto": "Estimada bibliotecaria:\nLe escribimos desde la clase de sexto porque queremos organizar un club de lectura. Necesitaríamos varias cosas: una sala tranquila, veinte ejemplares del mismo libro, un calendario para apuntarnos… ¿Podría reservarnos la biblioteca los jueves por la tarde? Hemos pensado en dos títulos: uno de aventuras y otro de misterio. Los mayores leerían en voz alta; los pequeños, en parejas. ¡Ojalá le guste nuestra idea! Esperamos su respuesta y le damos las gracias de antemano.\nReciba un saludo cordial.",
+      "segmentos": [
+        "Estimada bibliotecaria:",
+        "Le escribimos desde la clase de sexto",
+        "porque queremos organizar",
+        "un club de lectura.",
+        "Necesitaríamos varias cosas:",
+        "una sala tranquila,",
+        "veinte ejemplares del mismo libro,",
+        "un calendario para apuntarnos…",
+        "¿Podría reservarnos la biblioteca",
+        "los jueves por la tarde?",
+        "Hemos pensado en dos títulos:",
+        "uno de aventuras y otro de misterio.",
+        "Los mayores leerían en voz alta;",
+        "los pequeños, en parejas.",
+        "¡Ojalá le guste nuestra idea!",
+        "Esperamos su respuesta",
+        "y le damos las gracias de antemano.",
+        "Reciba un saludo cordial."
+      ],
+      "foco": [
+        {
+          "p": "bibliotecaria:",
+          "por": "Dos puntos después del saludo, también en una carta formal."
+        },
+        {
+          "p": "escribimos",
+          "por": "Con b: los verbos acabados en -bir van con b, menos hervir, servir y vivir."
+        },
+        {
+          "p": "Necesitaríamos",
+          "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "cosas:",
+          "por": "Dos puntos antes de una enumeración."
+        },
+        {
+          "p": "veinte",
+          "por": "Con v. Se escribe con ei, no «vente»."
+        },
+        {
+          "p": "ejemplares",
+          "por": "Con j: e-jem-pla-res. Antes de p se escribe m."
+        },
+        {
+          "p": "apuntarnos…",
+          "por": "Puntos suspensivos: la lista sigue. Son tres y no llevan punto detrás."
+        },
+        {
+          "p": "¿Podría reservarnos la biblioteca los jueves por la tarde?",
+          "por": "La pregunta se abre y se cierra.",
+          "e": "¿ … ? (pregunta)"
+        },
+        {
+          "p": "Podría",
+          "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "jueves",
+          "por": "Con j y con v. Los días de la semana van con minúscula."
+        },
+        {
+          "p": "títulos:",
+          "por": "Tí-tu-los es esdrújula: lleva tilde. Dos puntos antes de decir cuáles son."
+        },
+        {
+          "p": "leerían",
+          "por": "Con dos e, como leer. La í lleva tilde (hiato)."
+        },
+        {
+          "p": "alta; los pequeños, en parejas",
+          "por": "Punto y coma: separa dos partes. La coma de «los pequeños,» sustituye a «leerían».",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "¡Ojalá le guste nuestra idea!",
+          "por": "La exclamación se abre y se cierra.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "Ojalá",
+          "por": "Es aguda y acaba en vocal: lleva tilde."
+        },
+        {
+          "p": "antemano",
+          "por": "Se escribe en una sola palabra."
+        }
+      ],
+      "datos": "Correo inventado, sin datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Carta personal",
+      "titulo": "Carta a mi yo del futuro",
+      "texto": "Querido yo del futuro:\nHoy tengo once años y estoy en sexto. ¿Seguirás acordándote de este día? Me gustan muchas cosas: el baloncesto, los cómics, la música, dibujar dragones… Todavía no sé qué quiero ser de mayor: quizá veterinario, quizá inventor. En casa somos cuatro: mamá, papá, mi hermana y yo; en clase, veinticuatro. ¡Cuánto habrá cambiado todo cuando leas esto! Guárdame bien el secreto y no dejes de reír.\nHasta dentro de unos años.",
+      "segmentos": [
+        "Querido yo del futuro:",
+        "Hoy tengo once años",
+        "y estoy en sexto.",
+        "¿Seguirás acordándote de este día?",
+        "Me gustan muchas cosas:",
+        "el baloncesto, los cómics,",
+        "la música, dibujar dragones…",
+        "Todavía no sé",
+        "qué quiero ser de mayor:",
+        "quizá veterinario, quizá inventor.",
+        "En casa somos cuatro:",
+        "mamá, papá, mi hermana y yo;",
+        "en clase, veinticuatro.",
+        "¡Cuánto habrá cambiado todo",
+        "cuando leas esto!",
+        "Guárdame bien el secreto",
+        "y no dejes de reír.",
+        "Hasta dentro de unos años."
+      ],
+      "foco": [
+        {
+          "p": "futuro:",
+          "por": "Dos puntos después del saludo de una carta."
+        },
+        {
+          "p": "¿Seguirás acordándote de este día?",
+          "por": "La pregunta se abre y se cierra.",
+          "e": "¿ … ? (pregunta)"
+        },
+        {
+          "p": "acordándote",
+          "por": "Se divide a-cor-dán-do-te. Es esdrújula y lleva tilde siempre."
+        },
+        {
+          "p": "cosas:",
+          "por": "Dos puntos antes de una enumeración."
+        },
+        {
+          "p": "cómics",
+          "por": "Es llana y acaba en s detrás de otra consonante: lleva tilde, como bíceps."
+        },
+        {
+          "p": "música",
+          "por": "Se divide mú-si-ca. Es esdrújula y lleva tilde siempre."
+        },
+        {
+          "p": "dragones…",
+          "por": "Puntos suspensivos: la lista sigue. Son tres y no llevan punto detrás."
+        },
+        {
+          "p": "Todavía",
+          "por": "La í es tónica y va separada de la a (hiato): lleva tilde."
+        },
+        {
+          "p": "sé qué",
+          "por": "Sé, del verbo saber, lleva tilde. Qué lleva tilde porque pregunta, aunque no haya signos.",
+          "e": "sé qué"
+        },
+        {
+          "p": "quizá",
+          "por": "Es aguda y acaba en vocal: lleva tilde. También vale quizás."
+        },
+        {
+          "p": "yo; en clase, veinticuatro",
+          "por": "Punto y coma: separa dos partes que ya llevan comas dentro. La coma de «en clase,» sustituye a «somos».",
+          "e": "; (punto y coma)"
+        },
+        {
+          "p": "veinticuatro",
+          "por": "Los números hasta el treinta se escriben en una sola palabra."
+        },
+        {
+          "p": "¡Cuánto habrá cambiado todo cuando leas esto!",
+          "por": "La exclamación se abre y se cierra. Cuánto exclamativo lleva tilde.",
+          "e": "¡ … ! (exclamación)"
+        },
+        {
+          "p": "habrá",
+          "por": "Con h, del verbo haber. Es aguda y acaba en vocal: lleva tilde."
+        },
+        {
+          "p": "Guárdame",
+          "por": "Se divide guár-da-me. Es esdrújula y lleva tilde siempre."
+        },
+        {
+          "p": "reír",
+          "por": "La í es tónica y va separada de la e (hiato): lleva tilde."
+        }
+      ],
+      "datos": "Carta inventada, sin datos que verificar."
     }
   ]
 }

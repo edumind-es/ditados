@@ -6,6 +6,15 @@
 const LANGS = ['gl', 'es'];
 const ESTADOS = ['borrador', 'revisado', 'publicado'];
 
+/** La clave tiene que estar como palabra entera, igual que la busca marcar.js al compilar («os» no vale dentro de «aos»). */
+function apareceEntera(texto, p) {
+  const letra = /[\p{L}\p{N}]/u;
+  let pat = p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (letra.test(p[0])) pat = '(?<![\\p{L}\\p{N}])' + pat;
+  if (letra.test(p[p.length - 1])) pat += '(?![\\p{L}\\p{N}])';
+  return new RegExp(pat, 'u').test(texto);
+}
+
 /** Cuenta palabras como lo hace el prototipo: trozos separados por espacios. */
 function contarPalabras(texto) {
   return String(texto || '').trim().split(/\s+/).filter(Boolean).length;
@@ -93,6 +102,7 @@ function validar(d, config) {
         o.foco.forEach((f, i) => {
           if (!f || !esCadena(f.p)) { err(`${nombre}, clave ${i + 1}: falta la palabra («p»).`); return; }
           if (!o.texto.includes(f.p)) err(`${nombre}, clave ${i + 1}: «${f.p}» no aparece tal cual en el texto.`);
+          else if (!apareceEntera(o.texto, f.p)) err(`${nombre}, clave ${i + 1}: «${f.p}» solo aparece pegada a otras letras; escribe la palabra entera tal como está en el texto.`);
           if (!esCadena(f.por)) err(`${nombre}, clave ${i + 1} («${f.p}»): falta la explicación («por»).`);
           if (f.p.includes(' ') && !esCadena(f.e)) {
             aviso(`${nombre}, clave ${i + 1}: «${f.p}» es una frase; conviene darle una etiqueta corta («e») para la lista y para MiClase.`);
