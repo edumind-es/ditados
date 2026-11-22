@@ -15,6 +15,7 @@ function ditadoBase() {
   return {
     lang: 'gl', num: 9, curso: '6', titulo: 'Ditado 9 · Proba', tema: 'Proba', regra: 'Regra', etiquetas: ['proba'],
     fixome: ['a', 'b', 'c'], estado: 'borrador',
+    curriculo: { criterios: ['CE6.6'], contenidos: ['B6.10'], evaluar: ['Pon til nas agudas.', 'Forma o plural.'] },
     opcions: [{
       letra: 'A', tipo: 'Curiosidade', titulo: 'Un texto', texto, segmentos,
       foco: Array.from({ length: 12 }, (_, i) => ({ p: `palabra${i}`, por: 'porque si' })),
@@ -80,4 +81,44 @@ test('los cuatro dictados iniciales pasan la validación', () => {
     const r = validar(d, config);
     assert.deepEqual(r.errores, [], `${f}: ${r.errores.join(' | ')}`);
   }
+});
+
+test('el bloque curricular: obligatorio para publicar y con códigos del curso', () => {
+  const { leerConfig } = require('../src/build');
+  const conCurriculo = leerConfig();
+  const d = ditadoBase();
+  assert.deepEqual(validar(d, conCurriculo).errores, []);
+  // Un borrador sin currículo solo avisa; publicado, es un error
+  delete d.curriculo;
+  let r = validar(d, conCurriculo);
+  assert.deepEqual(r.errores, []);
+  assert.ok(r.avisos.some((a) => a.includes('bloque «curriculo»')));
+  d.estado = 'publicado';
+  d.revision = { fecha: '2026-10-19', revisor: 'Luis', fuentes: ['https://academia.gal/dicionario'] };
+  assert.ok(validar(d, conCurriculo).errores.some((e) => e.includes('bloque «curriculo»')));
+  // Códigos que no existen en ese curso y lista de evaluación demasiado corta
+  d.curriculo = { criterios: ['CE9.9'], contenidos: ['B6.10', 'B7.1'], evaluar: ['Solo una.'] };
+  r = validar(d, conCurriculo);
+  assert.ok(r.errores.some((e) => e.includes('el criterio «CE9.9» no existe en 6.º de primaria')));
+  assert.ok(r.errores.some((e) => e.includes('el contenido «B7.1» no existe')));
+  assert.ok(r.errores.some((e) => e.includes('entre 2 y 5 frases')));
+});
+
+test('el currículo importado cubre las dos lenguas y los diez cursos', () => {
+  const { leerCurriculo, resolver } = require('../src/curriculo');
+  const c = leerCurriculo();
+  for (const lang of ['gl', 'es']) {
+    assert.deepEqual(Object.keys(c[lang].cursos), ['1', '2', '3', '4', '5', '6', '1eso', '2eso', '3eso', '4eso']);
+    for (const curso of Object.values(c[lang].cursos)) {
+      assert.ok(Object.keys(curso.criterios).length > 20 && Object.keys(curso.contenidos).length > 40);
+    }
+  }
+  // En ESO cada contenido viene enlazado a criterios que existen
+  for (const [cod, v] of Object.entries(c.es.cursos['1eso'].contenidos)) {
+    for (const k of v.criterios) assert.ok(c.es.cursos['1eso'].criterios[k], `${cod} → ${k}`);
+  }
+  const r = resolver(ditadoBase(), c);
+  assert.equal(r.criterios[0].cod, 'CE6.6');
+  assert.match(r.contenidos[0].texto, /acentuación/);
+  assert.match(r.bloques[0], /^Bloque 6/);
 });

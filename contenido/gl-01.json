@@ -20,6 +20,23 @@
     "As esdrúxulas levan til sempre: música, árbores, mércores.",
     "En galego abonda normalmente co signo do final: Que bonito!"
   ],
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.3",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.10",
+      "B3.19",
+      "B6.12"
+    ],
+    "evaluar": [
+      "Pon til nas agudas, nas esdrúxulas e nos hiatos segundo a regra.",
+      "Forma o plural das palabras rematadas en -l (animal, animais; papel, papeis).",
+      "Forma o feminino das palabras rematadas en -án (irmán, irmá)."
+    ]
+  },
   "estado": "publicado",
   "revision": {
     "fecha": "2026-10-19",
@@ -28,7 +45,7 @@
       "https://academia.gal/dicionario",
       "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
     ],
-    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor."
+    "notas": "Usado en un aula de 6.º en octubre de 2026 con el prototipo. Las fuentes de los datos de cada texto están en «datos» de cada opción; las marcadas como pendientes debe completarlas el autor. Los textos B, C y D se añadieron el 22 de noviembre de 2026 con ayuda de IA y se publican por decisión del autor, pendientes de uso en el aula."
   },
   "opcions": [
     {
@@ -48,7 +65,8 @@
         "Entre as pedras durmían",
         "uns animais pequenos.",
         "Ademais, alí había moitas árbores",
-        "e unha música que soaba docemente desde as casas.",
+        "e unha música que soaba",
+        "docemente desde as casas.",
         "Escribimos os versos en papeis de cores",
         "e cantamos dúas cancións.",
         "Volveremos tamén o mércores?"
@@ -72,7 +90,8 @@
         },
         {
           "p": "Que bonitos eran!",
-          "por": "Exclamativo sen til. En galego abonda normalmente co signo do final."
+          "por": "Exclamativo sen til. En galego abonda normalmente co signo do final.",
+          "e": "Que … ! (exclamación)"
         },
         {
           "p": "Despois",
@@ -128,6 +147,290 @@
         }
       ],
       "datos": "Ramón Cabanillas (1876-1959), poeta de Cambados. O texto é unha narración persoal sen datos que verificar."
+    },
+    {
+      "letra": "B",
+      "tipo": "Descrición",
+      "titulo": "A feira do sábado",
+      "texto": "Os sábados hai feira na vila. A miña veciña Uxía, que é a mellor aldeá que coñezo, vende alí froita, ovos e mel. Ao seu lado, un señor ofrece funís, farois e uns aneis de prata. Que balbordo hai sempre! Eu axúdolle a colocar os carteis e ela regálame unha mazá. Ás veces tamén pasa un músico cun acordeón e todos bailamos. Despois recollemos as caixas e volvemos á casa, cansos pero felices.",
+      "segmentos": [
+        "Os sábados hai feira na vila.",
+        "A miña veciña Uxía,",
+        "que é a mellor aldeá que coñezo,",
+        "vende alí froita, ovos e mel.",
+        "Ao seu lado, un señor ofrece",
+        "funís, farois e uns aneis de prata.",
+        "Que balbordo hai sempre!",
+        "Eu axúdolle a colocar os carteis",
+        "e ela regálame unha mazá.",
+        "Ás veces tamén pasa un músico",
+        "cun acordeón e todos bailamos.",
+        "Despois recollemos as caixas",
+        "e volvemos á casa,",
+        "cansos pero felices."
+      ],
+      "foco": [
+        {
+          "p": "sábados",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "Uxía",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "aldeá",
+          "por": "Feminino de aldeán: -án cambia a -á. Non se di «aldeana»."
+        },
+        {
+          "p": "alí",
+          "por": "Aguda de dúas sílabas rematada en vogal: leva til."
+        },
+        {
+          "p": "funís",
+          "por": "Plural de funil: as agudas en -il cambian -il por -ís. Leva til."
+        },
+        {
+          "p": "farois",
+          "por": "Plural de farol: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "aneis",
+          "por": "Plural de anel: -l cambia a -is. Remata en ditongo: sen til. «Anillos» é castelán."
+        },
+        {
+          "p": "Que balbordo hai sempre!",
+          "por": "Exclamativo sen til. En galego abonda normalmente co signo do final.",
+          "e": "Que … ! (exclamación)"
+        },
+        {
+          "p": "axúdolle",
+          "por": "Divídese a-xú-do-lle. Co pronome pegado é esdrúxula: leva til."
+        },
+        {
+          "p": "carteis",
+          "por": "Plural de cartel: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "regálame",
+          "por": "Divídese re-gá-la-me. Co pronome pegado é esdrúxula: leva til."
+        },
+        {
+          "p": "mazá",
+          "por": "Aguda rematada en vogal: leva til. «Manzana» é castelán."
+        },
+        {
+          "p": "Ás",
+          "por": "A preposición a máis o artigo as: leva til para distinguila do artigo."
+        },
+        {
+          "p": "tamén",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "músico",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "acordeón",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "Despois",
+          "por": "Aguda rematada en ditongo decrecente (oi): sen til."
+        }
+      ],
+      "datos": "Descrición inventada, sen datos que verificar."
+    },
+    {
+      "letra": "C",
+      "tipo": "Narración",
+      "titulo": "A excursión ao faro",
+      "texto": "O xoves fomos de excursión ao faro co noso titor e coa capitá dun barco de pesca. Camiñamos entre piñeirais e vimos paxaros que aniñaban nas rochas. Desde o cume, o océano parecía non ter fin. A capitá explicounos como funcionan os sinais de luz e contounos historias de naufraxios. Quen quería ser mariñeiro? Todos nós, claro! Ao volver, eu levaba area nos zapatos, sal no pelo e moitísimo sono. Durmín no autobús ata chegar ao colexio.",
+      "segmentos": [
+        "O xoves fomos de excursión ao faro",
+        "co noso titor",
+        "e coa capitá dun barco de pesca.",
+        "Camiñamos entre piñeirais",
+        "e vimos paxaros",
+        "que aniñaban nas rochas.",
+        "Desde o cume, o océano",
+        "parecía non ter fin.",
+        "A capitá explicounos",
+        "como funcionan os sinais de luz",
+        "e contounos historias de naufraxios.",
+        "Quen quería ser mariñeiro?",
+        "Todos nós, claro!",
+        "Ao volver, eu levaba area nos zapatos,",
+        "sal no pelo e moitísimo sono.",
+        "Durmín no autobús",
+        "ata chegar ao colexio."
+      ],
+      "foco": [
+        {
+          "p": "xoves",
+          "por": "Con x e con v. «Jueves» é castelán."
+        },
+        {
+          "p": "excursión",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "capitá",
+          "por": "Feminino de capitán: -án cambia a -á. Non se di «capitana»."
+        },
+        {
+          "p": "piñeirais",
+          "por": "Plural de piñeiral: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "paxaros",
+          "por": "Grave rematada en -s: sen til. «Pájaros» é castelán."
+        },
+        {
+          "p": "océano",
+          "por": "Divídese o-cé-a-no. Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "parecía",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "sinais",
+          "por": "Plural de sinal: -l cambia a -is. Remata en ditongo: sen til. En galego dise o sinal."
+        },
+        {
+          "p": "naufraxios",
+          "por": "Con x. «Naufragios» é castelán."
+        },
+        {
+          "p": "Quen quería ser mariñeiro?",
+          "por": "Interrogativo sen til. En galego abonda co signo do final; o de apertura é opcional.",
+          "e": "Quen … ? (pregunta)"
+        },
+        {
+          "p": "quería",
+          "por": "A i é tónica e vai separada da a (hiato): leva til."
+        },
+        {
+          "p": "area",
+          "por": "Palabra galega. «Arena» é castelán."
+        },
+        {
+          "p": "moitísimo",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "Durmín",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "autobús",
+          "por": "Aguda rematada en -s: leva til."
+        },
+        {
+          "p": "colexio",
+          "por": "Con x. «Colegio» é castelán."
+        }
+      ],
+      "datos": "Narración inventada, sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Narración",
+      "titulo": "O obradoiro de reciclaxe",
+      "texto": "Na clase fixemos un obradoiro de reciclaxe. A mestra, que é a gardiá do noso recuncho verde, trouxo xornais vellos, cartóns e uns pinceis. Primeiro rachamos o papel en anacos e botámolo en auga morna. Despois, coa axuda dun artesán, o avó de Antón, fixemos follas novas e puxémolas a secar ao sol. Quedaron ásperas, pero preciosas. Agora temos postais para os nosos irmáns e irmás. Ningún regalo é máis fácil nin máis útil!",
+      "segmentos": [
+        "Na clase fixemos",
+        "un obradoiro de reciclaxe.",
+        "A mestra, que é a gardiá",
+        "do noso recuncho verde,",
+        "trouxo xornais vellos,",
+        "cartóns e uns pinceis.",
+        "Primeiro rachamos o papel en anacos",
+        "e botámolo en auga morna.",
+        "Despois, coa axuda dun artesán,",
+        "o avó de Antón,",
+        "fixemos follas novas",
+        "e puxémolas a secar ao sol.",
+        "Quedaron ásperas, pero preciosas.",
+        "Agora temos postais",
+        "para os nosos irmáns e irmás.",
+        "Ningún regalo é máis fácil",
+        "nin máis útil!"
+      ],
+      "foco": [
+        {
+          "p": "reciclaxe",
+          "por": "Remata en -axe e é feminina: a reciclaxe. «Reciclaje» é castelán."
+        },
+        {
+          "p": "gardiá",
+          "por": "Feminino de gardián: -án cambia a -á. Non se di «gardiana»."
+        },
+        {
+          "p": "xornais",
+          "por": "Plural de xornal: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "cartóns",
+          "por": "Aguda rematada en -ns: leva til."
+        },
+        {
+          "p": "pinceis",
+          "por": "Plural de pincel: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "botámolo",
+          "por": "Divídese bo-tá-mo-lo. Co pronome pegado é esdrúxula: leva til."
+        },
+        {
+          "p": "artesán",
+          "por": "Aguda rematada en -n: leva til. O feminino é artesá."
+        },
+        {
+          "p": "avó",
+          "por": "Aguda rematada en vogal: leva til. O avó é o pai dos pais; a avoa, sen til, é a nai."
+        },
+        {
+          "p": "Antón",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "puxémolas",
+          "por": "Divídese pu-xé-mo-las. Co pronome pegado é esdrúxula: leva til."
+        },
+        {
+          "p": "ásperas",
+          "por": "Esdrúxula: leva til sempre."
+        },
+        {
+          "p": "postais",
+          "por": "Plural de postal: -l cambia a -is. Remata en ditongo: sen til."
+        },
+        {
+          "p": "irmáns e irmás",
+          "por": "Irmán fai o plural irmáns; irmá, irmás. As dúas son agudas e levan til.",
+          "e": "irmáns / irmás"
+        },
+        {
+          "p": "Ningún",
+          "por": "Aguda rematada en -n: leva til."
+        },
+        {
+          "p": "máis",
+          "por": "Leva til cando indica cantidade. Mais, sen til, significa «pero»."
+        },
+        {
+          "p": "fácil",
+          "por": "Grave rematada en -l: leva til. O plural é fáciles, non «fácis»."
+        },
+        {
+          "p": "útil!",
+          "por": "Grave rematada en -l: leva til. O plural é útiles. En galego abonda co signo do final."
+        }
+      ],
+      "datos": "Narración inventada, sen datos que verificar."
     }
   ]
 }

@@ -12,12 +12,27 @@
     "Dos puntos antes de una explicación o de lo que alguien dice: grita: «¡Ya voy!».",
     "Punto y coma para separar dos partes muy relacionadas de la misma frase."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2"
+    ],
+    "evaluar": [
+      "Distingue y de ll en las palabras clave del dictado.",
+      "Escribe con mayúscula los nombres de personas y de lugares.",
+      "Coloca los dos puntos y el punto y coma donde el texto los pide."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -112,6 +127,39 @@
         { "p": "siguiente", "por": "Gu delante de i: la u no suena." }
       ],
       "datos": "Reglas del juego tradicional del escondite. Sin datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Invitación",
+      "titulo": "Una fiesta en la playa",
+      "texto": "¡Hola, Guillermo! El sábado cumplo nueve años y lo celebro en la playa de Samil, en Vigo. Solo necesitas dos cosas: bañador y toalla. Mi hermana Yolanda preparará los bocadillos; mi tía Estrella llevará una tarta de yema. Ya verás qué bien lo pasamos. Un abrazo, Yeray.",
+      "segmentos": [
+        "¡Hola, Guillermo! El sábado",
+        "cumplo nueve años y lo celebro",
+        "en la playa de Samil, en Vigo.",
+        "Solo necesitas dos cosas:",
+        "bañador y toalla.",
+        "Mi hermana Yolanda",
+        "preparará los bocadillos;",
+        "mi tía Estrella",
+        "llevará una tarta de yema.",
+        "Ya verás qué bien lo pasamos.",
+        "Un abrazo, Yeray."
+      ],
+      "foco": [
+        { "p": "Guillermo", "por": "Nombre de persona: va con mayúscula. Con ll." },
+        { "p": "playa", "por": "Con y." },
+        { "p": "Samil", "por": "Nombre de un lugar: va con mayúscula." },
+        { "p": "Solo necesitas dos cosas:", "por": "Dos puntos antes de una explicación.", "e": "cosas:" },
+        { "p": "toalla", "por": "Con ll." },
+        { "p": "Yolanda", "por": "Nombre de persona: va con mayúscula. Con y." },
+        { "p": "bocadillos;", "por": "Punto y coma para separar dos partes relacionadas. Bocadillos va con ll.", "e": "bocadillos;" },
+        { "p": "Estrella", "por": "Nombre de persona: va con mayúscula. Con ll." },
+        { "p": "llevará", "por": "Con ll y con v. Lleva tilde en la última a." },
+        { "p": "yema", "por": "Con y." },
+        { "p": "Yeray", "por": "Nombre de persona: va con mayúscula. Empieza y termina con y." }
+      ],
+      "datos": "Invitación inventada. La playa de Samil está en Vigo (Pontevedra)."
     }
   ]
 }

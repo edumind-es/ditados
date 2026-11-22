@@ -3,6 +3,7 @@
 // y «textos para el docente» con las opciones, las claves explicadas y las notas de datos.
 const { DOCENTE } = require('./textos');
 const { tituloCorto, contarPalabras, textoPlano } = require('./validar');
+const { resolver } = require('./curriculo');
 
 const LIMITE_PREGUNTAS = 50; // límite de MiClase
 
@@ -15,10 +16,17 @@ function miclase(d, o) {
   return lineas.join('\n');
 }
 
-function textosDocente(d) {
+function textosDocente(d, curriculo) {
   const l = DOCENTE[d.lang];
   const md = ['---', `title: "${l.tipo} ${d.num} · ${tituloCorto(d)} · ${l.tit}"`, 'author: "Luis Vilela Acuña"', `lang: ${d.lang}`, '---', '',
     `${d.tema} · ${l.intro}`, '', `> ${l.miclaseAviso}`, ''];
+  // Currículo: qué se puede evaluar con el dictado y a qué criterios y contenidos responde
+  const cur = resolver(d, curriculo);
+  if (cur) {
+    md.push(`# ${l.curriculo}`, '', `**${l.evaluar}**`, '', ...cur.evaluar.map((x) => `- ${x}`), '',
+      `**${l.criterios}** (${cur.norma})`, '', ...cur.criterios.map((x) => `- ${x.cod}: ${x.texto}`), '',
+      `**${l.contenidos}**`, '', ...cur.contenidos.map((x) => `- ${x.cod}: ${x.texto}`), '');
+  }
   for (const o of d.opcions) {
     md.push(`# ${o.letra} · ${o.titulo} (${o.tipo}, ${contarPalabras(textoPlano(o.texto))} ${l.pal})`, '', o.texto.replace(/\n/g, '  \n'), '', `**${l.clave}**`, '');
     o.foco.forEach((f, i) => md.push(`${i + 1}. **${f.e || f.p}**: ${f.por}`));

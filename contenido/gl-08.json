@@ -12,12 +12,27 @@
     "Despois de punto, outra vez maiúscula.",
     "A exclamación leva o signo ao final: Que ben!"
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.20",
+      "B6.4"
+    ],
+    "evaluar": [
+      "Escribe con ñ, ll e ch as palabras do ditado que levan eses sons.",
+      "Empeza cada frase con maiúscula e péchaa con punto.",
+      "Pon maiúscula despois de punto."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
-    "notas": "Texto proposto por IA: pendente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -90,6 +105,34 @@
         { "p": "muíño", "por": "Con ñ. O i leva til porque é tónico e vai separado do u." }
       ],
       "datos": "Texto instrutivo: muíño de vento de papel, manualidade clásica. O alfinete pínchao unha persoa adulta. Sen outros datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Descrición",
+      "titulo": "A avoa Chelo",
+      "texto": "A miña avoa Chelo vive en Allariz. Ten unha ovella, dúas galiñas e un cocho pequeno. Cada mañá lévalles millo. Que contentos están cando chega!",
+      "segmentos": [
+        "A miña avoa Chelo",
+        "vive en Allariz.",
+        "Ten unha ovella,",
+        "dúas galiñas",
+        "e un cocho pequeno.",
+        "Cada mañá",
+        "lévalles millo.",
+        "Que contentos están",
+        "cando chega!"
+      ],
+      "foco": [
+        { "p": "miña", "por": "Con ñ." },
+        { "p": "Chelo", "por": "Nome dunha persoa: vai con maiúscula. Con ch." },
+        { "p": "Allariz", "por": "Nome dun lugar: vai con maiúscula. Con ll." },
+        { "p": "ovella", "por": "Con ll." },
+        { "p": "galiñas", "por": "Con ñ." },
+        { "p": "cocho", "por": "Con ch." },
+        { "p": "Cada", "por": "Maiúscula porque vai despois de punto." },
+        { "p": "Que contentos están cando chega!", "por": "A exclamación leva o signo ao final. Chega vai con ch.", "e": "Que … chega!" }
+      ],
+      "datos": "Descrición inventada: sen datos que verificar. Allariz é un concello da provincia de Ourense."
     }
   ]
 }

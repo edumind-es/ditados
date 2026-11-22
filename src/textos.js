@@ -81,7 +81,24 @@ const VOCES = {
   celtia: 'Voz: Celtia, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
   sabela: 'Voz: Sabela, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
   icia: 'Voz: Icía, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
+  iago: 'Voz: Iago, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
+  paulo: 'Voz: Paulo, do Proxecto Nós (Universidade de Santiago de Compostela), sintetizada con aHoTTS (HiTZ, UPV/EHU). Modelo Apache 2.0.',
+  sharvard: 'Voz sintética: Sharvard, de Piper (Open Home Foundation, GPL-3.0), entrenada con el corpus Sharvard (CC BY 3.0); pronunciación con espeak-ng (GPL-3.0).',
+  davefx: 'Voz sintética: Davefx, de Piper (Open Home Foundation, GPL-3.0), entrenada con grabaciones de davefx (CC0); pronunciación con espeak-ng (GPL-3.0).',
+  dora: 'Voz sintética: Dora, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  santa: 'Voz sintética: Santa, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  alex: 'Voz sintética: Alex, del modelo Kokoro-82M (hexgrad, Apache 2.0); pronunciación con espeak-ng (GPL-3.0).',
+  laura: 'Voz sintética: Laura, de aHoTTS (HiTZ y Aholab, UPV/EHU). Modelo Apache 2.0; voz grabada del corpus ELRA-S0309.',
   alejandro: 'Voz sintética: Alejandro, de aHoTTS (HiTZ y Aholab, UPV/EHU). Modelo Apache 2.0; datos CC BY 4.0 (Multilingual LibriSpeech, LibriVox).',
+};
+
+/** Nombre de una voz para mostrar: «icia» → «Icía». */
+function nombreVoz(voz) { return voz === 'icia' ? 'Icía' : voz.charAt(0).toUpperCase() + voz.slice(1); }
+
+// Frases de muestra para la página «Voces»: una instrucción, una pregunta y una enumeración con punto y coma.
+const MUESTRAS_VOZ = {
+  gl: ['Hoxe imos facer un ditado. Escoita con atención.', 'Sabías que o polbo ten tres corazóns?', 'O río baixa cheo de auga; na beira hai xuncos, pedras e ras.'],
+  es: ['Hoy vamos a hacer un dictado. Escucha con atención.', '¿Sabías que los flamencos nacen grises?', 'El río baja lleno de agua; en la orilla hay juncos, piedras y ranas.'],
 };
 
 const FICHA = {
@@ -160,12 +177,14 @@ const DOCENTE = {
     tipo: 'Ditado', a: 'Ben escrita', b: 'Hai que corrixila', tit: 'Textos para o docente',
     intro: 'Textos para escoller. Todos traballan a mesma regra; a ficha e o ditado repetido serven para calquera deles. O alumnado marca na ficha a letra do texto.',
     pal: 'palabras', clave: 'Palabras clave (numeración da presentación e de MiClase):', datos: 'Datos e fontes',
+    curriculo: 'Currículo e avaliación', criterios: 'Criterios de avaliación', contenidos: 'Contidos', evaluar: 'Con este ditado pódese avaliar',
     miclaseAviso: 'MiClase colga o exame dun instrumento de tipo proba escrita, que conta para a nota. Para un uso formativo, comproba antes se admite peso cero.',
   },
   es: {
     tipo: 'Dictado', a: 'Bien escrita', b: 'Hay que corregirla', tit: 'Textos para el docente',
     intro: 'Textos para elegir. Todos trabajan la misma regla; la ficha y el dictado repetido sirven para cualquiera de ellos. El alumnado marca en la ficha la letra del texto.',
     pal: 'palabras', clave: 'Palabras clave (numeración de la presentación y de MiClase):', datos: 'Datos y fuentes',
+    curriculo: 'Currículo y evaluación', criterios: 'Criterios de evaluación', contenidos: 'Contenidos', evaluar: 'Con este dictado se puede evaluar',
     miclaseAviso: 'MiClase cuelga el examen de un instrumento de tipo prueba escrita, que cuenta para la nota. Para un uso formativo, comprueba antes si admite peso cero.',
   },
 };
@@ -193,7 +212,18 @@ const CATALOGO = {
   guardarSC: 'Guardar este dictado para usarlo sin conexión', guardando: 'Guardando en este navegador…', guardado: 'Listo: este dictado y sus descargas funcionan sin conexión en este navegador.',
   rapido: 'Dictado rápido', rapidoSub: 'Pega un texto, marca las palabras clave y genera la presentación proyectable al momento, sin guardar nada.',
   licenciaRapido: 'Texto del dictado: de quien lo preparó. Programa: AGPL-3.0-or-later o EUPL-1.2.',
+  curriculo: 'Currículo y evaluación', evaluar: 'Con este dictado se puede evaluar', criterios: 'Criterios de evaluación', contenidos: 'Contenidos del currículo',
+  codigosPropios: 'En primaria el decreto no numera los contenidos: el código indica su orden dentro del bloque.',
+  bloque: 'Bloque del currículo',
+  vozH: 'Voz del dictado', vozSub: 'Elige la voz con la que se proyecta este dictado. La elección se recuerda en este navegador.',
+  voces: 'Voces', vocesSub: 'Escucha las voces antes de elegir. La que marques se usará en todos los dictados de esa lengua en este navegador.',
+  vocesLink: 'Escuchar y elegir la voz', usarVoz: 'Usar esta voz', vozElegida: 'Es la voz elegida en este navegador', vozDefecto: 'voz por defecto',
+  niveles: 'Niveles', nivelesSub: 'De 1.º de primaria a 4.º de ESO. Elige un nivel para ver sus dictados.',
+  etapas: { primaria: 'Primaria', eso: 'ESO' }, enPreparacion: 'En preparación',
+  textos: 'textos', texto: 'texto', dictados: 'dictados', dictado: 'dictado',
+  verTextos: (n) => (n === 1 ? 'Ver el texto antes de abrirlo' : `Ver los ${n} textos antes de abrirlos`),
+  textosH: 'Los textos, uno a uno', verClaves: (n) => `Ver las ${n} palabras clave y su explicación`, escuchar: 'Escuchar el texto completo',
   kit: 'Tarjeta y cuaderno de reglas (PDF)', kitTarxeta: 'Tarjeta de reglas, 2 páginas', kitCaderno: 'Cuaderno de reglas acumulativo, 1 página',
 };
 
-module.exports = { PRESENTACION, FICHA, DOCENTE, CATALOGO, VOCES, PE };
+module.exports = { PRESENTACION, FICHA, DOCENTE, CATALOGO, VOCES, PE, nombreVoz, MUESTRAS_VOZ };

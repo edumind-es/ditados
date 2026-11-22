@@ -12,12 +12,28 @@
     "Esdrúxulas: a tónica é a antepenúltima. Til sempre: único, sábado, plástico.",
     "No diálogo, cada intervención empeza con raia (—) e o que di o narrador vai entre raias."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Pon til nas agudas, nas graves e nas esdrúxulas segundo a regra e sabe explicar por que.",
+      "Escribe con x as palabras clave (paxaro, xogo).",
+      "Empeza con raia cada intervención do diálogo."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
-    "notas": "Texto proposto por IA: pendente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -120,6 +136,41 @@
         { "p": "é", "por": "Til diacrítico: é é do verbo ser. E, sen til, é a conxunción." }
       ],
       "datos": "Narración ficticia inspirada nas limpezas de praias que organizan asociacións e centros educativos; non se refire a ningún feito nin lugar concreto. Sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instrutivo",
+      "titulo": "Un volcán na clase",
+      "texto": "Para fabricar un volcán necesitas arxila, vinagre, bicarbonato e un vaso de plástico. Primeiro, cobre o vaso coa arxila ata formar un cráter. Despois, bota dentro dúas culleradas de bicarbonato. Por último, engade o vinagre moi amodo. Axiña sairá unha escuma que parece lava. É un experimento fácil, rápido e máxico!",
+      "segmentos": [
+        "Para fabricar un volcán",
+        "necesitas arxila, vinagre, bicarbonato",
+        "e un vaso de plástico.",
+        "Primeiro, cobre o vaso coa arxila",
+        "ata formar un cráter.",
+        "Despois, bota dentro",
+        "dúas culleradas de bicarbonato.",
+        "Por último, engade o vinagre moi amodo.",
+        "Axiña sairá unha escuma",
+        "que parece lava.",
+        "É un experimento fácil,",
+        "rápido e máxico!"
+      ],
+      "foco": [
+        { "p": "fabricar", "por": "Aguda rematada en -r: sen til." },
+        { "p": "volcán", "por": "Aguda rematada en -n: leva til." },
+        { "p": "arxila", "por": "Con x. Grave rematada en vogal: sen til." },
+        { "p": "plástico", "por": "Esdrúxula: leva til sempre." },
+        { "p": "cráter", "por": "Grave rematada en -r: leva til." },
+        { "p": "último", "por": "Esdrúxula: leva til sempre." },
+        { "p": "vinagre", "por": "Grave rematada en vogal: sen til." },
+        { "p": "Axiña", "por": "Con x." },
+        { "p": "sairá", "por": "Aguda rematada en vogal: leva til." },
+        { "p": "fácil", "por": "Grave rematada en -l: leva til." },
+        { "p": "rápido", "por": "Esdrúxula: leva til sempre." },
+        { "p": "máxico", "por": "Esdrúxula: leva til sempre. Con x." }
+      ],
+      "datos": "Experimento escolar habitual: o vinagre e o bicarbonato reaccionan e desprenden dióxido de carbono, que forma a escuma. Facelo sobre unha bandexa e cunha persoa adulta."
     }
   ]
 }

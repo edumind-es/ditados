@@ -104,13 +104,14 @@ let S = vacio();
 try { S = { ...vacio(), ...JSON.parse(localStorage.getItem(CLAVE) || '{}') }; } catch (e) { /* sin almacenamiento: se trabaja igual */ }
 function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(S)); } catch (e) { /* nada */ } }
 
+const nomCurso = (k) => (/eso$/.test(k) ? k.replace(/eso$/, '') + '.º ESO' : k + '.º');   // igual que nombreCurso de src/validar.js
 const cfgCurso = () => DATOS.cursos[S.curso] || {};
 const rangoSeg = () => cfgCurso().segmento_palabras || DATOS.segmento_palabras;
 const rangoClaves = () => cfgCurso().claves || DATOS.claves;
 
 /* ---------- Pintar el formulario desde el estado ---------- */
 function pintarSelectores() {
-  $('#curso').innerHTML = Object.keys(DATOS.cursos).map((k) => `<option value="${k}"${k === S.curso ? ' selected' : ''}>${k}.º</option>`).join('');
+  $('#curso').innerHTML = Object.keys(DATOS.cursos).map((k) => `<option value="${k}"${k === S.curso ? ' selected' : ''}>${nomCurso(k)}</option>`).join('');
   $('#tipo').innerHTML = DATOS.tipos[S.lang].map((t) => `<option value="${esc(t)}"${t === S.tipo ? ' selected' : ''}>${esc(t)}</option>`).join('');
   if (!DATOS.tipos[S.lang].includes(S.tipo)) { S.tipo = DATOS.tipos[S.lang][0]; $('#tipo').value = S.tipo; }
   $('#lang').value = S.lang;
@@ -125,7 +126,7 @@ function pintarTodo() {
 function pintarCuenta() {
   const n = contarPalabras(textoPlano(S.texto));
   const r = cfgCurso().palabras;
-  $('#cuenta').textContent = n ? `${n} palabras` + (r ? ` · para ${S.curso}.º se recomiendan de ${r[0]} a ${r[1]}` : '') : '';
+  $('#cuenta').textContent = n ? `${n} palabras` + (r ? ` · para ${nomCurso(S.curso)} se recomiendan de ${r[0]} a ${r[1]}` : '') : '';
   $('#cuenta').classList.toggle('mal', Boolean(n && r && (n < r[0] || n > r[1])));
 }
 
@@ -176,7 +177,7 @@ function pintarFoco() {
   <div class="acc"><button class="boton alt peq" type="button" data-subir ${i === 0 ? 'disabled' : ''}>Subir</button><button class="boton alt peq" type="button" data-quitar>Quitar</button></div>
 </div>`).join('');
   const [a, b] = rangoClaves();
-  $('#foco-estado').textContent = S.texto.trim() ? `${S.foco.length} palabras clave · para ${S.curso}.º se recomiendan de ${a} a ${b}` : '';
+  $('#foco-estado').textContent = S.texto.trim() ? `${S.foco.length} palabras clave · para ${nomCurso(S.curso)} se recomiendan de ${a} a ${b}` : '';
   $$('.foco', cont).forEach((fila) => {
     const i = +fila.dataset.i;
     $('[data-por]', fila).addEventListener('input', (e) => { S.foco[i].por = e.target.value; guardar(); });

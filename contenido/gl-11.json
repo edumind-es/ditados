@@ -12,12 +12,28 @@
     "As formas do verbo haber levan h: hai, había.",
     "Con v: vir (viña, vés), vivir, volver (volvo), avisar."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.3"
+    ],
+    "contenidos": [
+      "B6.9",
+      "B6.8",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Escribe con b as formas en -aba e con til as formas en -ía.",
+      "Escribe con h as formas do verbo haber (hai, había).",
+      "Escribe con v os verbos vir, vivir, volver e avisar."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://academia.gal/dicionario", "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"],
-    "notas": "Texto proposto por IA: pendente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -126,6 +142,41 @@
         { "p": "Avísame", "por": "Avisa + me: esdrúxula, leva til. Con v." }
       ],
       "datos": "Carta ficticia; nomes ficticios. Sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Descrición",
+      "titulo": "A escola da miña avoa",
+      "texto": "A miña avoa vivía nunha aldea e camiñaba media hora para chegar á escola. Na aula había unha estufa de leña e todos levaban un tronco de casa. Escribían con pluma e tinta, e sabían de memoria os ríos de Galicia. Cando volvía, axudaba na horta e bebía leite acabado de muxir. Di que facía frío, pero que era feliz.",
+      "segmentos": [
+        "A miña avoa vivía nunha aldea",
+        "e camiñaba media hora",
+        "para chegar á escola.",
+        "Na aula había unha estufa de leña",
+        "e todos levaban un tronco de casa.",
+        "Escribían con pluma e tinta,",
+        "e sabían de memoria",
+        "os ríos de Galicia.",
+        "Cando volvía, axudaba na horta",
+        "e bebía leite acabado de muxir.",
+        "Di que facía frío,",
+        "pero que era feliz."
+      ],
+      "foco": [
+        { "p": "vivía", "por": "Imperfecto de vivir: con dous v e con -ía." },
+        { "p": "camiñaba", "por": "Imperfecto dun verbo en -ar: con b." },
+        { "p": "hora", "por": "Con h, que non soa." },
+        { "p": "había", "por": "Forma do verbo haber: con h e con b. Leva til no i." },
+        { "p": "levaban", "por": "Imperfecto de levar: a raíz vai con v e a terminación con b." },
+        { "p": "Escribían", "por": "Imperfecto de escribir: con b na raíz e con -ían." },
+        { "p": "sabían", "por": "Imperfecto de saber: con b e con -ían." },
+        { "p": "volvía", "por": "Imperfecto de volver: con dous v e con -ía." },
+        { "p": "axudaba", "por": "Imperfecto dun verbo en -ar: con b. Con x." },
+        { "p": "horta", "por": "Con h, que non soa." },
+        { "p": "bebía", "por": "Imperfecto de beber: con dous b e con -ía." },
+        { "p": "facía", "por": "Imperfecto de facer: con -ía." }
+      ],
+      "datos": "Recordo familiar inventado, verosímil nunha escola rural de mediados do século XX (estufa de leña, pluma e tinta). Sen datos concretos que verificar."
     }
   ]
 }

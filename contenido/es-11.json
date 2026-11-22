@@ -12,12 +12,28 @@
     "Las formas de haber y de hacer llevan h: hay, había, ha cambiado, hace.",
     "Con v: venir (venía, vienes), vivir, volver (vuelvo), avisar. Con b: beber, saber (sabía), cambiar."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.3"
+    ],
+    "contenidos": [
+      "B6.9",
+      "B6.8",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Escribe con b las formas en -aba y con tilde las formas en -ía.",
+      "Escribe con h las formas de haber y de hacer (hay, había, hace).",
+      "Distingue los verbos con b de los verbos con v del texto."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -126,6 +142,41 @@
         { "p": "Avísame", "por": "Avisa + me: esdrújula, lleva tilde. Con v." }
       ],
       "datos": "Carta ficticia; nombres ficticios. Sin datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Descripción",
+      "titulo": "La escuela de mi abuela",
+      "texto": "Mi abuela vivía en una aldea y caminaba media hora para llegar a la escuela. En el aula había una estufa de leña y todos llevaban un tronco de casa. Escribían con pluma y tinta, y sabían de memoria los ríos de España. Cuando volvía, ayudaba en la huerta y bebía leche recién ordeñada. Dice que hacía frío, pero que era feliz.",
+      "segmentos": [
+        "Mi abuela vivía en una aldea",
+        "y caminaba media hora",
+        "para llegar a la escuela.",
+        "En el aula había una estufa de leña",
+        "y todos llevaban un tronco de casa.",
+        "Escribían con pluma y tinta,",
+        "y sabían de memoria",
+        "los ríos de España.",
+        "Cuando volvía, ayudaba en la huerta",
+        "y bebía leche recién ordeñada.",
+        "Dice que hacía frío,",
+        "pero que era feliz."
+      ],
+      "foco": [
+        { "p": "vivía", "por": "Imperfecto de vivir: con dos v y con -ía." },
+        { "p": "caminaba", "por": "Imperfecto de un verbo en -ar: con b." },
+        { "p": "hora", "por": "Con h, que no suena." },
+        { "p": "había", "por": "Forma de haber: con h y con b. Lleva tilde en la i." },
+        { "p": "llevaban", "por": "Imperfecto de llevar: la raíz va con v y la terminación con b." },
+        { "p": "Escribían", "por": "Imperfecto de escribir: con b en la raíz y con -ían." },
+        { "p": "sabían", "por": "Imperfecto de saber: con b y con -ían." },
+        { "p": "volvía", "por": "Imperfecto de volver: con dos v y con -ía." },
+        { "p": "ayudaba", "por": "Imperfecto de un verbo en -ar: con b." },
+        { "p": "huerta", "por": "Con h: las palabras que empiezan por hue- llevan h." },
+        { "p": "bebía", "por": "Imperfecto de beber: con dos b y con -ía." },
+        { "p": "hacía", "por": "Forma de hacer: con h y con -ía." }
+      ],
+      "datos": "Recuerdo familiar inventado, verosímil en una escuela rural de mediados del siglo XX (estufa de leña, pluma y tinta). Sin datos concretos que verificar."
     }
   ]
 }

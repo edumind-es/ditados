@@ -12,12 +12,27 @@
     "Con h: hay (de haber), hace (de hacer), hasta, historia.",
     "Dos puntos antes de una explicación: Anda en manada: una pareja y sus crías. Punto y coma entre dos partes muy relacionadas."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.6",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.19",
+      "B6.11"
+    ],
+    "evaluar": [
+      "Escribe con b, con v y con h las palabras clave del dictado.",
+      "Pone dos puntos antes de una explicación.",
+      "Pone punto y coma entre dos partes relacionadas de una misma oración."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://dle.rae.es", "https://www.rae.es/dpd", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -134,6 +149,47 @@
         { "p": "debajo", "por": "Con j. En una sola palabra." }
       ],
       "datos": "Existen bibliotecas móviles (bibliobuses) que recorren pueblos y aldeas. La narración y los nombres son ficticios."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instructivo",
+      "titulo": "Antes de una excursión",
+      "texto": "Antes de salir de excursión al bosque, revisa la mochila: debe llevar agua, un bocadillo, un chubasquero y un silbato. Avisa siempre a un adulto del camino que vais a seguir; si hay niebla, es mejor volver. Camina por los senderos señalados y observa los árboles sin arrancar hojas ni ramas. Si encuentras basura, recógela con una bolsa. Al volver, habrás vivido una buena aventura y el bosque seguirá limpio.",
+      "segmentos": [
+        "Antes de salir de excursión al bosque,",
+        "revisa la mochila:",
+        "debe llevar agua, un bocadillo,",
+        "un chubasquero y un silbato.",
+        "Avisa siempre a un adulto",
+        "del camino que vais a seguir;",
+        "si hay niebla, es mejor volver.",
+        "Camina por los senderos señalados",
+        "y observa los árboles",
+        "sin arrancar hojas ni ramas.",
+        "Si encuentras basura,",
+        "recógela con una bolsa.",
+        "Al volver, habrás vivido",
+        "una buena aventura",
+        "y el bosque seguirá limpio."
+      ],
+      "foco": [
+        { "p": "bosque", "por": "Con b." },
+        { "p": "revisa", "por": "Con v." },
+        { "p": "mochila:", "por": "Dos puntos antes de una explicación: lo que debe llevar.", "e": "mochila:" },
+        { "p": "llevar", "por": "Con v." },
+        { "p": "chubasquero", "por": "Con b." },
+        { "p": "silbato", "por": "Con b." },
+        { "p": "Avisa", "por": "Mayúscula después de punto. Con v." },
+        { "p": "seguir;", "por": "Punto y coma entre dos partes muy relacionadas.", "e": "seguir;" },
+        { "p": "hay", "por": "Forma de haber: con h." },
+        { "p": "niebla", "por": "Con b." },
+        { "p": "volver", "por": "Con dos v." },
+        { "p": "observa", "por": "Con b y con v." },
+        { "p": "hojas", "por": "Con h, que no suena." },
+        { "p": "habrás", "por": "Forma de haber: con h y con b. Aguda terminada en -s: con tilde." },
+        { "p": "aventura", "por": "Con v." }
+      ],
+      "datos": "Consejos generales de seguridad y respeto por el entorno en una salida al monte. Sin datos concretos que verificar."
     }
   ]
 }

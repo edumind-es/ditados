@@ -12,12 +12,28 @@
     "Plural en -es si termina en consonante: flor, flores. Si termina en -z, cambia a -ces: lápiz, lápices.",
     "Después del saludo de una carta van dos puntos."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.3",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.21",
+      "B6.5"
+    ],
+    "evaluar": [
+      "Escribe za, zo, zu y ce, ci en las palabras con el sonido suave.",
+      "Forma el plural con -s o con -es, y cambia z por c (lápiz, lápices).",
+      "Revisa su dictado con el modelo y corrige las palabras clave."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -103,6 +119,37 @@
         { "p": "lápiz", "por": "Termina en z. Su plural es lápices." }
       ],
       "datos": "Carta ficticia; nombres ficticios. Sin datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Texto instructivo",
+      "titulo": "Una macedonia de frutas",
+      "texto": "Lava dos manzanas, tres melocotones y diez cerezas. Corta las manzanas y los melocotones en trozos pequeños. Echa todo en un cuenco con zumo de naranja y un poco de azúcar. Mezcla despacio. ¡Ya tienes una macedonia deliciosa!",
+      "segmentos": [
+        "Lava dos manzanas,",
+        "tres melocotones",
+        "y diez cerezas.",
+        "Corta las manzanas",
+        "y los melocotones",
+        "en trozos pequeños.",
+        "Echa todo en un cuenco",
+        "con zumo de naranja",
+        "y un poco de azúcar.",
+        "Mezcla despacio.",
+        "¡Ya tienes una macedonia deliciosa!"
+      ],
+      "foco": [
+        { "p": "manzanas", "por": "Za: z delante de a. Manzana termina en vocal: plural en -s." },
+        { "p": "melocotones", "por": "Melocotón termina en consonante: plural en -es. En plural pierde la tilde." },
+        { "p": "diez", "por": "Termina en z." },
+        { "p": "cerezas", "por": "Ce: c delante de e. Za: z delante de a." },
+        { "p": "trozos", "por": "Zo: z delante de o." },
+        { "p": "zumo", "por": "Zu: z delante de u." },
+        { "p": "azúcar", "por": "Zu: z delante de u. Lleva tilde en la u." },
+        { "p": "despacio", "por": "Ci: c delante de i." },
+        { "p": "deliciosa", "por": "Ci: c delante de i." }
+      ],
+      "datos": "Receta sencilla de macedonia: sin datos que verificar. La fruta la corta una persona adulta y a las cerezas hay que quitarles el hueso."
     }
   ]
 }

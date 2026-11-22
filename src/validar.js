@@ -6,6 +6,15 @@
 const LANGS = ['gl', 'es'];
 const ESTADOS = ['borrador', 'revisado', 'publicado'];
 
+/** La clave tiene que estar como palabra entera, igual que la busca marcar.js al compilar («os» no vale dentro de «aos»). */
+function apareceEntera(texto, p) {
+  const letra = /[\p{L}\p{N}]/u;
+  let pat = p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (letra.test(p[0])) pat = '(?<![\\p{L}\\p{N}])' + pat;
+  if (letra.test(p[p.length - 1])) pat += '(?![\\p{L}\\p{N}])';
+  return new RegExp(pat, 'u').test(texto);
+}
+
 /** Cuenta palabras como lo hace el prototipo: trozos separados por espacios. */
 function contarPalabras(texto) {
   return String(texto || '').trim().split(/\s+/).filter(Boolean).length;
@@ -93,6 +102,7 @@ function validar(d, config) {
         o.foco.forEach((f, i) => {
           if (!f || !esCadena(f.p)) { err(`${nombre}, clave ${i + 1}: falta la palabra («p»).`); return; }
           if (!o.texto.includes(f.p)) err(`${nombre}, clave ${i + 1}: «${f.p}» no aparece tal cual en el texto.`);
+          else if (!apareceEntera(o.texto, f.p)) err(`${nombre}, clave ${i + 1}: «${f.p}» solo aparece pegada a otras letras; escribe la palabra entera tal como está en el texto.`);
           if (!esCadena(f.por)) err(`${nombre}, clave ${i + 1} («${f.p}»): falta la explicación («por»).`);
           if (f.p.includes(' ') && !esCadena(f.e)) {
             aviso(`${nombre}, clave ${i + 1}: «${f.p}» es una frase; conviene darle una etiqueta corta («e») para la lista y para MiClase.`);
@@ -107,12 +117,39 @@ function validar(d, config) {
       // 3. Palabras del texto dentro del rango del curso.
       const n = contarPalabras(textoPlano(o.texto));
       if (rango && (n < rango[0] || n > rango[1])) {
-        err(`${nombre}: el texto tiene ${n} palabras; para ${d.curso}.º tiene que tener entre ${rango[0]} y ${rango[1]}.`);
+        err(`${nombre}: el texto tiene ${n} palabras; para ${nombreCurso(d.curso)} tiene que tener entre ${rango[0]} y ${rango[1]}.`);
       }
 
       // Datos verificables: solo aviso, porque no todos los textos llevan datos.
       if (!esCadena(o.datos)) aviso(`${nombre}: no tiene notas de datos y fuentes («datos») para el docente.`);
     });
+  }
+
+  // --- Currículo: criterios de evaluación y contenidos que trabaja el dictado, y qué se puede evaluar con él ---
+  const cur = d.curriculo;
+  const publicable = d.estado === 'publicado' || d.estado === 'revisado';
+  if (cur == null) {
+    const m = 'Falta el bloque «curriculo»: los criterios de evaluación y los contenidos del currículo que trabaja el dictado, y lo que se puede evaluar con él.';
+    if (publicable) err(m); else aviso(m);
+  } else if (typeof cur !== 'object') {
+    err('«curriculo» tiene que ser un objeto con «criterios», «contenidos» y «evaluar».');
+  } else {
+    const lista = (v) => Array.isArray(v) && v.length > 0 && v.every(esCadena);
+    if (!lista(cur.criterios)) err('Currículo: hace falta al menos un criterio de evaluación («curriculo.criterios»), por su código: CE6.6.');
+    if (!lista(cur.contenidos)) err('Currículo: hace falta al menos un contenido («curriculo.contenidos»), por su código: B6.10.');
+    if (!lista(cur.evaluar) || cur.evaluar.length < 2 || cur.evaluar.length > 5) {
+      err('Currículo: «curriculo.evaluar» tiene que tener entre 2 y 5 frases breves con lo que se puede observar y evaluar en el propio dictado.');
+    }
+    // Los códigos se comprueban contra el currículo del curso y la lengua (si está cargado: en el navegador no lo está).
+    const ref = config.curriculo && config.curriculo[d.lang] && config.curriculo[d.lang].cursos[d.curso];
+    if (ref) {
+      for (const k of Array.isArray(cur.criterios) ? cur.criterios : []) {
+        if (!ref.criterios[k]) err(`Currículo: el criterio «${k}» no existe en ${nombreCurso(d.curso, true)}.`);
+      }
+      for (const k of Array.isArray(cur.contenidos) ? cur.contenidos : []) {
+        if (!ref.contenidos[k]) err(`Currículo: el contenido «${k}» no existe en ${nombreCurso(d.curso, true)}.`);
+      }
+    }
   }
 
   // --- Publicación ---
@@ -141,6 +178,16 @@ function primeraDiferencia(a, b) {
 /** Identificador corto del dictado: gl-02. */
 function idDitado(d) { return `${d.lang}-${String(d.num).padStart(2, '0')}`; }
 
+/** Etapa de un curso: «1»…«6» son primaria; «1eso»…«4eso», secundaria. */
+function etapaDe(curso) { return /eso$/.test(String(curso)) ? 'eso' : 'primaria'; }
+
+/** Nombre del curso para mostrar: «3.º» en primaria, «3.º ESO» en secundaria (con `largo`, «3.º de primaria»). */
+function nombreCurso(curso, largo = false) {
+  const n = String(curso).replace(/eso$/, '');
+  if (etapaDe(curso) === 'eso') return `${n}.º ${largo ? 'de ' : ''}ESO`;
+  return largo ? `${n}.º de primaria` : `${n}.º`;
+}
+
 /** Identificador de una opción: gl-02a. */
 function idOpcion(d, o) { return idDitado(d) + String(o.letra).toLowerCase(); }
 
@@ -150,4 +197,4 @@ function tituloCorto(d) {
   return (partes.length > 1 ? partes.slice(1).join('·') : partes[0]).trim();
 }
 
-module.exports = { validar, contarPalabras, textoPlano, idDitado, idOpcion, tituloCorto, LANGS, ESTADOS };
+module.exports = { validar, contarPalabras, textoPlano, idDitado, idOpcion, tituloCorto, etapaDe, nombreCurso, LANGS, ESTADOS };

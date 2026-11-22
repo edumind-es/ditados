@@ -167,6 +167,7 @@ pre.reg{font-family:var(--m);font-size:.8rem;white-space:pre-wrap;max-height:260
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const nomCurso = (k) => (/eso$/.test(k) ? k.replace(/eso$/, '') + '.º ESO' : k + '.º');   // igual que nombreCurso de src/validar.js
 const api = async (ruta, opts = {}) => {
   const r = await fetch('/api/' + ruta, { headers: { 'Content-Type': 'application/json' }, ...opts, body: opts.body ? JSON.stringify(opts.body) : undefined });
   const j = await r.json().catch(() => ({}));
@@ -186,7 +187,7 @@ let timer = null;
   CONFIG = c.config; LT = c.languagetool; HAY_AUDIO = c.audio;
   $('#lt-estado').textContent = LT ? 'LanguageTool activo: ayuda, no sustituye la revisión humana.' : 'LanguageTool no está configurado en el servidor.';
   $('#lt-btn').disabled = !LT;
-  $('#n-curso').innerHTML = Object.keys(CONFIG.cursos).map((k) => `<option value="${k}"${k === '6' ? ' selected' : ''}>${k}.º</option>`).join('');
+  $('#n-curso').innerHTML = Object.keys(CONFIG.cursos).map((k) => `<option value="${k}"${k === '6' ? ' selected' : ''}>${nomCurso(k)}</option>`).join('');
   await cargarLista();
   const id = location.hash.slice(1);
   if (id) abrir(id);
@@ -285,7 +286,7 @@ function pintarFoco(k) {
   <div><label>Etiqueta corta (si es una frase)</label><input type="text" data-f="e" value="${esc(f.e || '')}"></div>
   <div><label>Por qué se escribe así (verifícalo en la RAG o la RAE)</label><textarea data-f="por">${esc(f.por)}</textarea></div>
   <div><button class="btn alt peq" type="button" data-f-accion="subir" ${i === 0 ? 'disabled' : ''}>Subir</button><button class="btn alt peq" type="button" data-f-accion="quitar">Quitar</button></div>
-</div>`).join('') + `<p class="estado">${o.foco.length} palabras clave (entre ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[0]} y ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[1]} en ${D.curso}.º)</p>`;
+</div>`).join('') + `<p class="estado">${o.foco.length} palabras clave (entre ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[0]} y ${(CONFIG.cursos[D.curso].claves || CONFIG.claves)[1]} en ${nomCurso(D.curso)})</p>`;
   $$('.foco', cont).forEach((fila) => {
     const i = +fila.dataset.i;
     $$('[data-f]', fila).forEach((inp) => inp.addEventListener('input', () => { o.foco[i][inp.dataset.f] = inp.value; if (inp.dataset.f === 'e' && !inp.value) delete o.foco[i].e; if (inp.dataset.f === 'p') pintarPalabras(k); validarVivo(); }));

@@ -19,15 +19,31 @@
     "O h non soa, pero escríbese: hortas, hai, hiberna.",
     "Nas enumeracións poño coma entre os elementos e e antes do último: cepillo, pasta e vaso."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2",
+      "B3.16"
+    ],
+    "evaluar": [
+      "Escribe con b, con v e con h as palabras clave do ditado.",
+      "Separa con comas os elementos dunha enumeración e non pon coma antes do e final.",
+      "Sinala a sílaba tónica das palabras que se lle indican."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": [
       "https://academia.gal/dicionario",
       "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
     ],
-    "notas": "Texto proposto por IA: pendente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -217,6 +233,39 @@
         }
       ],
       "datos": "Texto instrutivo: comedeiro de botella, manualidade escolar habitual. Facer os buratos coa axuda dunha persoa adulta. Sen outros datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Diario",
+      "titulo": "Un día na horta",
+      "texto": "Hoxe visitei a horta do meu avó. Había tomates, fabas, cenorias e leitugas. Reguei as plantas cunha vella regadeira verde e vin unha abella enriba dunha flor. Antes de volver, enchemos unha cesta grande de verduras. Esta noite haberá un bo caldo!",
+      "segmentos": [
+        "Hoxe visitei a horta",
+        "do meu avó.",
+        "Había tomates, fabas,",
+        "cenorias e leitugas.",
+        "Reguei as plantas",
+        "cunha vella regadeira verde",
+        "e vin unha abella",
+        "enriba dunha flor.",
+        "Antes de volver,",
+        "enchemos unha cesta grande de verduras.",
+        "Esta noite haberá un bo caldo!"
+      ],
+      "foco": [
+        { "p": "Hoxe", "por": "Con h, que non soa, e con x." },
+        { "p": "visitei", "por": "Con v. A sílaba tónica é tei: vi-si-TEI." },
+        { "p": "horta", "por": "Con h, que non soa." },
+        { "p": "avó", "por": "Con v. Leva til no o." },
+        { "p": "Había", "por": "Con h e con b. Leva til no i." },
+        { "p": "tomates, fabas, cenorias e leitugas", "por": "Enumeración: coma entre os elementos e e antes do último.", "e": "… , … , … e …" },
+        { "p": "vella", "por": "Con v." },
+        { "p": "abella", "por": "Con b." },
+        { "p": "volver", "por": "Con dous v." },
+        { "p": "verduras", "por": "Con v. A sílaba tónica é du: ver-DU-ras." },
+        { "p": "haberá", "por": "Con h e con b. A sílaba tónica é a última: ha-be-RÁ." }
+      ],
+      "datos": "Páxina de diario inventada: sen datos que verificar."
     }
   ]
 }

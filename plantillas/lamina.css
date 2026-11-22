@@ -48,3 +48,34 @@ footer.pe p{margin:4px 0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 /* Enlace al dictado rápido en la cabecera del catálogo */
 .acciones-cab{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:16px 0 0}
+/* Mapa de niveles (portada) y vista previa de los textos */
+table.mapa th.etapa{font-size:.85rem;color:var(--tinta);border-right:1px solid var(--filete-fino)}
+table.mapa td.vacia{color:var(--tinta-2);font-family:var(--f-mono);font-size:.8rem}
+table.mapa td a{font-weight:700}
+.lista li > details.previa{grid-column:1/-1}
+details > summary{cursor:pointer;font-weight:700;padding:10px 0;min-height:44px}
+article.texto{border-top:1px solid var(--filete-fino);padding:12px 0;max-width:72ch}
+article.texto h3,article.texto h4{margin:0 0 4px;font-size:1.05rem}
+article.texto .meta{font-family:var(--f-mono);font-size:.78rem;font-weight:400;color:var(--tinta-2);margin:0 0 6px}
+article.texto h4 .meta{margin-left:8px}
+.texto-op .k{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.texto-op sup.num{font-family:var(--f-mono);font-size:.62em;color:var(--tinta-2);margin-right:1px}
+ol.claves{margin:6px 0 0;padding-left:1.6em}ol.claves li{margin:4px 0}
+audio{width:100%;max-width:480px}
+table.mapa tbody th{border-bottom:1px solid var(--filete-fino)}
+/* Currículo y evaluación */
+.curriculo h3{font-size:1rem;margin:16px 0 4px}
+.lista .meta.cur{margin:8px 0 0}
+abbr[title]{text-decoration:underline dotted;cursor:help}
+/* Voces: selector en la ficha y página de muestras */
+fieldset.voces{border:1px solid var(--filete);padding:10px 14px;margin:14px 0 0;max-width:72ch;min-width:0}
+fieldset.voces legend{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);padding:0 6px}
+fieldset.voces label{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-right:22px;font-weight:700}
+fieldset.voces label .meta,article.voz h3 .meta{font-family:var(--f-mono);font-size:.75rem;font-weight:400;color:var(--tinta-2)}
+fieldset.voces input{width:20px;height:20px;accent-color:var(--tinta)}
+fieldset.voces .sub{margin-top:6px;font-size:.92rem}
+article.voz{border-top:1px solid var(--filete-fino);padding:14px 0;max-width:72ch}
+article.voz h3{margin:0 0 2px}article.voz .meta{font-family:var(--f-mono);font-size:.78rem;color:var(--tinta-2);margin:0 0 8px}
+article.voz figure{margin:10px 0}article.voz figcaption{margin-bottom:4px}
+button.boton{cursor:pointer;font:inherit;font-weight:700;white-space:normal;text-align:center}   /* un botón largo no puede ensanchar la página en el móvil */
+button.boton[aria-pressed=true]{background:var(--tinta);color:var(--papel)}

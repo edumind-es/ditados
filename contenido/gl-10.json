@@ -19,15 +19,32 @@
     "Dous puntos antes dunha explicación ou do que alguén di: berra: Alá vou!",
     "Punto e coma para separar dúas partes moi relacionadas da mesma frase."
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE6.5",
+      "CE6.1",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B6.8",
+      "B6.2",
+      "B6.1"
+    ],
+    "evaluar": [
+      "Escribe con x as palabras que en castelán levan j ou g (xeo, xogar).",
+      "Pon maiúscula nos nomes de persoas e de lugares.",
+      "Coloca os dous puntos e o punto e coma onde o texto os pide."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": [
       "https://academia.gal/dicionario",
       "Normas ortográficas e morfolóxicas do idioma galego (RAG/ILG, 2003)"
     ],
-    "notas": "Texto proposto por IA: pendente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -93,14 +110,14 @@
       "letra": "B",
       "tipo": "Narración",
       "titulo": "Unha viaxe a Compostela",
-      "texto": "Na fin de semana, Xiana e o seu avó Xosé foron a Compostela en tren. Viron a catedral, pasearon pola praza do Obradoiro e comeron unha tarta de améndoa. Despois, visitaron o Museo do Pobo Galego. Xiana mercou unha postal e escribiulle á súa amiga Sabela: «Compostela é xenial!».",
+      "texto": "Na fin de semana, Xiana e o seu avó Xosé foron a Compostela en tren. Viron a catedral, pasearon pola praza do Obradoiro e comeron unha torta de améndoa. Despois, visitaron o Museo do Pobo Galego. Xiana mercou unha postal e escribiulle á súa amiga Sabela: «Compostela é xenial!».",
       "segmentos": [
         "Na fin de semana,",
         "Xiana e o seu avó Xosé",
         "foron a Compostela en tren.",
         "Viron a catedral,",
         "pasearon pola praza do Obradoiro",
-        "e comeron unha tarta de améndoa.",
+        "e comeron unha torta de améndoa.",
         "Despois, visitaron",
         "o Museo do Pobo Galego.",
         "Xiana mercou unha postal",
@@ -151,7 +168,7 @@
           "por": "Con x. En castelán dise «genial»."
         }
       ],
-      "datos": "Santiago de Compostela: catedral, praza do Obradoiro, tarta de Santiago (de améndoa) e Museo do Pobo Galego son reais. Os nomes das persoas son ficticios."
+      "datos": "Santiago de Compostela: catedral, praza do Obradoiro, torta de Santiago (de améndoa) e Museo do Pobo Galego son reais. Os nomes das persoas son ficticios."
     },
     {
       "letra": "C",
@@ -216,6 +233,39 @@
         }
       ],
       "datos": "Regras do xogo tradicional das agachadas (o escondite). Sen datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Invitación",
+      "titulo": "Unha festa na praia",
+      "texto": "Ola, Xoán! O sábado fago nove anos e celébroo na praia de Samil, en Vigo. Só necesitas dúas cousas: bañador e toalla. A miña irmá Uxía fará os bocadillos; o meu tío Xacobe traerá unha torta de laranxa. Despois xogaremos na area ata a tardiña. Unha aperta, Xulia.",
+      "segmentos": [
+        "Ola, Xoán! O sábado",
+        "fago nove anos e celébroo",
+        "na praia de Samil, en Vigo.",
+        "Só necesitas dúas cousas:",
+        "bañador e toalla.",
+        "A miña irmá Uxía",
+        "fará os bocadillos;",
+        "o meu tío Xacobe",
+        "traerá unha torta de laranxa.",
+        "Despois xogaremos na area",
+        "ata a tardiña.",
+        "Unha aperta, Xulia."
+      ],
+      "foco": [
+        { "p": "Xoán", "por": "Nome de persoa: vai con maiúscula. Con x." },
+        { "p": "Samil", "por": "Nome dun lugar: vai con maiúscula." },
+        { "p": "Vigo", "por": "Nome dun lugar: vai con maiúscula." },
+        { "p": "Só necesitas dúas cousas:", "por": "Dous puntos antes dunha explicación.", "e": "cousas:" },
+        { "p": "Uxía", "por": "Nome de persoa: vai con maiúscula. Con x." },
+        { "p": "bocadillos;", "por": "Punto e coma para separar dúas partes relacionadas.", "e": "bocadillos;" },
+        { "p": "Xacobe", "por": "Nome de persoa: vai con maiúscula. Con x." },
+        { "p": "laranxa", "por": "Con x." },
+        { "p": "xogaremos", "por": "Con x." },
+        { "p": "Xulia", "por": "Nome de persoa: vai con maiúscula. Con x." }
+      ],
+      "datos": "Invitación inventada. A praia de Samil está en Vigo (Pontevedra)."
     }
   ]
 }

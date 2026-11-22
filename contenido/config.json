@@ -1,5 +1,5 @@
 {
-  "_comentario": "Parámetros por curso: rango de palabras del texto, número de palabras clave, tamaño de los trozos (palabras) y renglones de la cara A (11 mm). Son una propuesta de partida sin fuente normativa; ajústalos aquí y todo el sistema los aplica.",
+  "_comentario": "Parámetros por curso (1 a 6, primaria; 1eso a 4eso, secundaria): rango de palabras del texto, número de palabras clave, tamaño de los trozos (palabras) y renglones de la cara A (11 mm). Son una propuesta de partida sin fuente normativa; ajústalos aquí y todo el sistema los aplica. En «voces», «disponibles» son las que puede elegir el autor en el editor y «publicadas» las que se compilan para que el docente elija en la web (cada una multiplica el audio).",
   "cursos": {
     "1": {
       "palabras": [
@@ -90,6 +90,66 @@
         8
       ],
       "renglones": 10
+    },
+    "1eso": {
+      "palabras": [
+        80,
+        110
+      ],
+      "claves": [
+        10,
+        18
+      ],
+      "segmento_palabras": [
+        3,
+        9
+      ],
+      "renglones": 12
+    },
+    "2eso": {
+      "palabras": [
+        90,
+        120
+      ],
+      "claves": [
+        10,
+        18
+      ],
+      "segmento_palabras": [
+        3,
+        9
+      ],
+      "renglones": 12
+    },
+    "3eso": {
+      "palabras": [
+        100,
+        135
+      ],
+      "claves": [
+        12,
+        20
+      ],
+      "segmento_palabras": [
+        3,
+        10
+      ],
+      "renglones": 13
+    },
+    "4eso": {
+      "palabras": [
+        110,
+        150
+      ],
+      "claves": [
+        12,
+        20
+      ],
+      "segmento_palabras": [
+        3,
+        10
+      ],
+      "renglones": 13
     }
   },
   "claves": [
@@ -134,13 +194,33 @@
         "brais",
         "celtia",
         "sabela",
-        "icia"
+        "icia",
+        "iago",
+        "paulo"
+      ],
+      "publicadas": [
+        "brais",
+        "celtia",
+        "iago",
+        "paulo"
       ]
     },
     "es": {
-      "defecto": "alejandro",
+      "defecto": "dora",
       "disponibles": [
-        "alejandro"
+        "dora",
+        "santa",
+        "alex",
+        "laura",
+        "alejandro",
+        "sharvard",
+        "davefx"
+      ],
+      "publicadas": [
+        "dora",
+        "santa",
+        "alex",
+        "sharvard"
       ]
     }
   }

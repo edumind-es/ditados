@@ -6,7 +6,7 @@ const path = require('node:path');
 const { esc, rellenar, leerPlantilla, cssFuentes } = require('./html');
 const { marcar } = require('./marcar');
 const { PRESENTACION, VOCES, CATALOGO } = require('./textos');
-const { idDitado, idOpcion, tituloCorto, textoPlano } = require('./validar');
+const { idDitado, idOpcion, tituloCorto, textoPlano, nombreCurso } = require('./validar');
 
 /** Lee los MP3 de una opción si están todos; si no, devuelve null. */
 function audioBase64(audioDir, ident, nSeg) {
@@ -58,7 +58,7 @@ function generarPresentacion(d, opts = {}) {
 
   const html = rellenar(opts.plantilla || leerPlantilla('presentacion.html'), {
     FONTS: opts.fuentesCss !== undefined ? opts.fuentesCss : cssFuentes({ inline: true }),
-    LANG: d.lang, TITLE: esc(`${t.tipo} ${d.num} · ${titulo}`), TIPO: esc(t.tipo), NUM: String(d.num), CURSO: esc(d.curso),
+    LANG: d.lang, TITLE: esc(`${t.tipo} ${d.num} · ${titulo}`), TIPO: esc(t.tipo), NUM: String(d.num), CURSO: esc(nombreCurso(d.curso)),
     TITULO: esc(ops.length === 1 ? titulo : `${titulo} · ${ops[0].titulo}`), UD: esc(d.tema), PASOS: pasos, NAV: esc(t.nav),
     A11Y: esc(t.a11y), S1T: esc(t.s1t), S1P: esc(t.s1p), S1L: li(t.s1l), S2T: esc(t.s2t),
     REGRA: esc(d.regra), FIX: li(d.fixome), OPSEL: opsel, CORR: corr,

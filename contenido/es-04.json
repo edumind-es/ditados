@@ -12,12 +12,27 @@
     "Antes de p y de b va siempre m: campo, cambio.",
     "Las preguntas y las exclamaciones se abren y se cierran: ¿Qué? ¡Bien!"
   ],
-  "estado": "borrador",
+  "curriculo": {
+    "criterios": [
+      "CE3.5",
+      "CE6.4"
+    ],
+    "contenidos": [
+      "B3.21",
+      "B6.4"
+    ],
+    "evaluar": [
+      "Escribe rr solo entre vocales y r al principio de palabra o después de consonante.",
+      "Escribe m antes de p y de b.",
+      "Abre y cierra las preguntas y las exclamaciones."
+    ]
+  },
+  "estado": "publicado",
   "revision": {
-    "fecha": "",
-    "revisor": "",
+    "fecha": "2026-11-22",
+    "revisor": "Luis Vilela Acuña",
     "fuentes": ["https://dle.rae.es", "Ortografía de la lengua española (RAE, 2010)"],
-    "notas": "Texto propuesto por IA: pendiente de revisión humana."
+    "notas": "Texto escrito con ayuda de IA y pasado por LanguageTool. Publicado el 22 de noviembre de 2026 por decisión del autor; pendiente de uso en el aula."
   },
   "opcions": [
     {
@@ -105,6 +120,35 @@
         { "p": "¿Cuánto crecerá?", "por": "La pregunta se abre con ¿ y se cierra con ?", "e": "¿ … ?" }
       ],
       "datos": "Texto instructivo: germinación de lentejas en algodón húmedo, experimento escolar habitual; la raíz y el tallo aparecen en pocos días. Sin otros datos que verificar."
+    },
+    {
+      "letra": "D",
+      "tipo": "Cuento",
+      "titulo": "Ramón y el gato",
+      "texto": "El perro Ramón paseaba cerca del río. De pronto, vio un gato que temblaba de frío sobre una rama. Ramón ladró hasta que llegaron los bomberos. ¿Sabes qué pasó después? ¡Ahora el perro y el gato duermen siempre juntos!",
+      "segmentos": [
+        "El perro Ramón",
+        "paseaba cerca del río.",
+        "De pronto, vio un gato",
+        "que temblaba de frío",
+        "sobre una rama.",
+        "Ramón ladró",
+        "hasta que llegaron los bomberos.",
+        "¿Sabes qué pasó después?",
+        "¡Ahora el perro y el gato",
+        "duermen siempre juntos!"
+      ],
+      "foco": [
+        { "p": "perro", "por": "Sonido fuerte entre vocales: rr." },
+        { "p": "Ramón", "por": "Nombre propio: va con mayúscula. Al principio de palabra, el sonido fuerte lleva una sola r." },
+        { "p": "río", "por": "Al principio de palabra, una sola r. Lleva tilde en la i." },
+        { "p": "temblaba", "por": "Antes de b va m." },
+        { "p": "rama", "por": "Al principio de palabra, una sola r." },
+        { "p": "bomberos", "por": "Antes de b va m." },
+        { "p": "¿Sabes qué pasó después?", "por": "La pregunta se abre con ¿ y se cierra con ?", "e": "¿ … ?" },
+        { "p": "siempre", "por": "Antes de p va m." }
+      ],
+      "datos": "Cuento inventado: sin datos que verificar."
     }
   ]
 }
